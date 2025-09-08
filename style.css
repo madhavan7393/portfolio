@@ -25,6 +25,12 @@
      grid-column-gap: 16px;
    }
    
+
+.nav-link {
+  margin-right: 20px;
+}
+
+
    .body {
      display: block;
      overflow: visible;
@@ -3911,4 +3917,5 @@
        -ms-grid-column-align: start;
        justify-self: start;
      }
+
    }
