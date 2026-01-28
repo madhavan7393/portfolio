@@ -87,47 +87,41 @@
       }
       /* The Modal (background) */
       .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        padding: 120px 16px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
       }
 
-      /* Caption of Modal Image */
+      /* Caption / modal card */
       #caption {
         margin: auto;
         display: block;
-        width: 40%;
-        max-width: 600px;
-        padding: 40px 20px 10px 20px;
-        background: white;
-        /* box-shadow: 0 0 20px 0 #e4e4e4; */
-        border-radius: 4px;
+        max-width: 420px;
+        padding: 22px 22px 18px;
+        background: #ffffff;
+        border-radius: 20px;
         position: relative;
-      }
-      /* Add Animation */
-      #caption {
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
         -webkit-animation-name: zoom;
-        -webkit-animation-duration: 0.6s;
+        -webkit-animation-duration: 0.3s;
         animation-name: zoom;
-        animation-duration: 0.6s;
+        animation-duration: 0.3s;
       }
 
       #access-btn {
         display: flex;
-        min-height: 48px;
-        padding: 12px 32px;
+        min-height: 42px;
+        padding: 10px 20px;
         justify-content: center;
         align-items: center;
-        border-radius: 50px;
-        background-color: #5b20e0;
-        transition: background-color 300ms ease;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #5b20e0, #8b5bff);
+        border: none;
+        transition: background 160ms ease, transform 120ms ease, box-shadow 160ms ease;
         font-family: "IBM Plex Sans", sans-serif;
         color: #fff;
         font-size: 14px;
@@ -135,7 +129,15 @@
         letter-spacing: -0.02px;
         text-decoration: none;
         white-space: nowrap;
-        margin-top: 3rem;
+        margin-top: 0.75rem;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(91, 32, 224, 0.35);
+      }
+
+      #access-btn:hover {
+        background: linear-gradient(135deg, #4a1bb8, #7544f3);
+        transform: translateY(-1px);
+        box-shadow: 0 14px 32px rgba(91, 32, 224, 0.5);
       }
 
       .box {
@@ -211,52 +213,41 @@
 
       /* The Close Button */
       .close {
-        position: absolute;
-        top: 44px;
-        right: 25px;
+        position: static;
         color: #333;
-        font-size: 30px;
-        font-weight: bold;
-        transition: 0.3s;
-        background: white;
+        font-size: 0;
+        font-weight: normal;
+        transition: 0.2s;
+        background: #f6f5ff;
+        border-radius: 999px;
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        cursor: pointer;
       }
 
       .close:hover,
       .close:focus {
-        color: #808080;
+        background: #e7e2ff;
+        color: #111;
         text-decoration: none;
-        cursor: pointer;
       }
 
       .err-div {
-        color: #f00;
-        font-size: 14px;
-        height: 22px;
+        color: #d11149;
+        font-size: 13px;
+        min-height: 20px;
         display: flex;
         align-items: center;
-      }
-
-      @media screen and (max-width: 991px) {
-        #caption {
-          width: 50%;
-        }
+        margin-top: 6px;
       }
 
       @media screen and (max-width: 768px) {
         #caption {
-          width: 90%;
-        }
-        .label > h1 {
-          font-size: 18px;
-        }
-        .label > span {
-          font-size: 16px;
-        }
-        .input-field > button {
-          font-size: 16px;
-        }
-        .close {
-          font-size: 26px;
+          max-width: 100%;
         }
       }
     </style>
@@ -338,24 +329,30 @@
       <div class="home-container w-container">
         <div class="columns-3 w-row">
           <div class="column w-col w-col-8">
-            <h1 class="heading">
-              Hello! 👋 <br />
-              I am <strong class="bold-text">Madhavan</strong>,<br />data-driven UX designer</br>
-              with 7 years of experience. 
-
-
-            </h1>
-            <a
-              href="https://calendly.com/madhavan7393"
-              target="_blank"
-              class="bottombar w-inline-block"
-            >
-              <div class="text-block-9">Schedule a call</div>
-            </a>
+            <div class="hero-content">
+              <div class="hero-kicker">Product design • UX strategy • Research-led</div>
+              <h1 class="heading hero-title">
+                I’m <strong class="bold-text">Madhavan</strong>, a data-driven product designer crafting experiences
+              </h1>
+              <p class="hero-subtitle">
+                7 years shipping products across e-learning, POS, AI, and public services—aligned
+                with business goals, validated with research, and built with partners.
+              </p>
+              <div class="hero-actions">
+                <a
+                  href="https://calendly.com/madhavan7393"
+                  target="_blank"
+                  class="bottombar w-inline-block"
+                >
+                  <div class="text-block-9">Schedule a call</div>
+                </a>
+              </div>
+              <div class="hero-chips" aria-label="Highlights"></div>
+            </div>
           </div>
           <div class="column-2 left w-col w-col-4">
             <div
-             class="lottie-animation"
+             class="lottie-animation hero-visual"
               data-w-id="aaf340fc-d081-adaa-681d-9dc3bdaba23c"
               data-animation-type="lottie"
               data-src="https://uploads-ssl.webflow.com/60b1ee968e7b7ab6bce183cb/60b2061c86ed89194f1432c5_ball_spinner.json"
@@ -524,6 +521,77 @@ I'm a designer who loves to get to the root of a problem. My process is all abou
         </div>
       </div>
     </div>
+    <div id="FAQ" class="faq-section wf-section">
+      <div class="faq-container w-container">
+        <div class="faq-header">
+          <h2 class="faq-title">FAQ — How I work</h2>
+          <p class="faq-subtitle">
+            A quick snapshot of how I think, collaborate, and deliver.
+          </p>
+        </div>
+        <div class="faq-accordion" role="list">
+          <details class="faq-item" role="listitem">
+            <summary class="faq-summary">
+              <span class="faq-q">What drives my design decisions?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-panel">
+              <p class="faq-answer">
+                Evidence first: user research, product goals, and measurable outcomes.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-summary">
+              <span class="faq-q">How do I work with teams?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-panel">
+              <p class="faq-answer">
+                Tight loops with PM + eng, clear docs, and frequent demos to keep everyone aligned.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-summary">
+              <span class="faq-q">What’s my process?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-panel">
+              <p class="faq-answer">
+                Frame the problem → co-ideate → prototype fast → test → ship in slices.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-summary">
+              <span class="faq-q">What do I optimize for?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-panel">
+              <p class="faq-answer">
+                Clarity, accessibility, and reducing cognitive load for real-world users.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-summary">
+              <span class="faq-q">What do I enjoy most?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-panel">
+              <p class="faq-answer">
+                Turning complex systems into calm, intuitive flows that teams love to build.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
     <div
       id="Contact"
       data-w-id="d9610394-77df-e8e0-6542-30165e6a8cdb"
@@ -610,7 +678,7 @@ I'm a designer who loves to get to the root of a problem. My process is all abou
               />
             </a>
           </div>
-          <div class="text-block-8">
+           <!-- <div class="text-block-8">
             Assets from
             <a
               href="https://lottiefiles.com/user/755670"
@@ -627,7 +695,7 @@ I'm a designer who loves to get to the root of a problem. My process is all abou
               >Humans.
             </a>
             Designed and built with ❤️ not template.
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -720,26 +788,4 @@ I'm a designer who loves to get to the root of a problem. My process is all abou
     <script src="/https://github.com/madhavan7393/portfolio/blob/171b8629cd972843bb9b580645a2391d553f900c/main.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
