@@ -87,4 +87,3 @@ if ("serviceWorker" in navigator) {
     false
   );
 })();
-
