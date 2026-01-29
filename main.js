@@ -8,3 +8,83 @@ if ("serviceWorker" in navigator) {
       .catch((err) => console.log(`service worker: Error: ${err}`));
   });
 }
+
+// Custom nav transition: animated scroll + subtle fade reveal
+(function () {
+  // Choose 'instant' or 'quick'
+    var NAV_SCROLL_MODE = 'instant'; // 'instant' performs immediate jumps
+
+    // Force browser to not perform smooth scrolls (disable any CSS smooth behavior)
+    try {
+      document.documentElement.style.scrollBehavior = 'auto';
+    } catch (e) {}
+  // faster ease-out easing
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function animateScroll(targetY, duration, callback) {
+    var startY = window.scrollY || window.pageYOffset;
+    var diff = targetY - startY;
+    var start = null;
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      var eased = easeOutCubic(progress);
+      window.scrollTo(0, Math.round(startY + diff * eased));
+      if (progress < 1) requestAnimationFrame(step);
+      else callback && callback();
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.addEventListener(
+    "click",
+    function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      // Only override navbar links (the nav links live inside `.div-block`)
+      var navContainer = document.querySelector('.div-block');
+      if (!navContainer || !navContainer.contains(a)) return;
+      var href = a.getAttribute('href');
+      if (!href || href === '#') return;
+      var id = href.slice(1);
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+
+      // apply a quick reveal transition on the target
+      var prevTransition = target.style.transition || '';
+      // quicker reveal: 220ms ease-out
+      target.style.transition = 'opacity 100ms ease-out, transform 100ms ease-out';
+      target.style.opacity = '0.6';
+      target.style.transform = 'translateY(6px)';
+
+      var rect = target.getBoundingClientRect();
+      var targetY = window.scrollY + rect.top - 20; // small offset from top
+
+      if (NAV_SCROLL_MODE === 'quick') {
+        // immediate jump
+        window.scrollTo(0, targetY);
+        // show immediately (no transition)
+        target.style.transition = '';
+        target.style.opacity = '1';
+        target.style.transform = 'none';
+        try { target.focus && target.focus(); } catch (err) {}
+      } else {
+      faster scroll: 260ms
+      animateScroll(targetY, 260, function () {
+        // restore reveal to fully visible
+        target.style.opacity = '1';
+        target.style.transform = 'none';
+        setTimeout(function () {
+          target.style.transition = prevTransition;
+        }, 280);
+        try { target.focus && target.focus(); } catch (err) {}
+      });
+      }
+    },
+    false
+  );
+})();
+
