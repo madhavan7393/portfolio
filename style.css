@@ -398,6 +398,28 @@
      width: 100vw;
      height: 100vh;
    }
+
+/* Subtle default shadow and gentle hover elevation for project thumbnails */
+.container-7.w-container .shadow,
+.container-6.w-container .shadow,
+.container-7 .shadow,
+.container-6 .shadow {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  will-change: transform, box-shadow;
+}
+
+.container-7.w-container .shadow:hover,
+.container-6.w-container .shadow:hover,
+.container-7 .shadow:hover,
+.container-6 .shadow:hover,
+.container-7.w-container .shadow:focus,
+.container-6.w-container .shadow:focus,
+.container-7 .shadow:focus,
+.container-6 .shadow:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12) !important;
+}
    
    .camera {
      position: -webkit-sticky;
