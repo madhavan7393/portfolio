@@ -399,13 +399,13 @@
      height: 100vh;
    }
 
-/* Subtle default shadow and gentle hover elevation for project thumbnails */
+/* No default shadow; show a gentle shadow only on hover */
 .container-7.w-container .shadow,
 .container-6.w-container .shadow,
 .container-7 .shadow,
 .container-6 .shadow {
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06) !important;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: none !important;
+  transition: transform 160ms ease, box-shadow 160ms ease;
   will-change: transform, box-shadow;
 }
 
@@ -418,7 +418,7 @@
 .container-7 .shadow:focus,
 .container-6 .shadow:focus {
   transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.10) !important;
 }
    
    .camera {
