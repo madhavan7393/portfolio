@@ -717,7 +717,7 @@
      font-family: 'IBM Plex Sans', sans-serif;
      font-size: 18px;
      line-height: 2.3;
-     font-weight: 400;
+     font-weight: 300;
    }
    
    .link-7 {
@@ -2600,13 +2600,13 @@
        margin-top: 120px;
        font-size: 22px;
        line-height: 2.3;
-       font-weight: 400;
+       font-weight: 300;
      }
    
      .paragraph-3 {
        font-size: 22px;
        line-height: 2.3;
-       font-weight: 400;
+       font-weight: 300;
      }
    
      .link-7 {
@@ -4291,3 +4291,4 @@
      }
 
    }
+
