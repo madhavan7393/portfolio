@@ -1011,7 +1011,7 @@
   /* Custom hero (non-Webflow)    */
   /* ---------------------------- */
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important;
   }
 
   .home {
