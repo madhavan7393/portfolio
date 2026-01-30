@@ -384,6 +384,7 @@
      padding-left: 10%;
      flex-direction: row;
      justify-content: center;
+
      flex-wrap: nowrap;
      align-items: center;
      align-content: flex-start;
@@ -702,7 +703,7 @@
      font-family: 'IBM Plex Sans', sans-serif;
      font-size: 18px;
      line-height: 2.3;
-     font-weight: 400;
+     font-weight: 300;
    }
    
    .image-10 {
@@ -1167,6 +1168,11 @@
     }
     .hero-kicker {
       font-size: 12px;
+      display: block;
+      text-align: center;
+    }
+    .hero-subtitle {
+      text-align: center;
     }
   }
 
@@ -4291,4 +4297,3 @@
      }
 
    }
-
