@@ -1290,7 +1290,7 @@
   .faq-answer {
     margin: 8;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     color: rgba(17, 17, 17, 0.7);
   }
@@ -1368,7 +1368,7 @@
   .faq-answer {
     margin: 0;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.5;
     color: rgba(17, 17, 17, 0.7);
   }
