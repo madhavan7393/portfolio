@@ -667,7 +667,7 @@
     for (let i = 0; i < projectlink.length; i++) {
       projectlink[i].onclick = function () {
         url = projectlink[i].getAttribute("name");
-        
+
         if (isAuthorized()) {
           window.open(url, "_blank").focus();
         } else {
@@ -710,4 +710,3 @@
 </body>
 
 </html>
-
