@@ -6520,49 +6520,29 @@ html {
   }
 
   .container-7 {
+    display: block;
+    margin-bottom: 0px !important;
+  }
+
+  .projectlink {
+    display: block;
+    margin-bottom: 24px !important;
+  }
+
+  .container-7 {
     margin-top: 20px;
     padding-bottom: 0px;
     padding-left: 0px;
   }
 
-  .div-block-15 {
-    margin-bottom: 20px;
-  }
-
-  .div-block-15.shadow {
-    margin-bottom: 20px;
-  }
-
+  .image-15.shadow,
+  .image-16.shadow,
+  .image-17.shadow,
+  .image-18.shadow,
+  .image-19.shadow,
+  .div-block-15,
   .div-block-16 {
-    margin-bottom: 20px;
-  }
-
-  .div-block-16.shadow {
-    margin-bottom: 20px;
-  }
-
-  .shadow {
-    margin-bottom: 20px;
-  }
-
-  .image-15.shadow {
-    margin-bottom: 0px;
-  }
-
-  .image-16.shadow {
-    margin-bottom: 0px;
-  }
-
-  .image-17.shadow {
-    margin-bottom: 0px;
-  }
-
-  .image-18.shadow {
-    margin-bottom: 0px;
-  }
-
-  .image-19.shadow {
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
   }
 
   .f-modal-button-grid {
