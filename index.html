@@ -368,27 +368,27 @@
       </span>
 
 
-      <a href="https://medium.com/@madhavan7393/v2-9bd0313926c4" target="_blank" class="w-inline-block">
+      <span name="https://medium.com/@madhavan7393/v2-9bd0313926c4" class="w-inline-block projectlink">
         <div>
           <img
             src="https://uploads-ssl.webflow.com/60b1ee968e7b7ab6bce183cb/641dede22eb140f2bb9d0edf_10ba4e0ed325448e68f09b5ec71ceacf_v2.svg"
             loading="lazy" alt="" class="image-18 shadow" />
         </div>
-      </a>
-      <a href="https://medium.com/@madhavan7393/qb-app-dd3dd3d52b76" target="_blank" class="w-inline-block">
+      </span>
+      <span name="https://medium.com/@madhavan7393/qb-app-dd3dd3d52b76" class="w-inline-block projectlink">
         <div class="div-block-16">
           <img
             src="https://uploads-ssl.webflow.com/60b1ee968e7b7ab6bce183cb/641dede16b0b650f8af1a920_0e94890705e0947b09afff0a9298f08d_qbapp.svg"
             loading="lazy" alt="" class="image-17 shadow" />
         </div>
-      </a>
-      <a href="https://medium.com/@madhavan7393/estore-e104f915d303" target="_blank" class="w-inline-block">
+      </span>
+      <span name="https://medium.com/@madhavan7393/estore-e104f915d303" class="w-inline-block projectlink">
         <div>
           <img
             src="https://uploads-ssl.webflow.com/60b1ee968e7b7ab6bce183cb/641dede19fe5c898b1256afe_92ad578546fa0dd7b6bdcd13fb220759_estore.svg"
             loading="lazy" alt="" class="image-19 shadow" />
         </div>
-      </a>
+      </span>
     </div>
   </div>
 
@@ -659,13 +659,23 @@
 
     var url = null;
 
+    // Check if user is already authorized for this session
+    function isAuthorized() {
+      return sessionStorage.getItem("project_authorized") === "true";
+    }
+
     for (let i = 0; i < projectlink.length; i++) {
       projectlink[i].onclick = function () {
-        modal.style.display = "block";
-        errDiv.style.display = "none";
-        accessInput.value = "";
-        accessInput.focus();
         url = projectlink[i].getAttribute("name");
+        
+        if (isAuthorized()) {
+          window.open(url, "_blank").focus();
+        } else {
+          modal.style.display = "block";
+          errDiv.style.display = "none";
+          accessInput.value = "";
+          accessInput.focus();
+        }
       };
     }
 
@@ -679,6 +689,7 @@
     accessBtn.onclick = function () {
       var password = accessInput.value;
       if (password.toLowerCase() == "free") {
+        sessionStorage.setItem("project_authorized", "true");
         window.open(url, "_blank").focus();
         closeBtn.click();
       } else {
