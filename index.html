@@ -393,51 +393,51 @@
 
     @media screen and (max-width: 767px) {
       .hobbies-toast-wrapper {
-        bottom: 24px;
-        left: 0;
-        right: 0;
-        transform: none;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding: 0 10px;
-        box-sizing: border-box;
-        animation: bubble-pulse-mobile 4s ease-in-out infinite;
+        display: none !important;
       }
 
-      .hobbies-toast-wrapper.toast-hidden {
-        transform: translateY(20px) !important;
+      .sound-wrapper {
+        display: none !important;
       }
 
       .hobbies-toast {
         padding: 12px 16px;
         font-size: 11px;
-        gap: 12px;
         width: 100%;
-        max-width: 320px;
+        max-width: 330px;
         box-sizing: border-box;
-        justify-content: center;
-        flex-wrap: wrap;
-        overflow: visible;
         border-radius: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px 4px;
+        justify-items: center;
+        align-items: center;
       }
 
       .hobbies-toast span {
         flex: 0 1 auto;
       }
 
-      /* 3 on top, 2 on bottom */
-      .hobbies-toast .hobby-item:nth-child(1),
-      .hobbies-toast .hobby-item:nth-child(3),
-      .hobbies-toast .hobby-item:nth-child(5) {
-        flex-basis: 28%;
-        text-align: center;
+      /* Grid placement for items */
+      #hobby-dieselhead {
+        grid-column: 1;
       }
 
-      .hobbies-toast .hobby-item:nth-child(7),
-      .hobbies-toast .hobby-item:nth-child(9) {
-        flex-basis: 40%;
-        text-align: center;
+      #hobby-mechanic {
+        grid-column: 2;
+      }
+
+      #hobby-socionics {
+        grid-column: 3;
+      }
+
+      /* Row 2: Align FL Studio and Designer under first and third columns */
+      #hobby-flstudio {
+        grid-column: 1;
+      }
+
+      #hobby-designer {
+        grid-column: 3;
       }
 
       .hobby-divider {
@@ -1201,17 +1201,17 @@
           this.rotSpeed = (Math.random() - 0.5) * 0.1;
 
           if (type === 'smoke') {
-            this.color = `rgba(0, 0, 0, 0.6)`;
-            this.size = Math.random() * 50 + 30;
-            this.speedY = Math.random() * -4 - 2;
-            this.speedX = (Math.random() - 0.5) * 4;
-            this.maxLife = 180 + Math.random() * 120;
+            this.color = `rgba(10, 10, 10, 0.95)`;
+            this.size = Math.random() * 100 + 80;
+            this.speedY = Math.random() * -6 - 3;
+            this.speedX = (Math.random() - 0.5) * 15;
+            this.maxLife = 350 + Math.random() * 250;
           } else if (type === 'tool') {
             this.x = Math.random() * canvas.width;
             this.y = -50;
             this.speedY = Math.random() * 5 + 4;
             this.speedX = (Math.random() - 0.5) * 2;
-            const tools = ['🔧', '🔩', '⚙️', '⛓️', '🛠️'];
+            const tools = ['🔧', '🔩', '⚙️', '⛓️', '🛠️', '🏎️', '🛞', '🪜', '⚒️', '⚓'];
             this.icon = tools[Math.floor(Math.random() * tools.length)];
             this.size = Math.random() * 20 + 20;
           } else if (type === 'splash') {
@@ -1227,7 +1227,9 @@
             this.y = canvas.height + 20;
             this.speedY = Math.random() * -4 - 2;
             this.color = '#5b20e0';
-            this.size = Math.random() * 15 + 10;
+            this.size = Math.random() * 20 + 15;
+            const instruments = ['🎹', '🎸', '🥁', '🎷', '🎧', '📻', '🎼', '🎵', '🎶'];
+            this.icon = instruments[Math.floor(Math.random() * instruments.length)];
           }
         }
 
@@ -1238,8 +1240,8 @@
           this.opacity = 0.8 * (1 - (this.life / this.maxLife));
           this.rotation += this.rotSpeed;
           if (this.type === 'smoke') {
-            this.size += 0.5;
-            this.speedX *= 0.99;
+            this.size += 2.5;
+            this.speedX *= 0.995;
           }
         }
 
@@ -1263,7 +1265,7 @@
           } else if (this.type === 'note') {
             ctx.font = `${this.size}px Arial`;
             ctx.fillStyle = this.color;
-            ctx.fillText('♪', -this.size / 2, this.size / 2);
+            ctx.fillText(this.icon, -this.size / 2, this.size / 2);
           } else if (this.type === 'splash') {
             ctx.fillStyle = this.color;
             ctx.beginPath();
@@ -1278,7 +1280,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         if (currentHobby === 'dieselhead') {
-          if (Math.random() < 0.4) particles.push(new Particle(null, null, 'smoke'));
+          if (Math.random() < 0.85) particles.push(new Particle(null, null, 'smoke'));
         } else if (currentHobby === 'mechanic') {
           if (Math.random() < 0.25) {
             particles.push(new Particle(null, null, 'tool'));
@@ -1330,9 +1332,10 @@
           } else if (currentHobby === 'flstudio') {
             playFLStudioSound();
           } else if (currentHobby === 'designer') {
-            // Play a pleasant C Major 7 arpeggio
-            [261.63, 329.63, 392.00, 493.88].forEach((freq, i) => {
-              setTimeout(() => playTone(freq, 'sine', 0.6, 0.05), i * 40);
+            // Play a pleasant, sparkly sequence
+            const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+            notes.forEach((freq, i) => {
+              setTimeout(() => playTone(freq, 'sine', 0.4, 0.03), i * 60);
             });
           }
           if (!animationId) animate();
@@ -1447,7 +1450,3 @@
 </body>
 
 </html>
-
-
-
-
