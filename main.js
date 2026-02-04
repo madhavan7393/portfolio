@@ -12,12 +12,12 @@ if ("serviceWorker" in navigator) {
 // Custom nav transition: animated scroll + subtle fade reveal
 (function () {
   // Choose 'instant' or 'quick'
-    var NAV_SCROLL_MODE = 'instant'; // 'instant' performs immediate jumps
+  var NAV_SCROLL_MODE = 'instant'; // 'instant' performs immediate jumps
 
-    // Force browser to not perform smooth scrolls (disable any CSS smooth behavior)
-    try {
-      document.documentElement.style.scrollBehavior = 'auto';
-    } catch (e) {}
+  // Force browser to not perform smooth scrolls (disable any CSS smooth behavior)
+  try {
+    document.documentElement.style.scrollBehavior = 'auto';
+  } catch (e) { }
   // faster ease-out easing
   function easeOutCubic(t) {
     return 1 - Math.pow(1 - t, 3);
@@ -70,20 +70,62 @@ if ("serviceWorker" in navigator) {
         target.style.transition = '';
         target.style.opacity = '1';
         target.style.transform = 'none';
-        try { target.focus && target.focus(); } catch (err) {}
+        try { target.focus && target.focus(); } catch (err) { }
       } else {
-      faster scroll: 260ms
-      animateScroll(targetY, 260, function () {
-        // restore reveal to fully visible
-        target.style.opacity = '1';
-        target.style.transform = 'none';
-        setTimeout(function () {
-          target.style.transition = prevTransition;
-        }, 280);
-        try { target.focus && target.focus(); } catch (err) {}
-      });
+        // faster scroll: 260ms
+        animateScroll(targetY, 260, function () {
+          // restore reveal to fully visible
+          target.style.opacity = '1';
+          target.style.transform = 'none';
+          setTimeout(function () {
+            target.style.transition = prevTransition;
+          }, 280);
+          try { target.focus && target.focus(); } catch (err) { }
+        });
       }
     },
     false
   );
+
+  // Hobbies Toast Visibility Observer
+  document.addEventListener('DOMContentLoaded', () => {
+    const toastWrapper = document.querySelector('.hobbies-toast-wrapper');
+    const sectionsToWatch = [
+      { el: document.getElementById('Home'), show: true },
+      { el: document.querySelector('.section-11'), show: true },
+      { el: document.querySelector('.div-block-9'), show: true },
+      { el: document.getElementById('FAQ'), show: false }
+    ].filter(item => item.el !== null);
+
+    if (toastWrapper && sectionsToWatch.length > 0) {
+      const activeShowSections = new Set();
+      const activeHideSections = new Set();
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const config = sectionsToWatch.find(s => s.el === entry.target);
+          if (!config) return;
+
+          if (entry.isIntersecting) {
+            if (config.show) activeShowSections.add(entry.target);
+            else activeHideSections.add(entry.target);
+          } else {
+            if (config.show) activeShowSections.delete(entry.target);
+            else activeHideSections.delete(entry.target);
+          }
+
+          if (activeShowSections.size > 0 && activeHideSections.size === 0) {
+            toastWrapper.classList.remove('toast-hidden');
+          } else {
+            toastWrapper.classList.add('toast-hidden');
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.1
+      });
+
+      sectionsToWatch.forEach(item => observer.observe(item.el));
+    }
+  });
 })();
