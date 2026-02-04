@@ -3701,18 +3701,18 @@ html {
 }
 
 .text-block-16 {
-  transform: translate3d(-124px, -130px, 300px);
+  transform: translate3d(-108px, -108px, 150px);
   color: #000;
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 32px;
+  line-height: 40px;
   font-weight: 100;
   transform-style: preserve-3d;
 }
 
 .parent {
   display: flex;
-  width: 400px;
-  height: 400px;
+  width: 405px;
+  height: 405px;
   flex-direction: column;
   justify-content: center;
   flex-wrap: nowrap;
@@ -3729,57 +3729,57 @@ html {
 }
 
 .text-block-15 {
-  transform: translate3d(-124px, -20px, 400px);
+  transform: translate3d(-108px, -13px, 200px);
   color: #000;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 44px;
+  line-height: 44px;
   font-weight: 600;
   transform-style: preserve-3d;
 }
 
 .text-block-13 {
-  transform: translate3d(170px, 30px, 300px);
+  transform: translate3d(135px, 29px, 150px);
   color: #000;
-  font-size: 40px;
-  line-height: 50px;
+  font-size: 44px;
+  line-height: 55px;
   font-weight: 100;
   transform-style: preserve-3d;
 }
 
 .text-block-14 {
-  transform: translate3d(110px, -197px, 300px);
+  transform: translate3d(108px, -162px, 150px);
   color: #000;
-  font-size: 40px;
-  line-height: 44px;
+  font-size: 44px;
+  line-height: 49px;
   font-weight: 100;
   transform-style: preserve-3d;
 }
 
 .text-block-11 {
-  transform: translate3d(78px, -20px, 300px);
+  transform: translate3d(68px, -13px, 150px);
   font-family: 'IBM Plex Sans', sans-serif;
   color: #000;
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 32px;
+  line-height: 44px;
   font-weight: 700;
   transform-style: preserve-3d;
 }
 
 .text-block-17 {
-  transform: translate3d(100px, -33px, 300px);
+  transform: translate3d(95px, -29px, 150px);
   color: #5b20e0;
-  font-size: 50px;
-  line-height: 70px;
+  font-size: 55px;
+  line-height: 81px;
   font-weight: 700;
   transform-style: preserve-3d;
 }
 
 .heading-6 {
-  transform: translate3d(-200px, -40px, 57px);
+  transform: translate3d(-185px, -54px, 50px);
   font-family: 'IBM Plex Sans', sans-serif;
   color: #000;
-  font-size: 50px;
-  line-height: 70px;
+  font-size: 44px;
+  line-height: 55px;
   font-weight: 700;
   transform-style: preserve-3d;
 }
