@@ -257,6 +257,14 @@
       pointer-events: none;
       transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       will-change: transform, opacity;
+      animation: bubble-pulse 4s ease-in-out infinite;
+    }
+
+    .toast-hidden {
+      opacity: 0 !important;
+      transform: translateX(-50%) translateY(20px) !important;
+      pointer-events: none !important;
+      animation: none !important;
     }
 
     .hobbies-toast {
@@ -301,9 +309,7 @@
       animation: shimmer-border 2s linear infinite;
     }
 
-    .hobbies-toast-wrapper {
-      animation: bubble-pulse 4s ease-in-out infinite;
-    }
+
 
     @keyframes bubble-pulse {
 
@@ -315,6 +321,20 @@
 
       50% {
         transform: translateX(-50%) scale(1.05);
+        filter: drop-shadow(0 0 15px rgba(91, 32, 224, 0.4));
+      }
+    }
+
+    @keyframes bubble-pulse-mobile {
+
+      0%,
+      100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(91, 32, 224, 0));
+      }
+
+      50% {
+        transform: scale(1.05);
         filter: drop-shadow(0 0 15px rgba(91, 32, 224, 0.4));
       }
     }
@@ -371,9 +391,9 @@
       }
     }
 
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 767px) {
       .hobbies-toast-wrapper {
-        bottom: 20px;
+        bottom: 24px;
         left: 0;
         right: 0;
         transform: none;
@@ -382,35 +402,102 @@
         width: 100%;
         padding: 0 10px;
         box-sizing: border-box;
+        animation: bubble-pulse-mobile 4s ease-in-out infinite;
+      }
+
+      .hobbies-toast-wrapper.toast-hidden {
+        transform: translateY(20px) !important;
       }
 
       .hobbies-toast {
-        padding: 8px 16px;
+        padding: 12px 16px;
         font-size: 11px;
-        gap: 8px;
+        gap: 12px;
         width: 100%;
+        max-width: 320px;
         box-sizing: border-box;
-        justify-content: space-around;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: visible;
+        border-radius: 20px;
       }
 
       .hobbies-toast span {
-        flex-shrink: 0;
+        flex: 0 1 auto;
+      }
+
+      /* 3 on top, 2 on bottom */
+      .hobbies-toast .hobby-item:nth-child(1),
+      .hobbies-toast .hobby-item:nth-child(3),
+      .hobbies-toast .hobby-item:nth-child(5) {
+        flex-basis: 28%;
+        text-align: center;
+      }
+
+      .hobbies-toast .hobby-item:nth-child(7),
+      .hobbies-toast .hobby-item:nth-child(9) {
+        flex-basis: 40%;
+        text-align: center;
       }
 
       .hobby-divider {
-        opacity: 0.3;
+        display: none;
       }
     }
 
-    /* Sound Notice - Bottom Right Icon Only */
-    .sound-notice {
+    @media screen and (max-width: 479px) {
+      .hobbies-toast {
+        max-width: 280px;
+        gap: 8px;
+        padding: 10px 12px;
+      }
+    }
+
+    /* Sound Wrapper */
+    .sound-wrapper {
       position: fixed;
       bottom: 30px;
       right: 30px;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      pointer-events: none;
+    }
+
+    .curved-text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: rotate-text 10s linear infinite;
+      transition: opacity 0.5s ease;
+    }
+
+    .curved-text text {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 10.5px;
+      font-weight: 800;
+      fill: rgba(91, 32, 224, 0.9);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    @keyframes rotate-text {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .sound-notice {
+      position: relative;
+      bottom: auto;
+      right: auto;
       width: 44px;
       height: 44px;
       background: rgba(255, 255, 255, 0.9);
@@ -418,7 +505,6 @@
       -webkit-backdrop-filter: blur(14px);
       border-radius: 50%;
       border: 1px solid rgba(91, 32, 224, 0.2);
-      z-index: 2000;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -427,7 +513,10 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 20px rgba(91, 32, 224, 0.1);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       pointer-events: auto;
-      /* Active for click */
+    }
+
+    .sound-wrapper.active .curved-text {
+      opacity: 0;
     }
 
     .sound-notice svg {
@@ -442,43 +531,18 @@
     }
 
     .sound-notice.active {
-      opacity: 0.6;
-    }
-
-    .sound-notice.hidden {
-      opacity: 0;
-      transform: translateY(20px) scale(0.8);
-      pointer-events: none;
-    }
-
-    /* Pulse effect to encourage first click */
-    .sound-notice:not(.active) {
-      animation: sound-pulse 2s infinite;
-    }
-
-    @keyframes sound-pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(91, 32, 224, 0.4);
-      }
-
-      70% {
-        box-shadow: 0 0 0 15px rgba(91, 32, 224, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(91, 32, 224, 0);
-      }
-    }
-
-    .sound-notice.hidden {
-      opacity: 0;
-      transform: translateY(-10px);
+      opacity: 0.8;
     }
 
     @media screen and (max-width: 479px) {
-      .sound-notice {
+      .sound-wrapper {
         bottom: 24px;
         right: 24px;
+        width: 70px;
+        height: 70px;
+      }
+
+      .sound-notice {
         width: 38px;
         height: 38px;
       }
@@ -545,15 +609,23 @@
 <body class="body">
   <canvas id="hobby-canvas"></canvas>
   <div class="preloader"></div>
-  <div id="sound-intro">Sound Enabled 🔊</div>
-  <div class="sound-notice" id="soundNotice" title="Click to enable interaction sounds">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path d="M11 5L6 9H2V15H6L11 19V5Z"></path>
-      <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07">
-      </path>
-      <path d="M15.54 8.46C16.4774 9.39764 17.004 10.6692 17.004 12C17.004 13.3308 16.4774 14.6024 15.54 15.54"></path>
+  <div class="sound-wrapper" id="soundWrapper">
+    <svg class="curved-text" viewBox="0 0 100 100">
+      <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+      <text>
+        <textPath href="#circlePath">Click to enable • Click to enable • </textPath>
+      </text>
     </svg>
+    <div class="sound-notice" id="soundNotice" title="Click to enable interaction sounds">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M11 5L6 9H2V15H6L11 19V5Z"></path>
+        <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07">
+        </path>
+        <path d="M15.54 8.46C16.4774 9.39764 17.004 10.6692 17.004 12C17.004 13.3308 16.4774 14.6024 15.54 15.54">
+        </path>
+      </svg>
+    </div>
   </div>
   <!-- The Modal -->
   <div id="myModal" class="modal">
@@ -975,8 +1047,7 @@
       flStudioSound.volume = 1.0;
 
       const soundNotice = document.getElementById('soundNotice');
-
-
+      const soundWrapper = document.getElementById('soundWrapper');
 
       if (soundNotice) {
         soundNotice.addEventListener('click', (e) => {
@@ -991,11 +1062,14 @@
       window.addEventListener('keydown', unlockAudio);
 
       window.addEventListener('scroll', function () {
-        if (soundNotice) {
+        const target = soundWrapper || soundNotice;
+        if (target) {
           if (window.scrollY > 100) {
-            soundNotice.classList.add('hidden');
+            target.style.opacity = '0';
+            target.style.pointerEvents = 'none';
           } else {
-            soundNotice.classList.remove('hidden');
+            target.style.opacity = '1';
+            target.style.pointerEvents = 'auto';
           }
         }
       });
@@ -1021,6 +1095,9 @@
             console.log("AudioContext resumed successfully");
             if (soundNotice) {
               soundNotice.classList.add('active');
+            }
+            if (soundWrapper) {
+              soundWrapper.classList.add('active');
             }
             removeGlobalListeners();
           }).catch(e => {
@@ -1366,8 +1443,7 @@
       });
     }
   </script>
+  <script src="main.js"></script>
 </body>
 
 </html>
-
-
