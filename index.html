@@ -278,11 +278,31 @@
     }
 
     .body {
-      background-image: url('bg_grid.png');
-      background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
+      background-color: #000;
+    }
+
+    #video-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+      /* Background layer */
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.95);
+      /* Base/Stopped state set to 95% */
+      z-index: -1;
+      pointer-events: none;
+      will-change: background-color;
     }
 
     .hobbies-toast-wrapper {
@@ -641,9 +661,13 @@
       backdrop-filter: blur(8px);
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body class="body">
+  <canvas id="video-canvas"></canvas>
+  <div class="video-overlay"></div>
   <canvas id="hobby-canvas"></canvas>
   <div class="preloader"></div>
   <div class="sound-wrapper" id="soundWrapper">
@@ -685,7 +709,7 @@
       <div class="f-modal-title-wrapper">
         <div class="f-sub-heading-regular">
           Enter Password
-          <div style="font-weight: 300; font-size: 13px; color: #6b7094;">Password on request</div>
+          <div style="font-weight: 300; font-size: 13px; color: #6b7094;">Credentials provided in CV</div>
         </div>
         <button id="closeModal" class="f-modal-close-link w-inline-block close">
           <div class="f-icon-regular w-embed">
@@ -730,7 +754,7 @@
               I’m <strong class="bold-text">Madhavan</strong>, a data-driven product designer crafting experiences
             </h1>
             <p class="hero-subtitle">
-              7 years of shipping products across e-learning, POS, AI, and government—bridging business strategy with
+              6 years of shipping products across e-learning, POS, AI, and government—bridging business strategy with
               user-centric research to drive impactful solutions.
             </p>
             <a href="https://calendly.com/madhavan7393/15-minute-google-meet" target="_blank" class="cta-button-small">
@@ -857,7 +881,7 @@
 
 
             <p class="paragraph-3">
-              For 7 years, I have developed a diverse portfolio of digital products, from <strong> E-learning, point of
+              For 6 years, I have developed a diverse portfolio of digital products, from <strong> E-learning, point of
                 sale solutions to specialized projects in land acquisition, AI, and government services. </strong>
             </p>
 
@@ -1505,9 +1529,99 @@
       });
     }
   </script>
+  <script>
+    // GSAP Scroll-Triggered Video Scrubbing Logic
+    (function () {
+      const canvas = document.getElementById("video-canvas");
+      const context = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const frameCount = 120;
+      const currentFrame = index => (
+        `ezgif/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
+      );
+
+      const images = [];
+      const airpods = {
+        frame: 0
+      };
+
+      // Preload images
+      for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+        images.push(img);
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to(airpods, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: "none",
+        scrollTrigger: {
+          scrub: 0.5,
+          trigger: "#Home",
+          endTrigger: "#Project",
+          start: "top top",
+          end: "top top",
+        },
+        onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
+      });
+
+      // Dynamic overlay opacity: 75% at start, 95% when stopped at #Project
+      gsap.fromTo(".video-overlay",
+        { backgroundColor: "rgba(255, 255, 255, 0.75)" },
+        {
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          scrollTrigger: {
+            trigger: "#Home",
+            endTrigger: "#Project",
+            start: "top top",
+            end: "top top",
+            scrub: true
+          }
+        }
+      );
+
+      images[0].onload = render;
+
+      function render() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        const img = images[airpods.frame];
+        if (!img || !img.complete) return;
+
+        // Cover logic for canvas
+        const imgRatio = img.width / img.height;
+        const canvasRatio = canvas.width / canvas.height;
+        let drawWidth, drawHeight, drawX, drawY;
+
+        if (canvasRatio > imgRatio) {
+          drawWidth = canvas.width;
+          drawHeight = canvas.width / imgRatio;
+          drawX = 0;
+          drawY = (canvas.height - drawHeight) / 2;
+        } else {
+          drawWidth = canvas.height * imgRatio;
+          drawHeight = canvas.height;
+          drawX = (canvas.width - drawWidth) / 2;
+          drawY = 0;
+        }
+
+        context.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+      }
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        render();
+      });
+    })();
+  </script>
   <script src="main.js"></script>
 </body>
 
 </html>
-
-
