@@ -298,8 +298,10 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(255, 255, 255, 0.95);
-      /* Base/Stopped state set to 95% */
+      background-color: #fff;
+      /* Solid white fallback */
+      background-color: rgba(255, 255, 255, 0.80);
+      /* Initial state set to 80% */
       z-index: -1;
       pointer-events: none;
       will-change: background-color;
@@ -1571,11 +1573,11 @@
         onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
       });
 
-      // Dynamic overlay opacity: 75% at start, 95% when stopped at #Project
+      // Dynamic overlay opacity: 80% at start, 90% when stopped at #Project
       gsap.fromTo(".video-overlay",
         { backgroundColor: "rgba(255, 255, 255, 0.80)" },
         {
-          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          backgroundColor: "rgba(255, 255, 255, 0.90)",
           scrollTrigger: {
             trigger: "#Home",
             endTrigger: "#Project",
@@ -1587,6 +1589,8 @@
       );
 
       images[0].onload = render;
+      // If frame 0 is already in cache, render immediately
+      if (images[0].complete) render();
 
       function render() {
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -1625,4 +1629,3 @@
 </body>
 
 </html>
-
