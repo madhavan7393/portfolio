@@ -3143,14 +3143,60 @@ textarea.w-select {
   right: 0%;
   bottom: 0%;
   z-index: 99999999;
-  display: none;
-  overflow: visible;
-  width: 100vw;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  -o-object-fit: fill;
-  object-fit: fill;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-figure: blur(14px);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+}
+
+.progress-ring {
+  position: absolute;
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.1s linear;
+  stroke-dasharray: 282.7;
+  /* 2 * PI * r (45) */
+  stroke-dashoffset: 282.7;
+}
+
+.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-img {
+  width: 40px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  animation: breathe 1.5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 .lottie-animation-2 {
