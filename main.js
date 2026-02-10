@@ -128,4 +128,40 @@ if ("serviceWorker" in navigator) {
       sectionsToWatch.forEach(item => observer.observe(item.el));
     }
   });
+  // Preloader with circular progress simulation
+  window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    const circle = document.querySelector('.progress-ring__circle');
+
+    if (preloader && circle) {
+      const radius = circle.r.baseVal.value;
+      const circumference = radius * 2 * Math.PI;
+      const duration = 1500; // 1.5 seconds
+      const startTime = Date.now();
+
+      function updateProgress() {
+        const currentTime = Date.now();
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const offset = circumference - (progress * circumference);
+        circle.style.strokeDashoffset = offset;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateProgress);
+        } else {
+          // Progress complete, fade out
+          setTimeout(() => {
+            preloader.classList.add('preloader-hidden');
+            setTimeout(() => {
+              preloader.style.display = 'none';
+            }, 600);
+          }, 200);
+        }
+      }
+
+      requestAnimationFrame(updateProgress);
+    }
+  });
+
 })();
