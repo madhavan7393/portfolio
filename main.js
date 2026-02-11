@@ -128,6 +128,7 @@ if ("serviceWorker" in navigator) {
       sectionsToWatch.forEach(item => observer.observe(item.el));
     }
   });
+
   // Preloader with circular progress simulation
   window.addEventListener('load', () => {
     const preloader = document.querySelector('.preloader');
@@ -136,7 +137,7 @@ if ("serviceWorker" in navigator) {
     if (preloader && circle) {
       const radius = circle.r.baseVal.value;
       const circumference = radius * 2 * Math.PI;
-      const duration = 1500; // 1.5 seconds
+      const duration = 1000; // 1 second
       const startTime = Date.now();
 
       function updateProgress() {
@@ -159,9 +160,104 @@ if ("serviceWorker" in navigator) {
           }, 200);
         }
       }
-
       requestAnimationFrame(updateProgress);
     }
   });
+
+  // Full Page Scroll-Driven Image Sequence Animation
+  (function () {
+    const canvas = document.getElementById("video-canvas");
+    if (!canvas) return;
+
+    const context = canvas.getContext("2d");
+    const frameCount = 75;
+    const currentFrame = index => `ezgif/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`;
+
+    const images = [];
+    const airpods = { frame: 0 };
+
+    // Preload images
+    for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      img.src = currentFrame(i);
+      images.push(img);
+    }
+
+    function render() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      const img = images[airpods.frame];
+      if (!img || !img.complete) return;
+
+      const imgRatio = img.width / img.height;
+      const canvasRatio = canvas.width / canvas.height;
+      let drawWidth, drawHeight, drawX, drawY;
+
+      if (canvasRatio > imgRatio) {
+        drawWidth = canvas.width;
+        drawHeight = canvas.width / imgRatio;
+        drawX = 0;
+        drawY = (canvas.height - drawHeight) / 2;
+      } else {
+        drawWidth = canvas.height * imgRatio;
+        drawHeight = canvas.height;
+        drawX = (canvas.width - drawWidth) / 2;
+        drawY = 0;
+      }
+      context.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+    }
+
+    const initScrollAnimation = () => {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        setTimeout(initScrollAnimation, 100);
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animation sequence
+      gsap.to(airpods, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: "none",
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.5
+        },
+        onUpdate: render
+      });
+
+      // Overlay shift if needed
+      gsap.fromTo(".video-overlay",
+        { backgroundColor: "rgba(255, 255, 255, 0.8)" },
+        {
+          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          scrollTrigger: {
+            trigger: "body",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true
+          }
+        }
+      );
+
+      // Initial render
+      if (images[0].complete) render();
+      else images[0].onload = render;
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        render();
+      });
+    };
+
+    // Set initial canvas size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    initScrollAnimation();
+  })();
 
 })();
