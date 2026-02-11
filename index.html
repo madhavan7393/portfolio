@@ -298,9 +298,9 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #fff;
+      background-color: #ffffff;
       /* Solid white fallback */
-      background-color: rgba(255, 255, 255, 0.80);
+      background-color: rgba(255, 255, 255, 0.7);
       /* Initial state set to 80% */
       z-index: -1;
       pointer-events: none;
@@ -1538,100 +1538,6 @@
         scale: 1.02
       });
     }
-  </script>
-  <script>
-    // GSAP Scroll-Triggered Video Scrubbing Logic
-    (function () {
-      const canvas = document.getElementById("video-canvas");
-      const context = canvas.getContext("2d");
-
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      const frameCount = 120;
-      const currentFrame = index => (
-        `ezgif/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
-      );
-
-      const images = [];
-      const airpods = {
-        frame: 0
-      };
-
-      // Preload images
-      for (let i = 0; i < frameCount; i++) {
-        const img = new Image();
-        img.src = currentFrame(i);
-        images.push(img);
-      }
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.to(airpods, {
-        frame: frameCount - 1,
-        snap: "frame",
-        ease: "none",
-        scrollTrigger: {
-          scrub: 0.5,
-          trigger: "#Home",
-          endTrigger: "#Project",
-          start: "top top",
-          end: "top top",
-        },
-        onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
-      });
-
-      // Dynamic overlay opacity: 80% at start, 90% when stopped at #Project
-      gsap.fromTo(".video-overlay",
-        { backgroundColor: "rgba(255, 255, 255, 0.80)" },
-        {
-          backgroundColor: "rgba(255, 255, 255, 0.90)",
-          scrollTrigger: {
-            trigger: "#Home",
-            endTrigger: "#Project",
-            start: "top top",
-            end: "top top",
-            scrub: true
-          }
-        }
-      );
-
-      images[0].onload = render;
-      // If frame 0 is already in cache, render immediately
-      if (images[0].complete) render();
-
-      function render() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-        const img = images[airpods.frame];
-        if (!img || !img.complete) return;
-
-        // Cover logic for canvas
-        const imgRatio = img.width / img.height;
-        const canvasRatio = canvas.width / canvas.height;
-        let drawWidth, drawHeight, drawX, drawY;
-
-        if (canvasRatio > imgRatio) {
-          drawWidth = canvas.width;
-          drawHeight = canvas.width / imgRatio;
-          drawX = 0;
-          drawY = (canvas.height - drawHeight) / 2;
-        } else {
-          drawWidth = canvas.height * imgRatio;
-          drawHeight = canvas.height;
-          drawX = (canvas.width - drawWidth) / 2;
-          drawY = 0;
-        }
-
-        context.drawImage(img, drawX, drawY, drawWidth, drawHeight);
-      }
-
-      window.addEventListener("resize", () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        render();
-      });
-    })();
   </script>
   <script src="main.js"></script>
 </body>
