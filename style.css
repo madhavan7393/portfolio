@@ -2671,6 +2671,9 @@ textarea.w-select {
   align-items: center;
   align-content: space-around;
   flex: 1;
+  background-image: url('bg_grid.png');
+  background-repeat: repeat;
+  background-position: center;
 }
 
 .home-container {
@@ -3136,6 +3139,8 @@ textarea.w-select {
   padding-top: 20px;
 }
 
+
+
 .preloader {
   position: fixed;
   left: 0%;
@@ -3525,7 +3530,7 @@ html {
 /* ---------------------------- */
 .faq-section {
   padding: 80px 20px 60px;
-  background: transparent;
+  background: #ffffff;
 }
 
 .faq-container {
@@ -3739,7 +3744,7 @@ html {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+
   perspective: 1000px;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #5b20e0;
