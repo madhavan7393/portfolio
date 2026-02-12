@@ -6648,3 +6648,165 @@ html {
   }
 
 }
+
+/* =========================================
+   Modern FAQ Accordion Styles
+   ========================================= */
+
+.faq-section {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.faq-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.faq-subtitle {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  color: #666;
+  font-weight: 300;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 16px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 16px 0;
+  list-style: none;
+  /* Remove default triangle */
+}
+
+/* Hide default marker in Webkit/Blink */
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-q {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.faq-item[open] .faq-q {
+  color: #333;
+  /* Keep original color */
+}
+
+.faq-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background-color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.faq-icon::before {
+  width: 14px;
+  height: 2px;
+}
+
+.faq-icon::after {
+  width: 2px;
+  height: 14px;
+}
+
+/* Transform to '-' on open by rotating the vertical bar */
+.faq-item[open] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-item[open] .faq-icon::after {
+  transform: rotate(90deg);
+  background-color: #333;
+  /* Keep original color */
+}
+
+.faq-item[open] .faq-icon::before {
+  background-color: #333;
+  /* Keep original color */
+}
+
+.faq-panel {
+  padding-top: 8px;
+  padding-bottom: 16px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.faq-answer {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 479px) {
+  .faq-title {
+    font-size: 26px;
+  }
+
+  .faq-q {
+    font-size: 18px;
+  }
+
+  .faq-answer {
+    font-size: 15px;
+  }
+}
