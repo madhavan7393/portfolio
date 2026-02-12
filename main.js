@@ -188,9 +188,9 @@ window.addEventListener('load', () => {
 
     // Overlay shift if needed
     gsap.fromTo(".video-overlay",
-      { backgroundColor: "rgba(255, 255, 255, 0.8)" },
+      { backgroundColor: "rgba(255, 255, 255, 0.85)" },
       {
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        backgroundColor: "rgba(255, 255, 255, 0.85)",
         scrollTrigger: {
           trigger: "body",
           start: "top top",
@@ -217,5 +217,6 @@ window.addEventListener('load', () => {
 
   initScrollAnimation();
 })();
+
 
 
