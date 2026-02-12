@@ -2707,7 +2707,7 @@ textarea.w-select {
   align-items: center;
   align-content: space-around;
   flex: 1;
-  background-image: url('bg_grid.png');
+  /* background-image: url('bg_grid.png'); */
   background-repeat: repeat;
   background-position: center;
 }
@@ -6864,3 +6864,4 @@ html {
     font-size: 15px;
   }
 }
+
