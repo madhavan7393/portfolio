@@ -6083,6 +6083,33 @@ html {
   .link-block-10.scdeulecall {
     display: none;
   }
+
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-content h1,
+  .hero-content p,
+  .hero-content .hero-title,
+  .hero-content .hero-subtitle,
+  .hero-content .hero-kicker {
+    text-align: center !important;
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .cta-button-small {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -6183,8 +6210,9 @@ html {
     bottom: auto;
     display: flex;
     padding-right: 0px;
-    justify-content: flex-start;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .column-4 {
@@ -6581,8 +6609,8 @@ html {
   }
 
   .project {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
   }
 
   .container-6 {
@@ -6613,7 +6641,17 @@ html {
   .image-19.shadow,
   .div-block-15,
   .div-block-16 {
-    margin-bottom: 0px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .project a.w-inline-block {
+    display: block;
+    margin-bottom: 24px;
+    text-decoration: none;
+  }
+
+  .project a.w-inline-block:last-child {
+    margin-bottom: 0;
   }
 
   .f-modal-button-grid {
