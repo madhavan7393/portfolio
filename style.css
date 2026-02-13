@@ -6226,7 +6226,7 @@ html {
     bottom: auto;
     display: flex;
     padding-right: 0px;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     text-align: center;
   }
@@ -6864,4 +6864,5 @@ html {
     font-size: 15px;
   }
 }
+
 
