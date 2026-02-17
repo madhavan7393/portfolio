@@ -3,6 +3,300 @@
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css 
    ========================================================================== */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/* ===== Season Font Family ===== */
+
+/* SeasonSans */
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSans';
+  src: url('season-font-family/SeasonSans-TRIAL-HeavyItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* SeasonSerif */
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonSerif';
+  src: url('season-font-family/SeasonSerif-TRIAL-HeavyItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* SeasonMix */
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SeasonMix';
+  src: url('season-font-family/SeasonMix-TRIAL-HeavyItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
 html.lenis {
   height: auto;
 }
@@ -24,7 +318,7 @@ html.lenis {
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
@@ -302,7 +596,7 @@ body {
   margin: 0;
   min-height: 100%;
   background-color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333
@@ -1611,7 +1905,7 @@ textarea.w-select {
 .w-lightbox-backdrop {
   color: #000;
   cursor: auto;
-  font-family: serif;
+  font-family: 'SeasonSerif', serif;
   font-size: medium;
   font-style: normal;
   font-variant: normal;
@@ -1634,7 +1928,7 @@ textarea.w-select {
   bottom: 0;
   left: 0;
   color: #fff;
-  font-family: "Helvetica Neue", Helvetica, Ubuntu, "Segoe UI", Verdana, sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 17px;
   line-height: 1.2;
   font-weight: 300;
@@ -2388,7 +2682,7 @@ textarea.w-select {
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 18px;
   font-weight: 300;
@@ -2396,7 +2690,7 @@ textarea.w-select {
 }
 
 .navigation-text.navigation {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 18px;
   font-weight: 300;
@@ -2487,7 +2781,7 @@ textarea.w-select {
   display: block;
   margin-right: 30px;
   padding-bottom: 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 18px;
   font-weight: 300;
@@ -2506,7 +2800,7 @@ textarea.w-select {
   display: block;
   margin-right: 20px;
   padding-bottom: 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 18px;
   font-weight: 300;
@@ -2522,7 +2816,7 @@ textarea.w-select {
 .link-6 {
   display: block;
   padding-bottom: 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 18px;
   font-weight: 300;
@@ -2553,7 +2847,7 @@ textarea.w-select {
   padding-left: 0px;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 28px;
   line-height: 60px;
@@ -2832,7 +3126,7 @@ textarea.w-select {
 }
 
 .projectheading {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 28px;
   font-weight: 400;
 }
@@ -2840,14 +3134,14 @@ textarea.w-select {
 .projectparagraph {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
 
 .projectlink {
   position: static;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #4935bb;
   font-size: 20px;
   line-height: 1.4;
@@ -2957,14 +3251,14 @@ textarea.w-select {
 
 .heading-2 {
   margin-top: 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 30px;
   line-height: 44px;
   font-weight: 500;
 }
 
 .paragraph {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 20px;
   line-height: 1.4;
@@ -2995,7 +3289,7 @@ textarea.w-select {
 }
 
 .heading-3 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 30px;
 }
 
@@ -3018,7 +3312,7 @@ textarea.w-select {
 .heading-4 {
   display: block;
   margin-top: 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 30px;
   font-weight: 600;
   text-align: left;
@@ -3034,7 +3328,7 @@ textarea.w-select {
 
 .paragraph-2 {
   margin-top: 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 18px;
   line-height: 2.3;
   font-weight: 300;
@@ -3049,7 +3343,7 @@ textarea.w-select {
 .paragraph-3 {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 18px;
   line-height: 2.3;
   font-weight: 300;
@@ -3058,7 +3352,7 @@ textarea.w-select {
 .link-7 {
   overflow: hidden;
   opacity: 0;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #5b20e0;
   font-size: 18px;
   line-height: 1.4;
@@ -3087,7 +3381,7 @@ textarea.w-select {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 52px;
   line-height: 1.4;
   text-align: center;
@@ -3097,7 +3391,7 @@ textarea.w-select {
   margin-top: 10px;
   margin-right: 240px;
   margin-left: 240px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 14px;
   line-height: 1.4;
@@ -3109,7 +3403,7 @@ textarea.w-select {
   margin-top: 0px;
   margin-right: 10px;
   margin-bottom: 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #36c;
   font-size: 18px;
   line-height: 1.4;
@@ -3140,14 +3434,14 @@ textarea.w-select {
 .text-block-6 {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   line-height: 1.4;
   font-weight: 200;
   text-align: center;
 }
 
 .text-block-7 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   line-height: 1.4;
   font-weight: 300;
   text-align: center;
@@ -3156,7 +3450,7 @@ textarea.w-select {
 .text-block-8 {
   margin-bottom: 0px;
   padding-bottom: 10px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   line-height: 1.4;
   font-weight: 300;
@@ -3322,7 +3616,7 @@ textarea.w-select {
   padding-bottom: 0px;
   border-radius: 7px;
   background-color: #f15bb5;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #fff;
   font-weight: 400;
   text-align: center;
@@ -3337,7 +3631,7 @@ textarea.w-select {
   height: auto;
   border-radius: 0px;
   background-color: transparent;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #5b20e0;
   font-size: 16px;
   line-height: 2.3;
@@ -3449,7 +3743,7 @@ html {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 16px;
   font-weight: 800;
   letter-spacing: -0.01em;
@@ -3467,7 +3761,7 @@ html {
 .hero-subtitle {
   margin-top: 8px;
   margin-bottom: 18px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: rgba(34, 34, 34, 0.75);
   font-size: clamp(16px, 2.5vw, 19px);
   line-height: 1.5;
@@ -3490,7 +3784,7 @@ html {
 
 .hero-link-text {
   padding: 12px 0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #5b20e0;
   font-size: 16px;
   line-height: 1.2;
@@ -3513,7 +3807,7 @@ html {
   border-radius: 999px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   background: rgba(248, 248, 248, 0.9);
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 12.5px;
   line-height: 1.1;
   font-weight: 500;
@@ -3582,7 +3876,7 @@ html {
 
 .faq-title {
   margin: 0 0 10px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 28px;
   line-height: 1.2;
   font-weight: 500;
@@ -3592,7 +3886,7 @@ html {
 
 .faq-subtitle {
   margin: 0;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: rgba(17, 17, 17, 0.7);
@@ -3630,7 +3924,7 @@ html {
 
 .faq-q {
   margin: 0;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 18px;
   line-height: 1.3;
   font-weight: 600;
@@ -3674,7 +3968,7 @@ html {
 
 .faq-answer {
   margin: 8;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 18px;
   line-height: 1.5;
   color: rgba(17, 17, 17, 0.7);
@@ -3713,7 +4007,7 @@ html {
 
 .faq-title {
   margin: 0 0 10px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 28px;
   line-height: 1.2;
   font-weight: 500;
@@ -3723,7 +4017,7 @@ html {
 
 .faq-subtitle {
   margin: 0;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: rgba(17, 17, 17, 0.7);
@@ -3743,7 +4037,7 @@ html {
 
 .faq-question {
   margin: 0 0 8px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 18px;
   line-height: 1.3;
   font-weight: 600;
@@ -3753,7 +4047,7 @@ html {
 
 .faq-answer {
   margin: 0;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 18px;
   line-height: 1.5;
   color: rgba(17, 17, 17, 0.7);
@@ -3782,7 +4076,7 @@ html {
   align-items: center;
 
   perspective: 1000px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #5b20e0;
   font-weight: 200;
 }
@@ -3844,7 +4138,7 @@ html {
 
 .text-block-11 {
   transform: translate3d(68px, -13px, 150px);
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 32px;
   line-height: 44px;
@@ -3863,7 +4157,7 @@ html {
 
 .heading-6 {
   transform: translate3d(-185px, -54px, 50px);
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #000;
   font-size: 44px;
   line-height: 55px;
@@ -4119,7 +4413,7 @@ html {
   border-radius: 50px;
   background-color: #5b20e0;
   transition: background-color 300ms ease;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -4216,7 +4510,7 @@ html {
 
 .f-field-label {
   margin-bottom: 8px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #160042;
   font-size: 14px;
   line-height: 24px;
@@ -4238,7 +4532,7 @@ html {
   border-color: #e4e6f1;
   border-radius: 8px;
   transition: all 200ms ease;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
 }
 
 .f-field-input:focus {
@@ -4285,7 +4579,7 @@ html {
 }
 
 .f-sub-heading-regular {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   color: #160042;
   font-size: 20px;
   line-height: 1.5;
@@ -4420,7 +4714,7 @@ html {
   }
 
   .text-block {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'SeasonSans', sans-serif;
     color: #030303;
     font-size: 18px;
     font-weight: 200;
@@ -4432,7 +4726,7 @@ html {
   }
 
   .text-block-2 {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'SeasonSans', sans-serif;
     color: #000;
     font-size: 18px;
     font-weight: 200;
@@ -4468,7 +4762,7 @@ html {
   }
 
   .text-block-3 {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'SeasonSans', sans-serif;
     font-size: 18px;
     font-weight: 200;
     text-align: center;
@@ -4969,7 +5263,7 @@ html {
   .heading-3 {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'SeasonSans', sans-serif;
     font-size: 30px;
     line-height: 1.4;
     font-weight: 600;
@@ -6723,7 +7017,7 @@ html {
 }
 
 .faq-title {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 16px;
@@ -6731,7 +7025,7 @@ html {
 }
 
 .faq-subtitle {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 18px;
   color: #666;
   font-weight: 300;
@@ -6768,7 +7062,7 @@ html {
 }
 
 .faq-q {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 20px;
   font-weight: 500;
   color: #333;
@@ -6831,7 +7125,7 @@ html {
 }
 
 .faq-answer {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'SeasonSans', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #555;
@@ -6880,7 +7174,7 @@ body.case-study-page {
   overflow-y: auto;
   /* Allow vertical scrolling */
   background: #000;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: 'SeasonSans', sans-serif;
 }
 
 .case-study-page .pdf-viewer {
