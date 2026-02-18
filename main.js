@@ -194,11 +194,17 @@ window.addEventListener('load', () => {
     }
   }
 
-  Promise.all(initialPromises).then(loadRemainingFrames);
+  // Start loading remaining frames immediately — don't wait for initial batch
+  // This ensures all 75 frames load even if Promise.all has timing issues
+  loadRemainingFrames();
+  Promise.all(initialPromises).then(() => {
+    if (images[0] && images[0].complete) render();
+  });
 
   function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    const img = images[airpods.frame];
+    const frameIndex = Math.round(airpods.frame);
+    const img = images[frameIndex];
     if (!img || !img.complete) return;
 
     const imgRatio = img.width / img.height;
@@ -229,7 +235,7 @@ window.addEventListener('load', () => {
 
     gsap.to(airpods, {
       frame: frameCount - 1,
-      snap: "frame",
+      snap: 1,
       ease: "none",
       scrollTrigger: {
         trigger: "body",
