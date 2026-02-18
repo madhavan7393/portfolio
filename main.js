@@ -9,43 +9,52 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// Lenis Smooth Scroll Initialization
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  direction: 'vertical',
-  gestureDirection: 'vertical',
-  smooth: true,
-  mouseMultiplier: 1,
-  smoothTouch: false,
-  touchMultiplier: 2,
-});
+// Wait for Lenis to load (now deferred) before initializing
+function initLenis() {
+  if (typeof Lenis === 'undefined') {
+    setTimeout(initLenis, 50);
+    return;
+  }
 
-function raf(time) {
-  lenis.raf(time);
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
   requestAnimationFrame(raf);
+
+  // Integrate Lenis with GSAP ScrollTrigger
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  // Smooth scroll to anchor links using Lenis
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      lenis.scrollTo(this.getAttribute('href'));
+    });
+  });
 }
 
-requestAnimationFrame(raf);
-
-// Integrate Lenis with GSAP ScrollTrigger
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-  lenis.on('scroll', ScrollTrigger.update);
-
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-
-  gsap.ticker.lagSmoothing(0);
-}
-
-// Smooth scroll to anchor links using Lenis
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    lenis.scrollTo(this.getAttribute('href'));
-  });
-});
+initLenis();
 
 // Hobbies Toast Visibility Observer
 document.addEventListener('DOMContentLoaded', () => {
@@ -123,23 +132,69 @@ window.addEventListener('load', () => {
 });
 
 // Full Page Scroll-Driven Image Sequence Animation
+// Progressive loading: first 10 frames load immediately, rest load in idle batches
 (function () {
   const canvas = document.getElementById("video-canvas");
   if (!canvas) return;
 
   const context = canvas.getContext("2d");
   const frameCount = 75;
+  const INITIAL_LOAD = 10;
+  const BATCH_SIZE = 10;
   const currentFrame = index => `ezgif/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`;
 
-  const images = [];
+  const images = new Array(frameCount);
   const airpods = { frame: 0 };
 
-  // Preload images
-  for (let i = 0; i < frameCount; i++) {
-    const img = new Image();
-    img.src = currentFrame(i);
-    images.push(img);
+  // Load a single frame and return a promise
+  function loadFrame(index) {
+    return new Promise((resolve) => {
+      if (images[index] && images[index].complete) {
+        resolve();
+        return;
+      }
+      const img = new Image();
+      img.onload = resolve;
+      img.onerror = resolve;
+      img.src = currentFrame(index);
+      images[index] = img;
+    });
   }
+
+  // Load initial frames immediately
+  const initialPromises = [];
+  for (let i = 0; i < Math.min(INITIAL_LOAD, frameCount); i++) {
+    initialPromises.push(loadFrame(i));
+  }
+
+  // Progressively load remaining frames during idle periods
+  function loadRemainingFrames() {
+    let nextIndex = INITIAL_LOAD;
+
+    function loadBatch() {
+      if (nextIndex >= frameCount) return;
+
+      const end = Math.min(nextIndex + BATCH_SIZE, frameCount);
+      for (let i = nextIndex; i < end; i++) {
+        loadFrame(i);
+      }
+      nextIndex = end;
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadBatch, { timeout: 2000 });
+      } else {
+        setTimeout(loadBatch, 200);
+      }
+    }
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadBatch, { timeout: 1000 });
+    } else {
+      setTimeout(loadBatch, 500);
+    }
+  }
+
+  Promise.all(initialPromises).then(loadRemainingFrames);
 
   function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -172,7 +227,6 @@ window.addEventListener('load', () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animation sequence
     gsap.to(airpods, {
       frame: frameCount - 1,
       snap: "frame",
@@ -186,7 +240,6 @@ window.addEventListener('load', () => {
       onUpdate: render
     });
 
-    // Overlay shift if needed
     gsap.fromTo(".video-overlay",
       { backgroundColor: "rgba(255, 255, 255, 0.85)" },
       {
@@ -200,9 +253,8 @@ window.addEventListener('load', () => {
       }
     );
 
-    // Initial render
-    if (images[0].complete) render();
-    else images[0].onload = render;
+    if (images[0] && images[0].complete) render();
+    else if (images[0]) images[0].onload = render;
 
     window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;
@@ -211,12 +263,8 @@ window.addEventListener('load', () => {
     });
   };
 
-  // Set initial canvas size
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
   initScrollAnimation();
 })();
-
-
-
