@@ -4,12 +4,12 @@
    ========================================================================== */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
-/* ===== Season Font Family ===== */
+/* ===== Season Font Family (Optimized: WOFF2, unused removed) ===== */
 
-/* SeasonSans */
+/* SeasonSans — only used weights, no italics */
 @font-face {
   font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-Light.otf') format('opentype');
+  src: url('season-font-family/SeasonSans-TRIAL-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -17,15 +17,7 @@
 
 @font-face {
   font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-LightItalic.otf') format('opentype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-Regular.otf') format('opentype');
+  src: url('season-font-family/SeasonSans-TRIAL-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -33,15 +25,7 @@
 
 @font-face {
   font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-RegularItalic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-Medium.otf') format('opentype');
+  src: url('season-font-family/SeasonSans-TRIAL-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -49,15 +33,7 @@
 
 @font-face {
   font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-MediumItalic.otf') format('opentype');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-SemiBold.otf') format('opentype');
+  src: url('season-font-family/SeasonSans-TRIAL-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -65,15 +41,7 @@
 
 @font-face {
   font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-SemiBoldItalic.otf') format('opentype');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-Bold.otf') format('opentype');
+  src: url('season-font-family/SeasonSans-TRIAL-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -81,219 +49,18 @@
 
 @font-face {
   font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-BoldItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-Heavy.otf') format('opentype');
+  src: url('season-font-family/SeasonSans-TRIAL-Heavy.woff2') format('woff2');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'SeasonSans';
-  src: url('season-font-family/SeasonSans-TRIAL-HeavyItalic.otf') format('opentype');
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* SeasonSerif */
+/* SeasonSerif — only Regular weight used */
 @font-face {
   font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-LightItalic.otf') format('opentype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-Regular.otf') format('opentype');
+  src: url('season-font-family/SeasonSerif-TRIAL-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-RegularItalic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-MediumItalic.otf') format('opentype');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-SemiBold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-SemiBoldItalic.otf') format('opentype');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-BoldItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-Heavy.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonSerif';
-  src: url('season-font-family/SeasonSerif-TRIAL-HeavyItalic.otf') format('opentype');
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* SeasonMix */
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-LightItalic.otf') format('opentype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-RegularItalic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-MediumItalic.otf') format('opentype');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-SemiBold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-SemiBoldItalic.otf') format('opentype');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-BoldItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-Heavy.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SeasonMix';
-  src: url('season-font-family/SeasonMix-TRIAL-HeavyItalic.otf') format('opentype');
-  font-weight: 800;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -2884,7 +2651,7 @@ textarea.w-select {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('bg_grid.png');
+  background-image: url('bg_grid.webp');
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -7411,4 +7178,3 @@ body.case-study-page {
     /* Smooth scrolling on iOS */
   }
 }
-
