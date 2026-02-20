@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (toastWrapper && sectionsToWatch.length > 0) {
     const activeShowSections = new Set();
     const activeHideSections = new Set();
+    const contactEl = document.getElementById('Contact');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -85,6 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
           toastWrapper.classList.remove('toast-hidden');
         } else {
           toastWrapper.classList.add('toast-hidden');
+        }
+
+        // Toggle contact-visible class for dark background styling
+        if (contactEl && activeShowSections.has(contactEl)) {
+          toastWrapper.classList.add('contact-visible');
+        } else {
+          toastWrapper.classList.remove('contact-visible');
         }
       });
     }, {
@@ -274,3 +282,54 @@ window.addEventListener('load', () => {
 
   initScrollAnimation();
 })();
+
+// Lazy load Contact section background video
+document.addEventListener("DOMContentLoaded", () => {
+  const contactSection = document.getElementById("Contact");
+  const bgVideo = document.querySelector(".contact-bg-video");
+
+  if (contactSection && bgVideo) {
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const source = bgVideo.querySelector("source");
+          if (source && source.dataset.src) {
+            source.src = source.dataset.src;
+            bgVideo.load();
+            bgVideo.play().then(() => {
+              let isFading = false;
+              const fadeDuration = 0.8; // Match the CSS transition time
+
+              const checkVideoTime = () => {
+                if (bgVideo.duration) {
+                  const timeLeft = bgVideo.duration - bgVideo.currentTime;
+
+                  // Trigger fade out right before the video ends
+                  if (timeLeft <= fadeDuration && !isFading) {
+                    isFading = true;
+                    bgVideo.classList.add('fade-out');
+                  }
+
+                  // Remove fade out once it has looped back to the beginning
+                  if (bgVideo.currentTime < fadeDuration && isFading) {
+                    isFading = false;
+                    bgVideo.classList.remove('fade-out');
+                  }
+                }
+                requestAnimationFrame(checkVideoTime);
+              };
+              requestAnimationFrame(checkVideoTime);
+            }).catch(e => console.log("Autoplay prevented:", e));
+            // Stop observing once loaded
+            observer.unobserve(contactSection);
+          }
+        }
+      });
+    }, {
+      // Start loading when the contact section is 800px away from the viewport
+      rootMargin: "800px 0px"
+    });
+
+    videoObserver.observe(contactSection);
+  }
+});
