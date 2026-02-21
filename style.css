@@ -1029,17 +1029,7 @@ label {
   height: 120px;
 }
 
-.progress-ring {
-  position: absolute;
-  transform: rotate(-90deg);
-}
 
-.progress-ring__circle {
-  transition: stroke-dashoffset 0.1s linear;
-  stroke-dasharray: 282.7;
-  /* 2 * PI * r (45) */
-  stroke-dashoffset: 282.7;
-}
 
 .preloader-hidden {
   opacity: 0;
