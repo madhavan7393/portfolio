@@ -26,9 +26,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-  <!-- Google Fonts: load via CSS link instead of render-blocking WebFont.js -->
+  <!-- Google Fonts: non-render-blocking async load -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+  </noscript>
 
   <style>
     @media (min-width: 992px) {
@@ -1039,10 +1043,7 @@
           <div class="tooltip-and-btn-wrapper">
             <div data-clipboard-text="madhavan7393@gmail.com" data-w-id="a12bcd44-8e78-5ba1-7b77-a61d9df08c7c"
               class="regular-btn">
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-              <script>
-                new ClipboardJS(".regular-btn");
-              </script>
+
               <img src="https://uploads-ssl.webflow.com/60b1ee968e7b7ab6bce183cb/60b74fd87f9a8dbcf9b674b0_copy.svg"
                 loading="lazy" alt="" class="image-13" />
             </div>
@@ -1523,6 +1524,8 @@
     };
   </script>
   <!-- Deferred animation/interaction scripts (moved from head) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js" defer></script>
+  <script>document.addEventListener('DOMContentLoaded', () => { new ClipboardJS('.regular-btn'); });</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
