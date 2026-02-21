@@ -112,7 +112,7 @@ window.addEventListener('load', () => {
   if (preloader && circle) {
     const radius = circle.r.baseVal.value;
     const circumference = radius * 2 * Math.PI;
-    const duration = 1000; // 1 second
+    const duration = 0; // instant — no artificial delay
     const startTime = Date.now();
 
     function updateProgress() {
@@ -127,12 +127,10 @@ window.addEventListener('load', () => {
         requestAnimationFrame(updateProgress);
       } else {
         // Progress complete, fade out
+        preloader.classList.add('preloader-hidden');
         setTimeout(() => {
-          preloader.classList.add('preloader-hidden');
-          setTimeout(() => {
-            preloader.style.display = 'none';
-          }, 600);
-        }, 200);
+          preloader.style.display = 'none';
+        }, 300);
       }
     }
     requestAnimationFrame(updateProgress);
@@ -149,7 +147,7 @@ window.addEventListener('load', () => {
   const frameCount = 75;
   const INITIAL_LOAD = 10;
   const BATCH_SIZE = 10;
-  const currentFrame = index => `ezgif/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`;
+  const currentFrame = index => `ezgif/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.webp`;
 
   const images = new Array(frameCount);
   const airpods = { frame: 0 };
