@@ -564,6 +564,10 @@ label {
   text-decoration: none;
 }
 
+.nav-active {
+  font-weight: 600 !important;
+}
+
 .div-block {
   position: static;
   left: 0%;
@@ -3628,4 +3632,3 @@ body.case-study-page {
 .w-webflow-badge {
   display: none !important;
 }
-
