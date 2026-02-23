@@ -259,6 +259,56 @@ window.addEventListener('load', () => {
   initScrollAnimation();
 })();
 
+// Active section highlighting for nav links
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll('#Navbar .div-block a[href^="#"]');
+  const sectionIds = Array.from(navLinks).map(link => link.getAttribute('href').substring(1));
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  function setActiveLink(sectionId) {
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === '#' + sectionId) {
+        link.classList.add('nav-active');
+      } else {
+        link.classList.remove('nav-active');
+      }
+    });
+  }
+
+  // Highlight on click immediately
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const id = link.getAttribute('href').substring(1);
+      setActiveLink(id);
+    });
+  });
+
+  // Highlight on scroll via IntersectionObserver
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // When Home section is in view, clear all active states
+        if (entry.target.id === 'Home') {
+          navLinks.forEach(link => link.classList.remove('nav-active'));
+        } else {
+          setActiveLink(entry.target.id);
+        }
+      }
+    });
+  }, observerOptions);
+
+  // Also observe Home section so we can clear highlights when in hero area
+  const homeSection = document.getElementById('Home');
+  if (homeSection) observer.observe(homeSection);
+  sections.forEach(section => observer.observe(section));
+});
+
 // Lazy load Contact section background video
 document.addEventListener("DOMContentLoaded", () => {
   const contactSection = document.getElementById("Contact");
