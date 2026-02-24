@@ -74,9 +74,21 @@
 
         const targetUrl = "https://medium.com/@madhavan7393/qb-app-dd3dd3d52b76";
 
+        // Magic link password bypass
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('auth') === 'recruiter') {
+            localStorage.setItem("project_authorized", "true");
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({ path: newUrl }, '', newUrl);
+        }
+
         readBtn.onclick = function () {
-            modal.style.display = "block";
-            accessInput.focus();
+            if (localStorage.getItem("project_authorized") === "true") {
+                window.open(targetUrl, "_blank").focus();
+            } else {
+                modal.style.display = "block";
+                accessInput.focus();
+            }
         };
 
         closeBtn.onclick = function () {
@@ -113,7 +125,7 @@
             const password = accessInput.value;
             // Password hash check logic from index.html
             if (simpleHash(password.toLowerCase()) === "30166c") {
-                sessionStorage.setItem("project_authorized", "true");
+                localStorage.setItem("project_authorized", "true");
                 window.open(targetUrl, "_blank").focus();
                 modal.style.display = "none";
             } else {
