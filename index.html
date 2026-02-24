@@ -1467,9 +1467,18 @@
 
     var url = null;
 
+    // Magic link password bypass
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('auth') === 'recruiter') {
+      localStorage.setItem("project_authorized", "true");
+      // Clean up URL
+      const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+      window.history.replaceState({path: newUrl}, '', newUrl);
+    }
+
     // Check if user is already authorized for this session
     function isAuthorized() {
-      return sessionStorage.getItem("project_authorized") === "true";
+      return localStorage.getItem("project_authorized") === "true";
     }
 
     for (let i = 0; i < projectlink.length; i++) {
@@ -1509,7 +1518,7 @@
       var password = accessInput.value;
       // Compare hashed input against pre-calculated hash (obfuscated '')
       if (simpleHash(password.toLowerCase()) === "30166c") {
-        sessionStorage.setItem("project_authorized", "true");
+        localStorage.setItem("project_authorized", "true");
         window.open(url, "_blank").focus();
         closeBtn.click();
       } else {
