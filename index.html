@@ -21,6 +21,9 @@
   <meta content="Webflow" name="generator" />
   <link href="style.css" rel="stylesheet" type="text/css" />
 
+  <!-- Preload SeasonSans Light to prevent FOUT on recruiter bypass message -->
+  <link rel="preload" href="season-font-family/SeasonSans-TRIAL-Light.woff2" as="font" type="font/woff2" crossorigin />
+
   <!-- Preconnect to CDN origins for faster resource loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -695,6 +698,8 @@
       if (new URLSearchParams(window.location.search).get('auth') === 'recruiter') {
         window.isRecruiterBypass = true;
         document.getElementById('recruiter-msg').style.display = 'block';
+        localStorage.setItem('project_authorized', 'true');
+        window.history.replaceState(null, '', window.location.pathname);
       }
     </script>
   </div>
@@ -1474,16 +1479,6 @@
     var closeBtn = document.getElementById("closeModal");
 
     var url = null;
-
-    // Magic link password bypass
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('auth') === 'recruiter') {
-      window.isRecruiterBypass = true;
-      localStorage.setItem("project_authorized", "true");
-      // Clean up URL
-      const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-      window.history.replaceState({ path: newUrl }, '', newUrl);
-    }
 
     // Check if user is already authorized for this session
     function isAuthorized() {
