@@ -108,10 +108,21 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
   const preloader = document.querySelector('.preloader');
   if (preloader) {
-    preloader.classList.add('preloader-hidden');
-    setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 300);
+    if (window.isRecruiterBypass) {
+      const msg = document.getElementById('recruiter-msg');
+      if (msg) msg.style.display = 'block';
+      setTimeout(() => {
+        preloader.classList.add('preloader-hidden');
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 300);
+      }, 2000);
+    } else {
+      preloader.classList.add('preloader-hidden');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 300);
+    }
   }
 });
 
