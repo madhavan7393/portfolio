@@ -688,6 +688,7 @@
   <div class="preloader">
     <div class="loader-wrapper">
       <img src="loader.svg" alt="Loading..." class="loader-img">
+      <div id="recruiter-msg" style="display: none;">Bypassing password for recruiter access<span class="animated-ellipsis">...</span></div>
     </div>
   </div>
   <div class="sound-wrapper" id="soundWrapper">
@@ -1470,6 +1471,7 @@
     // Magic link password bypass
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('auth') === 'recruiter') {
+      window.isRecruiterBypass = true;
       localStorage.setItem("project_authorized", "true");
       // Clean up URL
       const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
