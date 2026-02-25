@@ -12,7 +12,7 @@
   src: url('season-font-family/SeasonSans-TRIAL-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -1020,7 +1020,7 @@ label {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-figure: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -1030,8 +1030,6 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 120px;
 }
 
 
@@ -3638,7 +3636,7 @@ body.case-study-page {
 #recruiter-msg {
   font-family: 'SeasonSans', sans-serif;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 300;
   color: #000000;
   margin-top: 18px;
   text-align: center;
