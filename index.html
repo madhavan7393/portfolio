@@ -688,8 +688,15 @@
   <div class="preloader">
     <div class="loader-wrapper">
       <img src="loader.svg" alt="Loading..." class="loader-img">
-      <div id="recruiter-msg" style="display: none;">Bypassing password for recruiter access<span class="animated-ellipsis">...</span></div>
+      <div id="recruiter-msg" style="display: none;">Bypassing password for recruiter access<span
+          class="animated-ellipsis">...</span></div>
     </div>
+    <script>
+      if (new URLSearchParams(window.location.search).get('auth') === 'recruiter') {
+        window.isRecruiterBypass = true;
+        document.getElementById('recruiter-msg').style.display = 'block';
+      }
+    </script>
   </div>
   <div class="sound-wrapper" id="soundWrapper">
     <svg class="curved-text" viewBox="0 0 100 100">
@@ -1475,7 +1482,7 @@
       localStorage.setItem("project_authorized", "true");
       // Clean up URL
       const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-      window.history.replaceState({path: newUrl}, '', newUrl);
+      window.history.replaceState({ path: newUrl }, '', newUrl);
     }
 
     // Check if user is already authorized for this session
