@@ -1027,6 +1027,7 @@ label {
 .loader-wrapper {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 120px;
@@ -3631,4 +3632,34 @@ body.case-study-page {
 /* Hide Webflow branding */
 .w-webflow-badge {
   display: none !important;
+}
+
+/* Preloader Recruiter Message */
+#recruiter-msg {
+  font-family: 'SeasonSans', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  color: #000000;
+  margin-top: 18px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.animated-ellipsis {
+  display: inline-block;
+  animation: pulse-ellipsis 1.5s infinite;
+}
+
+@keyframes pulse-ellipsis {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
 }
