@@ -130,24 +130,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function spawnTarget(forceImg = null) {
         const radius = Math.random() * 60 + 60; // 60-120px (3x larger)
-        // Keep within horizontal bounds
-        const x = Math.random() * (width - radius * 4) + radius * 2;
         const img = forceImg || isoImages[Math.floor(Math.random() * isoImages.length)];
 
-        // Static bounds if game hasn't started
-        const startY = isGameStarted ? (height + radius + 10) : (radius + Math.random() * (height - radius * 2));
-        const requiredVy = isGameStarted ? Math.sqrt(2 * GRAVITY * height) : 0;
-        const startVx = isGameStarted ? (Math.random() - 0.5) * (width * 0.01) : 0;
-        const startRotSpeed = isGameStarted ? (Math.random() - 0.5) * 0.1 : 0;
+        let startX, startY, requiredVy, startVx, startRotSpeed;
+
+        if (width < 768) {
+            // Mobile: original behavior
+            startX = Math.random() * (width - radius * 4) + radius * 2;
+            startY = isGameStarted ? (height + radius + 10) : (radius + Math.random() * (height - radius * 2));
+            requiredVy = isGameStarted ? Math.sqrt(2 * GRAVITY * height) : 0;
+            startVx = isGameStarted ? (Math.random() - 0.5) * (width * 0.01) : 0;
+            startRotSpeed = isGameStarted ? (Math.random() - 0.5) * 0.1 : 0;
+        } else {
+            // Desktop: Start from left side of sound-wrapper widget in right side
+            // sound-wrapper is fixed at bottom:30px, right:30px, width:80px.
+            // Left edge is at width - 110.
+            startX = width - 140; // Left side of the widget plus some margin
+            startY = height - 50; // Near bottom right
+
+            // Shoot up and scatter everywhere
+            // Vy controls peak height (reach 40% to 90% of screen height)
+            requiredVy = Math.sqrt(2 * GRAVITY * (height * (0.4 + Math.random() * 0.5)));
+
+            // Vx controls distance travelled left
+            // Time to peak = vy / g. Total air time ~ 2 * vy / g.
+            const airTime = 2 * (requiredVy / GRAVITY);
+            // Distance X to travel: between 20% and 90% of width
+            const distanceX = width * (0.2 + Math.random() * 0.7);
+            startVx = -(distanceX / airTime);
+
+            startRotSpeed = (Math.random() - 0.5) * 0.15;
+        }
 
         targets.push({
-            x: x,
+            x: startX,
             y: startY,
             vx: startVx,
             vy: -requiredVy,
             radius: radius,
             img: img,
-            rotation: 0,
+            rotation: Math.random() * Math.PI * 2,
             rotSpeed: startRotSpeed,
         });
     }
@@ -371,6 +393,12 @@ document.addEventListener('DOMContentLoaded', () => {
         Promise.all(imagePromises).then(() => {
             // Start engine immediately now that assets are ready
             isGameStarted = true;
+
+            // Explode the 10 assets from right bottom to everywhere
+            isoImages.forEach(img => {
+                spawnTarget(img);
+            });
+
             loop();
         });
     }
