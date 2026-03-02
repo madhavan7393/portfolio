@@ -2775,6 +2775,10 @@ html {
 }
 
 @media screen and (max-width: 991px) {
+  .geo-scorecard {
+    display: none !important;
+  }
+
   .section-11 {
     display: none;
   }
