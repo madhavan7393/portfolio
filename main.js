@@ -1,5 +1,3 @@
-// for SW lifecycle: register => install => activate
-
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -8,6 +6,26 @@ if ("serviceWorker" in navigator) {
       .catch((err) => console.log(`service worker: Error: ${err}`));
   });
 }
+
+// Smooth fade loop for hero background video
+document.addEventListener('DOMContentLoaded', () => {
+  const heroVideo = document.querySelector('.hero-bg-video');
+  if (heroVideo) {
+    const fadeDuration = 1; // seconds before end to start fading
+
+    heroVideo.addEventListener('timeupdate', () => {
+      const timeLeft = heroVideo.duration - heroVideo.currentTime;
+      if (timeLeft <= fadeDuration) {
+        heroVideo.style.opacity = Math.max(0, timeLeft / fadeDuration);
+      } else if (heroVideo.currentTime < fadeDuration) {
+        heroVideo.style.opacity = Math.min(1, heroVideo.currentTime / fadeDuration);
+      } else {
+        heroVideo.style.opacity = 1;
+      }
+    });
+  }
+});
+
 
 // Wait for Lenis to load (now deferred) before initializing
 function initLenis() {
@@ -68,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeShowSections = new Set();
     const activeHideSections = new Set();
     const contactEl = document.getElementById('Contact');
+    const navbarEl = document.getElementById('Navbar');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -88,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
           toastWrapper.classList.add('toast-hidden');
         }
 
-        // Toggle contact-visible class for dark background styling
+        // Toggle contact-visible class for hobbies toast styling
         if (contactEl && activeShowSections.has(contactEl)) {
           toastWrapper.classList.add('contact-visible');
         } else {
@@ -101,6 +120,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sectionsToWatch.forEach(item => observer.observe(item.el));
+  }
+
+  // Dedicated observer for Navbar dark mode starting from About section
+  const aboutEl = document.getElementById('About');
+  const faqEl = document.getElementById('FAQ');
+  const contactEl = document.getElementById('Contact');
+  const navbarEl = document.getElementById('Navbar');
+
+  if (navbarEl) {
+    let activeDarkSections = new Set();
+    const navDarkObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          activeDarkSections.add(entry.target.id);
+        } else {
+          activeDarkSections.delete(entry.target.id);
+        }
+      });
+
+      if (activeDarkSections.size > 0) {
+        navbarEl.classList.add('nav-dark');
+      } else {
+        navbarEl.classList.remove('nav-dark');
+      }
+    }, {
+      root: null,
+      rootMargin: '-80px 0px 0px 0px', // Trigger slightly after it hits the top
+      threshold: 0
+    });
+
+    if (aboutEl) navDarkObserver.observe(aboutEl);
+    if (faqEl) navDarkObserver.observe(faqEl);
+    if (contactEl) navDarkObserver.observe(contactEl);
   }
 });
 
@@ -125,150 +177,6 @@ window.addEventListener('load', () => {
     }
   }
 });
-
-// Full Page Scroll-Driven Image Sequence Animation
-// Progressive loading: first 10 frames load immediately, rest load in idle batches
-(function () {
-  const canvas = document.getElementById("video-canvas");
-  if (!canvas) return;
-
-  const context = canvas.getContext("2d");
-  const frameCount = 75;
-  const INITIAL_LOAD = 10;
-  const BATCH_SIZE = 10;
-  const currentFrame = index => `ezgif/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.webp`;
-
-  const images = new Array(frameCount);
-  const airpods = { frame: 0 };
-
-  // Load a single frame and return a promise
-  function loadFrame(index) {
-    return new Promise((resolve) => {
-      if (images[index] && images[index].complete) {
-        resolve();
-        return;
-      }
-      const img = new Image();
-      img.onload = resolve;
-      img.onerror = resolve;
-      img.src = currentFrame(index);
-      images[index] = img;
-    });
-  }
-
-  // Load initial frames immediately
-  const initialPromises = [];
-  for (let i = 0; i < Math.min(INITIAL_LOAD, frameCount); i++) {
-    initialPromises.push(loadFrame(i));
-  }
-
-  // Progressively load remaining frames during idle periods
-  function loadRemainingFrames() {
-    let nextIndex = INITIAL_LOAD;
-
-    function loadBatch() {
-      if (nextIndex >= frameCount) return;
-
-      const end = Math.min(nextIndex + BATCH_SIZE, frameCount);
-      for (let i = nextIndex; i < end; i++) {
-        loadFrame(i);
-      }
-      nextIndex = end;
-
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadBatch, { timeout: 2000 });
-      } else {
-        setTimeout(loadBatch, 200);
-      }
-    }
-
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadBatch, { timeout: 1000 });
-    } else {
-      setTimeout(loadBatch, 500);
-    }
-  }
-
-  // Start loading remaining frames immediately — don't wait for initial batch
-  // This ensures all 75 frames load even if Promise.all has timing issues
-  loadRemainingFrames();
-  Promise.all(initialPromises).then(() => {
-    if (images[0] && images[0].complete) render();
-  });
-
-  function render() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    const frameIndex = Math.round(airpods.frame);
-    const img = images[frameIndex];
-    if (!img || !img.complete) return;
-
-    const imgRatio = img.width / img.height;
-    const canvasRatio = canvas.width / canvas.height;
-    let drawWidth, drawHeight, drawX, drawY;
-
-    if (canvasRatio > imgRatio) {
-      drawWidth = canvas.width;
-      drawHeight = canvas.width / imgRatio;
-      drawX = 0;
-      drawY = (canvas.height - drawHeight) / 2;
-    } else {
-      drawWidth = canvas.height * imgRatio;
-      drawHeight = canvas.height;
-      drawX = (canvas.width - drawWidth) / 2;
-      drawY = 0;
-    }
-    context.drawImage(img, drawX, drawY, drawWidth, drawHeight);
-  }
-
-  const initScrollAnimation = () => {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-      setTimeout(initScrollAnimation, 100);
-      return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to(airpods, {
-      frame: frameCount - 1,
-      snap: 1,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.5
-      },
-      onUpdate: render
-    });
-
-    gsap.fromTo(".video-overlay",
-      { backgroundColor: "rgba(255, 255, 255, 0.85)" },
-      {
-        backgroundColor: "rgba(255, 255, 255, 0.85)",
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true
-        }
-      }
-    );
-
-    if (images[0] && images[0].complete) render();
-    else if (images[0]) images[0].onload = render;
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      render();
-    });
-  };
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  initScrollAnimation();
-})();
 
 // Active section highlighting for nav links
 document.addEventListener("DOMContentLoaded", () => {
