@@ -47,6 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const BG_COLOR = '#ffffff'; // Pure White
     const SWORD_GLOW = 'rgba(0,0,0,0.2)'; // Dark subtle glow for white background
 
+    // Slash Sounds
+    const slashAudioPool = [];
+    const slashAudioFiles = [
+        'snd1.mp3', 'snd2.mp3', 'snd3.mp3', 'snd4.mp3', 'snd5.mp3'
+    ];
+    slashAudioFiles.forEach(src => {
+        const audio = new Audio();
+        audio.src = `sound/geo-slash/${src}`;
+        audio.preload = 'auto'; // Preload the audio to avoid delay
+        slashAudioPool.push(audio);
+    });
+
     // --- Sizing & Scaling ---
     function resizeCanvas() {
         const rect = gameContainer.getBoundingClientRect();
@@ -209,6 +221,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Sliced! Replace target with two halves
                 targets.splice(i, 1);
 
+                // Play slash sound if audio is enabled
+                let soundEnabled = true; // By default let's assume sound is enabled or track user preference
+                // For now, let's play the sound directly natively (ideally gated by a user interaction)
+                const playSlashSound = () => {
+                    if (slashAudioPool.length > 0) {
+                        const audioIndex = Math.floor(Math.random() * slashAudioPool.length);
+                        // Clone the audio node so overlapping sounds don't cut each other off
+                        const sound = slashAudioPool[audioIndex].cloneNode();
+                        sound.volume = 0.1; // Reduced volume to make it subtle
+                        sound.play().catch(e => {
+                            // Autoplay might be blocked until user interacts with document
+                            // console.warn("Audio autoplay prevented", e);
+                        });
+                    }
+                };
+                playSlashSound();
+
                 // Update Score
                 cutScore++;
                 updateScoreboard();
@@ -340,28 +369,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Render Slash Trail (White Tapering Blade)
+        // Render Slash Trail (Cool Subtle Grey with Edge Effect)
         if (slashTrail.length > 1) {
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
-            ctx.shadowColor = SWORD_GLOW; // Subtle dark glow
-            ctx.shadowBlur = 10;
+
+            // Outer glow effect
+            ctx.shadowColor = 'rgba(180, 180, 200, 0.4)'; // Cool grey-blue glow
+            ctx.shadowBlur = 15;
 
             for (let i = 1; i < slashTrail.length; i++) {
                 const pt1 = slashTrail[i - 1];
                 const pt2 = slashTrail[i];
 
-                // Trail fades out over 18 frames (~300ms)
-                const alpha = Math.max(0, 1 - (pt2.age / 18));
-                // Sword width tapers from head to tail
-                const thickness = Math.max(0.5, 12 * (1 - (i / slashTrail.length)));
+                // Trail fades out over 20 frames (~330ms)
+                const alpha = Math.max(0, 1 - (pt2.age / 20));
 
+                // Sword width tapers from head to tail (slightly thicker now)
+                const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
+
+                // Draw Core (Inner bright line)
                 ctx.beginPath();
                 ctx.moveTo(pt1.x, pt1.y);
                 ctx.lineTo(pt2.x, pt2.y);
-                ctx.strokeStyle = `rgba(150, 150, 150, ${alpha})`; // Smooth realistic grey
-                ctx.lineWidth = thickness;
+                ctx.strokeStyle = `rgba(245, 245, 250, ${alpha})`; // Nearly white core
+                ctx.lineWidth = thickness * 0.4;
                 ctx.stroke();
+
+                // Draw Edge (Outer darker grey line to create depth/edge effect)
+                ctx.beginPath();
+                ctx.moveTo(pt1.x, pt1.y);
+                ctx.lineTo(pt2.x, pt2.y);
+                ctx.strokeStyle = `rgba(140, 140, 160, ${alpha * 0.6})`; // Subtler grey edge
+                ctx.lineWidth = thickness;
+                // Use source-over for standard layering, or lighter for an energy effect
+                ctx.globalCompositeOperation = 'destination-over';
+                ctx.stroke();
+                ctx.globalCompositeOperation = 'source-over'; // Reset
             }
             ctx.shadowBlur = 0;
 
@@ -370,8 +414,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 slashTrail[i].age++;
             }
 
-            // Remove dead points (> 18 frames old ~300ms)
-            slashTrail = slashTrail.filter(p => p.age < 18);
+            // Remove dead points (> 20 frames old)
+            slashTrail = slashTrail.filter(p => p.age < 20);
         }
 
         requestAnimationFrame(loop);
