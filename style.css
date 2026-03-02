@@ -3603,7 +3603,7 @@ html {
 
   .container-7 {
     display: block;
-    margin-bottom: 0px !important;
+    margin-bottom: 24px !important;
   }
 
   .projectlink {
@@ -3624,7 +3624,7 @@ html {
   .image-19.shadow,
   .div-block-15,
   .div-block-16 {
-    margin-bottom: 24px !important;
+    margin-bottom: 0px !important;
   }
 
   .project a.w-inline-block {
@@ -3857,8 +3857,75 @@ body.case-study-page {
   display: none;
 }
 
+/* Mobile PDF fallback — replaces iframe which doesn't work on mobile browsers */
+.pdf-mobile-fallback {
+  display: none;
+}
+
 /* Mobile & Tablet Responsive Adjustments */
 @media screen and (max-width: 767px) {
+
+  /* Hide iframe on mobile — PDFs don't render in iframes on mobile browsers */
+  .case-study-page .pdf-viewer {
+    display: none;
+  }
+
+  .pdf-mobile-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 40px 24px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .pdf-mobile-fallback .pdf-icon {
+    font-size: 64px;
+    line-height: 1;
+  }
+
+  .pdf-mobile-fallback .pdf-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .pdf-mobile-fallback .pdf-subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 280px;
+    line-height: 1.5;
+  }
+
+  .pdf-mobile-fallback .pdf-open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #5b20e0, #8b5bff);
+    color: #fff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(91, 32, 224, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .pdf-mobile-fallback .pdf-open-btn:hover {
+    background: linear-gradient(135deg, #4a1bb8, #7544f3);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(91, 32, 224, 0.6);
+  }
+
   .case-study-page .floating-cta {
     bottom: 24px;
     width: 90%;
@@ -3883,8 +3950,7 @@ body.case-study-page {
     padding: 60px 16px;
     align-items: center;
     justify-content: center;
-    display: flex;
-    /* Centering for mobile */
+    /* display is controlled by JS — do NOT set display:flex here, it overrides display:none */
   }
 
   .case-study-page #caption {
