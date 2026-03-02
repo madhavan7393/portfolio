@@ -150,8 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
       threshold: 0
     });
 
-    if (aboutEl) navDarkObserver.observe(aboutEl);
-    if (faqEl) navDarkObserver.observe(faqEl);
     if (contactEl) navDarkObserver.observe(contactEl);
   }
 });
