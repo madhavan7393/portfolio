@@ -5,7 +5,22 @@
     <meta charset="utf-8" />
     <title>Estore Case Study - Madhavan</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css?v=3" rel="stylesheet" type="text/css" />
+    <style>
+        @media screen and (max-width: 767px) {
+            .pdf-viewer {
+                display: none !important;
+            }
+
+            .pdf-mobile-fallback {
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 70vh;
+            }
+        }
+    </style>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
