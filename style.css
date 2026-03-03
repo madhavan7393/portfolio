@@ -1397,19 +1397,55 @@ html {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) and (max-width: 1366px) and (orientation: portrait) {
   .heading.hero-title {
-    font-size: 32px;
+    font-size: 65px;
+    line-height: 1.1;
   }
 
   .hero-kicker {
-    font-size: 12px;
-    display: block;
-    text-align: center;
+    font-size: 18px;
+    padding: 12px 28px;
+    margin-bottom: 24px;
+    display: inline-flex;
   }
 
   .hero-subtitle {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .cta-button-small {
+    font-size: 22px !important;
+    padding: 18px 40px !important;
+    width: auto !important;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .heading.hero-title {
+    font-size: 42px;
+    line-height: 1.1;
     text-align: center;
+  }
+
+  .hero-kicker {
+    font-size: 14px;
+    display: inline-flex;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.4;
   }
 }
 
@@ -3239,8 +3275,8 @@ html {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
   }
@@ -3252,13 +3288,16 @@ html {
   .hero-content .hero-kicker {
     text-align: center !important;
     align-self: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .cta-button-small {
-    margin-left: auto !important;
+    margin-left: 0 !important;
     margin-right: auto !important;
+    font-size: 18px !important;
+    padding: 14px 32px !important;
+    width: 100% !important;
   }
 }
 
