@@ -26,6 +26,10 @@
 
   <!-- Preconnect to CDN origins for faster resource loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Preload Critical Video -->
+  <link rel="preload" href="portfolio_video.webm" as="video" type="video/webm" />
+
   <!-- Google Fonts: non-render-blocking async load -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
@@ -51,7 +55,7 @@
         type="text/javascript"
       ></script
     ><![endif]-->
-  <script type="text/javascript">
+  <script type="text/javascript" defer>
     !(function (o, c) {
       var n = c.documentElement,
         t = " w-mod-";
@@ -270,6 +274,40 @@
       display: flex;
       align-items: center;
       /* margin-top: 6px; */
+    }
+
+    .nav-clock-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      /* Modern Mint Green */
+      margin-left: 2px;
+    }
+
+    /* Used by JS to change color based on connection */
+    .clock-status-good {
+      background: #4ade80;
+      animation: clock-sonar 2s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    }
+
+    .clock-status-bad {
+      background: #ff1744;
+      animation: none;
+    }
+
+    @keyframes clock-sonar {
+      0% {
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.8);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -676,6 +714,141 @@
 
     .hobbies-toast-wrapper.contact-visible .hobby-divider {
       color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Navbar Layout Fixes to prevent Clock overlapping */
+    .columns-2.w-row {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+
+    .columns-2.w-row::before,
+    .columns-2.w-row::after {
+      display: none !important;
+    }
+
+    .column-3.w-col,
+    .column-4.w-col {
+      width: auto !important;
+      float: none !important;
+      flex: 0 0 auto !important;
+    }
+
+    /* Navbar Clock Styles (Performance Monitor) */
+    .nav-clock-wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-clock-wrapper {
+        display: none !important;
+      }
+    }
+
+    .nav-clock {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      font-family: 'IBM Plex Sans', sans-serif;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      color: inherit;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      vertical-align: middle;
+      cursor: default;
+      white-space: nowrap;
+      /* Prevent contents from wrapping and overlapping */
+    }
+
+    .nav-dark .nav-clock {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-clock-label {
+      font-weight: 500;
+      color: rgba(34, 34, 34, 0.5);
+      letter-spacing: 0.5px;
+      font-size: 10px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-dark .nav-clock-label {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav-clock-divider {
+      color: rgba(34, 34, 34, 0.2);
+      font-size: 10px;
+      margin: 0 1px;
+    }
+
+    .nav-dark .nav-clock-divider {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-clock-value {
+      font-weight: 600;
+      color: rgba(34, 34, 34, 0.9);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.2px;
+      transition: color 0.3s ease;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .nav-dark .nav-clock-value {
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+
+
+    @media screen and (max-width: 767px) {
+      .nav-clock {
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+
+      .nav-clock-label {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      .nav-clock-label {
+        display: none;
+      }
+
+      .nav-clock {
+        gap: 4px;
+        padding: 4px 8px;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+
+      .nav-clock-label,
+      .nav-clock-divider {
+        font-size: 9px;
+      }
+
+      .nav-clock {
+        padding: 4px 8px;
+        gap: 4px;
+      }
     }
   </style>
   <!-- GSAP/ScrollTrigger/Lenis moved to end of body for non-blocking load -->
@@ -1134,7 +1307,8 @@
     </div>
   </div>
   <div id="Navbar" class="navigation-bar wf-section">
-    <div class="container-3 w-container">
+    <div class="container-3 w-container" style="position: relative;">
+
       <div class="columns-2 w-row">
         <div class="column-3 w-col w-col-6">
           <a href="#Home" class="link-block-2 w-inline-block">
@@ -1143,479 +1317,569 @@
               loading="lazy" alt="" class="image-2" />
           </a>
         </div>
+        <div class="nav-clock-wrapper">
+          <div class="nav-clock" id="chennai-clock" title="Chennai Date, Time & Weather">
+            <span class="nav-clock-value" id="clock-date">-- --</span>
+            <span class="nav-clock-divider">|</span>
+            <span class="nav-clock-value" id="clock-time">--:--</span>
+            <span class="nav-clock-divider">|</span>
+            <span class="nav-clock-value" id="clock-weather">--°C</span>
+            <span class="nav-clock-label">CHENNAI</span>
+            <span class="nav-clock-dot" id="clock-dot"></span>
+          </div>
+        </div>
+
+        <script>
+          (function () {
+            const dateEl = document.getElementById('clock-date');
+            const timeEl = document.getElementById('clock-time');
+            const weatherEl = document.getElementById('clock-weather');
+            const dotEl = document.getElementById('clock-dot');
+
+            if (!timeEl || !weatherEl || !dateEl) return;
+
+            // --- Chennai Date and Time logic ---
+            let lastMinute = -1;
+            function updateTime() {
+              const now = new Date();
+              const currentMinute = now.getMinutes();
+
+              // Only update DOM when the minute actually changes to prevent restarting the CSS animation
+              if (currentMinute !== lastMinute) {
+                // Determine Date (e.g. "Mar 04")
+                const dateOptions = { timeZone: 'Asia/Kolkata', month: 'short', day: '2-digit' };
+                const dateString = new Intl.DateTimeFormat('en-US', dateOptions).format(now);
+                dateEl.textContent = dateString;
+
+                // Format time in Asia/Kolkata timezone
+                const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: true };
+                let timeString = new Intl.DateTimeFormat('en-US', options).format(now);
+
+                // Replace the physical colon with an animated blinking span
+                timeString = timeString.replace(':', '<span class="colon-blink">:</span>');
+                timeEl.innerHTML = timeString;
+
+                lastMinute = currentMinute;
+              }
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+
+            // --- Helper: Map WMO Weather Code to Emoji ---
+            function getWeatherEmoji(code, isDay) {
+              if (code === 0) return isDay ? '☀️' : '🌙'; // Clear
+              if (code === 1 || code === 2) return isDay ? '🌤️' : '☁️'; // Mainly clear, partly cloudy
+              if (code === 3) return '☁️'; // Overcast
+              if (code === 45 || code === 48) return '🌫️'; // Fog
+              if (code === 51 || code === 53 || code === 55) return '🌦️'; // Drizzle
+              if (code === 56 || code === 57 || code === 66 || code === 67) return '🌧️❄️'; // Freezing Rain / Freezing Drizzle
+              if (code === 61 || code === 63) return '🌧️'; // Light/Moderate Rain
+              if (code === 65) return '🌧️'; // Heavy Rain (changed to standard rain for consistency, or '☔')
+              if (code === 71 || code === 73) return '🌨️'; // Light/Moderate Snow
+              if (code === 75 || code === 77) return '❄️'; // Heavy Snow / Snow Grains
+              if (code >= 80 && code <= 82) return '🌦️'; // Rain showers
+              if (code >= 85 && code <= 86) return '🌨️'; // Snow showers
+              if (code >= 95 && code <= 99) return '⛈️'; // Thunderstorm
+              return '🌡️'; // Unknown fallback
+            }
+
+            // --- Chennai Weather logic (Open-Meteo API) ---
+            async function fetchWeather() {
+              try {
+                // Chennai coordinates: 13.0827° N, 80.2707° E
+                const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=13.0827&longitude=80.2707&current_weather=true');
+                if (res.ok) {
+                  const data = await res.json();
+                  const temp = Math.round(data.current_weather.temperature);
+                  const isDay = data.current_weather.is_day === 1;
+                  const emoji = getWeatherEmoji(data.current_weather.weathercode, isDay);
+
+                  weatherEl.textContent = emoji + ' ' + temp + '°C';
+                  // Make dot pulse green to show connection success
+                  dotEl.className = 'nav-clock-dot clock-status-good';
+                }
+              } catch (e) {
+                weatherEl.textContent = '🌡️ --°C';
+                dotEl.className = 'nav-clock-dot clock-status-bad';
+              }
+            }
+
+            fetchWeather();
+            // Refresh weather every 30 mins
+            setInterval(fetchWeather, 30 * 60 * 1000);
+          })();
+        </script>
+
         <div class="column-4 w-col w-col-6">
           <div class="div-block">
             <a href="#Project" class="link-4">Work</a>
             <a href="#About" class="link-4">About</a>
-
             <a href="#Contact" class="link-6">Contact</a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <script>
-    (function () {
-      const canvas = document.getElementById('hobby-canvas');
-      const ctx = canvas.getContext('2d');
-      let particles = [];
-      let animationId = null;
-      let currentHobby = null;
+        <script>
+          (function () {
+            const canvas = document.getElementById('hobby-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let animationId = null;
+            let currentHobby = null;
 
-      // Audio setup (using Web Audio API for zero-dependency sound)
-      let audioCtx = null;
-      let gwagonSound = new Audio('sound/gwagon-exhaust.mp3');
-      gwagonSound.volume = 0.6;
-      let wrenchSound = new Audio('sound/imapctwrench.mp3');
-      wrenchSound.volume = 0.5;
-      let flStudioSound = new Audio('sound/calvin.mp3');
-      flStudioSound.volume = 1.0;
+            // Audio setup (using Web Audio API for zero-dependency sound)
+            let audioCtx = null;
+            let gwagonSound = new Audio('sound/gwagon-exhaust.mp3');
+            gwagonSound.volume = 0.6;
+            let wrenchSound = new Audio('sound/imapctwrench.mp3');
+            wrenchSound.volume = 0.5;
+            let flStudioSound = new Audio('sound/calvin.mp3');
+            flStudioSound.volume = 1.0;
 
-      const soundNotice = document.getElementById('soundNotice');
-      const soundWrapper = document.getElementById('soundWrapper');
+            const soundNotice = document.getElementById('soundNotice');
+            const soundWrapper = document.getElementById('soundWrapper');
 
-      if (soundNotice) {
-        soundNotice.addEventListener('click', (e) => {
-          e.stopPropagation();
-          unlockAudio();
-        });
-      }
-
-      // Add global listeners to catch ANY interaction
-      window.addEventListener('click', unlockAudio);
-      window.addEventListener('touchstart', unlockAudio);
-      window.addEventListener('keydown', unlockAudio);
-
-      window.addEventListener('scroll', function () {
-        const target = soundWrapper || soundNotice;
-        if (target) {
-          if (window.scrollY > 100) {
-            target.style.opacity = '0';
-            target.style.pointerEvents = 'none';
-          } else {
-            target.style.opacity = '1';
-            target.style.pointerEvents = 'auto';
-          }
-        }
-      });
-
-      function initAudio() {
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-      }
-
-      function removeGlobalListeners() {
-        window.removeEventListener('click', unlockAudio);
-        window.removeEventListener('touchstart', unlockAudio);
-        window.removeEventListener('keydown', unlockAudio);
-      }
-
-      function unlockAudio() {
-        initAudio();
-
-        // Try to resume context if suspended
-        if (audioCtx && audioCtx.state === 'suspended') {
-          audioCtx.resume().then(() => {
-            console.log("AudioContext resumed successfully");
             if (soundNotice) {
-              soundNotice.classList.add('active');
+              soundNotice.addEventListener('click', (e) => {
+                e.stopPropagation();
+                unlockAudio();
+              });
             }
-            if (soundWrapper) {
-              soundWrapper.classList.add('active');
-            }
-            removeGlobalListeners();
-          }).catch(e => {
-            console.log("AudioContext resume failed (waiting for user gesture):", e);
-          });
-        }
-        // If already running, ensure UI is updated and listeners removed
-        else if (audioCtx && audioCtx.state === 'running') {
-          if (soundNotice) {
-            soundNotice.classList.add('active');
-          }
-          removeGlobalListeners();
-        }
-      }
 
-      let currentSound = null; // Track currently playing sound object
+            // Add global listeners to catch ANY interaction
+            window.addEventListener('click', unlockAudio);
+            window.addEventListener('touchstart', unlockAudio);
+            window.addEventListener('keydown', unlockAudio);
 
-      function playGWagonSound() {
-        if (!gwagonSound) return;
-        gwagonSound.currentTime = 0;
-        gwagonSound.volume = 0.6; // Reset volume
-        gwagonSound.play().catch(e => console.log("G-Wagon audio play failed:", e));
-        return { type: 'audio', source: gwagonSound };
-      }
-
-      function playWrenchSound() {
-        if (!wrenchSound) return;
-        wrenchSound.currentTime = 0;
-        wrenchSound.volume = 0.5; // Reset volume
-        wrenchSound.play().catch(e => console.log("Wrench audio play failed:", e));
-        return { type: 'audio', source: wrenchSound };
-      }
-
-      function playFLStudioSound() {
-        if (!flStudioSound) return;
-        flStudioSound.currentTime = 0;
-        flStudioSound.volume = 1.0; // Reset volume
-        flStudioSound.play().catch(e => console.log("FL Studio audio play failed:", e));
-        return { type: 'audio', source: flStudioSound };
-      }
-
-      function playTone(freq, type = 'sine', duration = 0.5, volume = 0.1) {
-        if (!audioCtx) return;
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = type;
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        gain.gain.setValueAtTime(volume, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + duration);
-        return { type: 'osc', gain: gain, osc: osc };
-      }
-
-      function fadeOutSound(soundObj) {
-        if (!soundObj) return;
-        if (soundObj.type === 'audio') {
-          // Smoothly fade out HTML5 Audio
-          const originalVolume = soundObj.source.volume;
-          let fadeInterval = setInterval(() => {
-            if (soundObj.source.volume > 0.05) {
-              soundObj.source.volume -= 0.05;
-            } else {
-              soundObj.source.pause();
-              soundObj.source.volume = originalVolume; // Restore for next play
-              clearInterval(fadeInterval);
-            }
-          }, 50); // 50ms steps
-        } else if (soundObj.type === 'osc') {
-          // Smoothly fade out Oscillator
-          try {
-            soundObj.gain.gain.cancelScheduledValues(audioCtx.currentTime);
-            soundObj.gain.gain.setValueAtTime(soundObj.gain.gain.value, audioCtx.currentTime);
-            soundObj.gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5);
-          } catch (e) { }
-        }
-      }
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      class Particle {
-        constructor(x, y, type) {
-          this.x = x || Math.random() * canvas.width;
-          this.y = y || canvas.height + 20;
-          this.type = type;
-          this.size = Math.random() * 5 + 2;
-          this.speedY = Math.random() * -3 - 1;
-          this.speedX = Math.random() * 2 - 1;
-          this.opacity = 1;
-          this.color = '#fff';
-          this.life = 0;
-          this.maxLife = 100 + Math.random() * 100;
-          this.rotation = Math.random() * Math.PI * 2;
-          this.rotSpeed = (Math.random() - 0.5) * 0.1;
-
-          if (type === 'smoke') {
-            this.color = `rgba(10, 10, 10, 0.95)`;
-            this.size = Math.random() * 100 + 80;
-            this.speedY = Math.random() * -6 - 3;
-            this.speedX = (Math.random() - 0.5) * 15;
-            this.maxLife = 350 + Math.random() * 250;
-          } else if (type === 'tool') {
-            this.x = Math.random() * canvas.width;
-            this.y = -50;
-            this.speedY = Math.random() * 5 + 4;
-            this.speedX = (Math.random() - 0.5) * 2;
-            const tools = ['🔧', '🔩', '⚙️', '⛓️', '🛠️', '🏎️', '🛞', '🪜', '⚒️', '⚓'];
-            this.icon = tools[Math.floor(Math.random() * tools.length)];
-            this.size = Math.random() * 20 + 20;
-          } else if (type === 'splash') {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
-            this.size = Math.random() * 60 + 20;
-            this.speedY = 0;
-            this.speedX = 0;
-            this.maxLife = 50;
-          } else if (type === 'note') {
-            this.x = Math.random() * canvas.width;
-            this.y = canvas.height + 20;
-            this.speedY = Math.random() * -4 - 2;
-            this.color = '#5b20e0';
-            this.size = Math.random() * 20 + 15;
-            const instruments = ['🎹', '🎸', '🥁', '🎷', '🎧', '📻', '🎼', '🎵', '🎶'];
-            this.icon = instruments[Math.floor(Math.random() * instruments.length)];
-          }
-        }
-
-        update() {
-          this.x += this.speedX;
-          this.y += this.speedY;
-          this.life++;
-          this.opacity = 0.8 * (1 - (this.life / this.maxLife));
-          this.rotation += this.rotSpeed;
-          if (this.type === 'smoke') {
-            this.size += 2.5;
-            this.speedX *= 0.995;
-          }
-        }
-
-        draw() {
-          ctx.save();
-          ctx.translate(this.x, this.y);
-          ctx.rotate(this.rotation);
-          ctx.globalAlpha = Math.max(0, this.opacity);
-
-          if (this.type === 'smoke') {
-            const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, this.size);
-            grad.addColorStop(0, this.color);
-            grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
-            ctx.fillStyle = grad;
-            ctx.beginPath();
-            ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-            ctx.fill();
-          } else if (this.type === 'tool') {
-            ctx.font = `${this.size}px Arial`;
-            ctx.fillText(this.icon, -this.size / 2, this.size / 2);
-          } else if (this.type === 'note') {
-            ctx.font = `${this.size}px Arial`;
-            ctx.fillStyle = this.color;
-            ctx.fillText(this.icon, -this.size / 2, this.size / 2);
-          } else if (this.type === 'splash') {
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(0, 0, this.size, 0, Math.PI * 2);
-            ctx.fill();
-          }
-          ctx.restore();
-        }
-      }
-
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        if (currentHobby === 'dieselhead') {
-          if (Math.random() < 0.85) particles.push(new Particle(null, null, 'smoke'));
-        } else if (currentHobby === 'mechanic') {
-          if (Math.random() < 0.25) {
-            particles.push(new Particle(null, null, 'tool'));
-            playTone(1200 + Math.random() * 800, 'square', 0.05, 0.01);
-          }
-        } else if (currentHobby === 'designer') {
-          if (Math.random() < 0.15) particles.push(new Particle(null, null, 'splash'));
-        } else if (currentHobby === 'designer') {
-          if (Math.random() < 0.15) particles.push(new Particle(null, null, 'splash'));
-        } else if (currentHobby === 'flstudio') {
-          if (Math.random() < 0.15) {
-            particles.push(new Particle(null, null, 'note'));
-          }
-        }
-
-        particles = particles.filter(p => p.life < p.maxLife && p.opacity > 0);
-        particles.forEach(p => {
-          p.update();
-          p.draw();
-        });
-
-        animationId = requestAnimationFrame(animate);
-      }
-
-      const hobbies = {
-        'hobby-dieselhead': 'dieselhead',
-        'hobby-mechanic': 'mechanic',
-        'hobby-socionics': 'socionics',
-        'hobby-flstudio': 'flstudio',
-        'hobby-designer': 'designer'
-      };
-
-      Object.keys(hobbies).forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-
-        el.addEventListener('mouseenter', () => {
-          // Attempt to unlock audio on hover (best effort)
-          unlockAudio();
-
-          currentHobby = hobbies[id];
-          if (currentHobby === 'socionics') {
-            document.body.classList.add('psychosis-mode');
-            playTone(90, 'sawtooth', 2, 0.08);
-          } else if (currentHobby === 'dieselhead') {
-            playGWagonSound();
-          } else if (currentHobby === 'mechanic') {
-            playWrenchSound();
-          } else if (currentHobby === 'flstudio') {
-            playFLStudioSound();
-          } else if (currentHobby === 'designer') {
-            // Play a pleasant, sparkly sequence
-            const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
-            notes.forEach((freq, i) => {
-              setTimeout(() => playTone(freq, 'sine', 0.4, 0.03), i * 60);
+            window.addEventListener('scroll', function () {
+              const target = soundWrapper || soundNotice;
+              if (target) {
+                if (window.scrollY > 100) {
+                  target.style.opacity = '0';
+                  target.style.pointerEvents = 'none';
+                } else {
+                  target.style.opacity = '1';
+                  target.style.pointerEvents = 'auto';
+                }
+              }
             });
+
+            function initAudio() {
+              if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+              }
+            }
+
+            function removeGlobalListeners() {
+              window.removeEventListener('click', unlockAudio);
+              window.removeEventListener('touchstart', unlockAudio);
+              window.removeEventListener('keydown', unlockAudio);
+            }
+
+            function unlockAudio() {
+              initAudio();
+
+              // Try to resume context if suspended
+              if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume().then(() => {
+                  console.log("AudioContext resumed successfully");
+                  if (soundNotice) {
+                    soundNotice.classList.add('active');
+                  }
+                  if (soundWrapper) {
+                    soundWrapper.classList.add('active');
+                  }
+                  removeGlobalListeners();
+                }).catch(e => {
+                  console.log("AudioContext resume failed (waiting for user gesture):", e);
+                });
+              }
+              // If already running, ensure UI is updated and listeners removed
+              else if (audioCtx && audioCtx.state === 'running') {
+                if (soundNotice) {
+                  soundNotice.classList.add('active');
+                }
+                removeGlobalListeners();
+              }
+            }
+
+            let currentSound = null; // Track currently playing sound object
+
+            function playGWagonSound() {
+              if (!gwagonSound) return;
+              gwagonSound.currentTime = 0;
+              gwagonSound.volume = 0.6; // Reset volume
+              gwagonSound.play().catch(e => console.log("G-Wagon audio play failed:", e));
+              return { type: 'audio', source: gwagonSound };
+            }
+
+            function playWrenchSound() {
+              if (!wrenchSound) return;
+              wrenchSound.currentTime = 0;
+              wrenchSound.volume = 0.5; // Reset volume
+              wrenchSound.play().catch(e => console.log("Wrench audio play failed:", e));
+              return { type: 'audio', source: wrenchSound };
+            }
+
+            function playFLStudioSound() {
+              if (!flStudioSound) return;
+              flStudioSound.currentTime = 0;
+              flStudioSound.volume = 1.0; // Reset volume
+              flStudioSound.play().catch(e => console.log("FL Studio audio play failed:", e));
+              return { type: 'audio', source: flStudioSound };
+            }
+
+            function playTone(freq, type = 'sine', duration = 0.5, volume = 0.1) {
+              if (!audioCtx) return;
+              const osc = audioCtx.createOscillator();
+              const gain = audioCtx.createGain();
+              osc.type = type;
+              osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+              gain.gain.setValueAtTime(volume, audioCtx.currentTime);
+              gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+              osc.connect(gain);
+              gain.connect(audioCtx.destination);
+              osc.start();
+              osc.stop(audioCtx.currentTime + duration);
+              return { type: 'osc', gain: gain, osc: osc };
+            }
+
+            function fadeOutSound(soundObj) {
+              if (!soundObj) return;
+              if (soundObj.type === 'audio') {
+                // Smoothly fade out HTML5 Audio
+                const originalVolume = soundObj.source.volume;
+                let fadeInterval = setInterval(() => {
+                  if (soundObj.source.volume > 0.05) {
+                    soundObj.source.volume -= 0.05;
+                  } else {
+                    soundObj.source.pause();
+                    soundObj.source.volume = originalVolume; // Restore for next play
+                    clearInterval(fadeInterval);
+                  }
+                }, 50); // 50ms steps
+              } else if (soundObj.type === 'osc') {
+                // Smoothly fade out Oscillator
+                try {
+                  soundObj.gain.gain.cancelScheduledValues(audioCtx.currentTime);
+                  soundObj.gain.gain.setValueAtTime(soundObj.gain.gain.value, audioCtx.currentTime);
+                  soundObj.gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5);
+                } catch (e) { }
+              }
+            }
+
+            function resize() {
+              canvas.width = window.innerWidth;
+              canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+              constructor(x, y, type) {
+                this.x = x || Math.random() * canvas.width;
+                this.y = y || canvas.height + 20;
+                this.type = type;
+                this.size = Math.random() * 5 + 2;
+                this.speedY = Math.random() * -3 - 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.opacity = 1;
+                this.color = '#fff';
+                this.life = 0;
+                this.maxLife = 100 + Math.random() * 100;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotSpeed = (Math.random() - 0.5) * 0.1;
+
+                if (type === 'smoke') {
+                  this.color = `rgba(10, 10, 10, 0.95)`;
+                  this.size = Math.random() * 100 + 80;
+                  this.speedY = Math.random() * -6 - 3;
+                  this.speedX = (Math.random() - 0.5) * 15;
+                  this.maxLife = 350 + Math.random() * 250;
+                } else if (type === 'tool') {
+                  this.x = Math.random() * canvas.width;
+                  this.y = -50;
+                  this.speedY = Math.random() * 5 + 4;
+                  this.speedX = (Math.random() - 0.5) * 2;
+                  const tools = ['🔧', '🔩', '⚙️', '⛓️', '🛠️', '🏎️', '🛞', '🪜', '⚒️', '⚓'];
+                  this.icon = tools[Math.floor(Math.random() * tools.length)];
+                  this.size = Math.random() * 20 + 20;
+                } else if (type === 'splash') {
+                  this.x = Math.random() * canvas.width;
+                  this.y = Math.random() * canvas.height;
+                  this.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+                  this.size = Math.random() * 60 + 20;
+                  this.speedY = 0;
+                  this.speedX = 0;
+                  this.maxLife = 50;
+                } else if (type === 'note') {
+                  this.x = Math.random() * canvas.width;
+                  this.y = canvas.height + 20;
+                  this.speedY = Math.random() * -4 - 2;
+                  this.color = '#5b20e0';
+                  this.size = Math.random() * 20 + 15;
+                  const instruments = ['🎹', '🎸', '🥁', '🎷', '🎧', '📻', '🎼', '🎵', '🎶'];
+                  this.icon = instruments[Math.floor(Math.random() * instruments.length)];
+                }
+              }
+
+              update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.life++;
+                this.opacity = 0.8 * (1 - (this.life / this.maxLife));
+                this.rotation += this.rotSpeed;
+                if (this.type === 'smoke') {
+                  this.size += 2.5;
+                  this.speedX *= 0.995;
+                }
+              }
+
+              draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                ctx.globalAlpha = Math.max(0, this.opacity);
+
+                if (this.type === 'smoke') {
+                  const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, this.size);
+                  grad.addColorStop(0, this.color);
+                  grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                  ctx.fillStyle = grad;
+                  ctx.beginPath();
+                  ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+                  ctx.fill();
+                } else if (this.type === 'tool') {
+                  ctx.font = `${this.size}px Arial`;
+                  ctx.fillText(this.icon, -this.size / 2, this.size / 2);
+                } else if (this.type === 'note') {
+                  ctx.font = `${this.size}px Arial`;
+                  ctx.fillStyle = this.color;
+                  ctx.fillText(this.icon, -this.size / 2, this.size / 2);
+                } else if (this.type === 'splash') {
+                  ctx.fillStyle = this.color;
+                  ctx.beginPath();
+                  ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+                  ctx.fill();
+                }
+                ctx.restore();
+              }
+            }
+
+            function animate() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+              if (currentHobby === 'dieselhead') {
+                if (Math.random() < 0.85) particles.push(new Particle(null, null, 'smoke'));
+              } else if (currentHobby === 'mechanic') {
+                if (Math.random() < 0.25) {
+                  particles.push(new Particle(null, null, 'tool'));
+                  playTone(1200 + Math.random() * 800, 'square', 0.05, 0.01);
+                }
+              } else if (currentHobby === 'designer') {
+                if (Math.random() < 0.15) particles.push(new Particle(null, null, 'splash'));
+              } else if (currentHobby === 'designer') {
+                if (Math.random() < 0.15) particles.push(new Particle(null, null, 'splash'));
+              } else if (currentHobby === 'flstudio') {
+                if (Math.random() < 0.15) {
+                  particles.push(new Particle(null, null, 'note'));
+                }
+              }
+
+              particles = particles.filter(p => p.life < p.maxLife && p.opacity > 0);
+              particles.forEach(p => {
+                p.update();
+                p.draw();
+              });
+
+              animationId = requestAnimationFrame(animate);
+            }
+
+            const hobbies = {
+              'hobby-dieselhead': 'dieselhead',
+              'hobby-mechanic': 'mechanic',
+              'hobby-socionics': 'socionics',
+              'hobby-flstudio': 'flstudio',
+              'hobby-designer': 'designer'
+            };
+
+            Object.keys(hobbies).forEach(id => {
+              const el = document.getElementById(id);
+              if (!el) return;
+
+              el.addEventListener('mouseenter', () => {
+                // Attempt to unlock audio on hover (best effort)
+                unlockAudio();
+
+                currentHobby = hobbies[id];
+                if (currentHobby === 'socionics') {
+                  document.body.classList.add('psychosis-mode');
+                  playTone(90, 'sawtooth', 2, 0.08);
+                } else if (currentHobby === 'dieselhead') {
+                  playGWagonSound();
+                } else if (currentHobby === 'mechanic') {
+                  playWrenchSound();
+                } else if (currentHobby === 'flstudio') {
+                  playFLStudioSound();
+                } else if (currentHobby === 'designer') {
+                  // Play a pleasant, sparkly sequence
+                  const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                  notes.forEach((freq, i) => {
+                    setTimeout(() => playTone(freq, 'sine', 0.4, 0.03), i * 60);
+                  });
+                }
+                if (!animationId) animate();
+              });
+
+              el.addEventListener('mouseleave', () => {
+                currentHobby = null;
+                document.body.classList.remove('psychosis-mode');
+              });
+            });
+
+            // Handle Splash Screen
+            const splashScreen = document.getElementById('splash-screen');
+            const enterBtn = document.getElementById('enter-site-btn');
+
+            if (enterBtn && splashScreen) {
+              enterBtn.addEventListener('click', () => {
+                // Unlock audio context
+                unlockAudio();
+                // Hide splash
+                splashScreen.classList.add('hidden');
+                // Start a simple sound to confirm feedback (optional)
+                playTone(440, 'sine', 0.1, 0.05);
+                playTone(880, 'sine', 0.1, 0.05);
+
+                setTimeout(() => {
+                  splashScreen.style.display = 'none';
+                }, 600);
+              });
+            }
+          })();
+        </script>
+        <script
+          src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60b1ee968e7b7ab6bce183cb"
+          type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+          crossorigin="anonymous"></script>
+        <script src="https://uploads-ssl.webflow.com/60b1ee968e7b7ab6bce183cb/js/webflow.555bf46bd.js"
+          type="text/javascript"></script>
+        <script>
+          var modal = document.getElementById("myModal");
+          var projectlink = document.querySelectorAll("span.projectlink");
+
+          var accessInput = document.getElementById("access-input");
+          var accessBtn = document.getElementById("access-btn");
+          var errDiv = document.getElementById("access-err");
+          var closeBtn = document.getElementById("closeModal");
+
+          var url = null;
+
+          // Check if user is already authorized for this session
+          function isAuthorized() {
+            return localStorage.getItem("project_authorized") === "true";
           }
-          if (!animationId) animate();
-        });
 
-        el.addEventListener('mouseleave', () => {
-          currentHobby = null;
-          document.body.classList.remove('psychosis-mode');
-        });
-      });
+          for (let i = 0; i < projectlink.length; i++) {
+            projectlink[i].onclick = function () {
+              url = projectlink[i].getAttribute("name");
 
-      // Handle Splash Screen
-      const splashScreen = document.getElementById('splash-screen');
-      const enterBtn = document.getElementById('enter-site-btn');
+              if (isAuthorized()) {
+                window.open(url, "_blank").focus();
+              } else {
+                modal.style.display = "block";
+                errDiv.style.display = "none";
+                accessInput.value = "";
+                accessInput.focus();
+              }
+            };
+          }
 
-      if (enterBtn && splashScreen) {
-        enterBtn.addEventListener('click', () => {
-          // Unlock audio context
-          unlockAudio();
-          // Hide splash
-          splashScreen.classList.add('hidden');
-          // Start a simple sound to confirm feedback (optional)
-          playTone(440, 'sine', 0.1, 0.05);
-          playTone(880, 'sine', 0.1, 0.05);
+          accessInput.onkeydown = function (event) {
+            errDiv.style.display = "none";
+            if (event.key === 'Enter') {
+              accessBtn.click();
+            }
+          };
 
-          setTimeout(() => {
-            splashScreen.style.display = 'none';
-          }, 600);
-        });
-      }
-    })();
-  </script>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60b1ee968e7b7ab6bce183cb"
-    type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous"></script>
-  <script src="https://uploads-ssl.webflow.com/60b1ee968e7b7ab6bce183cb/js/webflow.555bf46bd.js"
-    type="text/javascript"></script>
-  <script>
-    var modal = document.getElementById("myModal");
-    var projectlink = document.querySelectorAll("span.projectlink");
+          // Simple hash function to obfuscate password
+          const simpleHash = str => {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+              const char = str.charCodeAt(i);
+              hash = (hash << 5) - hash + char;
+              hash &= hash; // Convert to 32bit integer
+            }
+            return new Uint32Array([hash])[0].toString(16);
+          };
 
-    var accessInput = document.getElementById("access-input");
-    var accessBtn = document.getElementById("access-btn");
-    var errDiv = document.getElementById("access-err");
-    var closeBtn = document.getElementById("closeModal");
+          accessBtn.onclick = function () {
+            var password = accessInput.value;
+            // Compare hashed input against pre-calculated hash (obfuscated '')
+            if (simpleHash(password.toLowerCase()) === "30166c") {
+              localStorage.setItem("project_authorized", "true");
+              window.open(url, "_blank").focus();
+              closeBtn.click();
+            } else {
+              errDiv.style.display = "block";
+            }
+          };
 
-    var url = null;
+          closeBtn.onclick = function () {
+            modal.style.display = "none";
+            errDiv.style.display = "none";
+            accessInput.value = "";
+          };
+        </script>
+        <!-- Deferred animation/interaction scripts (moved from head) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js" defer></script>
+        <script>document.addEventListener('DOMContentLoaded', () => { new ClipboardJS('.regular-btn'); });</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+        <script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js" defer></script>
+        <script src="geo-slash.js?v=5" defer></script>
+        <script>
+          //Consolidated Hobbies Animation/Sound Logic is above
 
-    // Check if user is already authorized for this session
-    function isAuthorized() {
-      return localStorage.getItem("project_authorized") === "true";
-    }
+          // Initialize 3D Tilt Hover only for desktop screens
+          // Initialize 3D Tilt Hover only for desktop screens
+          document.addEventListener("DOMContentLoaded", () => {
+            if (window.innerWidth > 991 && typeof VanillaTilt !== 'undefined') {
+              const tiltEl = document.querySelector(".section-11 .parent");
+              if (tiltEl) {
+                VanillaTilt.init(tiltEl, {
+                  max: 20,
+                  speed: 400,
+                  glare: false,
+                  perspective: 1000,
+                  scale: 1.02
+                });
 
-    for (let i = 0; i < projectlink.length; i++) {
-      projectlink[i].onclick = function () {
-        url = projectlink[i].getAttribute("name");
+                tiltEl.addEventListener("tiltChange", function (event) {
+                  const rect = tiltEl.getBoundingClientRect();
 
-        if (isAuthorized()) {
-          window.open(url, "_blank").focus();
-        } else {
-          modal.style.display = "block";
-          errDiv.style.display = "none";
-          accessInput.value = "";
-          accessInput.focus();
-        }
-      };
-    }
+                  // Event values come from vanilla-tilt, but let's calculate our own precision pointer ratio
+                  // based on the mouse client coordinates, to emulate the holographic effect exactly.
+                  // We'll actually do this with mousemove so it's perfectly synchronous with the hover,
+                  // but we can just use the provided event.detail.percentageX and percentageY for simplicity.
 
-    accessInput.onkeydown = function (event) {
-      errDiv.style.display = "none";
-      if (event.key === 'Enter') {
-        accessBtn.click();
-      }
-    };
+                  // percentageX goes 0 to 100 as you move left to right. We need -1 to 1.
+                  const ratioX = (event.detail.percentageX - 50) / 50;
+                  // percentageY goes 0 to 100 as you move top to bottom.
+                  const ratioY = (event.detail.percentageY - 50) / 50;
 
-    // Simple hash function to obfuscate password
-    const simpleHash = str => {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        const char = str.charCodeAt(i);
-        hash = (hash << 5) - hash + char;
-        hash &= hash; // Convert to 32bit integer
-      }
-      return new Uint32Array([hash])[0].toString(16);
-    };
+                  tiltEl.style.setProperty('--ratio-x', ratioX);
+                  tiltEl.style.setProperty('--ratio-y', ratioY);
+                  tiltEl.style.setProperty('--abs-ratio-x', Math.abs(ratioX));
+                });
 
-    accessBtn.onclick = function () {
-      var password = accessInput.value;
-      // Compare hashed input against pre-calculated hash (obfuscated '')
-      if (simpleHash(password.toLowerCase()) === "30166c") {
-        localStorage.setItem("project_authorized", "true");
-        window.open(url, "_blank").focus();
-        closeBtn.click();
-      } else {
-        errDiv.style.display = "block";
-      }
-    };
-
-    closeBtn.onclick = function () {
-      modal.style.display = "none";
-      errDiv.style.display = "none";
-      accessInput.value = "";
-    };
-  </script>
-  <!-- Deferred animation/interaction scripts (moved from head) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js" defer></script>
-  <script>document.addEventListener('DOMContentLoaded', () => { new ClipboardJS('.regular-btn'); });</script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
-  <script src="geo-slash.js?v=5" defer></script>
-  <script>
-    //Consolidated Hobbies Animation/Sound Logic is above
-
-    // Initialize 3D Tilt Hover only for desktop screens
-    // Initialize 3D Tilt Hover only for desktop screens
-    document.addEventListener("DOMContentLoaded", () => {
-      if (window.innerWidth > 991 && typeof VanillaTilt !== 'undefined') {
-        const tiltEl = document.querySelector(".section-11 .parent");
-        if (tiltEl) {
-          VanillaTilt.init(tiltEl, {
-            max: 20,
-            speed: 400,
-            glare: false,
-            perspective: 1000,
-            scale: 1.02
+                // Set defaults so it looks nice before hover
+                tiltEl.style.setProperty('--ratio-x', 0);
+                tiltEl.style.setProperty('--ratio-y', 0);
+                tiltEl.style.setProperty('--abs-ratio-x', 0);
+              }
+            }
           });
-
-          tiltEl.addEventListener("tiltChange", function (event) {
-            const rect = tiltEl.getBoundingClientRect();
-
-            // Event values come from vanilla-tilt, but let's calculate our own precision pointer ratio
-            // based on the mouse client coordinates, to emulate the holographic effect exactly.
-            // We'll actually do this with mousemove so it's perfectly synchronous with the hover,
-            // but we can just use the provided event.detail.percentageX and percentageY for simplicity.
-
-            // percentageX goes 0 to 100 as you move left to right. We need -1 to 1.
-            const ratioX = (event.detail.percentageX - 50) / 50;
-            // percentageY goes 0 to 100 as you move top to bottom.
-            const ratioY = (event.detail.percentageY - 50) / 50;
-
-            tiltEl.style.setProperty('--ratio-x', ratioX);
-            tiltEl.style.setProperty('--ratio-y', ratioY);
-            tiltEl.style.setProperty('--abs-ratio-x', Math.abs(ratioX));
-          });
-
-          // Set defaults so it looks nice before hover
-          tiltEl.style.setProperty('--ratio-x', 0);
-          tiltEl.style.setProperty('--ratio-y', 0);
-          tiltEl.style.setProperty('--abs-ratio-x', 0);
-        }
-      }
-    });
-  </script>
-  <script src="main.js" defer></script>
+        </script>
+        <script src="main.js" defer></script>
 </body>
 
 </html>
