@@ -127,12 +127,13 @@
 
     .cta-button-small {
       display: inline-flex;
-      padding: 8px 20px;
+      padding: 12px 28px;
       justify-content: center;
       align-items: center;
-      border-radius: 999px;
+      border-radius: 20px;
       background: linear-gradient(135deg, #5b20e0, #8b5bff);
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 4px 15px rgba(91, 32, 224, 0.25);
       transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       font-family: "IBM Plex Sans", sans-serif;
       color: #fff;
@@ -143,16 +144,15 @@
       white-space: nowrap;
       margin-top: 12px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(91, 32, 224, 0.25);
       gap: 8px;
     }
 
     @media screen and (max-width: 479px) {
       .cta-button-small {
         display: flex;
-        margin-left: auto;
+        margin-left: 0;
         margin-right: auto;
-        width: fit-content;
+        width: 100%;
       }
     }
 
