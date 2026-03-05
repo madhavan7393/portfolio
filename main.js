@@ -166,7 +166,7 @@ window.addEventListener('load', () => {
         setTimeout(() => {
           preloader.style.display = 'none';
         }, 300);
-      }, 2000);
+      }, 0);
     } else {
       preloader.classList.add('preloader-hidden');
       setTimeout(() => {
