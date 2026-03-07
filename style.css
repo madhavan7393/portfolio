@@ -12,7 +12,7 @@
   src: url('season-font-family/SeasonSans-TRIAL-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 @font-face {
@@ -4039,6 +4039,21 @@ body.case-study-page {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media screen and (max-width: 768px) {
+  .preloader-msg {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .preloader-msg {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+}
+
 
 .animated-ellipsis {
   display: inline-block;
