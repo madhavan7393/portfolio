@@ -4026,15 +4026,18 @@ body.case-study-page {
   display: none !important;
 }
 
-/* Preloader Recruiter Message */
-#recruiter-msg {
+/* Preloader Messages */
+.preloader-msg {
   font-family: 'SeasonSans', sans-serif;
   font-size: 20px;
   font-weight: 300;
   color: #000000;
   margin-top: 18px;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .animated-ellipsis {
