@@ -4042,14 +4042,12 @@ body.case-study-page {
 
 @media screen and (max-width: 768px) {
   .preloader-msg {
-    font-size: 16px;
     padding: 0 10px;
   }
 }
 
 @media screen and (max-width: 479px) {
   .preloader-msg {
-    font-size: 14px;
     padding: 0 20px;
   }
 }
