@@ -4029,10 +4029,10 @@ body.case-study-page {
 /* Preloader Messages */
 .preloader-msg {
   font-family: 'SeasonSans', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   color: #000000;
-  margin-top: 18px;
+  margin-top: 8px;
   text-align: center;
   white-space: normal;
   max-width: 90vw;
