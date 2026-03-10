@@ -4032,7 +4032,7 @@ body.case-study-page {
   font-size: 18px;
   font-weight: 300;
   color: #000000;
-  margin-top: 8px;
+  margin-top: 12px;
   text-align: center;
   white-space: normal;
   max-width: 90vw;
@@ -4071,3 +4071,4 @@ body.case-study-page {
     opacity: 0.2;
   }
 }
+
