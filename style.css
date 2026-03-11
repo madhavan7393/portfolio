@@ -1238,7 +1238,7 @@ html {
   /* Allow grid to show through */
   overflow: hidden;
   /* 3D Katana Custom Cursor */
-  cursor: url('geo-slash-assets/katana_cursor_small.png') 0 0, crosshair;
+  cursor: url('geo-slash-assets/katana_cursor_small.webp') 0 0, crosshair;
   z-index: 0;
   pointer-events: auto;
   /* Ensure canvas receives slash events */
