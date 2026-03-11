@@ -13,9 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDragging = false;
     let isPaused = false; // Flag for IntersectionObserver
 
+    // Timing state for framerate independent loop
+    let lastTime = 0;
+    const FRAME_MIN_TIME = (1000 / 60) * (60 / 60) - (1000 / 60) * 0.5; // Target ~60fps maximum
+
     // Config
     const GRAVITY = 0.25;
     const SLICE_DIST_THRESHOLD = 40; // Pixels distance to register a hit
+
+    // Quality Scaling Engine
+    let qualityTier = 'HIGH'; // HIGH, MEDIUM, LOW
+    let dprCap = 2; // Default High Cap
+    let frameDrops = 0; // Consecutive slow frames
+    let fpsHistory = []; // Rolling average buffer
 
     // Game Entities
     let targets = []; // Floating geometric shapes
@@ -63,8 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Sizing & Scaling ---
     function resizeCanvas() {
         const rect = gameContainer.getBoundingClientRect();
-        // Handle high-DPI displays for crisp rendering
-        const dpr = window.devicePixelRatio || 1;
+        // Dynamic DPR Cap based on Quality Tier
+        let dpr = window.devicePixelRatio || 1;
+        if (dpr > dprCap) dpr = dprCap;
 
         width = rect.width;
         height = rect.height;
@@ -195,7 +206,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function createDebris(x, y) {
         // Just spawn sparks (bisecting an image cleanly in canvas is complex, 
         // sparks + shake carry the juice well)
-        for (let i = 0; i < 15; i++) {
+        
+        let targetSparks = 15;
+        let maxSparks = 60;
+        if (qualityTier === 'LOW') return; // Disable particles entirely on 10-year-old devices
+        if (qualityTier === 'MEDIUM') {
+            targetSparks = 5;
+            maxSparks = 20;
+        }
+
+        // Cap particles if there are already too many
+        if (particles.length > maxSparks) return;
+
+        const sparkCount = Math.min(targetSparks, maxSparks - particles.length);
+
+        for (let i = 0; i < sparkCount; i++) {
             particles.push({
                 x: x,
                 y: y,
@@ -204,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 radius: Math.random() * 4 + 1,
                 color: Math.random() > 0.5 ? '#f43f5e' : '#6366f1', // Pink/Indigo sparks
                 alpha: 1,
-                decay: Math.random() * 0.05 + 0.02,
+                decay: Math.random() * 0.05 + 0.04, // Fade faster
                 isSpark: true
             });
         }
@@ -287,35 +312,69 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.translate(t.x, t.y);
         ctx.rotate(t.rotation);
 
-        // Since we are now loading transparent PNGs, we don't need 'darken' composite operation
-        // ctx.globalCompositeOperation = 'darken';
-
         const renderSize = t.radius * 2.5;
 
-        // Clip if it's a sliced half
+        // Use source sub-image slicing instead of expensive ctx.clip() on mobile GPUs
         if (t.sliceSide) {
-            ctx.beginPath();
             if (t.sliceSide === 'left') {
-                ctx.rect(-renderSize / 2, -renderSize / 2, renderSize / 2, renderSize);
+                ctx.drawImage(t.img, 
+                    0, 0, t.img.width / 2, t.img.height,     // source
+                    -renderSize / 2, -renderSize / 2, renderSize / 2, renderSize  // dest
+                );
             } else if (t.sliceSide === 'right') {
-                ctx.rect(0, -renderSize / 2, renderSize / 2, renderSize);
+                ctx.drawImage(t.img, 
+                    t.img.width / 2, 0, t.img.width / 2, t.img.height, // source
+                    0, -renderSize / 2, renderSize / 2, renderSize     // dest
+                );
             }
-            ctx.clip();
+        } else {
+            ctx.drawImage(t.img, -renderSize / 2, -renderSize / 2, renderSize, renderSize);
         }
-
-        ctx.drawImage(t.img, -renderSize / 2, -renderSize / 2, renderSize, renderSize);
         ctx.restore();
     }
 
-    function loop() {
+    function loop(time) {
         if (!isPaused) {
+            let dt = time - lastTime;
+            // Cap framerate at roughly 60fps to prevent 144hz monitors or slow laptops from desyncing Physics
+            if (dt < FRAME_MIN_TIME) {
+                requestAnimationFrame(loop);
+                return;
+            }
+            lastTime = time;
+
+            // Adaptive Performance Monitor
+            if (isGameStarted && time > 5000) { // Give engine 5s to warm up
+                // Track frame times, if it takes > 22ms per frame (approx < 45fps), flag a drop
+                if (dt > 22) {
+                    frameDrops++;
+                } else {
+                    frameDrops = Math.max(0, frameDrops - 0.2); // Slowly recover
+                }
+
+                if (frameDrops > 30) {
+                    if (qualityTier === 'HIGH') {
+                        qualityTier = 'MEDIUM';
+                        frameDrops = 0; // Reset monitor
+                    } else if (qualityTier === 'MEDIUM' && frameDrops > 60) {
+                        qualityTier = 'LOW';
+                        dprCap = 1; // Drop native resolution
+                        resizeCanvas();
+                        particles = []; // Clear remaining particles
+                    }
+                }
+            }
+
             // Clear background for transparency over bg_grid.webp
             ctx.clearRect(0, 0, width, height);
 
             frameCount++;
 
+            const maxTargets = qualityTier === 'LOW' ? 4 : (qualityTier === 'MEDIUM' ? 7 : 12);
+
             // Random spawner logic
-            if (isGameStarted) {
+            // Cap max targets on screen to prevent slow laptops from freezing
+            if (isGameStarted && targets.length < maxTargets) {
                 // Spawn more often if there are fewer targets
                 const spawnChance = targets.length === 0 ? 0.05 : 0.02;
                 if (Math.random() < spawnChance) {
@@ -380,41 +439,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Pass 1: Draw Faint Glow (instead of expensive shadowBlur)
-                for (let i = 1; i < slashTrail.length; i++) {
-                    const pt1 = slashTrail[i - 1];
-                    const pt2 = slashTrail[i];
-                    const alpha = Math.max(0, 1 - (pt2.age / 20));
-                    const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
+                if (qualityTier === 'HIGH') {
+                    for (let i = 1; i < slashTrail.length; i++) {
+                        const pt1 = slashTrail[i - 1];
+                        const pt2 = slashTrail[i];
+                        const alpha = Math.max(0, 1 - (pt2.age / 20));
+                        const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
 
-                    ctx.beginPath();
-                    ctx.moveTo(pt1.x, pt1.y);
-                    ctx.lineTo(pt2.x, pt2.y);
-                    ctx.strokeStyle = `rgba(180, 180, 200, ${alpha * 0.2})`;
-                    ctx.lineWidth = thickness * 2.5; 
-                    ctx.stroke();
+                        ctx.beginPath();
+                        ctx.moveTo(pt1.x, pt1.y);
+                        ctx.lineTo(pt2.x, pt2.y);
+                        ctx.strokeStyle = `rgba(180, 180, 200, ${alpha * 0.2})`;
+                        ctx.lineWidth = thickness * 2.5; 
+                        ctx.stroke();
+                    }
                 }
 
                 // Pass 2: Draw Edge (Outer darker grey line)
-                for (let i = 1; i < slashTrail.length; i++) {
-                    const pt1 = slashTrail[i - 1];
-                    const pt2 = slashTrail[i];
-                    const alpha = Math.max(0, 1 - (pt2.age / 20));
-                    const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
+                if (qualityTier !== 'LOW') {
+                    for (let i = 1; i < slashTrail.length; i++) {
+                        const pt1 = slashTrail[i - 1];
+                        const pt2 = slashTrail[i];
+                        const alpha = Math.max(0, 1 - (pt2.age / 20));
+                        const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
 
-                    ctx.beginPath();
-                    ctx.moveTo(pt1.x, pt1.y);
-                    ctx.lineTo(pt2.x, pt2.y);
-                    ctx.strokeStyle = `rgba(140, 140, 160, ${alpha * 0.6})`;
-                    ctx.lineWidth = thickness;
-                    ctx.stroke();
+                        ctx.beginPath();
+                        ctx.moveTo(pt1.x, pt1.y);
+                        ctx.lineTo(pt2.x, pt2.y);
+                        ctx.strokeStyle = `rgba(140, 140, 160, ${alpha * 0.6})`;
+                        ctx.lineWidth = thickness;
+                        ctx.stroke();
+                    }
                 }
 
                 // Pass 3: Draw Core (Inner bright line)
                 for (let i = 1; i < slashTrail.length; i++) {
                     const pt1 = slashTrail[i - 1];
                     const pt2 = slashTrail[i];
-                    const alpha = Math.max(0, 1 - (pt2.age / 20));
-                    const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
+                    // Trail fades out twice as fast on low
+                    const fadeDiv = qualityTier === 'LOW' ? 10 : 20;
+                    const alpha = Math.max(0, 1 - (pt2.age / fadeDiv));
+                    // Trail is half thickness on low
+                    const baseThick = qualityTier === 'LOW' ? 8 : 16;
+                    const thickness = Math.max(0.5, baseThick * (1 - (i / slashTrail.length)));
 
                     ctx.beginPath();
                     ctx.moveTo(pt1.x, pt1.y);
