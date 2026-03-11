@@ -25,16 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const isoImages = [];
     // Load specific pre-generated transparent assets
     const imageFiles = [
-        'velvet_sphere.png',
-        'textured_cone.png',
-        'glossy_torus.png',
-        'metallic_cylinder.png',
-        'polished_bead.png',
-        'velvet_pyramid.png',
-        'jelly_prism.png',
-        'matte_pebble.png',
-        'chrome_ribbon.png',
-        'split_bowl.png'
+        'velvet_sphere.webp',
+        'textured_cone.webp',
+        'glossy_torus.webp',
+        'metallic_cylinder.webp',
+        'polished_bead.webp',
+        'velvet_pyramid.webp',
+        'jelly_prism.webp',
+        'matte_pebble.webp',
+        'chrome_ribbon.webp',
+        'split_bowl.webp'
     ];
 
     imageFiles.forEach(src => {
