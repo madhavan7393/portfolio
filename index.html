@@ -1373,7 +1373,7 @@
               if (code === 1 || code === 2) return isDay ? '🌤️' : '☁️'; // Mainly clear, partly cloudy
               if (code === 3) return '☁️'; // Overcast
               if (code === 45 || code === 48) return '🌫️'; // Fog
-              if (code === 51 || code === 53 || code === 55) return '🌦️'; // Drizzle
+              if (code === 51 || code === 53 || code === 55) return '����️'; // Drizzle
               if (code === 56 || code === 57 || code === 66 || code === 67) return '🌧️❄️'; // Freezing Rain / Freezing Drizzle
               if (code === 61 || code === 63) return '🌧️'; // Light/Moderate Rain
               if (code === 65) return '🌧️'; // Heavy Rain (changed to standard rain for consistency, or '☔')
@@ -1882,6 +1882,11 @@
           });
         </script>
         <script src="main.js" defer></script>
+        <!-- Vercel Speed Insights -->
+        <script>
+          window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+        </script>
+        <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 
 </html>
