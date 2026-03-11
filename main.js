@@ -243,25 +243,22 @@ document.addEventListener("DOMContentLoaded", () => {
               let isFading = false;
               const fadeDuration = 0.8; // Match the CSS transition time
 
-              const checkVideoTime = () => {
-                if (bgVideo.duration) {
-                  const timeLeft = bgVideo.duration - bgVideo.currentTime;
+              // Use native timeupdate event instead of infinite requestAnimationFrame polling
+              bgVideo.addEventListener('timeupdate', () => {
+                const timeLeft = bgVideo.duration - bgVideo.currentTime;
 
-                  // Trigger fade out right before the video ends
-                  if (timeLeft <= fadeDuration && !isFading) {
-                    isFading = true;
-                    bgVideo.classList.add('fade-out');
-                  }
-
-                  // Remove fade out once it has looped back to the beginning
-                  if (bgVideo.currentTime < fadeDuration && isFading) {
-                    isFading = false;
-                    bgVideo.classList.remove('fade-out');
-                  }
+                // Trigger fade out right before the video ends
+                if (timeLeft <= fadeDuration && !isFading) {
+                  isFading = true;
+                  bgVideo.classList.add('fade-out');
                 }
-                requestAnimationFrame(checkVideoTime);
-              };
-              requestAnimationFrame(checkVideoTime);
+
+                // Remove fade out once it has looped back to the beginning
+                if (bgVideo.currentTime < fadeDuration && isFading) {
+                  isFading = false;
+                  bgVideo.classList.remove('fade-out');
+                }
+              });
             }).catch(e => console.log("Autoplay prevented:", e));
             // Stop observing once loaded
             observer.unobserve(contactSection);
