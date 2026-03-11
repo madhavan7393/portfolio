@@ -374,44 +374,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.lineCap = 'round';
                 ctx.lineJoin = 'round';
 
-                // Outer glow effect
-                ctx.shadowColor = 'rgba(180, 180, 200, 0.4)'; // Cool grey-blue glow
-                ctx.shadowBlur = 15;
+                // Age the points before computing alpha
+                for (let i = 0; i < slashTrail.length; i++) {
+                    slashTrail[i].age++;
+                }
 
+                // Pass 1: Draw Faint Glow (instead of expensive shadowBlur)
                 for (let i = 1; i < slashTrail.length; i++) {
                     const pt1 = slashTrail[i - 1];
                     const pt2 = slashTrail[i];
-
-                    // Trail fades out over 20 frames (~330ms)
                     const alpha = Math.max(0, 1 - (pt2.age / 20));
-
-                    // Sword width tapers from head to tail (slightly thicker now)
                     const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
 
-                    // Draw Core (Inner bright line)
                     ctx.beginPath();
                     ctx.moveTo(pt1.x, pt1.y);
                     ctx.lineTo(pt2.x, pt2.y);
-                    ctx.strokeStyle = `rgba(245, 245, 250, ${alpha})`; // Nearly white core
+                    ctx.strokeStyle = `rgba(180, 180, 200, ${alpha * 0.2})`;
+                    ctx.lineWidth = thickness * 2.5; 
+                    ctx.stroke();
+                }
+
+                // Pass 2: Draw Edge (Outer darker grey line)
+                for (let i = 1; i < slashTrail.length; i++) {
+                    const pt1 = slashTrail[i - 1];
+                    const pt2 = slashTrail[i];
+                    const alpha = Math.max(0, 1 - (pt2.age / 20));
+                    const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
+
+                    ctx.beginPath();
+                    ctx.moveTo(pt1.x, pt1.y);
+                    ctx.lineTo(pt2.x, pt2.y);
+                    ctx.strokeStyle = `rgba(140, 140, 160, ${alpha * 0.6})`;
+                    ctx.lineWidth = thickness;
+                    ctx.stroke();
+                }
+
+                // Pass 3: Draw Core (Inner bright line)
+                for (let i = 1; i < slashTrail.length; i++) {
+                    const pt1 = slashTrail[i - 1];
+                    const pt2 = slashTrail[i];
+                    const alpha = Math.max(0, 1 - (pt2.age / 20));
+                    const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
+
+                    ctx.beginPath();
+                    ctx.moveTo(pt1.x, pt1.y);
+                    ctx.lineTo(pt2.x, pt2.y);
+                    ctx.strokeStyle = `rgba(245, 245, 250, ${alpha})`;
                     ctx.lineWidth = thickness * 0.4;
                     ctx.stroke();
-
-                    // Draw Edge (Outer darker grey line to create depth/edge effect)
-                    ctx.beginPath();
-                    ctx.moveTo(pt1.x, pt1.y);
-                    ctx.lineTo(pt2.x, pt2.y);
-                    ctx.strokeStyle = `rgba(140, 140, 160, ${alpha * 0.6})`; // Subtler grey edge
-                    ctx.lineWidth = thickness;
-                    // Use source-over for standard layering, or lighter for an energy effect
-                    ctx.globalCompositeOperation = 'destination-over';
-                    ctx.stroke();
-                    ctx.globalCompositeOperation = 'source-over'; // Reset
-                }
-                ctx.shadowBlur = 0;
-
-                // Age the points
-                for (let i = 0; i < slashTrail.length; i++) {
-                    slashTrail[i].age++;
                 }
 
                 // Remove dead points (> 20 frames old)
