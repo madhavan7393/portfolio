@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let width = 0;
     let height = 0;
     let isDragging = false;
+    let isPaused = false; // Flag for IntersectionObserver
 
     // Config
     const GRAVITY = 0.25;
@@ -307,116 +308,117 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loop() {
-        // Clear background for transparency over bg_grid.webp
-        ctx.clearRect(0, 0, width, height);
+        if (!isPaused) {
+            // Clear background for transparency over bg_grid.webp
+            ctx.clearRect(0, 0, width, height);
 
-        frameCount++;
+            frameCount++;
 
-        // Random spawner logic
-        if (isGameStarted) {
-            // Spawn more often if there are fewer targets
-            const spawnChance = targets.length === 0 ? 0.05 : 0.02;
-            if (Math.random() < spawnChance) {
-                spawnTarget();
-            }
-        }
-
-        // Update & Render Targets
-        for (let i = targets.length - 1; i >= 0; i--) {
-            let t = targets[i];
-
-            // Physics (only after game starts or if it's been sliced)
-            if (isGameStarted || t.sliceSide) {
-                t.vy += GRAVITY;
-                t.x += t.vx;
-                t.y += t.vy;
-                t.rotation += t.rotSpeed;
+            // Random spawner logic
+            if (isGameStarted) {
+                // Spawn more often if there are fewer targets
+                const spawnChance = targets.length === 0 ? 0.05 : 0.02;
+                if (Math.random() < spawnChance) {
+                    spawnTarget();
+                }
             }
 
-            // Render
-            drawImageTarget(t);
+            // Update & Render Targets
+            for (let i = targets.length - 1; i >= 0; i--) {
+                let t = targets[i];
 
-            // Remove if fallen below screen
-            if (t.y > height + t.radius * 3) {
-                targets.splice(i, 1);
+                // Physics (only after game starts or if it's been sliced)
+                if (isGameStarted || t.sliceSide) {
+                    t.vy += GRAVITY;
+                    t.x += t.vx;
+                    t.y += t.vy;
+                    t.rotation += t.rotSpeed;
+                }
+
+                // Render
+                drawImageTarget(t);
+
+                // Remove if fallen below screen
+                if (t.y > height + t.radius * 3) {
+                    targets.splice(i, 1);
+                }
             }
-        }
 
-        // Update & Render Particles (Debris)
-        for (let i = particles.length - 1; i >= 0; i--) {
-            let p = particles[i];
+            // Update & Render Particles (Debris)
+            for (let i = particles.length - 1; i >= 0; i--) {
+                let p = particles[i];
 
-            p.vy += GRAVITY;
-            p.x += p.vx;
-            p.y += p.vy;
+                p.vy += GRAVITY;
+                p.x += p.vx;
+                p.y += p.vy;
 
-            // Always sparks now
-            p.alpha -= p.decay;
-            if (p.alpha <= 0) {
-                particles.splice(i, 1);
-                continue;
-            }
-            ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-            // ctx.shadowColor = p.color;
-            // ctx.shadowBlur = 10;
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.shadowBlur = 0; // reset
-
-            if (p.y > height + 100) {
-                particles.splice(i, 1);
-            }
-        }
-
-        // Render Slash Trail (Cool Subtle Grey with Edge Effect)
-        if (slashTrail.length > 1) {
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-
-            // Outer glow effect
-            ctx.shadowColor = 'rgba(180, 180, 200, 0.4)'; // Cool grey-blue glow
-            ctx.shadowBlur = 15;
-
-            for (let i = 1; i < slashTrail.length; i++) {
-                const pt1 = slashTrail[i - 1];
-                const pt2 = slashTrail[i];
-
-                // Trail fades out over 20 frames (~330ms)
-                const alpha = Math.max(0, 1 - (pt2.age / 20));
-
-                // Sword width tapers from head to tail (slightly thicker now)
-                const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
-
-                // Draw Core (Inner bright line)
+                // Always sparks now
+                p.alpha -= p.decay;
+                if (p.alpha <= 0) {
+                    particles.splice(i, 1);
+                    continue;
+                }
+                ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
                 ctx.beginPath();
-                ctx.moveTo(pt1.x, pt1.y);
-                ctx.lineTo(pt2.x, pt2.y);
-                ctx.strokeStyle = `rgba(245, 245, 250, ${alpha})`; // Nearly white core
-                ctx.lineWidth = thickness * 0.4;
-                ctx.stroke();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0; // reset
 
-                // Draw Edge (Outer darker grey line to create depth/edge effect)
-                ctx.beginPath();
-                ctx.moveTo(pt1.x, pt1.y);
-                ctx.lineTo(pt2.x, pt2.y);
-                ctx.strokeStyle = `rgba(140, 140, 160, ${alpha * 0.6})`; // Subtler grey edge
-                ctx.lineWidth = thickness;
-                // Use source-over for standard layering, or lighter for an energy effect
-                ctx.globalCompositeOperation = 'destination-over';
-                ctx.stroke();
-                ctx.globalCompositeOperation = 'source-over'; // Reset
-            }
-            ctx.shadowBlur = 0;
-
-            // Age the points
-            for (let i = 0; i < slashTrail.length; i++) {
-                slashTrail[i].age++;
+                if (p.y > height + 100) {
+                    particles.splice(i, 1);
+                }
             }
 
-            // Remove dead points (> 20 frames old)
-            slashTrail = slashTrail.filter(p => p.age < 20);
+            // Render Slash Trail (Cool Subtle Grey with Edge Effect)
+            if (slashTrail.length > 1) {
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+
+                // Outer glow effect
+                ctx.shadowColor = 'rgba(180, 180, 200, 0.4)'; // Cool grey-blue glow
+                ctx.shadowBlur = 15;
+
+                for (let i = 1; i < slashTrail.length; i++) {
+                    const pt1 = slashTrail[i - 1];
+                    const pt2 = slashTrail[i];
+
+                    // Trail fades out over 20 frames (~330ms)
+                    const alpha = Math.max(0, 1 - (pt2.age / 20));
+
+                    // Sword width tapers from head to tail (slightly thicker now)
+                    const thickness = Math.max(0.5, 16 * (1 - (i / slashTrail.length)));
+
+                    // Draw Core (Inner bright line)
+                    ctx.beginPath();
+                    ctx.moveTo(pt1.x, pt1.y);
+                    ctx.lineTo(pt2.x, pt2.y);
+                    ctx.strokeStyle = `rgba(245, 245, 250, ${alpha})`; // Nearly white core
+                    ctx.lineWidth = thickness * 0.4;
+                    ctx.stroke();
+
+                    // Draw Edge (Outer darker grey line to create depth/edge effect)
+                    ctx.beginPath();
+                    ctx.moveTo(pt1.x, pt1.y);
+                    ctx.lineTo(pt2.x, pt2.y);
+                    ctx.strokeStyle = `rgba(140, 140, 160, ${alpha * 0.6})`; // Subtler grey edge
+                    ctx.lineWidth = thickness;
+                    // Use source-over for standard layering, or lighter for an energy effect
+                    ctx.globalCompositeOperation = 'destination-over';
+                    ctx.stroke();
+                    ctx.globalCompositeOperation = 'source-over'; // Reset
+                }
+                ctx.shadowBlur = 0;
+
+                // Age the points
+                for (let i = 0; i < slashTrail.length; i++) {
+                    slashTrail[i].age++;
+                }
+
+                // Remove dead points (> 20 frames old)
+                slashTrail = slashTrail.filter(p => p.age < 20);
+            }
         }
+
 
         requestAnimationFrame(loop);
     }
@@ -438,10 +440,23 @@ document.addEventListener('DOMContentLoaded', () => {
             // Start engine immediately now that assets are ready
             isGameStarted = true;
 
-            // Explode the 10 assets from right bottom to everywhere
+            // Destroy and respawn targets outside of view to clear processing backlog
             isoImages.forEach(img => {
                 spawnTarget(img);
             });
+
+            // Set up Intersection Observer to pause the loop when the canvas is off-screen
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    isPaused = !entry.isIntersecting;
+                });
+            }, {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.0 // Pause immediately when 0% visible
+            });
+
+            observer.observe(gameContainer);
 
             loop();
         });
