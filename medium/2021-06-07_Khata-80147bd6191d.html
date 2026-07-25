@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Khata</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Khata</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Introduction
+</section>
+<section data-field="body" class="e-content">
+<section name="559b" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="93f2" id="93f2" class="graf graf--h3 graf--leading graf--title">Khata</h3><h3 name="6b4a" id="6b4a" class="graf graf--h3 graf-after--h3">Introduction</h3><p name="3309" id="3309" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">QueueBuster’s Khata</strong> was a new feature which was added to QueueuBuster android application.</p></div><div class="section-inner sectionLayout--outsetColumn"><figure name="dff0" id="dff0" class="graf graf--figure graf--layoutOutsetCenter graf-after--p"><img class="graf-image" data-image-id="1*n4y72KJ33XlVCOlQW3wUQQ.png" data-width="1280" data-height="320" src="https://cdn-images-1.medium.com/max/1200/1*n4y72KJ33XlVCOlQW3wUQQ.png"></figure></div><div class="section-inner sectionLayout--insetColumn"><h3 name="fa15" id="fa15" class="graf graf--h3 graf-after--figure">Why Khata?</h3><p name="3419" id="3419" class="graf graf--p graf-after--h3">QueueBuster has customers from <strong class="markup--strong markup--p-strong">Retail Business, Restaurant Business, Grocery Stores, Spa and Salon, and more. </strong>QueueBuster’s major focus is on the unorganized retail industry like <strong class="markup--strong markup--p-strong">General store</strong> or <strong class="markup--strong markup--p-strong">Kirana store. </strong>This khata feature can be helpful for these merchants.</p><h3 name="5547" id="5547" class="graf graf--h3 graf-after--p">What is Khata?</h3><p name="e963" id="e963" class="graf graf--p graf-after--h3">There are Kirana stores in every corner of India, where loyal customers buy the products on credit. Shopkeepers maintain all the customer&#39;s credit in a notebook, this is where Khata can help.</p><blockquote name="8d5c" id="8d5c" class="graf graf--blockquote graf-after--p">For example : Sunil buys groceries everyday from Ratna Store. He pays for all the groceries bought in end of the week. Shopkeeper notes all the purchases Sunil made throughout the week in a notebook and recieves payment end of the week.</blockquote><p name="d0ae" id="d0ae" class="graf graf--p graf-after--blockquote">Khata can record all the transactions easily made with the customer which makes this process much simpler for the merchant. The merchant can also ask the customer to pay through SMS, Whatsapp, email, etc. anytime with a payment link.</p><h3 name="28f2" id="28f2" class="graf graf--h3 graf-after--p">User flow for Khata</h3><p name="e2d6" id="e2d6" class="graf graf--p graf-after--h3">We looked for products which were offering similar features. After researching we started to analyze how the merchants would be using it if this feature was built.</p><p name="ffaa" id="ffaa" class="graf graf--p graf-after--p">We found that there were two main transactions that will be performed by the users(merchant) :</p><ol class="postList"><li name="5eb8" id="5eb8" class="graf graf--li graf-after--p">Give Credit</li><li name="9577" id="9577" class="graf graf--li graf-after--li">Accept payment</li></ol><p name="00bc" id="00bc" class="graf graf--p graf-after--li">We made this generic user flow for both the transactions.</p><figure name="f319" id="f319" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*Gsn6h8bI_iqZj4kRCZYS4w.png" data-width="3124" data-height="1828" src="https://cdn-images-1.medium.com/max/800/1*Gsn6h8bI_iqZj4kRCZYS4w.png"></figure><h3 name="de40" id="de40" class="graf graf--h3 graf-after--figure">Prototype</h3><p name="0fa2" id="0fa2" class="graf graf--p graf-after--h3">After a whole lot of wireframing, we decided to add an option to upload image (a bill or grocery image while purchasing, or an other) for every transaction. User(merchant) should be able to edit each transaction, but not for the transaction which is already paid online by the customer. Here is the prototype of Khata we built.(Not visible in incognito in chrome)</p><figure name="a6c8" id="a6c8" class="graf graf--figure graf--iframe graf-after--p graf--trailing"><iframe src="https://marvelapp.com/prototype/390294j?emb=1&amp;frameless=false&amp;iosapp=false&amp;emb=1" width="390" height="779" frameborder="0" scrolling="no"></iframe></figure></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@madhavan7393" class="p-author h-card">Madhavan</a> on <a href="https://medium.com/p/80147bd6191d"><time class="dt-published" datetime="2021-06-07T15:24:04.289Z">June 7, 2021</time></a>.</p><p><a href="https://medium.com/@madhavan7393/khata-80147bd6191d" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 25, 2026.</p></footer></article></body></html>

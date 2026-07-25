@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Improving QueueBuster Android Application</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Improving QueueBuster Android Application</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Approach
+</section>
+<section data-field="body" class="e-content">
+<section name="87f3" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="75fe" id="75fe" class="graf graf--h3 graf--leading graf--title">Improving QueueBuster Android Application</h3></div><div class="section-inner sectionLayout--outsetColumn"><figure name="0bbf" id="0bbf" class="graf graf--figure graf--layoutOutsetCenter graf-after--h3"><img class="graf-image" data-image-id="1*pERxuQbX-HacDCSUC_Nqpg.png" data-width="1280" data-height="320" src="https://cdn-images-1.medium.com/max/1200/1*pERxuQbX-HacDCSUC_Nqpg.png"></figure></div><div class="section-inner sectionLayout--insetColumn"><h3 name="7fc6" id="7fc6" class="graf graf--h3 graf-after--figure">Approach</h3><p name="88ab" id="88ab" class="graf graf--p graf-after--h3">Our customers were facing a hard time while operating the point of sale application. Our customer support team had to explain everything in detail about the important features but we wanted to minimize the support work so that customers can learn to use the app by themselves. We wanted to redesign some important features so that users can understand them easily.</p><p name="ffe2" id="ffe2" class="graf graf--p graf-after--p">We collected all the possible complaints from the support team in order to solve our problem.</p><h3 name="ed09" id="ed09" class="graf graf--h3 graf-after--p">Findings of our research</h3><h4 name="6ab4" id="6ab4" class="graf graf--h4 graf-after--h3">Pain points of our customer</h4><ol class="postList"><li name="28e4" id="28e4" class="graf graf--li graf-after--h4">Lack of visibility of some features in QueueBuster app.</li><li name="4c08" id="4c08" class="graf graf--li graf-after--li">Customers were not able to edit or customize products in the cart in Food/Electronic industry.</li><li name="1af7" id="1af7" class="graf graf--li graf-after--li">No detailed information of the product in the cart to differentiate two same products.</li><li name="46a0" id="46a0" class="graf graf--li graf-after--li">The customer felt <strong class="markup--strong markup--li-strong">create product</strong> process very complex.</li></ol><h4 name="9e44" id="9e44" class="graf graf--h4 graf-after--li">Reason for the above pain points</h4><ol class="postList"><li name="4838" id="4838" class="graf graf--li graf-after--h4">We were showing all the features inside the hamburger menu. Our landing page was the billing section. Hard time finding all the features.</li><li name="d4aa" id="d4aa" class="graf graf--li graf-after--li">Users had a hard time customizing the food product on the cart screen. There were lots of scenarios when the user perform any operation and sometimes the product was complex especially in case of a combo food products.</li><li name="758a" id="758a" class="graf graf--li graf-after--li">We were not displaying any information about product like IMEI number, serial number of products.</li><li name="7efb" id="7efb" class="graf graf--li graf-after--li">Create product form had lots of input fields but was not segregated properly for easy understanding.</li></ol><h3 name="6b7b" id="6b7b" class="graf graf--h3 graf-after--li">Journey Mapping of Cashier</h3><figure name="8a7a" id="8a7a" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*aLiihzy80mlTFAdW0W2nGw.png" data-width="1440" data-height="698" src="https://cdn-images-1.medium.com/max/800/1*aLiihzy80mlTFAdW0W2nGw.png"><figcaption class="imageCaption">Example image for Scenario 1</figcaption></figure></div><div class="section-inner sectionLayout--outsetColumn"><figure name="0381" id="0381" class="graf graf--figure graf--layoutOutsetCenter graf-after--figure"><img class="graf-image" data-image-id="1*NXF8A7MzECrLILrx7WmHAw.png" data-width="1440" data-height="872" src="https://cdn-images-1.medium.com/max/1200/1*NXF8A7MzECrLILrx7WmHAw.png"></figure></div><div class="section-inner sectionLayout--insetColumn"><h3 name="aeab" id="aeab" class="graf graf--h3 graf-after--figure">Goals</h3><p name="0e59" id="0e59" class="graf graf--p graf-after--h3">With all the findings we decided to :</p><ul class="postList"><li name="960a" id="960a" class="graf graf--li graf-after--p">To make a <strong class="markup--strong markup--li-strong">home screen</strong> that would comprise all the important features of the application.</li><li name="b65d" id="b65d" class="graf graf--li graf-after--li">Open Product should be given more preference and we renamed it to <strong class="markup--strong markup--li-strong">“Quick Bill”.</strong></li><li name="a3b6" id="a3b6" class="graf graf--li graf-after--li">Redesigning the <strong class="markup--strong markup--li-strong">cart page</strong>.</li><li name="0ca2" id="0ca2" class="graf graf--li graf-after--li">Proper <strong class="markup--strong markup--li-strong">segregation of input fields </strong>was needed and mandatory input fields were decided in create product form.</li></ul><h3 name="e220" id="e220" class="graf graf--h3 graf-after--li">Wireframes</h3><p name="381b" id="381b" class="graf graf--p graf-after--h3">After researching and analyzing the current design, we made the wireframes before high fidelity design as we were planning to add some features as well.</p></div><div class="section-inner sectionLayout--outsetColumn"><figure name="b152" id="b152" class="graf graf--figure graf--layoutOutsetCenter graf-after--p"><img class="graf-image" data-image-id="1*obnxkw0gwHhWbdvnbJHmFQ@2x.png" data-width="4256" data-height="6464" src="https://cdn-images-1.medium.com/max/1200/1*obnxkw0gwHhWbdvnbJHmFQ@2x.png"></figure></div><div class="section-inner sectionLayout--insetColumn"><h3 name="9f8f" id="9f8f" class="graf graf--h3 graf-after--figure">Final Designs</h3></div><div class="section-inner sectionLayout--fullWidth"><figure name="14ed" id="14ed" class="graf graf--figure graf--layoutFillWidth graf-after--h3"><img class="graf-image" data-image-id="1*mqEN3TcIQ1bY3lr1_VLdZA.png" data-width="3560" data-height="2131" src="https://cdn-images-1.medium.com/max/2560/1*mqEN3TcIQ1bY3lr1_VLdZA.png"></figure><figure name="0fee" id="0fee" class="graf graf--figure graf--layoutFillWidth graf-after--figure"><img class="graf-image" data-image-id="1*JghZPNSs22KsCIoY72_Fuw.png" data-width="3253" data-height="1982" src="https://cdn-images-1.medium.com/max/2560/1*JghZPNSs22KsCIoY72_Fuw.png"></figure><figure name="724f" id="724f" class="graf graf--figure graf--layoutFillWidth graf-after--figure"><img class="graf-image" data-image-id="1*igSu9N-y_Zw9wpjgBRpirA.png" data-width="3253" data-height="4627" src="https://cdn-images-1.medium.com/max/2560/1*igSu9N-y_Zw9wpjgBRpirA.png"></figure><figure name="5664" id="5664" class="graf graf--figure graf--layoutFillWidth graf-after--figure"><img class="graf-image" data-image-id="1*PbnJjg9dH86gUqHG_2FyXQ.png" data-width="3253" data-height="4142" src="https://cdn-images-1.medium.com/max/2560/1*PbnJjg9dH86gUqHG_2FyXQ.png"></figure></div><div class="section-inner sectionLayout--insetColumn"><h3 name="dc47" id="dc47" class="graf graf--h3 graf-after--figure">Conclusion</h3><p name="0047" id="0047" class="graf graf--p graf-after--h3 graf--trailing">Being in a small team I felt like we were following activity centered design when we approach any problem. During this project it felt like we were using the user centered approach. We improved the android application on the basis of complaints we received from customers. Thanks to <strong class="markup--strong markup--p-strong">Samarth Gupta</strong> for his help and support during the project.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@madhavan7393" class="p-author h-card">Madhavan</a> on <a href="https://medium.com/p/dd3dd3d52b76"><time class="dt-published" datetime="2021-06-07T15:25:21.885Z">June 7, 2021</time></a>.</p><p><a href="https://medium.com/@madhavan7393/qb-app-dd3dd3d52b76" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 25, 2026.</p></footer></article></body></html>

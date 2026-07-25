@@ -1,0 +1,104 @@
+
+<!-- M.Bot Floating AI Chatbot Widget -->
+<div class="mbot-launcher" id="mbotLauncher">
+  <div class="mbot-avatar"></div>
+  <span class="mbot-launcher-text">Ask</span>
+
+</div>
+
+<div class="mbot-window" id="mbotWindow">
+  <div class="mbot-header">
+    <div class="mbot-header-info">
+      <div class="mbot-avatar"></div>
+      <div>
+        <div class="mbot-title">Ask Madhavan</div>
+
+        <div class="mbot-sub">Principal PM & Design Recruiter Assistant</div>
+      </div>
+    </div>
+    <button class="mbot-close" id="mbotClose">✕</button>
+  </div>
+
+  
+  <div class="mbot-messages" id="mbotMessages">
+    <div class="mbot-msg mbot-msg--bot">
+      👋 Hi! I'm Madhavan's Case Study Assistant. Ask me anything about project scope, ROI metrics, UX trade-offs, or design decisions!
+    </div>
+  </div>
+
+  <div class="mbot-pills" id="mbotPills">
+    <button class="mbot-pill" data-q="5-sec summary">⚡ 5-sec summary</button>
+    <button class="mbot-pill" data-q="30-sec summary">⏱️ 30-sec summary</button>
+    <button class="mbot-pill" data-q="Metrics & ROI">📊 Metrics & ROI</button>
+    <button class="mbot-pill" data-q="Key Trade-offs">⚠️ Key Trade-offs</button>
+    <button class="mbot-pill" data-q="Design System">🎨 Design System</button>
+  </div>
+
+  <div class="mbot-input-area">
+    <input type="text" class="mbot-input" id="mbotInput" placeholder="Ask about metrics, scope, decisions..." />
+    <button class="mbot-send" id="mbotSend">➤</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const launcher = document.getElementById('mbotLauncher');
+  const win = document.getElementById('mbotWindow');
+  const close = document.getElementById('mbotClose');
+  const messages = document.getElementById('mbotMessages');
+  const pills = document.getElementById('mbotPills');
+  const input = document.getElementById('mbotInput');
+  const send = document.getElementById('mbotSend');
+
+  const kb = {
+    "5-sec summary": "Redesigned TNAU's agricultural marketplace from a manual single-vendor system into an automated multi-vendor SaaS platform — growing monthly sales from ₹62K to ₹77 Lakhs and expanding the vendor base by 15x.",
+    "30-sec summary": "TNAU was suffering a 26.83% monthly order cancellation rate because staff manually called 60+ vendors to verify stock post-checkout. Madhavan designed an Org-Branch-POS architecture with direct vendor self-service portals and 12h SLA auto-routing, eliminating fulfillment delays and driving Year-on-Year revenue growth.",
+    "Metrics & ROI": "📈 Monthly sales surged from ₹62,826/mo to ₹77,01,486/mo.\n🏢 Vendor base expanded from 70 to 1,000+ active participants.\n⚡ Order cancellations dropped to near zero due to automated SLA routing.",
+    "Key Trade-offs": "The biggest trade-off was disabling non-applicable action buttons during early order stages. Usability testing on Maze showed non-technical staff clicked disabled options out of habit, so restricting early affordances drastically cut operational errors.",
+    "Design System": "Structured around a 3-tier Org-Branch-POS model with high-contrast accessibility tokens, responsive data tables, and native mobile-friendly status workflows."
+  };
+
+  function toggle() { win.classList.toggle('is-open'); }
+  launcher.addEventListener('click', toggle);
+  close.addEventListener('click', toggle);
+
+  function addMsg(text, type) {
+    const d = document.createElement('div');
+    d.className = 'mbot-msg mbot-msg--' + type;
+    d.innerText = text;
+    messages.appendChild(d);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function answer(query) {
+    const qLower = query.toLowerCase();
+    let reply = "Great question! Madhavan led this project end-to-end, focusing on user-centered research, quantitative metric analysis, and component-driven UI systems. Feel free to explore the case study or presentation deck for complete details!";
+    for (let key in kb) {
+      if (qLower.includes(key.toLowerCase()) || key.toLowerCase().includes(qLower)) {
+        reply = kb[key];
+        break;
+      }
+    }
+    setTimeout(() => addMsg(reply, 'bot'), 400);
+  }
+
+  pills.querySelectorAll('.mbot-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const q = btn.getAttribute('data-q');
+      addMsg(q, 'user');
+      answer(q);
+    });
+  });
+
+  function handleSend() {
+    const val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    answer(val);
+  }
+
+  send.addEventListener('click', handleSend);
+  input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+})();
+</script>

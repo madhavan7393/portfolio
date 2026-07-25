@@ -1,0 +1,841 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Case Study: Empowering TN government through Digital Solutions</title><meta name="data-notion-page-icon" content="🚜"/><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%9A%9C%3C%2Ftext%3E%3C%2Fsvg%3E"/><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure,
+aside,
+details {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="f8e97259-046f-4e9d-bf7f-72854583f831" class="page sans" data-notion-page-icon="🚜"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1667874952638-fdb88fe192a0?ixlib=rb-4.1.0&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 59.88%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon" data-emoji="🚜"></span></div><h1 class="page-title" dir="auto">Case Study: Empowering TN government through Digital Solutions</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><figure id="30513098-caf7-8014-b5fa-f9d539815b01" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2026-02-12_at_3.28.05_PM_Large.jpeg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2026-02-12_at_3.28.05_PM_Large.jpeg"><img style="width:710px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2026-02-12_at_3.28.05_PM_Large.jpeg"/></a></figure><p id="30513098-caf7-8075-b3f5-c57d41dd82da" class="" dir="auto">
+</p><aside class="block-color-pink_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="pink_background" style="white-space:pre-wrap;display:flex" id="25613098-caf7-80a4-af44-ca015cda6d45" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="30513098-caf7-8037-be48-c4f09a02fcb2" class="" dir="auto"><strong>🚀 Post-Project Impact </strong></p><p id="25613098-caf7-804d-98da-d3f774a9a876" class="" dir="auto">📈  Increase in avg. monthly sales of <strong>₹62,826/month</strong> to <strong>₹77,01,486/month</strong></p><p id="25613098-caf7-80ea-951d-e4b3bca41d79" class="" dir="auto">💡 <strong>Vendor Base Soars 15x — </strong>From<strong> 70 to 1,000 </strong>and<strong> Counting!<br/></strong><br/>Sales have seen a dramatic increase over the past few years. From 2023 to 2024, sales grew by <strong>91%</strong>, increasing from an<strong> average of ₹62,826 per month to ₹1,20,000 per month</strong>. This initial growth was then completely overshadowed by a <strong>monumental leap in 2025</strong>, where the implementation of new systems resulted in average <strong>monthly sales of ₹77,01,486</strong>. This represents an astonishing <strong>6,317.90%</strong> growth from the previous year, highlighting how the successful integration of technology can exponentially enhance revenue streams and drive business success.</p></div></aside><h2 id="25613098-caf7-80be-bb37-eafa371f3813" class="" dir="auto">✨ Project Overview</h2><p id="25813098-caf7-80cf-909f-eca1237c0a62" class="" dir="auto"><strong>🌱 Tamil Nadu Agricultural University (TNAU)</strong> is based in Coimbatore, Tamil Nadu. They have over two decades (or 20 years) of research data on Indian agriculture. TNAU wants farmers to utilize this information effectively. TNAU wanted a system where they can reach out to farmers and provide them with the best quality seeds, fertilizers, various services like renting an agriculture drone, soil testing, and provide information on loans, government services, etc. </p><p id="24e13098-caf7-80db-a2d5-fb0ded3d0ff5" class="" dir="auto">To achieve this, first, they wanted to have </p><blockquote id="24e13098-caf7-80dc-8c9a-c3e2aba2fbb9" class="" dir="auto">🛒 An e-commerce system that could adapt to how they operate and provide the best quality seeds from them or through their vendors.</blockquote><p id="25613098-caf7-8034-bde5-cb01da6645a2" class="" dir="auto">TNAU was using<strong> Zoho Commerce</strong> for its e-commerce business via its website <a href="http://tnauagricart.com/">TNAUagricart.com</a>. They offer a variety of products like crop seeds (paddy, maize, pulses, cotton, turmeric), vegetable seeds in packets, crop boosters, bio-fertilizer, micronutrients, organic inputs, and water-soluble fertilizers. Additionally, they provide drone rental services and soil tests like pH tests and other related analyses.<br/></p><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-icon="💡" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="24e13098-caf7-803d-af40-d7de1f319d81" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="💡"></span></div><div style="width:100%"><p id="24e13098-caf7-802a-a503-e2ab656973d4" class="" dir="auto">While TNAU was using Zoho Commerce, they were facing a wide variety of issues in managing its e-commerce operations. Faced a lot of negative reviews from customers and stakeholders.</p></div></aside><h1 id="25613098-caf7-80cd-972a-ec71a7076594" class="" dir="auto"><br/><strong>⚠️ Why was Revamp needed?</strong></h1><aside class="block-color-brown_background callout" data-notion-callout="" data-notion-callout-icon="❌" data-notion-callout-background="brown_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-80dc-babb-d1760e718fa3" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="❌"></span></div><div style="width:100%"><p id="25813098-caf7-806b-a857-d7a02697a9ba" class="" dir="auto"><strong>📦 Order Cancellation - 26.83%</strong> of Orders are getting cancelled on average every month from May 2023 to December 2023 <strong>due to Vendors</strong></p></div></aside><aside class="block-color-blue_background callout" data-notion-callout="" data-notion-callout-icon="🚫" data-notion-callout-background="blue_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-8097-ac37-f8d7bdc278aa" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="🚫"></span></div><div style="width:100%"><p id="25813098-caf7-8061-a0d4-d87d5e5218de" class="" dir="auto"><strong>💰 Decline in Revenue Cancellation -</strong> Average loss of <strong> ₹17,234</strong> of orders per month due to order cancellations from May 2023 to December 2023</p></div></aside><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-icon="⛔" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-80ea-89b1-c87cf9f01dc0" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="⛔"></span></div><div style="width:100%"><p id="25813098-caf7-803b-abc7-e7754d3348ea" class="" dir="auto"><strong>👨‍🌾 Bad Reputation among Customers -</strong> &quot;<em>It&#x27;s already a big deal to get farmers to buy online, and one bad piece of feedback can spread very badly through word of mouth.</em>” - <em><mark class="highlight-pink" data-notion-highlight="pink">got to know from customers and TNAU staff</mark></em></p></div></aside><p id="25813098-caf7-80b6-aec9-c2df104fa023" class="" dir="auto">
+</p><p id="25813098-caf7-80b9-b8bd-ecd0459ee57c" class="" dir="auto">
+</p><h1 id="24e13098-caf7-80a0-bace-dce2455b9fba" class="" dir="auto"><strong>💡 Researching Problem Space</strong></h1><blockquote id="24f13098-caf7-8044-b4c9-c76924f74536" class="block-color-teal_background" data-notion-highlight="teal_background" dir="auto"><em>Before diving into researching and talking to stakeholders we did desk research of the current ecommerce system of TNAU.</em></blockquote><p id="24f13098-caf7-80c4-8940-fedb37fd132c" class="" dir="auto">We talked to operation users, customers, and ran analyses to really understand the pain points. For our e‑commerce setup, this showed us just how much the manual, single‑vendor system was causing late shipments, missed orders, and endless customer follow‑ups. With those insights, we aimed to build a multi‑vendor‑friendly system that automates order handling — meaning fewer cancellations and happier customers.<br/></p><figure id="24e13098-caf7-8093-9071-d004d324d6de" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Desktop_-_1.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Desktop_-_1.png"><img style="width:710px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Desktop_-_1.png"/></a></figure><h2 id="24e13098-caf7-8014-a2a4-e7affb5e4995" class="" dir="auto"><strong>👥 User Interview with Operations Managers </strong></h2><p id="24e13098-caf7-80d2-bdcb-f0d261a8cfff" class="" dir="auto"><mark class="highlight-default" data-notion-highlight="default">To gather in‑depth insights on e‑commerce order management challenges — especially issues caused by a manual, single‑vendor system — and to understand customer preferences for a smoother, multi‑vendor shopping experience, through focused discussions with a select group of users.</mark><mark class="highlight-default" data-notion-highlight="default"><br/></mark></p><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-8073-a2ff-f8a0542bb8bb" dir="ltr"><div style="width:100%"><h3 id="24f13098-caf7-8053-b94d-f93904f6937c" class="block-color-teal_background" data-notion-highlight="teal_background" dir="auto"><strong>🛠️ Method</strong></h3><ul id="25813098-caf7-8099-9fd3-eac1dec57bd8" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>🖥️ Virtual Interviews</strong> with not more than 4 participants, people who manage the operations of e-commerce, agricultural product experts, and vendors<strong>.</strong></li></ul><div data-notion-highlight="teal_background" dir="auto"><ul id="25813098-caf7-8063-ae49-fbac6b19c5c7" class="block-color-teal_background bulleted-list" data-notion-highlight="teal_background"><li style="list-style-type:disc"><strong>📍One-on-one interviews</strong> were held at Tamil Nadu Agriculture University, Coimbatore, to understand how they operate in real-world use case scenarios.</li></ul></div></div></aside><figure id="25d13098-caf7-80b1-a665-f1f9f0b7eb08" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Section_1architecture_.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Section_1architecture_.svg"><img style="width:1392px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Section_1architecture_.svg"/></a></figure><p id="25313098-caf7-8098-be95-c9d1009ccac9" class="" dir="auto">
+</p><figure id="24e13098-caf7-801b-bb43-cb122bb0fa22" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Group_1000001680.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Group_1000001680.png"><img style="width:709.9921875px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Group_1000001680.png"/></a></figure><h3 id="24f13098-caf7-80a4-9d32-dee11d2756b4" class="" dir="auto"><strong>⁉️ Finalised the right questions to be asked</strong></h3><p id="25313098-caf7-80f0-894c-caf9c13d0a9c" class="" dir="auto">After discussing with the project manager, doing all the possible desk research, we framed some important questions which was necessary to understand the client’s need.</p><p id="25313098-caf7-80e7-9e26-df6860b7067f" class="" dir="auto">These were some prepared questions I decided to ask the client during product research.</p><ol type="1" id="24f13098-caf7-804e-9ca5-ca76ad27e52b" class="numbered-list" start="1" dir="auto"><li>How many staff operate the operation?</li></ol><ol type="1" id="25313098-caf7-8006-9130-c598a5174065" class="numbered-list" start="2" dir="auto"><li>Who decides the product and pricing?</li></ol><ol type="1" id="25313098-caf7-80e3-958e-e12ef342ffac" class="numbered-list" start="3" dir="auto"><li>What is the basic process from sourcing a product to delivering it to the customer?</li></ol><ol type="1" id="24f13098-caf7-8009-b30f-c7bb2841dc25" class="numbered-list" start="4" dir="auto"><li>What part do they use the most in the product, and what do they use less?</li></ol><ol type="1" id="24f13098-caf7-8002-8347-e5b0e68d35a3" class="numbered-list" start="5" dir="auto"><li>Their priorities while working?</li></ol><ol type="1" id="24f13098-caf7-80de-95b2-f14769b18b86" class="numbered-list" start="6" dir="auto"><li>What is their overall use of the system and the time they take to do the operation?</li></ol><ol type="1" id="24f13098-caf7-80b8-a717-e4f624757d99" class="numbered-list" start="7" dir="auto"><li>How does TNAU deal with vendors?</li></ol><ol type="1" id="24f13098-caf7-8080-9ecd-caacfbe10ab6" class="numbered-list" start="8" dir="auto"><li>How do vendors operate?</li></ol><ol type="1" id="24f13098-caf7-80f3-bfd3-c83f537043fd" class="numbered-list" start="9" dir="auto"><li>Difficulties they faced while operating?</li></ol><ol type="1" id="24f13098-caf7-80dc-b5b1-dca2eed3b7cc" class="numbered-list numbered-list-digits-2" start="10" dir="auto"><li>Desired improvements/new features, if any</li></ol><ol type="1" id="24f13098-caf7-80c3-9f53-f639a9e11958" class="numbered-list numbered-list-digits-2" start="11" dir="auto"><li>Are there any complaints they faced from customers?</li></ol><p id="25c13098-caf7-802a-8046-f85535fa6a37" class="" dir="auto">
+</p><aside class="block-color-yellow_background callout" data-notion-callout="" data-notion-callout-icon="💡" data-notion-callout-background="yellow_background" style="white-space:pre-wrap;display:flex" id="25313098-caf7-8052-b092-fab2fa0133d5" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="💡"></span></div><div style="width:100%"><p id="25313098-caf7-8089-a71e-db430dc2a577" class="block-color-default_background" data-notion-highlight="default_background" dir="auto"><em><mark class="highlight-default_background" data-notion-highlight="default_background">During the research with the client, we gathered a lot of critical information—not just about their needs and pain points, but also got to know that their entire process is more complex than we expected, and the current system is not appropriate for their requirements.</mark></em></p></div></aside><p id="25c13098-caf7-8001-ab40-f877da6c4ca8" class="" dir="auto">
+</p><h3 id="25513098-caf7-80bc-a4ad-c5d6fa525caf" class="" dir="auto"><strong>⚠️ Problems / </strong><mark class="highlight-gray_background" data-notion-highlight="gray_background"><strong>Pain-Points / Answers to questions</strong></mark></h3><div id="25413098-caf7-80fe-82a3-e442988d1dbb" class="column-list" data-notion-column-list="" dir="auto"><div id="25413098-caf7-8032-aad1-c04d244588b1" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><aside class="block-color-yellow_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="yellow_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-8035-b74b-f3e6c693d7b9" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-8097-a015-fa9fa86869a2" class="" dir="auto"><strong>How many staff operate the operation?</strong></p><p id="25413098-caf7-80f5-a2e5-f5fb6d3faaa2" class="" dir="auto">Currently, there are 2-3 members who operate e-commerce, and it is a very manual process. They have to manually track the inventory by connecting with the vendor. When a new order is received, the team contacts the vendor and then accepts the order.</p></div></aside><p id="25413098-caf7-80a9-9f76-d16d38ace60d" class="" dir="auto">
+</p><aside class="block-color-pink_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="pink_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-8041-9789-c85a980f3e39" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-80d9-b305-f834d8a1e5ac" class="" dir="auto"><strong>What is the basic process from sourcing a product to delivering it to the customer?</strong></p><p id="25413098-caf7-80a5-914c-fca0c1ad6bc1" class="" dir="auto">TNAU has partnered with several FPOs and vendors. They source various products from them. When an order is received, the admin team manually checks the order, calls the vendor to confirm, and then accepts or rejects the order.</p></div></aside><p id="25413098-caf7-8078-a886-e273deefe95c" class="" dir="auto">
+</p><aside class="block-color-yellow_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="yellow_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-80f4-b677-c86332d4775f" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-809a-b22a-c289cd749e9b" class="" dir="auto"><strong>What are their priorities while working?</strong></p><p id="25413098-caf7-80dc-911d-d138934c00f2" class="" dir="auto">The team receives an alert for new orders via email or phone. They only fulfill orders during office hours. Work generally starts late at the college. The people working in operations are university staff who are also busy with other university work. TNAU has a rule to accept or reject an order within 24 hours. However, this process can be delayed due to university priorities, holidays, or personal work, which has resulted in several missed orders and customer cancellations.</p></div></aside><p id="25413098-caf7-8006-90dc-f6b2a232a31e" class="" dir="auto">
+</p><aside class="block-color-pink_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="pink_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-80c6-b0c4-ef3c5643a339" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-8012-8174-d13da035edd4" class="" dir="auto"><strong>How does TNAU deal with vendors?</strong></p><p id="25513098-caf7-808e-bc4b-f560bffa2709" class="" dir="auto">TNAU has 60-70 vendors, and each vendor has multiple stores.</p><p id="25613098-caf7-8025-9ffa-ed887798df07" class="" dir="auto">TNAU has partnered with vendors who can provide high-quality seeds, crop inputs, etc.</p><p id="25513098-caf7-803c-8a05-d6f90cc03549" class="" dir="auto">Some vendors have offline stores. All products are in different districts in Tamil Nadu, which generally increases over time. For example, TNAU has partnered with one specific vendor for paddy seeds, another vendor for cotton seeds, etc. TNAU also keeps stocks of several products in the university, which they procure from different vendors or FPOs.</p></div></aside><p id="25513098-caf7-80ec-8e39-f440223e05a1" class="" dir="auto">
+</p><aside class="block-color-yellow_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="yellow_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-8043-af54-ebe189d3f16f" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-807e-8a5d-c9fc4d463660" class="" dir="auto"><strong>Are there any complaints they faced from customers?</strong></p><p id="25413098-caf7-8014-94b4-dbcf23c02eb2" class="" dir="auto">Customers mostly complain about non-delivery, no response, and order cancellation. The reason is that the operations team is unable to fulfill the order from the vendor within 24 hours. The order gets cancelled by the customer due to less responsive customer care, as the operations team is busy with other university work. Several orders are not even seen by the team due to the large number of orders.</p></div></aside><p id="25c13098-caf7-806e-95a5-efe481f2bbbc" class="" dir="auto">
+</p></div><div id="25413098-caf7-80b3-85df-d24caed1c152" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><aside class="block-color-blue_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="blue_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-8057-a0e5-d2b1e193d885" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-8022-ace1-e610cc59b92a" class="" dir="auto"><strong>Who decides the product and pricing?</strong></p><p id="25413098-caf7-800d-b4af-c0d00366744e" class="" dir="auto">TNAU itself decides the product list and pricing. They are connected to several FPOs and vendors who are their partners.</p></div></aside><p id="25413098-caf7-80cc-a6dd-cc56e0d6025e" class="" dir="auto">
+</p><aside class="block-color-orange_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="orange_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-801c-bc35-d8ea83ac4f20" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-8075-9383-c3740f280fc7" class="" dir="auto"><strong>What part do they use the most in the product, and what do they use less?</strong></p><p id="25513098-caf7-809a-8c3c-c4699a476531" class="" dir="auto">The operations team focuses primarily on <strong>order management</strong>. Very rarely does anyone from the team add, delete, or update products or manage inventory.</p></div></aside><p id="25413098-caf7-80e4-ba09-edb589e427a2" class="" dir="auto">
+</p><aside class="block-color-blue_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="blue_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-80fc-8943-eab77c920229" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-80ed-b0fb-fb1ae9d28608" class="" dir="auto"><strong>What is their overall use of the system and the time they take to do the operation?</strong></p><p id="25413098-caf7-8096-9f43-f5b30509f39c" class="" dir="auto">The operation team has been trained to use the product, as they only handle the order management, so it&#x27;s easy for them to use. They generally fulfill the order in 24 hours. Easy to navigate the order management page; sometimes, they have to cancel the order.</p></div></aside><p id="25413098-caf7-8024-9f42-ffc5cd2658db" class="" dir="auto">
+</p><aside class="block-color-red_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="red_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-80a0-896e-d12ff8a91574" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-803b-b4f9-f89bfbc855af" class="" dir="auto"><strong>How do vendors operate?</strong></p><p id="25413098-caf7-8001-88c4-f455d7dd902e" class="" dir="auto">TNAU has over 60 vendors, a number that could increase over time. They receive a call from TNAU to confirm the product and quantity. The address is shared with them manually by TNAU, and the payment is from TNAU. The vendor payment relationship is handled privately by TNAU.</p></div></aside><p id="25413098-caf7-8012-93c5-e375ef4d82fa" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-80bb-9a26-e5b151e86c23" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-803b-9de7-fede3c906d0b" class="" dir="auto"><strong>Difficulties they faced while operating?</strong></p><p id="25413098-caf7-8056-ba07-ecf4bcae7ed3" class="" dir="auto"><strong>Apart from order management</strong>, most of the sections in the product are very rarely used. The team mostly had issues with the order management, and their requirement could not able to be met by the current system.</p></div></aside><p id="25c13098-caf7-8060-9a8e-d0c77763ce42" class="" dir="auto">
+</p><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="25413098-caf7-80c1-997b-c06e7e5aa8cd" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25413098-caf7-80bf-980d-e1fcca519df4" class="" dir="auto"><strong>Desired improvements/new features, if any</strong></p><ul id="25413098-caf7-803f-b56e-e3ac24116f1c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">There is no place to manage a vendor&#x27;s store online.</li></ul><ul id="25513098-caf7-8057-9955-f5fe4a196d62" class="bulleted-list" dir="auto"><li style="list-style-type:disc">They want to sell a combo of different products.</li></ul><ul id="25513098-caf7-8080-87ea-cdf2654b4c00" class="bulleted-list" dir="auto"><li style="list-style-type:disc">They want to sell services like renting an agricultural drone, soil testing, pH, etc.</li></ul><ul id="25c13098-caf7-800b-a3d3-fe51ee29e758" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Appointment Feature for service</li></ul><ul id="25513098-caf7-80d7-a171-eacbbfeb7894" class="bulleted-list" dir="auto"><li style="list-style-type:disc">TNAU wants to handle vendors online; currently, everything is handled on paper.</li></ul><ul id="25513098-caf7-8026-a724-d568512f4f6f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">In creating a product, they want to sell different variants of the product.</li></ul><ul id="25c13098-caf7-8027-95c3-e1d9d298d3bb" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Options to include Vouchers, GST Billing, Customized Invoices.</li></ul></div></aside><p id="25613098-caf7-80c5-bfc2-d6c283dc7b4e" class="" dir="auto">
+</p></div></div><aside class="block-color-pink_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="pink_background" style="white-space:pre-wrap;display:flex" id="25513098-caf7-8026-9b24-c46d4f134008" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="25513098-caf7-800d-8306-e2734f63ccbe" class="" dir="auto"><strong>What are the issues faced when fulfilling orders? </strong></p><p id="25513098-caf7-8051-966c-c51cdc34f352" class="" dir="auto">For every order, the team has to call the vendor to check the product&#x27;s available quantity. Sometimes vendors provide false information, or misunderstandings occur between the team and vendors, leading to order cancellations. <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Daily arguments with vendors and a lack of accountability on their part have led to a poor vendor relationship</mark><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"><strong>.</strong></mark><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"> </mark>This is the major problem they wanted to solve.</p><p id="25513098-caf7-8091-b191-eb2889d57ca8" class="" dir="auto"><strong>😫 </strong><strong><span style="border-bottom:0.05em solid">Customer Impact</span></strong></p><p id="25513098-caf7-80c4-af62-cd869dca43a2" class="" dir="auto">Due to these issues, the business has developed a <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">bad reputation among customers</mark><strong>.</strong> When an order is accepted, farmers who are waiting for seeds to sow may have their order canceled a few days later without their knowledge. Many customers get frustrated because their crops might not receive seeds, fertilizer, or insecticides on time. <mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Customers often argue with the TNAU team for not informing them about the order cancellation, the reason being that the TNAU team themselves do not know the status of the orders.</mark></p><p id="25513098-caf7-8072-a1e0-d7ee4fe52f82" class="" dir="auto"><strong>⚠️ </strong><strong><span style="border-bottom:0.05em solid">Manual Operations and Confusion</span></strong></p><p id="25513098-caf7-80f2-a2a9-d8d58b43d5d9" class="" dir="auto">The status of every order is changed manually by calling the vendor (e.g., &quot;order accepted,&quot; &quot;shipped,&quot; or &quot;delivered&quot;). Many times, even after an order has shipped, the team forgets to change the status, leading to a lot of confusion. <em>For example, many products that were delivered last month still had a status of &quot;Order accepted.&quot;</em></p><p id="25513098-caf7-8080-b28c-ff94e5f42599" class="" dir="auto"><strong>🤖 </strong><strong><span style="border-bottom:0.05em solid">The Need for a New System</span></strong></p><p id="25513098-caf7-80a6-a85c-f0c16ee189f1" class="" dir="auto"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">They wanted a system where several things were automated and where vendors could be held accountable.</mark> This would help reduce poor relationships and, in turn, be better for the business.</p></div></aside><p id="25c13098-caf7-80fd-b45b-eb9e85cf47a6" class="" dir="auto">
+</p><figure id="25c13098-caf7-8004-9c19-d1e21bc13c6f" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Section_11.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Section_11.svg"><img style="width:1248px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Section_11.svg"/></a></figure><p id="25c13098-caf7-80e5-aa31-eedb24f4ffcc" class="" dir="auto">
+</p><figure id="25c13098-caf7-8000-9b63-c50fa5ced985" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/ezgif-84d9c14e8cc223.gif" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/ezgif-84d9c14e8cc223.gif"><img style="width:709.9921875px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/ezgif-84d9c14e8cc223.gif"/></a></figure><h1 id="25c13098-caf7-8021-868f-fc8242bbfe12" class="" dir="auto"><br/><br/><strong>🔍 Key Findings from Researching with Clients</strong></h1><p id="25d13098-caf7-808b-85b5-c8e5c948cfc7" class="" dir="auto">
+</p><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-8079-a8d8-e44374fbb214" dir="ltr"><div style="width:100%"><p id="25613098-caf7-8011-9b4f-d28b4201f246" class="" dir="auto">📁 <strong>Vendors were FPOs and farmers</strong></p><p id="25813098-caf7-80e4-8383-e155c471fcfc" class="" dir="auto">TNAU has 60-70 vendors, the number of which can increase over time. These vendors sold mainly <em>Seeds, Agri Inputs, Agri Inputs, Produce &amp; Planting Materials, Services, and farm equipment.</em></p></div></aside><aside class="block-color-brown_background callout" data-notion-callout="" data-notion-callout-background="brown_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-80bf-96a6-d7d00fb2c4b3" dir="ltr"><div style="width:100%"><p id="25613098-caf7-80ba-ba74-f4e7f0eb9d13" class="" dir="auto">🍎 <strong>Fixed Vendors for some products or categories</strong></p><p id="25813098-caf7-8016-a200-f9828b08b2f2" class="" dir="auto">Some vendors were fixed for certain important products to maintain high-quality yield; for example, Maize seeds came from Vendor A, and paddy seeds came from Vendor B.</p></div></aside><aside class="block-color-yellow_background callout" data-notion-callout="" data-notion-callout-background="yellow_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-8019-aa41-c7d6016177bb" dir="ltr"><div style="width:100%"><p id="25613098-caf7-8070-8ad9-d01b77b02b5b" class="" dir="auto">🛒 <strong>Major flaw in doing operations</strong></p><p id="25813098-caf7-8068-88b2-f1103b021de1" class="" dir="auto">The current system of doing e-commerce business in Zoho e-commerce is not compatible with TNAU&#x27;s needs, as the current system is only compatible for an individual selling products online. TNAU wanted to source the product from different places and sell it, being an aggregator.</p></div></aside><aside class="block-color-pink_background callout" data-notion-callout="" data-notion-callout-background="pink_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-8065-abf0-e26931ffd566" dir="ltr"><div style="width:100%"><p id="25613098-caf7-8005-826c-c7315802a1cc" class="" dir="auto">❌  <strong>No Customization with the current tool<br/></strong>There were no customizations available with <em>Zoho e-commerce</em> that could suit with clients’ requirements.</p></div></aside><aside class="block-color-blue_background callout" data-notion-callout="" data-notion-callout-background="blue_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-80da-ad95-f08b23264d1a" dir="ltr"><div style="width:100%"><p id="25613098-caf7-8079-921b-f9898e107373" class="" dir="auto">📦 <strong>Critical issues with Order Cancellation</strong></p><p id="25813098-caf7-8000-a02e-ed0fbd36e226" class="" dir="auto"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">A lot of manual work was required because for every order, the team had to call from a list of over 60 vendors to confirm quantities and place the order.</mark></mark></p><ul id="25813098-caf7-801e-9f0b-e75126d89869" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">Vendors made false promises about product availability.</mark></mark></li></ul><ul id="25813098-caf7-801e-873d-dedc30358350" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">There were frequent arguments with vendors over unfulfilled quantities. Their reasons varied, from an inability to procure products on time to other business issues.</mark></mark></li></ul><ul id="25813098-caf7-80ee-8921-e208dc79d20f" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">Vendors were not held accountable for their mistakes.</mark></mark></li></ul><ul id="25813098-caf7-804b-a0e8-ceaaa4656f9a" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">Simple tasks required an excessive number of phone calls.</mark></mark></li></ul><ul id="25813098-caf7-8032-8ee9-fbf904115093" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">The operations team often failed to update the order status, which led to incorrect reporting of overall sales.</mark></mark></li></ul><ul id="25813098-caf7-8064-b927-c68f140299cd" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">Customer orders included a mix of products that were shipped from different vendors. In the past, there were fewer vendors whose warehouses were nearby, so shipping wasn&#x27;t a major issue. There were instances where the unavailability of a single, inexpensive product led to the cancellation of an entire order.</mark></mark></li></ul></div></aside><figure id="25d13098-caf7-8063-a15e-c4a6bf0a842f" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/CArdsortingfinal.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/CArdsortingfinal.svg"><img style="width:1248px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/CArdsortingfinal.svg"/></a></figure><p id="25d13098-caf7-80ad-8785-dd7a6bbe4721" class="" dir="auto">
+</p><h2 id="25d13098-caf7-80b5-879c-c949e81670ba" class="" dir="auto">🛤️ Journey Mapping and Possible Solutions</h2><table id="25d13098-caf7-8071-ae7c-f090df392772" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="25d13098-caf7-8053-aab8-ceedd385db82" dir="ltr"><th id="KC:l" class="simple-table-header-color simple-table-header" style="width:148px"><strong>Stage</strong></th><th id="zTXy" class="simple-table-header-color simple-table-header" style="width:168px"><strong>Action/Task</strong></th><th id="&gt;rYy" class="simple-table-header-color simple-table-header"><strong>Role (TNAU Staff / Vendor / Customer)</strong></th><th id="|f?[" class="simple-table-header-color simple-table-header" style="width:189px"><strong>Pain Points from TNAU Staff</strong></th><th id="YIEY" class="simple-table-header-color simple-table-header" style="width:225.953125px"><strong>Solutions</strong></th></tr></thead><tbody><tr id="25d13098-caf7-8049-a625-ed837651621b" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>1. Product Creation</strong></td><td id="zTXy" class="" style="width:168px">New agricultural products (seeds, fertilizers, services) are created in the system</td><td id="&gt;rYy" class="">TNAU staff</td><td id="|f?[" class="" style="width:189px">😀 Product creation is manual which is fine; navigation is confusing, hard to find settings to update inventoryx</td><td id="YIEY" class="" style="width:225.953125px">Centralized product setup with clear navigation; improved UI for product creation</td></tr><tr id="25d13098-caf7-8062-bf8c-da5c7fb2eca7" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>2. Adding Inventory</strong></td><td id="zTXy" class="" style="width:168px">Inventory is updated per vendor/ incorrect data</td><td id="&gt;rYy" class="">TNAU staff &amp; Vendors</td><td id="|f?[" class="" style="width:189px">😕 Staff manually calls vendor for stock; wrong/false stock info, accepting order</td><td id="YIEY" class="" style="width:225.953125px">Build Vendor portal to manage their inventory detail → <strong>vendors update directly</strong></td></tr><tr id="25d13098-caf7-80b3-bd66-dcc2dc9100e4" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>3. Receiving an Order</strong></td><td id="zTXy" class="" style="width:168px">Customer places an order (online store</td><td id="&gt;rYy" class="">Customer → TNAU system</td><td id="|f?[" class="" style="width:189px">😠 Some orders get missed due to workload; no auto-confirmation</td><td id="YIEY" class="" style="width:225.953125px">Sync orders from vendors, TNAU not in between, Customer reciever faster update.</td></tr><tr id="25d13098-caf7-80a2-a58f-c305765fa6f8" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>4. Confirming with Vendor</strong></td><td id="zTXy" class="" style="width:168px">TNAU staff calls vendor to confirm stock &amp; delivery</td><td id="&gt;rYy" class="">TNAU staff ↔ Vendors</td><td id="|f?[" class="" style="width:189px">😡 Delays, miscommunication, arguments, false confirmations</td><td id="YIEY" class="" style="width:225.953125px">Order auto-routed to vendor on system; vendor must confirm/deny within SLA (24 hrs max)</td></tr><tr id="25d13098-caf7-801b-8af5-c6eb7efe08db" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>5. Accept/Reject Order</strong></td><td id="zTXy" class="" style="width:168px">TNAU decides fulfillment</td><td id="&gt;rYy" class="">Vendor via TNAU staff</td><td id="|f?[" class="" style="width:189px">😡 Wrong status updates; manual calls needed</td><td id="YIEY" class="" style="width:225.953125px">Vendor self-updates in portal → system updates TNAU + customer instantly</td></tr><tr id="25d13098-caf7-800c-9b1f-e29c9abc58a6" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>6. Vendor Dispatch &amp; Checking</strong></td><td id="zTXy" class="" style="width:168px">TNAU follows up to ask “Has it shipped?”</td><td id="&gt;rYy" class="">TNAU staff ↔ Vendor</td><td id="|f?[" class="" style="width:189px">😡 Time wasted on repetitive calls; lack of accountability</td><td id="YIEY" class="" style="width:225.953125px">Vendor uploads shipping document / waybill to system; automated triggers &amp; digital evidence</td></tr><tr id="25d13098-caf7-80ba-a5e1-cd40461848a4" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>7. Shipping Information</strong></td><td id="zTXy" class="" style="width:168px">Shipping details shared with TNAU → Customer</td><td id="&gt;rYy" class="">TNAU staff ↔ Vendor ↔ Customer</td><td id="|f?[" class="" style="width:189px">😠 Often delays or missed updates; status wrong in system</td><td id="YIEY" class="" style="width:225.953125px">Auto-tracking API with courier; sync status (“Shipped,” “Out for delivery,” etc.)</td></tr><tr id="25d13098-caf7-8007-95c0-d91f4eba0b59" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>8. Tracking the Shipping</strong></td><td id="zTXy" class="" style="width:168px">TNAU/customer tracks delivery status</td><td id="&gt;rYy" class="">Customer + TNAU</td><td id="|f?[" class="" style="width:189px">😠 Status not updated due to manual entry; leads to confusion</td><td id="YIEY" class="" style="width:225.953125px">End-to-end live tracking visible to both vendor, TNAU &amp; customer</td></tr><tr id="25d13098-caf7-8045-a6ef-c79ecf8795d3" dir="ltr"><td id="KC:l" class="" style="width:148px"><strong>9. Status Updates</strong></td><td id="zTXy" class="" style="width:168px">Order status updated at each step</td><td id="&gt;rYy" class="">TNAU staff</td><td id="|f?[" class="" style="width:189px">😠 Staff forgets to manually update; backlog, poor visibility</td><td id="YIEY" class="" style="width:225.953125px">System auto-updates order status; dashboard shows “Pending, In-progress, Delivered”</td></tr></tbody></table><h1 id="25413098-caf7-8098-9925-e12f089a8d7a" class="" dir="auto"><strong>🎯 Finalizing Objectives &amp; Goals</strong></h1><p id="25c13098-caf7-8068-9795-d94a690fcf6c" class="" dir="auto">There were lots of suggestions, comments from the entire team, from stakeholders, so we prioritized the features by conducting several interviews, calls, and exercises.</p><p id="25c13098-caf7-8096-90c0-efa6b285900d" class="" dir="auto">
+</p><div id="25813098-caf7-80d7-8455-d59db73c5c7a" class="column-list" data-notion-column-list="" dir="auto"><div id="25c13098-caf7-80ea-82ac-d350ef57b1b4" style="width:100.00000000000003%" class="column" data-notion-column-ratio="1.0000000000000002" dir="auto"><figure id="25413098-caf7-8009-a988-e4f906b74210" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Group_1.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Group_1.png"><img style="width:710px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Group_1.png"/></a></figure></div><div id="25c13098-caf7-8047-b333-d562c2ac4052" style="width:200.00000000000009%" class="column" data-notion-column-ratio="2.000000000000001" dir="auto"><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-800d-bca6-d9443d5f8741" dir="ltr"><div style="width:100%"><p id="25813098-caf7-807b-90d9-d5fac1d7788f" class="" dir="auto">A system that can handle products from several vendors, with TNAU being the aggregator. TNAU will decide what product to sell at what price. So <mark class="highlight-default_background" data-notion-highlight="default_background">we decided to build an application that will be used by both TNAU and the vendor, with an</mark><mark class="highlight-default_background" data-notion-highlight="default_background"><strong> </strong></mark></p><p id="25c13098-caf7-8001-ae21-e215e61da4a0" class="" dir="auto"><mark class="highlight-default_background" data-notion-highlight="default_background"><strong><span style="border-bottom:0.05em solid">O</span></strong></mark><strong><span style="border-bottom:0.05em solid">rganization-Branch-POS Model</span></strong></p><p id="25c13098-caf7-80e0-91f1-d7068f285363" class="" dir="auto"><strong><br/></strong><mark class="highlight-purple_background" data-notion-highlight="purple_background">Organization = Merchant = TNAU<br/>Branch = Vendors<br/>POS = Offline Store</mark></p></div></aside></div></div><figure id="25413098-caf7-8080-94c5-f5f14501b8b3" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/310c310b-6b60-45e3-b75b-0dedecf03475.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/310c310b-6b60-45e3-b75b-0dedecf03475.png"><img style="width:508.8963210702341px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/310c310b-6b60-45e3-b75b-0dedecf03475.png"/></a></figure><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-8028-b745-d5bf22b0e22e" dir="ltr"><div style="width:100%"><p id="25813098-caf7-8087-87dd-c15516214435" class="" dir="auto">📦 <strong>Major Change in Order Management</strong></p><p id="25813098-caf7-8048-8f37-d68e9461afb2" class="" dir="auto">They were well-versed in the product flow of product creation, settings, etc. They wanted the order management to be changed.</p></div></aside><aside class="block-color-orange_background callout" data-notion-callout="" data-notion-callout-background="orange_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-80d1-9d4d-f94773276201" dir="ltr"><div style="width:100%"><p id="25713098-caf7-8074-a524-e692fa0e0c17" class="" dir="auto">🤵🏻‍♂️ <strong>Vendor Management</strong></p><p id="25813098-caf7-8043-a52a-c9673985bd44" class="" dir="auto">They wanted a functionality to create and manage a list of vendors, create B2B orders of various agricultural products (one vendor can place an order to one specific vendor), and maintain a ledger of spending and receiving from each vendor.</p></div></aside><aside class="block-color-brown_background callout" data-notion-callout="" data-notion-callout-background="brown_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-80c0-ace9-f441cf14b8d9" dir="ltr"><div style="width:100%"><p id="25713098-caf7-80a5-b2bd-ce8e281df5f3" class="" dir="auto">🪴 <strong>Agricultural Services</strong></p><p id="25813098-caf7-807d-9af4-c37d3a2b5e35" class="" dir="auto">TNAU wanted to sell several services like renting agricultural drones, pH analysis, soil testing, and other pest detection services.</p></div></aside><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-80fa-9882-c42bcd8fac74" dir="ltr"><div style="width:100%"><p id="25713098-caf7-809d-a721-dd47d56a04f5" class="" dir="auto">🤵🏻‍♂️ <strong>Customer Management</strong><br/>They wanted a list of customers and to make a directory to track customer purchases.</p></div></aside><aside class="block-color-red_background callout" data-notion-callout="" data-notion-callout-background="red_background" style="white-space:pre-wrap;display:flex" id="25d13098-caf7-80ba-964f-dd25d28f843b" dir="ltr"><div style="width:100%"><p id="25d13098-caf7-80db-a5c2-da468861ff71" class="" dir="auto">📍 <strong>Navigation Improvement as they like</strong><br/>They had a hard time changing the inventory of some products. It was under settings that they couldn’t find. This is one such example</p></div></aside><aside class="block-color-yellow_background callout" data-notion-callout="" data-notion-callout-background="yellow_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-80ea-9738-e59bdd14bd08" dir="ltr"><div style="width:100%"><p id="25813098-caf7-800f-8ba2-ea23c05ee5b5" class="" dir="auto"><strong>🏬 Offline Store to Online Store</strong></p><p id="25813098-caf7-80c8-a8de-f6630109daf0" class="" dir="auto">Some vendors have offline stores and want to sell those products online, too. This allows customers to book items online and pick up their orders from the store. A single vendor can have multiple stores.</p></div></aside><aside class="block-color-purple_background callout" data-notion-callout="" data-notion-callout-background="purple_background" style="white-space:pre-wrap;display:flex" id="25813098-caf7-8036-9982-fb58013c9103" dir="ltr"><div style="width:100%"><p id="25813098-caf7-80d5-b4fc-c26b306dc1e8" class="" dir="auto">🔁 <strong>Too Replicate the current features</strong></p><p id="25813098-caf7-8087-97b1-dbbeba6d1bd6" class="" dir="auto">The client wanted the system to look similar to the current system and not make the navigation complex to train the team again.</p></div></aside><aside class="block-color-pink_background callout" data-notion-callout="" data-notion-callout-background="pink_background" style="white-space:pre-wrap;display:flex" id="25c13098-caf7-805f-bdc8-c5c19a59a84f" dir="ltr"><div style="width:100%"><p id="25c13098-caf7-80c2-aa8e-fc5175097f40" class="" dir="auto"> <strong>❌ Removal of unnecessary features</strong></p><p id="25c13098-caf7-80b6-9114-eb1fca26a2b4" class="" dir="auto">Settings features were not used: SEO, Reviews, Analytics, Web Editor, SSL, Social,  etc.</p></div></aside><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="25d13098-caf7-80f1-ad12-cea7c67377f4" dir="ltr"><div style="width:100%"><p id="25d13098-caf7-8041-b3a9-d5e08cbae8a2" class="" dir="auto"> ⏳<strong> Addition of GST Mgmt. and Voucher if needed</strong></p><p id="25d13098-caf7-8083-9e36-c81ed6e3602d" class="" dir="auto">They were not very sure about these features and wanted a sample design to help them decide. Some vendors use different software or nothing at all to manage their accounts. They wanted to check if it could help them or not.</p></div></aside><p id="25713098-caf7-80f4-8441-deb426600bc9" class="" dir="auto">
+</p><h1 id="25713098-caf7-8012-9c45-f692245cadfe" class="" dir="auto"><strong>📍New Product Architecture</strong></h1><figure id="25d13098-caf7-80eb-a219-dfc1ceaba866" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/untitled_(1).png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/untitled_(1).png"><img style="width:1104px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/untitled_(1).png"/></a></figure><h1 id="25713098-caf7-80d0-bd41-c5956a508296" class="" dir="auto"><strong>🎨 Moodboard + Design Pattern</strong></h1><p id="26013098-caf7-8054-9c9a-c8efea466be2" class="" dir="auto">
+</p><figure id="26013098-caf7-8082-ba9d-c92da856c9b3" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/navigaiton.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/navigaiton.svg"><img style="width:816px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/navigaiton.svg"/></a></figure><p id="26013098-caf7-809e-b9f8-c9124d26b005" class="" dir="auto">
+</p><p id="25d13098-caf7-8018-8684-ca7b399b67fa" class="" dir="auto">
+</p><figure id="25d13098-caf7-80f7-9c19-f9612d74cd9c" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/create_PRoduct.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/create_PRoduct.svg"><img style="width:816px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/create_PRoduct.svg"/></a></figure><p id="25d13098-caf7-8091-9702-fd62125e8946" class="" dir="auto">
+</p><p id="26013098-caf7-803d-9ddc-c1175bd0fb90" class="" dir="auto">
+</p><h1 id="25d13098-caf7-8051-9b77-e5fefd430eea" class="" dir="auto"><strong>🎨 Client Discussion</strong></h1><p id="26013098-caf7-80de-925d-f5d76ed926af" class="" dir="auto">We were working with people who were professors 👩‍🏫 in college. They had to take time out of classes to discuss with us. We rarely get a chance to have a  ⏳ deeper conversation, so we wanted to make the most of it. We wanted to get their feedback on UIs, colours, workflows, etc.<br/>They prefer to see something visually first in order to make a decision. We made basic screens which were common across the product like tables, forms, etc.<br/></p><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="26013098-caf7-80c1-bc84-dcb57d2abd67" dir="ltr"><div style="width:100%"><p id="26013098-caf7-805f-a87f-e4ac64a2ee50" class="" dir="auto">During short calls 📞, clients would agree to everything or say they had no expectations. However, when we presented something 🖥️, they would have a different take or would expect something entirely different. To minimise this, we started by showing them designs so we could get quick feedback and improve more quickly.</p></div></aside><div id="25d13098-caf7-80a6-80c7-cc6084e60cc3" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-804c-a38a-c249d1e248ca" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><h1 id="25d13098-caf7-80c9-85b9-ea8382f97e66" class="" dir="auto"><strong>🎨 UI Designs for the moodboard</strong></h1><p id="25d13098-caf7-800f-8e0d-f6d10168b779" class="" dir="auto"><strong>Disclaimer</strong>: Apologies. SVG conversion may result in unwanted lines in the UI.<br/>These UIs were not finalized; they were tested with the client for their feedback to understand if they are satisfied with the moodboard finalized.</p></div><div id="25d13098-caf7-80ab-9cce-dc0c3131c711" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-808a-bc81-c14ee02cdb58" class="" dir="auto">
+</p></div></div><div id="25d13098-caf7-8063-8c84-c993c0dd0d1c" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-8011-873c-f3c2022415c8" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-80ea-8a3e-e17756a66e6a" class="" dir="auto"><strong>Catalog → Product Combo</strong></p><figure id="25d13098-caf7-8071-8d40-d22302297384" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Product_Combo.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Product_Combo.svg"><img style="width:912px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Product_Combo.svg"/></a></figure><p id="25d13098-caf7-80af-8735-eb6fa180047c" class="" dir="auto">
+</p></div><div id="25d13098-caf7-80ea-bac0-f0f3b4e8b9de" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-801a-a643-fd70bc372973" class="" dir="auto"><strong>Catalog → Products</strong></p><figure id="25d13098-caf7-80f7-9e6a-ebea6f42efbb" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Products.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Products.svg"><img style="width:576px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Products.svg"/></a></figure></div></div><div id="25d13098-caf7-807e-92e5-d54803fb1839" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-8051-b2f1-dab2f27e29de" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><p id="25d13098-caf7-80d0-943d-da7184453f4a" class="" dir="auto"><strong>Catalog → Category, Sub-Category, Brand</strong></p></div><div id="25d13098-caf7-80c3-ae78-e48c8c770fff" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><p id="25d13098-caf7-8052-9924-dd6191673e14" class="" dir="auto">
+</p></div></div><figure id="25d13098-caf7-802e-952f-cb4e571a1181" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Category_Sub_Category_and_Brand-1.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Category_Sub_Category_and_Brand-1.svg"><img style="width:1200px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Category_Sub_Category_and_Brand-1.svg"/></a></figure><div id="25d13098-caf7-8094-8377-f4d23f370fdb" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-8064-879a-fb008455e4fb" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-8024-82fd-fa2c7a091495" class="" dir="auto"><strong>Catalog → Service</strong></p><figure id="25d13098-caf7-8053-8fb0-f485d28b9366" class="image" style="text-align:left" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Service.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Service.svg"><img style="width:624px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Service.svg"/></a></figure></div><div id="25d13098-caf7-8043-ae64-c56070bd1ce8" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-800c-92fa-d7135e8c0686" class="" dir="auto"><strong>Catalog → Service Combo</strong></p><figure id="25d13098-caf7-80ca-91cf-f94f8462cd14" class="image" style="text-align:left" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Service.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Service.svg"><img style="width:624px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Service.svg"/></a></figure></div></div><div id="25d13098-caf7-809a-b75f-e5f873ce28cc" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-80a7-a0ff-e3268612716e" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-8063-bea3-d44115796cf9" class="" dir="auto"><strong>Inventory → Product Inventory, Manage Stock</strong></p></div><div id="25d13098-caf7-800a-bb39-d807688cbb1e" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-80ca-9510-f019cb3c8e15" class="" dir="auto">
+</p></div></div><figure id="25d13098-caf7-8064-b14d-e7278802b5fd" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Inventory_Mgmt.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Inventory_Mgmt.svg"><img style="width:1200px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Inventory_Mgmt.svg"/></a></figure><p id="25713098-caf7-8005-818a-da48bb7deb2a" class="" dir="auto">
+</p><div id="25d13098-caf7-80c7-a462-c690c5df4414" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-80e6-820c-cc1b16723c36" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25713098-caf7-8057-8665-d542294b1095" class="" dir="auto"><strong>Customer → List of Customer </strong></p><figure id="25d13098-caf7-80d8-b86d-d2ef19dc020c" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Customer_Management.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Customer_Management.svg"><img style="width:709.984375px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Customer_Management.svg"/></a></figure><p id="25d13098-caf7-80a9-ac9d-f76bc3aeaf92" class="" dir="auto">
+</p></div><div id="25d13098-caf7-80d9-bac8-f048f18455fd" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-80e6-8dc1-d72c547edbdc" class="" dir="auto"><strong>Order → List of Orders</strong></p><figure id="25d13098-caf7-80de-8d75-d2385c01ddc6" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Order_Management.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Order_Management.svg"><img style="width:576.9921875px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Order_Management.svg"/></a></figure></div></div><div id="25d13098-caf7-8009-94c9-d11f01f123ee" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-8057-a4cf-f82e1f6e7d8c" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-80b0-8a4b-da37e263b1af" class="" dir="auto"><strong>Vendor → Vendor Management </strong></p></div><div id="25d13098-caf7-80bc-84fc-cea77917f376" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="25d13098-caf7-809a-a336-d530b028eae0" class="" dir="auto"><strong>Vendor → Store/POS</strong></p></div></div><div id="25d13098-caf7-80dd-8de2-c5e7d39fbee2" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-807f-a7ef-c7552c78f4c5" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="25d13098-caf7-805c-9933-e129bc1e99f7" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Vendor_Management.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Vendor_Management.svg"><img style="width:576.9921875px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Vendor_Management.svg"/></a></figure></div><div id="25d13098-caf7-80e6-a834-e72ce83365d5" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="25d13098-caf7-8010-a3ff-c0f9566643c6" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Store_Mgmt.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Store_Mgmt.svg"><img style="width:331.9921875px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Store_Mgmt.svg"/></a></figure></div></div><div id="25d13098-caf7-802b-b367-d17f48573dae" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-8011-9476-f0c0d4b98e59" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><p id="25d13098-caf7-8053-96e7-e9b5ace896fb" class="" dir="auto"><strong>Reports → Abandoned Cart </strong></p></div><div id="25d13098-caf7-80b0-9db1-e51563d9387b" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><p id="25d13098-caf7-8017-a4f2-e8aeb8a0177e" class="" dir="auto"><strong>Reports → Other Reports</strong></p></div></div><div id="25d13098-caf7-8069-9cd4-fcbe0c1dcb3d" class="column-list" data-notion-column-list="" dir="auto"><div id="25d13098-caf7-8062-bc2e-dae1d4a4ce73" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><figure id="25d13098-caf7-8037-aa2d-f30d76d355fa" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Abandoned_Cart_Report.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Abandoned_Cart_Report.svg"><img style="width:331.9765625px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Abandoned_Cart_Report.svg"/></a></figure><p id="25d13098-caf7-80b8-ae7b-d68d57588051" class="" dir="auto"><strong>Reports → Sales Reports</strong></p><figure id="25d13098-caf7-8074-af36-cced73e190da" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Sales_Report.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Sales_Report.svg"><img style="width:576.984375px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Sales_Report.svg"/></a></figure></div><div id="25d13098-caf7-80aa-ae41-c208cebc8a1c" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><figure id="25d13098-caf7-80c5-9740-c618575d612b" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Analytics_Report.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Analytics_Report.svg"><img style="width:331.9921875px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Analytics_Report.svg"/></a></figure><p id="25d13098-caf7-80f1-b1c7-d06283f08748" class="" dir="auto">
+</p><p id="25d13098-caf7-8031-8e09-e2d785ddb0b2" class="" dir="auto"><strong>Reports → Other Reports</strong></p><figure id="25d13098-caf7-8037-8826-d558ff41645d" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Customer_Report.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Customer_Report.svg"><img style="width:576.9765625px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Customer_Report.svg"/></a></figure></div></div><p id="25e13098-caf7-8035-a1f3-e2f066f26943" class="" dir="auto">
+</p><h1 id="25e13098-caf7-8062-b039-c488c9a05a4a" class="" dir="auto">📢 Feedback we got</h1><ol type="1" id="26013098-caf7-8049-9913-c8226d218b1b" class="numbered-list" start="1" dir="auto"><li>They were happy with the UI, which resembled the current interface they were expecting, like tables, forms 📋, etc.</li></ol><ol type="1" id="26013098-caf7-8024-9755-f169a7f5a613" class="numbered-list" start="2" dir="auto"><li>We changed the navigation style as they wanted to show modules with bigger icons for Catalog, Orders 🛒, Vendors, etc. </li></ol><h1 id="26013098-caf7-8045-a551-d96d55b7780a" class="" dir="auto"> 📦 Discussion regarding Order Management </h1><p id="26013098-caf7-80e1-b19d-dd5eff5cd61d" class="" dir="auto">Most Important thing was to discuss our order management process with them so that they can give us feedback and we can start the designs.</p><figure id="26313098-caf7-8014-bcb5-dfbe555921df" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/CurrentOrderStatus_shipping_refund.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/CurrentOrderStatus_shipping_refund.svg"><img style="width:1296px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/CurrentOrderStatus_shipping_refund.svg"/></a></figure><h3 id="26013098-caf7-80c2-bb07-f587959339f3" class="" dir="auto"><strong>🏬 Merchant User Flow</strong></h3><p id="26013098-caf7-8042-8d5a-fb158abff5d0" class="" dir="auto"><strong>Objective:</strong> Manage products, vendors, and orders. The merchant acts as a central hub.</p><ul id="26013098-caf7-8066-aa54-c0fe09a82976" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Product &amp; Vendor Management:</strong> The merchant adds new products to the platform, setting prices and associating them with specific vendors. They also onboard new vendors. 🤝</li></ul><ul id="26013098-caf7-80cc-88da-fc88f6a7e6f9" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Order Oversight:</strong> 📊 The merchant has a dashboard that displays all orders, regardless of status or vendor. They can monitor the full order lifecycle. ⏳</li></ul><ul id="26013098-caf7-8042-9e22-ebd62c65026b" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Order Rejection &amp; Re-assignment:</strong> 🚨 A vendor rejects a sub-order. The status of that specific sub-order is flagged for the merchant. The merchant&#x27;s dashboard alerts them of the rejected order. 🔄 The merchant manually searches for an alternative vendor and re-assigns the sub-order to them. The new vendor receives a notification. 🔔</li></ul><h3 id="26013098-caf7-80db-a975-d0b1b181e52c" class="" dir="auto"><strong>📦 Vendor User Flow</strong></h3><p id="26013098-caf7-8060-885d-dadb035b8958" class="" dir="auto"><strong>Objective:</strong> Accept, modify, and fulfill sub-orders assigned to them.</p><ul id="26013098-caf7-8060-9cfb-f94a7d7ec420" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>New Order Notification:</strong> 🔔 The vendor receives a notification (via email or dashboard alert) for a new sub-order. The sub-order&#x27;s status is &quot;Order Placed.&quot;</li></ul><ul id="26013098-caf7-8063-b96c-cc558f9de2c0" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Order Review:</strong> 📝 The vendor logs in and reviews the sub-order details, including products and quantities.</li></ul><ul id="26013098-caf7-8009-b200-d0db5b672266" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Accept, Modify, or Reject:</strong><ul id="26013098-caf7-8079-953e-ed89209c5c4b" class="bulleted-list" dir="auto"><li style="list-style-type:circle"><strong>Accept:</strong> ✅ If the vendor can fulfill the order as is, they accept it. The status of the sub-order changes to &quot;Order Confirmed.&quot;</li></ul><ul id="26013098-caf7-802e-bdbb-e092dc98d0d5" class="bulleted-list" dir="auto"><li style="list-style-type:circle"><strong>Modify:</strong> ✏️ If the vendor needs to adjust the quantity (e.g., they&#x27;re out of a certain product), they can decrease the quantity. The customer and merchant are notified of the change. The sub-order status changes to &quot;Order Confirmed.&quot;</li></ul><ul id="26013098-caf7-80b8-a035-e3829e3bb219" class="bulleted-list" dir="auto"><li style="list-style-type:circle"><strong>Reject:</strong> ❌ If the vendor cannot fulfill the order at all, they reject it. The sub-order status is flagged for the merchant to reassign. 🚩</li></ul></li></ul><ul id="26013098-caf7-806e-9a97-d5afd1ff6f17" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Packing &amp; Shipping:</strong> For a confirmed sub-order, the vendor packs the products.</li></ul><ul id="26013098-caf7-800a-a930-c52fa5124811" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Add Shipping Information:</strong> 🚚 The vendor enters the shipping carrier and tracking number into the platform. This action automatically changes the sub-order status to &quot;Order Shipped.&quot; The customer receives an email with the tracking information. 📧</li></ul><ul id="26013098-caf7-8009-b509-d4eb8630de25" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Delivery Confirmation:</strong> 🎉 Once the carrier&#x27;s tracking information indicates the sub-order has been delivered, the system automatically updates the status to &quot;Order Delivered.&quot; </li></ul><figure id="26113098-caf7-80a6-89be-c9cfb2db6f07" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Frame.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Frame.svg"><img style="width:768px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Frame.svg"/></a></figure><h1 id="25e13098-caf7-8067-8acb-cf11e855c795" class="" dir="auto">📢 Feedback for New Order Management process</h1><p id="26013098-caf7-803f-89a0-cad3dba4522a" class="" dir="auto">The client was happy with the process that matched their workflow, which <strong>helped to improve several issues they were facing.</strong></p><p id="26013098-caf7-8043-8b54-cb869f71c3ba" class="" dir="auto"><br/>Solved these important issues:</p><aside class="block-color-yellow_background callout" data-notion-callout="" data-notion-callout-background="yellow_background" style="white-space:pre-wrap;display:flex" id="26013098-caf7-8031-b8de-e4d282fe6124" dir="ltr"><div style="width:100%"><p id="25e13098-caf7-8026-9899-fb0f31a93a21" class="" dir="auto">✅  <strong>Staff manually calls vendor for stock; wrong/false stock info, accepting order</strong><br/>Now merchant/TNAU does not need to call the vendor each time to accept or reject the order. The vendor can make the decision themselves, and will be responsible for the customer not getting the order on time.</p></div></aside><aside class="block-color-brown_background callout" data-notion-callout="" data-notion-callout-background="brown_background" style="white-space:pre-wrap;display:flex" id="26013098-caf7-80bf-b003-e47e00122826" dir="ltr"><div style="width:100%"><p id="26013098-caf7-8086-9230-ed76cc130a9b" class="" dir="auto">✅  <strong>Some orders get missed due to workload; no auto-confirmation</strong><br/>As vendors were now accountable, most of the things were managed by the vendors themselves; only a few order concerns got to TNAU/merchant.</p></div></aside><aside class="block-color-purple_background callout" data-notion-callout="" data-notion-callout-background="purple_background" style="white-space:pre-wrap;display:flex" id="26013098-caf7-8004-9080-dccbe750ddc8" dir="ltr"><div style="width:100%"><p id="26013098-caf7-80a5-931e-e00a27cff490" class="" dir="auto">✅  <strong>Delays, miscommunication, arguments, false confirmations</strong><br/>The vendor can keep the inventory of the product available to them, thereby avoiding false promises, delays, and miscommunication with TNAU/merchant.</p></div></aside><aside class="block-color-red_background callout" data-notion-callout="" data-notion-callout-background="red_background" style="white-space:pre-wrap;display:flex" id="26013098-caf7-8083-8b2d-ed4c058a3ec5" dir="ltr"><div style="width:100%"><p id="26013098-caf7-8064-a6c4-d661f6107322" class="" dir="auto">✅  <strong>Time wasted on repetitive calls; lack of accountability</strong><br/>As vendor were handling their orders themselves, there were no calls related to orders between TNAU and vendors, thereby saving time, and vendors were accountable for their orders that came for them. </p></div></aside><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="26013098-caf7-807a-9174-c23959081d21" dir="ltr"><div style="width:100%"><p id="26013098-caf7-802c-8d0a-d710fbfd16de" class="" dir="auto">✅  <strong>Wrong status updates; manual calls needed, Often delays or missed updates; status wrong in system</strong><br/>The work done by the vendor changes the status automatically in the system. If vendor accept the order the status changes from <strong>“Order Placed”</strong> to <strong>“Order Confirmed”</strong>, once the vendor pack the item and ship it, they need to add the shipping information, when filling it, it automatically changes the status to <strong>“Order Shippped”</strong>, depending on the shipping company the order can be marked as <strong>“Order Delivered” </strong>through manually or API integration from logistic provider.</p></div></aside><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="26013098-caf7-80d7-aac8-f268c7e36f40" dir="ltr"><div style="width:100%"><p id="26013098-caf7-800e-8b39-e04ea44665d4" class="" dir="auto">✅  <strong>Staff forgets to manually update the delivery status<br/></strong>Now TNAU/merchant knows their role of work, so they do not need to worry about the delivery status, as the vendor can change the status themselves.</p></div></aside><p id="26113098-caf7-80af-ae85-c822d9eb250f" class="" dir="auto">
+</p><div id="26113098-caf7-8019-b626-fd88957c32dc" class="column-list" data-notion-column-list="" dir="auto"><div id="26113098-caf7-80a4-aa7f-ce073f549eb2" style="width:112.5%" class="column" data-notion-column-ratio="1.125" dir="auto"><h3 id="25e13098-caf7-8036-b0f6-e652dac4ff65" class="" dir="auto"><strong>Merchant View for Order Detail ℹ</strong></h3><p id="26113098-caf7-80f1-b874-d6278e5d374a" class="" dir="auto">Merchants can see all orders from customers. 👩‍💼 TNAU can view all vendor orders but cannot edit them. 🧐 TNAU has access to initiate a refund under unforeseen circumstances.  <em><mark class="highlight-red" data-notion-highlight="red">[Removed toast, Confirmation components]</mark></em></p></div><div id="26113098-caf7-8025-95b2-fd5215239911" style="width:25.00000000000001%" class="column" data-notion-column-ratio="0.2500000000000001" dir="auto"><h3 id="26113098-caf7-802a-93ce-e6c17b2206a1" class="" dir="auto"></h3><p id="26113098-caf7-804a-9f7d-c2b4be4d1653" class="" dir="auto">
+</p></div></div><figure id="26113098-caf7-8047-a14d-f51f0fcdbf14" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Order_Management1_(2).svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Order_Management1_(2).svg"><img style="width:1152px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Order_Management1_(2).svg"/></a></figure><p id="26113098-caf7-803e-b6e9-ef2ea6e0ccfd" class="" dir="auto">
+</p><div id="26113098-caf7-809d-a0a4-d46f9cf78844" class="column-list" data-notion-column-list="" dir="auto"><div id="26113098-caf7-80ff-b85a-d6fe132da434" style="width:75%" class="column" data-notion-column-ratio="0.75" dir="auto"><h3 id="25e13098-caf7-8073-b93f-d0bd43b3cbc2" class="" dir="auto"><strong>Vendor View for ℹ Order Detail</strong></h3><p id="26113098-caf7-80d3-96d3-cc7132580b1d" class="" dir="auto">Merchants can see all orders from customers. TNAU can view all vendor orders but cannot edit them. 🧐 TNAU has access to initiate a refund under unforeseen circumstances. <em><mark class="highlight-red" data-notion-highlight="red">[Removed toast, Confirmation components]</mark></em></p></div><div id="26113098-caf7-80f9-a4ed-d0f53e93f430" style="width:24.999999999999996%" class="column" data-notion-column-ratio="0.24999999999999997" dir="auto"><p id="26113098-caf7-8022-9d9a-f03008b25091" class="" dir="auto"><br/><br/></p></div></div><figure id="26113098-caf7-8068-ab83-dd9d60b70216" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Branch_Management1_(1).svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Branch_Management1_(1).svg"><img style="width:1152px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Branch_Management1_(1).svg"/></a></figure><p id="26113098-caf7-803f-b5ad-f60587aaed19" class="" dir="auto">
+</p><div id="26113098-caf7-80a9-869a-e68473f074f3" class="column-list" data-notion-column-list="" dir="auto"><div id="26113098-caf7-8043-a9e7-c1ff26530d2a" style="width:75%" class="column" data-notion-column-ratio="0.75" dir="auto"><h3 id="25e13098-caf7-80fc-94bf-d2dca7e7bcf6" class="" dir="auto"><strong>If Vendor ❌ cancels the Order 📦, Merchant can assign new Vendor 👤 📦</strong></h3><p id="26113098-caf7-808c-bdf5-e78f63fb33c6" class="" dir="auto">Merchants can see all orders from customers. TNAU can view all vendor orders but cannot edit them. 🧐 TNAU has access to initiate a refund under unforeseen circumstances. <em><mark class="highlight-red" data-notion-highlight="red">[Removed toast, Confirmation components]</mark></em></p></div><div id="26113098-caf7-80c5-b428-e665c054821b" style="width:25%" class="column" data-notion-column-ratio="0.25" dir="auto"><p id="26113098-caf7-80b1-b8bc-f8a42f84b15f" class="" dir="auto">
+</p></div></div><figure id="26113098-caf7-80fa-b8d5-f169cdd577c6" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/merchant_assign_Management2.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/merchant_assign_Management2.svg"><img style="width:1152px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/merchant_assign_Management2.svg"/></a></figure><p id="25e13098-caf7-8008-835d-fc832165dac0" class="" dir="auto">
+</p><div id="26113098-caf7-802e-86c2-c81638478823" class="column-list" data-notion-column-list="" dir="auto"><div id="26113098-caf7-8051-9b00-ee44231cf1d8" style="width:75%" class="column" data-notion-column-ratio="0.75" dir="auto"><h3 id="26113098-caf7-8025-a91f-c50471c665fb" class="" dir="auto"><strong>If a Order 📦 have multiple sub orders for different vendors, Merchant View ℹ</strong></h3><p id="26113098-caf7-80a1-a595-ef93395c13ca" class="" dir="auto">Merchants can view sub-orders contained within a single order and perform operations from the collapsible menu.  <em><mark class="highlight-red" data-notion-highlight="red">[Removed toast, Confirmation components]</mark></em></p></div><div id="26113098-caf7-8056-85b3-c19366302600" style="width:25.000000000000007%" class="column" data-notion-column-ratio="0.25000000000000006" dir="auto"><p id="26113098-caf7-8090-b34c-ed584eb5380f" class="" dir="auto">
+</p></div></div><figure id="26113098-caf7-8071-8d32-f06394f6d0dc" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Merchant_Management_3_suborders.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Merchant_Management_3_suborders.svg"><img style="width:1152px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Merchant_Management_3_suborders.svg"/></a></figure><p id="25e13098-caf7-8075-8a87-ed26bfe2e2c6" class="" dir="auto">
+</p><h1 id="25e13098-caf7-804f-bd21-ec76ef7ebef9" class="" dir="auto"><strong> 🔥 User Testing</strong></h1><h3 id="25d13098-caf7-80a0-884c-ca281bfca79c" class="" dir="auto"><strong>👁️ Eye Tracker Experiment</strong></h3><p id="25d13098-caf7-8032-bc29-e3895ee7a129" class="" dir="auto">We tried eye tracker experiments for eye testing, but this was not feasible for us as we had several flows, screens, etc. we were looking a inexpensive tool for testing. The tool we were using was also frustrating for the client, as it calibrates for 10-20 seconds, for capturing one screen. <strong>[Didn’t work  for us❌]</strong><br/></p><figure id="25d13098-caf7-80b4-849b-e8b0059e5523" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/eyetesting.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/eyetesting.svg"><img style="width:710px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/eyetesting.svg"/></a></figure><p id="26113098-caf7-8050-a204-e0b0a61b9d52" class="" dir="auto">
+</p><p id="26113098-caf7-80fe-baed-c64bfd315806" class="" dir="auto">
+</p><h1 id="26113098-caf7-80c4-a0fa-d525f3a0ab1a" class="" dir="auto"><strong>🔍 Userflow Tracker with Maze tool</strong></h1><p id="26113098-caf7-8038-9b4f-fe6c600c8cd4" class="" dir="auto">We ran several prototype tests, which worked for us. We did several user flow tests with clients on several tasks to check the affordance for the UI Designs. We conducted several maze tests, perhaps more than 50 in total.</p><p id="26113098-caf7-80ad-8fa2-cf5086cf8018" class="" dir="auto">We also ran in-person prototype testing in Figma. <strong>[Worked for us ✅]</strong></p><div id="26213098-caf7-8052-b531-fe555ac5e99b" class="column-list" data-notion-column-list="" dir="auto"><div id="26213098-caf7-8084-b20d-e88f48bebfe1" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="26213098-caf7-8029-9906-c6e7086c1f26" class="" dir="auto">
+</p><p id="26213098-caf7-8002-8e63-f0bfde27129d" class="" dir="auto"><mark class="highlight-red" data-notion-highlight="red"><mark class="highlight-red_background" data-notion-highlight="red_background">A few of the data from the Maze Testing</mark></mark></p></div><div id="26213098-caf7-80ac-8713-d61ce8f8c100" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="26213098-caf7-807d-b286-d36dc174eaa1" class="" dir="auto">
+</p></div></div><figure id="26113098-caf7-8029-a91a-e3ba87dbbe2b" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.47.57.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.47.57.png"><img style="width:912px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.47.57.png"/></a></figure><div id="26113098-caf7-80d0-b615-d4fb53346cc5" class="column-list" data-notion-column-list="" dir="auto"><div id="26113098-caf7-8031-a433-e5b8895083fa" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="26113098-caf7-80a9-b780-e14ff9d766cb" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.49.12.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.49.12.png"><img style="width:2156px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.49.12.png"/></a></figure><p id="26113098-caf7-8029-97b9-f6138c1a8599" class="" dir="auto">
+</p></div><div id="26113098-caf7-8016-8c20-db7ce06761ea" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="26113098-caf7-8007-afa9-ee392d244ca6" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.48.56.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.48.56.png"><img style="width:2214px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-01_at_20.48.56.png"/></a></figure><p id="26113098-caf7-804b-a4c7-d17456a1e7a7" class="" dir="auto">
+</p><p id="26113098-caf7-8039-9986-ef644d2354cc" class="" dir="auto">
+</p><p id="26113098-caf7-805f-99c2-c8da8ab04940" class="" dir="auto">
+</p></div></div><figure id="26113098-caf7-80b2-aa5b-fb23b6e59fe3" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.16.19.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.16.19.png"><img style="width:816px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.16.19.png"/></a></figure><div id="26113098-caf7-801b-8beb-f915353310fe" class="column-list" data-notion-column-list="" dir="auto"><div id="26113098-caf7-80ab-8565-e6c7f92c646e" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="26113098-caf7-8040-bb43-d4295044b6c5" class="" dir="auto">
+</p><figure id="26113098-caf7-804b-aa71-e4160648ff43" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.17.01.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.17.01.png"><img style="width:709.984375px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.17.01.png"/></a></figure></div><div id="26113098-caf7-8065-9299-d5c3bdf7e798" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="26113098-caf7-8088-ad3f-f10e6b743080" class="" dir="auto">
+</p><p id="26113098-caf7-80f7-9a0f-ef5e39397053" class="" dir="auto">
+</p><figure id="26113098-caf7-8015-99d2-fdb769958e4f" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.17.33.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.17.33.png"><img style="width:385px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.17.33.png"/></a></figure></div></div><p id="26113098-caf7-80ce-acf8-f75c75802ef1" class="" dir="auto">
+</p><figure id="26113098-caf7-8046-ad89-fbf69be39b19" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.51.15.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.51.15.png"><img style="width:816px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.51.15.png"/></a></figure><div id="26113098-caf7-809a-8a1a-ff128fff1c72" class="column-list" data-notion-column-list="" dir="auto"><div id="26113098-caf7-80ac-96da-fce317a4d408" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="26113098-caf7-80ee-a9bd-e9b41d4a21b7" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.52.10.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.52.10.png"><img style="width:332px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.52.10.png"/></a></figure><p id="26113098-caf7-802e-b33f-e54ff2cf0041" class="" dir="auto">
+</p></div><div id="26113098-caf7-8026-adca-eea30214d4d9" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="26113098-caf7-80b3-a61d-d89f2550331c" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.55.02.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.55.02.png"><img style="width:332px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_00.55.02.png"/></a></figure><p id="26113098-caf7-80ec-bc79-c177349cfc71" class="" dir="auto">
+</p></div></div><h1 id="25d13098-caf7-80f5-b863-fafcc6ef505c" class="" dir="auto">📢 Feedback and <strong>Insights from Usability testing</strong></h1><p id="25d13098-caf7-80fd-a37b-ddfd53097b4c" class="" dir="auto">We did a lot of prototype testing with people available within the company,  stakeholders as well.<br/>This being a B2B product, chances are this product would be complicated for a new user.<br/><br/></p><aside class="block-color-teal_background callout" data-notion-callout="" data-notion-callout-background="teal_background" style="white-space:pre-wrap;display:flex" id="26213098-caf7-8008-b728-eb394e86190d" dir="ltr"><div style="width:100%"><h3 id="26213098-caf7-8066-85ce-f3953d1cfa85" class="" dir="auto"><strong>💡 Insights</strong></h3><p id="26213098-caf7-80d3-8e1f-cbc8add66641" class="" dir="auto">We changed the UI based on the data and recordings we got in maze testing and while talking to the participants.<br/><br/>In our in-person and virtual meetings, we tried to find anything which we could change to improve the experience.<br/><br/>For example:</p><p id="26613098-caf7-809b-9221-e10b92886736" class="" dir="auto"><strong>Tracking why some users took so much time to go to the next step 💁</strong>, </p><p id="26213098-caf7-808d-b7bd-e0b2ef577001" class="" dir="auto"><strong>What were they thinking 🤔 ?</strong></p><p id="26213098-caf7-80e2-9666-d428d52c5c01" class="" dir="auto"><strong>What were they looking 👀 for?<br/>Were they trying to find 🔍 anything specific?</strong></p></div></aside><p id="26213098-caf7-80ed-ba09-ebe36d497101" class="" dir="auto">
+</p><h3 id="26213098-caf7-804e-b373-fbb3a1152421" class="" dir="auto">Changed 🔀 several things after testing and discussing 💁🏻‍♂️ with users<br/>few of them are below</h3><p id="26213098-caf7-8009-a6e5-f27c5302ff61" class="" dir="auto">In some instances, like when the order was in <strong>&quot;Order Placed&quot;</strong> status 📦, some users were trying perform other actions which should not be in the case.</p><p id="26213098-caf7-8020-a220-f2f87565bdf2" class="" dir="auto">Below is the heatmap 🔥 for instances where we clearly insisted that the user only confirm the order, but some users were trying to do other things.</p><p id="26213098-caf7-8011-af24-d7dddf143ccb" class="" dir="auto">Although it&#x27;s not a problem, it gave me the thought to reduce the visibility 🧐 or disable those things that cannot ❌ be used in some scenarios.<br/><br/></p><figure id="26213098-caf7-80ff-968a-e2d4dccf6d99" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Disable1.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Disable1.svg"><img style="width:1056px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Disable1.svg"/></a></figure><p id="26213098-caf7-80a4-8a78-c52a9d433cd1" class="" dir="auto">
+</p><figure id="26213098-caf7-80a9-b6f0-fac006a63ae0" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Disable2.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Disable2.svg"><img style="width:1056px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Disable2.svg"/></a></figure><p id="26213098-caf7-809e-a8e5-d01c31b35569" class="" dir="auto">
+</p><figure id="26213098-caf7-80f1-b951-d74b43103464" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrdercancellationRefund.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrdercancellationRefund.svg"><img style="width:1056px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrdercancellationRefund.svg"/></a></figure><p id="26213098-caf7-8041-85d1-f13ab6bdf342" class="" dir="auto">
+</p><figure id="26213098-caf7-80b1-9531-f07eb3ff99ee" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrderStatus_Screens23assigne.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrderStatus_Screens23assigne.svg"><img style="width:1056px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrderStatus_Screens23assigne.svg"/></a></figure><p id="26213098-caf7-808f-9d5b-f916ea83cd14" class="" dir="auto">
+</p><figure id="26213098-caf7-8064-b052-cabe630fc93b" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrderStatus_shipping_refund.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrderStatus_shipping_refund.svg"><img style="width:1056px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/OrderStatus_shipping_refund.svg"/></a></figure><p id="26213098-caf7-80dd-b8e7-c9603d31cdbf" class="" dir="auto">
+</p><p id="26213098-caf7-808e-a79e-ff337836c2c8" class="" dir="auto">
+</p><blockquote id="26213098-caf7-80d7-82a3-d6bcc84d9c30" class="block-color-red_background" data-notion-highlight="red_background" dir="auto">We even tested with people 👨‍💼 who have no idea about backend of e-commerce 🛒 business. Unfortunately, the truth is they were having a very hard 🤔 understanding the each and every screen.</blockquote><p id="26213098-caf7-8037-9ce5-e6a84ab39fe9" class="" dir="auto">
+</p><p id="26213098-caf7-809f-bc64-f064c96864a0" class="" dir="auto">We also decided to make 🖥️ tutorial videos 🎥 in order a new person can understand the flows.<br/>The training videos for TNAU/Merchant, Vendor/Branch and POS/Store.</p><figure id="26213098-caf7-8076-9363-ccde35c3421c" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/trainig_videos.svg" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/trainig_videos.svg"><img style="width:709.984375px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/trainig_videos.svg"/></a></figure><p id="25713098-caf7-80d8-aadb-df937713dd8a" class="" dir="auto"><br/></p><div id="26213098-caf7-8067-89f9-ca441d09a263" class="column-list" data-notion-column-list="" dir="auto"><div id="26213098-caf7-8037-945a-ce5d0493777f" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><h1 id="26213098-caf7-802e-9f46-fb4394f830b2" class="" dir="auto">📰 In Public News</h1></div><div id="26213098-caf7-805a-a6c5-d54f07edf9fe" style="width:50.000000000000014%" class="column" data-notion-column-ratio="0.5000000000000001" dir="auto"><p id="26213098-caf7-8070-b579-ea02ade4eeed" class="" dir="auto">
+</p></div></div><figure id="26213098-caf7-80b5-aff4-c6d76ec6ac14" class="image" style="text-align:center" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_20.18.02.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_20.18.02.png"><img style="width:960px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-09-02_at_20.18.02.png"/></a><figcaption><strong>Thiru M.R.K. Panneerselvam</strong> (Minister for Agriculture and Farmer’s Welfare) &amp; <strong>Dr. V. GEETHALAKSHMI (</strong>Vice-Chancellor Tamil Nadu Agricultural University) discussing the adoption of Agricart and the overall need for the betterment of farmers</figcaption></figure><figure id="25813098-caf7-8044-b510-d6bcc158a489" class="image" data-notion-image="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-08-23_at_10.55.18.png" dir="ltr"><a href="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-08-23_at_10.55.18.png"><img style="width:2880px" src="Case%20Study%20Empowering%20TN%20government%20through%20Digita/Screenshot_2025-08-23_at_10.55.18.png"/></a></figure><p id="25c13098-caf7-8024-b165-f64942b0a8b6" class="" dir="auto">
+</p><div id="26213098-caf7-8095-95d0-fb68fc324776" class="column-list" data-notion-column-list="" dir="auto"><div id="26213098-caf7-80b7-be5b-d70831b599fe" style="width:112.5%" class="column" data-notion-column-ratio="1.125" dir="auto"><h1 id="25613098-caf7-809b-be7d-ee46a0bcc851" class="" dir="auto"><strong>📚 Key learnings and takeaways</strong></h1><p id="26213098-caf7-806a-b1bb-e363db2d9523" class="" dir="auto">We spent almost a year on this ecommerce project with TNAU👨‍🏫 and other government organizations, traveling to Coimbatore several times to meet them. The experience was completely different from anything I have worked on before. Working with a government organization was very unique. They have their own understanding of things and their own timelines. 🗓️ </p><p id="26213098-caf7-809c-8dd3-fca38dd3f6b5" class="" dir="auto">Ultimately, I learned that you need to be patient and truly understand their needs. </p><p id="26613098-caf7-8033-93ba-c90c87a6cdba" class="" dir="auto">By doing that, we were able to create a product that made a huge impact for TNAU trying to reach farmers across the state. 🚜🌟</p><p id="26213098-caf7-8078-bfec-fdca67d2ed78" class="" dir="auto">
+</p><aside class="block-color-pink_background callout" data-notion-callout="" data-notion-callout-icon="✅" data-notion-callout-background="pink_background" style="white-space:pre-wrap;display:flex" id="26913098-caf7-8014-955f-d7c02b47baf4" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="✅"></span></div><div style="width:100%"><p id="26913098-caf7-806a-9342-da8f3a216474" class="block-color-default_background" data-notion-highlight="default_background" dir="auto"><strong>🚀 Post-Project Impact </strong></p><p id="26913098-caf7-8008-9937-f1ed266136c5" class="" dir="auto">📈  Increase in avg. monthly sales of <strong>₹62,826/month</strong> to <strong>₹77,01,486/month</strong></p><p id="26913098-caf7-80dc-bc06-c0ef33f7d799" class="" dir="auto">💡 <strong>Vendor Base Soars 15x — </strong>From<strong> 70 to 1,000 </strong>and<strong> Counting!<br/></strong><br/>Sales have seen a dramatic increase over the past few years. From 2023 to 2024, sales grew by <strong>91%</strong>, increasing from an<strong> average of ₹62,826 per month to ₹1,20,000 per month</strong>. This initial growth was then completely overshadowed by a <strong>monumental leap in 2025</strong>, where the implementation of new systems resulted in average <strong>monthly sales of ₹77,01,486</strong>. This represents an astonishing <strong>6,317.90%</strong> growth from the previous year, highlighting how the successful integration of technology can exponentially enhance revenue streams and drive business success.</p></div></aside><p id="26213098-caf7-809e-bd0f-e7b4e77acba9" class="" dir="auto">
+</p></div><div id="26213098-caf7-8066-a676-cb70dc83da3e" style="width:6.25%" class="column" data-notion-column-ratio="0.0625" dir="auto"><p id="26213098-caf7-8001-bc77-f7874166ab87" class="" dir="auto">
+</p></div></div><p id="25813098-caf7-80e6-9d57-c7bbecb2795d" class="" dir="auto">
+</p><p id="25813098-caf7-806e-ab1a-f604ec713ffe" class="" dir="auto">
+</p><p id="25813098-caf7-80e5-a05d-ff9d2914f011" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"><hr/><details open="" style="padding-top:1em"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Resolved inline comments</summary><div class="indented"><div><p style="padding:0.2em"><b>Block text</b>: <mark class="highlight-yellow_background">Add: line break</mark></p><ul class="toggle"></ul></div><hr/></div></details></span></body></html>
