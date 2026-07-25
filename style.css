@@ -4240,7 +4240,7 @@ body.case-study-page {
 .cs-hero {
   max-width: 100%;
   margin: 0;
-  padding: 20px 0 36px;
+  padding: 20px 0 24px;
   text-align: left;
 }
 .cs-hero-kicker {
@@ -4269,7 +4269,7 @@ body.case-study-page {
   font-size: clamp(16px, 2vw, 18px);
   color: var(--cs-text-secondary);
   max-width: 760px;
-  margin: 0 0 32px;
+  margin: 0;
   line-height: 1.65;
   text-align: left;
 }
@@ -4341,9 +4341,9 @@ body.case-study-page {
   display: flex;
   justify-content: flex-start;
   gap: 40px;
-  padding: 12px 24px;
+  padding: 14px 24px;
   max-width: 100%;
-  margin: 0 0 40px;
+  margin: 0;
   flex-wrap: wrap;
   background: var(--cs-bg-secondary);
   border: 1px solid var(--cs-border);
