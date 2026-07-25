@@ -4702,9 +4702,9 @@ body.case-study-page {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   align-items: center;
   justify-content: center;
   cursor: zoom-out;
@@ -4716,7 +4716,9 @@ body.case-study-page {
   max-height: 90vh;
   object-fit: contain;
   border-radius: var(--cs-radius-sm);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+  border: 1px solid var(--cs-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.18);
 }
 .cs-lightbox-close {
   position: absolute;
@@ -4725,9 +4727,9 @@ body.case-study-page {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  background: rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  color: #0f172a;
   font-size: 20px;
   cursor: pointer;
   display: flex;
@@ -4735,7 +4737,8 @@ body.case-study-page {
   justify-content: center;
   transition: background var(--cs-transition);
 }
-.cs-lightbox-close:hover { background: rgba(255, 255, 255, 0.3); }
+.cs-lightbox-close:hover { background: rgba(15, 23, 42, 0.2); }
+
 
 /* ==========================================================================
    EXECUTIVE PRESENTATION MODE (White Theme + Split Deck Layout)
