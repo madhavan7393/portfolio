@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: QueueBuster Web Application Redesign — Madhavan</title>
+  <meta name="description" content="UX case study on redesigning QueueBuster's web application — improving speed, navigation, and usability across tables, forms, and order details." />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="style.css?v=5" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>WebFont.load({ google: { families: ["IBM Plex Sans:300,400,500,600,700"] } });</script>
+</head>
+<body class="cs-page" data-accent="indigo">
+
+<a href="index.html" class="cs-back">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Back
+</a>
+
+
+<div class="cs-layout">
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-inner">
+      <nav class="cs-nav-card" id="navCard">
+        <ul class="cs-nav-list" id="navList">
+          <div class="cs-nav-indicator" id="navIndicator"></div>
+          <li><a href="#hero" class="cs-nav-link is-active">Intro</a></li>
+          <li><a href="#intro" class="cs-nav-link">Introduction</a></li>
+
+          <li><a href="#problem" class="cs-nav-link">Problem</a></li>
+          <li><a href="#ideation" class="cs-nav-link">Ideation</a></li>
+          <li><a href="#speed" class="cs-nav-link">Goal 1: Speed</a></li>
+          <li><a href="#navigation" class="cs-nav-link">Goal 2: Navigation</a></li>
+          <li><a href="#usability" class="cs-nav-link">Goal 3: Usability</a></li>
+          <li><a href="#tables" class="cs-nav-link">Tables</a></li>
+          <li><a href="#orders" class="cs-nav-link">Order Detail</a></li>
+          <li><a href="#createproduct" class="cs-nav-link">Create Product</a></li>
+          <li><a href="#takeaway" class="cs-nav-link">Takeaway</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="cs-content">
+    <section class="cs-hero" id="hero">
+      <span class="cs-hero-kicker">Case Study</span>
+      <h1 class="cs-hero-title">QueueBuster Web Application Redesign</h1>
+      <p class="cs-hero-lead">A complete redesign of the QueueBuster POS web app — solving speed, navigation, and usability issues across 11 modules with 100s of wireframes and a full design system.</p>
+      <div class="cs-hero-actions">
+        <div class="cs-hero-action">
+          <a href="#intro" class="cs-cta cs-cta-primary">📄 Read Case Study</a>
+          <span class="cs-cta-meta">~6 min read</span>
+        </div>
+        <div class="cs-hero-action">
+          <button type="button" class="cs-cta cs-cta-secondary" id="openPresentation">▶ Quick Summary</button>
+          <span class="cs-cta-meta">~3 min · Quick Deck</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-hero-meta">
+      <div class="cs-meta-item"><div class="cs-meta-label">Company</div><div class="cs-meta-value">QueueBuster</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Year</div><div class="cs-meta-value">2021</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Role</div><div class="cs-meta-value">Product Designer</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Platform</div><div class="cs-meta-value">Web (SaaS)</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Scale</div><div class="cs-meta-value">11 Modules</div></div>
+    </div>
+
+
+    <section class="cs-section" id="intro">
+      <p class="cs-section-kicker">Overview</p>
+      <h2 class="cs-section-title">💻 Introduction</h2>
+      <p class="cs-body">This case study is about redesigning the web application of <strong>QueueBuster point of sale solution</strong>. 100's of wireframes and I don't know how many artboards I might have created during this project. This is my only project of this scale. To keep the case study as short as possible, I have included only the important ones due to the vastness of the project.</p>
+      <div class="cs-callout cs-callout--info">
+        <div class="cs-callout-title">What is POS?</div>
+        <p class="cs-callout-body">Point of sale is a place where the customer gets billed for the product or services he/she bought. A normal thing which happens in a store. A POS can have a computer or any electronic device which can generate a bill and can add the taxes and charges for the products bought.</p>
+      </div>
+      <h3 class="cs-section-subtitle">What QueueBuster is doing?</h3>
+      <blockquote class="cs-blockquote">QueueBuster provides an android platform replacing the old way of using laggy computers with small to large compact devices.</blockquote>
+      <p class="cs-body">QueueBuster provides an <strong>Android App</strong> and <strong>Web App</strong>. The Android app can be installed on handheld, tablet, desktop POS devices for billing, inventory, and other operations. QueueBuster has customized solutions targeting <strong>Retail Business, Restaurant Business, Grocery Stores, Spa and Salon, and more.</strong></p>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/800/1*HmpUI2MskxqFbARQDJUh9Q.png" alt="QueueBuster App installed in POS devices" loading="lazy" width="737" height="502" /><div class="cs-image-caption">QueueBuster App installed in POS devices</div></div>
+      <p class="cs-body">Main features of QueueBuster:</p>
+      <ol class="cs-list">
+        <li><strong>Catalog Management</strong> to store product information with SKU, prices, taxes, charges, and other information.</li>
+        <li><strong>Inventory Management</strong> to maintain the desired stock level of products or services.</li>
+        <li><strong>Billing Solution</strong> to generate bills from the device.</li>
+        <li>Various <strong>Payments Options</strong> like wallets, cash, card, UPI, cheque, etc.</li>
+        <li><strong>Reports</strong> to analyze the performance of the business.</li>
+        <li><strong>eStore</strong> to sell products online.</li>
+      </ol>
+      <p class="cs-body">and more…</p>
+    </section>
+
+    <section class="cs-section" id="problem">
+      <p class="cs-section-kicker">Problem Space</p>
+      <h2 class="cs-section-title">1️⃣ Defining the problem / Why Redesign Web app?</h2>
+      <p class="cs-body">Apart from the visual change as the product looked old, it was slow for the customers while using the product and there were a lot of usability problems.</p>
+      <div class="cs-callout cs-callout--warning">
+        <div class="cs-callout-title">Goal 1: We needed a faster application.</div>
+        <p class="cs-callout-body">Consider a super chain like Big Bazaar, Walmart or any other. These chains can have more than 50 stores and these 50 stores can have 50,000+ products. All these products can have name, prices, taxes, charges, etc. With lots of data our product was slow and annoying to use.</p>
+      </div>
+      <div class="cs-callout cs-callout--purple">
+        <div class="cs-callout-title">Goal 2: To improve Navigation.</div>
+        <p class="cs-callout-body">We had 11 modules with lots of options and features inside it. Navigating between them was a cumbersome process in the old architecture.</p>
+      </div>
+      <div class="cs-callout cs-callout--teal">
+        <div class="cs-callout-title">Goal 3: To improve Usability across the system especially in Order Detail, Tables, Product Catalog, etc.</div>
+        <p class="cs-callout-body">The web app mostly had tables, forms etc. and these needed a great attention with keeping usability in mind.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="ideation">
+      <p class="cs-section-kicker">Phase 2</p>
+      <h2 class="cs-section-title">2️⃣ Ideation and Prototype Phase</h2>
+      <p class="cs-body">After defining what we were planning to solve, we started exploring the products of payment companies, POS companies, inventory management companies. We were not just going to redesign the UI, but we were making architectural changes as well.</p>
+    </section>
+
+    <section class="cs-section" id="speed">
+      <p class="cs-section-kicker">Performance</p>
+      <h2 class="cs-section-title">⚡ To solve Goal 1: Faster Application</h2>
+      <ol class="cs-list">
+        <li><strong>ReactJS was chosen</strong> to have a better interactive UI as ReactJS efficiently updates and renders the right components when data changes.</li>
+        <li>As our main goal was to minimize the loading time, we went further on to changing the typography to <strong>System Font</strong> (0ms loading time) avoiding FOIT, FOUT. Our customers mostly would be using Windows or Apple laptops Segoe UI, San Francisco were great for us. Although, it does not take a lot of time to load fonts from servers we were saving time there.</li>
+      </ol>
+    </section>
+
+    <section class="cs-section" id="navigation">
+      <p class="cs-section-kicker">Navigation</p>
+      <h2 class="cs-section-title">🧭 To solve Goal 2: To improve Navigation</h2>
+      <p class="cs-body">We had too many options in the sidebar which were equally important, but scrolling between them was not a very good experience. We decided to use the same hamburger menu navigation in the sidebar but by dividing everything into 6+ modules. <strong>Two-panel selectors are always the best for users, as their tasks require them to switch between overall items and specific content multiple times while they're performing a task with minimal cognitive expenditure.</strong></p>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/800/1*W2FARl5sp3SzYo0_NBA3_g.gif" alt="Older Navigation" loading="lazy" width="600" height="338" /><div class="cs-image-caption">Older Navigation</div></div>
+        <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/800/1*sSwdyF7Tltk_Fz9PiCny3g.gif" alt="Newer Navigation" loading="lazy" width="600" height="376" /><div class="cs-image-caption">Newer Navigation</div></div>
+      </div>
+      <p class="cs-body">Why newer navigation was better:-</p>
+      <ol class="cs-list">
+        <li>Easy navigating to all the options and features.</li>
+        <li>Most of our targeted customers would have windows laptops, which is known for its bad experience with the <strong>touchpad</strong>. We minimized the use of the scroll function in the touchpad in order to have a better experience while navigating through the menu.</li>
+      </ol>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/800/1*tgKxQ-JqenUAmsGzZnUOoQ.png" alt="Navigation architecture comparison" loading="lazy" width="800" height="450" /></div>
+    </section>
+
+    <section class="cs-section" id="usability">
+      <p class="cs-section-kicker">Usability</p>
+      <h2 class="cs-section-title">🎯 To solve Goal 3: To improve usability across the system</h2>
+      <p class="cs-body">80% of the web app consist of tables, form, order information or something similar to these.</p>
+    </section>
+
+    <section class="cs-section" id="tables">
+      <p class="cs-section-kicker">Tables</p>
+      <h2 class="cs-section-title">📊 1. Tables</h2>
+      <p class="cs-body"><strong>Tables</strong> were the best option to visualize our data, but we were showing lots of fields in a table. The user had to scroll horizontally to see all the fields, sometimes the user had to scroll for like 5 sec in order to see a specific field or report or data. We had customers who said, <strong>“they never knew that it was scrollable.”</strong></p>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/800/1*vnc5IIS_AUpGMaPeTB0XkQ.gif" alt="Old horizontal scroll in table" loading="lazy" width="600" height="303" /><div class="cs-image-caption">Old-Horizontal scroll in table</div></div>
+        <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*LG4TSlq_U91LYBEtSGFvsA.png" alt="New horizontal scroll in table" loading="lazy" width="1200" height="520" /><div class="cs-image-caption">New-Horizontal scroll in table</div></div>
+      </div>
+      <h3 class="cs-section-subtitle">2. Showing a table with a filter</h3>
+      <p class="cs-body">Showing a table with a filter was also a major concern in our current design. We wanted the table to be visible in the first place.</p>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*TTbkTuTd1QsjXmCOHpHypg.png" alt="Old Filter UI" loading="lazy" width="1200" height="558" /><div class="cs-image-caption">Old UI</div></div>
+        <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*5G8-LGBUarx_o9UZJkVTQQ.png" alt="New Filter UI" loading="lazy" width="1200" height="565" /><div class="cs-image-caption">New UI</div></div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="orders">
+      <p class="cs-section-kicker">Order Detail</p>
+      <h2 class="cs-section-title">📋 3. Order Detail</h2>
+      <p class="cs-body">Order Detail page was the most difficult one for our customers. It showed all the information in table format which was really a bad experience for the user. We planed out that we wanted to have something similar to the physical bill/invoice format.</p>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*S63Rf55xdDnxzR4xj7Gi5w.png" alt="Old Order Detail UI" loading="lazy" width="1200" height="1071" /><div class="cs-image-caption">Old UI</div></div>
+        <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*UkvT8dMpERjAFYIfwOWp9w.png" alt="New Order Detail UI" loading="lazy" width="1200" height="1071" /><div class="cs-image-caption">New UI</div></div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="createproduct">
+      <p class="cs-section-kicker">Product Form</p>
+      <h2 class="cs-section-title">📦 4. Create Product</h2>
+      <p class="cs-body">Create Product form which was the most important one. Although it needed some UI changes, more than that we introduced an <strong>attribute</strong> system so that it can handle different industries like <strong>Retail Business, Restaurant Business, Grocery Stores, Spa and Salon, and more.</strong></p>
+      <p class="cs-body">Attributes, that a product can be differentiated from one another and would be easy in managing inventory as well.</p>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*cTBDF7Pbmv-bUGWPikcG3w.png" alt="Create Product form" loading="lazy" width="1200" height="1089" /></div>
+      <p class="cs-body">We had different subscription plans for <strong>QueueBuster POS</strong> solution, this new create product was made on keeping that in mind.</p>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*SQ8tdcBrE9LGK0WhtydBbg.png" alt="Subscription plans create product" loading="lazy" width="1200" height="1071" /></div>
+    </section>
+
+    <section class="cs-section" id="takeaway">
+      <p class="cs-section-kicker">Reflection</p>
+      <h2 class="cs-section-title">3️⃣ My Takeaway</h2>
+      <p class="cs-body">This project helped me understand how to design in scale. When I started with UI, I was skeptical about the background grey color in the web app. The white color looks modern but when I tested all the UI with different shades of grey and white background in over 5–10 different laptops from cheap windows to high-quality screens. I found that the boring grey was far better than the white background in terms of visibility of text, fields, tables, etc.</p>
+      <p class="cs-body">Working on this project was overwhelming due to the sheer amount of UI which needed to be designed with other projects in line. I created the entire design library for all the components, I am not sure if I can call it a design system. At the moment I am trying to do a cognitive walkthrough and heuristic evaluation with the product.</p>
+      <p class="cs-body">The design process is different in every company. I believe all the references we take from good sources(google, apple, uber, etc.) are already an outcome of the design thinking process. I try to understand those tried-tested-successful patterns and use them according to requirements. Tables, Forms, etc. components (more than 100 years of research or more than that) are the things that we cannot break and create something new to visualize the data. I decide when it's correct to visualize in the table and when not, it totally comes only after thoroughly understanding the product. I think designers do everything subtly without noticing that they had followed those design thinking steps in their minds. I learned the importance of usability and correct user flows with respect to the product. There is no point in making a great UI if the user is not able to reach a goal successfully. A collaborative effort with different designers, engineers, testers, project managers can help make a better product.</p>
+      <p class="cs-body">Thanks if you read this far:)</p>
+    </section>
+  </main>
+</div>
+
+<footer class="cs-footer"><p>Case Study by Madhavan · <a href="index.html">Back to Portfolio</a></p></footer>
+
+<div class="cs-lightbox" id="lightbox"><button class="cs-lightbox-close" id="lightboxClose">✕</button><img src="" alt="Expanded view" id="lightboxImg" /></div>
+
+<!-- Executive Presentation Deck -->
+<div class="cs-presentation" id="presentation">
+  <div class="cs-pres-header">
+    <span class="cs-pres-counter" id="presCounter">1 / 6</span>
+    <button class="cs-pres-close" id="presClose">✕</button>
+  </div>
+  <div class="cs-pres-stage">
+    <button class="cs-pres-arrow cs-pres-arrow--prev" id="presPrev">‹</button>
+    <button class="cs-pres-arrow cs-pres-arrow--next" id="presNext">›</button>
+
+    <div class="cs-pres-slide cs-pres-slide--full is-active" data-slide="0">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Quick Summary</span>
+        <h2 class="cs-pres-title">QueueBuster Web POS Architecture Redesign</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Scope:</strong> Complete overhaul of 11 enterprise modules across ReactJS web application.</li>
+          <li class="cs-pres-point"><strong>Key Drivers:</strong> Application loading speed, complex navigation, table data density.</li>
+          <li class="cs-pres-point"><strong>Target Verticals:</strong> Retail chains, Restaurants, Grocery, Spas & Salons.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🚀 Outcome: Reduced loading latencies while improving daily merchant operational speed.</div>
+      </div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="1">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Navigation Architecture</span>
+        <h3 class="cs-pres-title">Two-Panel Navigation System</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Cognitive Efficiency:</strong> Two-panel selector allows fast switching between core modules and sub-features.</li>
+          <li class="cs-pres-point"><strong>Touchpad Optimization:</strong> Minimized vertical scrolling friction on standard Windows hardware.</li>
+        </ul>
+        <div class="cs-pres-takeaway">💡 Innovation: Replaced long single-column scroll menu with structured 2-panel hierarchy.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/800/1*sSwdyF7Tltk_Fz9PiCny3g.gif" alt="New Navigation" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="2">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Table Usability</span>
+        <h3 class="cs-pres-title">Data Table & Filter Optimization</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Scroll Affordance:</strong> Fixed hidden horizontal scrolling issues across multi-column reports.</li>
+          <li class="cs-pres-point"><strong>Filter Hierarchy:</strong> Compact filter controls to keep table data above the fold.</li>
+        </ul>
+        <div class="cs-pres-takeaway">📊 Design Impact: Enabled instant data scanning for multi-store managers.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/1200/1*5G8-LGBUarx_o9UZJkVTQQ.png" alt="Filter UI" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="3">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Order Experience</span>
+        <h3 class="cs-pres-title">Invoice-Style Order Detail Screen</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Real-World Alignment:</strong> Transformed raw table data into a physical bill/invoice format.</li>
+          <li class="cs-pres-point"><strong>Action Items:</strong> Clear status tags, refund triggers, and customer contact detail layout.</li>
+        </ul>
+        <div class="cs-pres-takeaway">✅ Experience: Matched real-world cashier and manager mental models.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/1200/1*UkvT8dMpERjAFYIfwOWp9w.png" alt="Invoice View" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="4">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Product Catalog</span>
+        <h3 class="cs-pres-title">Multi-Industry Attribute System</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Attribute Support:</strong> Custom product attributes for size, color, serial numbers, and combo packages.</li>
+          <li class="cs-pres-point"><strong>Tier Integration:</strong> Built-in support for QueueBuster subscription tier limits.</li>
+        </ul>
+        <div class="cs-pres-takeaway">📦 Scalability: Single product engine supporting retail, F&B, and service verticals.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/1200/1*cTBDF7Pbmv-bUGWPikcG3w.png" alt="Create Product" /></div>
+    </div>
+
+    <div class="cs-pres-slide cs-pres-slide--full" data-slide="5">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Quick Summary</span>
+        <h2 class="cs-pres-title">Enterprise Scale POS Web Application</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point">Designed component-driven UI library for 11 complex business modules.</li>
+          <li class="cs-pres-point">Improved application load times and daily usability for high-volume merchants.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🌟 Core Value: Robust design system powering QueueBuster's SaaS web platform.</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="cs-pres-footer" id="presDots"></div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  const navLinks = document.querySelectorAll('.cs-nav-link');
+  const navIndicator = document.getElementById('navIndicator');
+  function updateIndicator(activeLink) {
+    if (!activeLink || !navIndicator) return;
+    const parentTop = activeLink.parentElement.parentElement.getBoundingClientRect().top;
+    const linkTop = activeLink.getBoundingClientRect().top;
+    const relativeTop = linkTop - parentTop;
+    navIndicator.style.top = relativeTop + 'px';
+    navIndicator.style.height = activeLink.offsetHeight + 'px';
+  }
+
+  const sections = document.querySelectorAll('.cs-section[id]');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          const isMatch = link.getAttribute('href') === '#' + id;
+          link.classList.toggle('is-active', isMatch);
+          if (isMatch) updateIndicator(link);
+        });
+      }
+    });
+  }, { threshold: [0.1, 0.3], rootMargin: '-40px 0px -55% 0px' });
+  sections.forEach(s => obs.observe(s));
+  setTimeout(() => {
+    const active = document.querySelector('.cs-nav-link.is-active');
+    if (active) updateIndicator(active);
+  }, 100);
+
+  window.addEventListener('scroll', () => {
+    if (navCard) navCard.style.setProperty('--timeline-fill', Math.min((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100) + '%');
+  }, { passive: true });
+  navLinks.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    const href = l.getAttribute('href');
+    const targetEl = document.querySelector(href);
+    if (targetEl) {
+      const topOffset = 60;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }));
+
+  const lb = document.getElementById('lightbox'), lbI = document.getElementById('lightboxImg');
+  document.querySelectorAll('.cs-image[data-lightbox]').forEach(el => {
+    el.addEventListener('click', () => { const i = el.querySelector('img'); if (i) { lbI.src = i.src; lbI.alt = i.alt; lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; } });
+  });
+  function cLB() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+  document.getElementById('lightboxClose').addEventListener('click', cLB);
+  lb.addEventListener('click', e => { if (e.target === lb) cLB(); });
+
+  const pres = document.getElementById('presentation'), slides = pres.querySelectorAll('.cs-pres-slide'), counter = document.getElementById('presCounter'), dots = document.getElementById('presDots');
+  let cur = 0;
+  slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'cs-pres-dot' + (i === 0 ? ' is-active' : ''); d.addEventListener('click', () => go(i)); dots.appendChild(d); });
+  function go(n) { slides[cur].classList.remove('is-active'); dots.children[cur].classList.remove('is-active'); cur = (n + slides.length) % slides.length; slides[cur].classList.add('is-active'); dots.children[cur].classList.add('is-active'); counter.textContent = (cur + 1) + ' / ' + slides.length; }
+  document.getElementById('openPresentation').addEventListener('click', () => { pres.classList.add('is-open'); document.body.style.overflow = 'hidden'; go(0); });
+  document.getElementById('presClose').addEventListener('click', () => { pres.classList.remove('is-open'); document.body.style.overflow = ''; });
+  document.getElementById('presPrev').addEventListener('click', () => go(cur - 1));
+  document.getElementById('presNext').addEventListener('click', () => go(cur + 1));
+})();
+</script>
+<!-- M.Bot Floating AI Chatbot Widget -->
+<div class="mbot-launcher" id="mbotLauncher">
+  <div class="mbot-avatar"></div>
+  <span class="mbot-launcher-text">Ask</span>
+</div>
+
+<div class="mbot-window" id="mbotWindow">
+  <div class="mbot-header">
+    <div class="mbot-header-info">
+      <div class="mbot-avatar"></div>
+      <div>
+        <div class="mbot-title">Ask Madhavan</div>
+
+        <div class="mbot-sub">Assistant</div>
+      </div>
+    </div>
+    <button class="mbot-close" id="mbotClose">✕</button>
+  </div>
+
+  
+  <div class="mbot-messages" id="mbotMessages">
+    <div class="mbot-msg mbot-msg--bot">
+      👋 Hi! I'm Madhavan's Case Study Assistant. Ask me anything about QueueBuster POS Web App redesign, ReactJS migration, or table usability!
+    </div>
+  </div>
+
+  <div class="mbot-pills" id="mbotPills">
+    <button class="mbot-pill" data-q="ReactJS Migration">⚡ ReactJS Migration</button>
+    <button class="mbot-pill" data-q="Native Font Zero Latency">🅰️ System Font Latency</button>
+    <button class="mbot-pill" data-q="Dual Panel Navigation">📂 2-Panel Drawer Navigation</button>
+    <button class="mbot-pill" data-q="Data Table UX Overhaul">📊 Data Table Usability</button>
+    <button class="mbot-pill" data-q="Enterprise 50k SKU Scale">🏬 50,000 SKU Multi-Store Scale</button>
+    <button class="mbot-pill" data-q="Invoice Detail Layout">📄 Invoice Style Order View</button>
+    <button class="mbot-pill" data-q="Slate Surface Trade-off">🎨 Light-Slate Contrast Trade-off</button>
+    <button class="mbot-pill" data-q="System Architecture ROI">🚀 11 Modules Performance</button>
+  </div>
+
+  <div class="mbot-input-area">
+    <input type="text" class="mbot-input" id="mbotInput" placeholder="Ask about metrics, scope, decisions..." />
+    <button class="mbot-send" id="mbotSend">➤</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const launcher = document.getElementById('mbotLauncher');
+  const win = document.getElementById('mbotWindow');
+  const close = document.getElementById('mbotClose');
+  const messages = document.getElementById('mbotMessages');
+  const pills = document.getElementById('mbotPills');
+  const input = document.getElementById('mbotInput');
+  const send = document.getElementById('mbotSend');
+
+  const kb = {
+    "reactjs migration": "Engineered a migration from legacy web frames to a modular ReactJS architecture across 11 core SaaS modules, enabling instant client-side data rendering for multi-store chains.",
+    "native font zero latency": "Eliminated custom web font downloads to achieve 0ms typography loading latency by specifying native OS system fonts (Segoe UI on Windows, San Francisco on macOS).",
+    "dual panel navigation": "Introduced a two-panel navigation drawer: Panel 1 displays main business pillars (Catalog, Sales, Reports), and Panel 2 dynamically expands sub-modules without losing context.",
+    "data table ux overhaul": "Redesigned enterprise data tables with fixed column headers, customizable field visibility, inline batch actions, and high-contrast row zebra striping for low-end POS monitors.",
+    "enterprise 50k sku scale": "Engineered data grid pagination and virtualized scrolling to handle enterprise clients operating 50+ store branches with over 50,000 SKUs.",
+    "invoice detail layout": "Replaced cramped pop-up modals with invoice-style full-bleed order detail pages, allowing accounting managers to review line items, tax breakdowns, and payment gateway logs.",
+    "slate surface trade-off": "Selected a neutral light-slate background (`#f8fafc`) over pure white `#ffffff`. Testing across 10+ cheap laptop screens proved gray borders significantly improved table readability under glare.",
+    "system architecture roi": "⚡ 0ms font loading latency across 11 business modules.\n🚀 Slashed cognitive load for multi-store managers handling complex inventory matrices."
+  };
+
+
+  function toggle() { win.classList.toggle('is-open'); }
+  if (launcher) launcher.addEventListener('click', toggle);
+  if (close) close.addEventListener('click', toggle);
+
+  function addMsg(text, type) {
+    const d = document.createElement('div');
+    d.className = 'mbot-msg mbot-msg--' + type;
+    d.innerText = text;
+    messages.appendChild(d);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function answer(query) {
+    const qLower = query.toLowerCase();
+    let reply = "Great question! Madhavan led this project end-to-end, focusing on user-centered research, quantitative metric analysis, and component-driven UI systems. Feel free to explore the case study or presentation deck for complete details!";
+    for (let key in kb) {
+      if (qLower.includes(key.toLowerCase()) || key.toLowerCase().includes(qLower)) {
+        reply = kb[key];
+        break;
+      }
+    }
+    setTimeout(() => addMsg(reply, 'bot'), 400);
+  }
+
+  if (pills) {
+    pills.querySelectorAll('.mbot-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.getAttribute('data-q');
+        addMsg(q, 'user');
+        answer(q);
+      });
+    });
+  }
+
+  function handleSend() {
+    const val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    answer(val);
+  }
+
+  if (send) send.addEventListener('click', handleSend);
+  if (input) input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+})();
+</script>
+</body>
+</html>
+

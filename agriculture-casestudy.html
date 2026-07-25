@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Empowering TN Government through Digital Solutions — Madhavan</title>
+  <meta name="description" content="UX case study on digital transformation of agriculture marketplace for Tamil Nadu Agricultural University (TNAU). Multi-vendor e-commerce redesign." />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="style.css?v=5" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>WebFont.load({ google: { families: ["IBM Plex Sans:300,400,500,600,700"] } });</script>
+</head>
+<body class="cs-page" data-accent="green">
+
+<a href="index.html" class="cs-back">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Back
+</a>
+
+
+<div class="cs-layout">
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-inner">
+      <nav class="cs-nav-card" id="navCard">
+        <ul class="cs-nav-list" id="navList">
+          <div class="cs-nav-indicator" id="navIndicator"></div>
+          <li><a href="#hero" class="cs-nav-link is-active">Intro</a></li>
+          <li><a href="#impact" class="cs-nav-link">Impact Metrics</a></li>
+
+          <li><a href="#overview" class="cs-nav-link">About TNAU</a></li>
+          <li><a href="#revamp" class="cs-nav-link">Why Revamp</a></li>
+          <li><a href="#research" class="cs-nav-link">Research</a></li>
+          <li><a href="#painpoints" class="cs-nav-link">Pain Points</a></li>
+          <li><a href="#findings" class="cs-nav-link">Key Findings</a></li>
+          <li><a href="#journey" class="cs-nav-link">Journey Map</a></li>
+          <li><a href="#goals" class="cs-nav-link">Goals & Model</a></li>
+          <li><a href="#architecture" class="cs-nav-link">Architecture</a></li>
+          <li><a href="#designs" class="cs-nav-link">UI Designs</a></li>
+          <li><a href="#ordermgmt" class="cs-nav-link">Order Mgmt</a></li>
+          <li><a href="#orderfeedback" class="cs-nav-link">Order Feedback</a></li>
+          <li><a href="#testing" class="cs-nav-link">User Testing</a></li>
+          <li><a href="#insights" class="cs-nav-link">Insights</a></li>
+          <li><a href="#news" class="cs-nav-link">Public News</a></li>
+          <li><a href="#learnings" class="cs-nav-link">Key Learnings</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="cs-content">
+
+    <section class="cs-hero" id="hero">
+      <span class="cs-hero-kicker">Case Study</span>
+      <h1 class="cs-hero-title">Empowering TN Government through Digital Solutions</h1>
+      <p class="cs-hero-lead">Redesigning TNAU's agriculture marketplace from a manual single-vendor system to an automated multi-vendor platform — reducing order cancellations and driving Year-on-Year revenue growth.</p>
+      <div class="cs-hero-actions">
+        <div class="cs-hero-action">
+          <a href="#impact" class="cs-cta cs-cta-primary">📄 Read Case Study</a>
+          <span class="cs-cta-meta">~10 min read</span>
+        </div>
+        <div class="cs-hero-action">
+          <button type="button" class="cs-cta cs-cta-secondary" id="openPresentation">▶ Quick Summary</button>
+          <span class="cs-cta-meta">~3 min · Executive Deck</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-hero-meta">
+      <div class="cs-meta-item"><div class="cs-meta-label">Company</div><div class="cs-meta-value">TNAU, Coimbatore</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Year</div><div class="cs-meta-value">2023 – 2025</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Role</div><div class="cs-meta-value">Product Designer</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Platform</div><div class="cs-meta-value">Web (B2B SaaS)</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Tools</div><div class="cs-meta-value">Figma, Maze</div></div>
+    </div>
+
+    <section class="cs-section" id="impact">
+
+
+
+      <p class="cs-section-kicker">Post-Transformation Impact</p>
+      <h2 class="cs-section-title">🚀 Measurable Outcomes</h2>
+      <div class="cs-impact-grid">
+        <div class="cs-impact-card">
+          <div class="cs-impact-value">₹77,01,486</div>
+          <div class="cs-impact-label">Avg. Monthly Sales (2025)</div>
+          <p class="cs-impact-desc">Up from ₹62,826/month in 2023</p>
+        </div>
+        <div class="cs-impact-card">
+          <div class="cs-impact-value">15×</div>
+          <div class="cs-impact-label">Vendor Base Expansion</div>
+          <p class="cs-impact-desc">Scaled from 70 to 1,000+ active vendors</p>
+        </div>
+        <div class="cs-impact-card">
+          <div class="cs-impact-value">Significant</div>
+          <div class="cs-impact-label">Year-on-Year Growth</div>
+          <p class="cs-impact-desc">Surged following multi-vendor automation</p>
+        </div>
+      </div>
+
+      <div class="cs-callout cs-callout--success" style="margin-top: 28px;">
+        <div class="cs-callout-title">📈 Metric Comparison (Pre vs. Post Transformation)</div>
+        <div class="cs-table-wrap" style="margin-top: 12px; background: white;">
+          <table class="cs-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Before Transformation (2023)</th>
+                <th>After Transformation (2025)</th>
+                <th>Performance Delta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Average Monthly Sales</strong></td>
+                <td>₹62,826 / month</td>
+                <td><strong>₹77,01,486 / month</strong></td>
+                <td><strong style="color: #16a34a;">Massive Sales Surge</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Active Vendor Base</strong></td>
+                <td>70 Vendors (Manual single-channel)</td>
+                <td><strong>1,000+ Vendors</strong></td>
+                <td><strong style="color: #16a34a;">15× Network Expansion</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Order Fulfillment Model</strong></td>
+                <td>Manual phone confirmation within 24h</td>
+                <td><strong>Automated Multi-Vendor Portal</strong></td>
+                <td><strong style="color: #16a34a;">Zero manual delay</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Order Cancellation Rate</strong></td>
+                <td>26.83% Monthly Cancellation Rate</td>
+                <td><strong>Near Zero SLA Breaches</strong></td>
+                <td><strong style="color: #16a34a;">Drastic reduction</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="overview">
+      <p class="cs-section-kicker">Project Overview</p>
+      <h2 class="cs-section-title">✨ About Tamil Nadu Agricultural University</h2>
+      <p class="cs-body"><strong>Tamil Nadu Agricultural University (TNAU)</strong> is based in Coimbatore, Tamil Nadu. They have over two decades of research data on Indian agriculture. TNAU wants farmers to utilize this information effectively. They wanted a system where they can reach out to farmers and provide them with the best quality seeds, fertilizers, various services like renting an agriculture drone, soil testing, and provide information on loans, government services, etc.</p>
+      <blockquote class="cs-blockquote">🛒 An e-commerce system that could adapt to how they operate and provide the best quality seeds from them or through their vendors.</blockquote>
+      <p class="cs-body">TNAU was using <strong>Zoho Commerce</strong> for its e-commerce business. They offer a variety of products like crop seeds (paddy, maize, pulses, cotton, turmeric), vegetable seeds, crop boosters, bio-fertilizer, micronutrients, organic inputs, and water-soluble fertilizers.</p>
+
+    </section>
+
+    <section class="cs-section cs-section--alt" id="revamp">
+      <p class="cs-section-kicker">Problem Space</p>
+      <h2 class="cs-section-title">⚠️ Why was Revamp Needed?</h2>
+      <p class="cs-body">Around <strong>26.83%</strong> of total orders were being canceled every month. From May 2023 to February 2024, the monthly cancellation rate averaged 26.83%, resulting in a monthly loss of ₹17,234. While this financial loss might seem small, the main concern was the impact on customer trust.</p>
+      <p class="cs-body">It's already a big deal to get farmers to buy online, and one bad piece of feedback can spread very badly through word of mouth. Farmers lose trust in the digital seed sourcing system if their orders fail silently after placement.</p>
+      <div class="cs-impact-grid">
+        <div class="cs-impact-card">
+          <div class="cs-impact-value" style="color: #dc2626;">26.83%</div>
+          <div class="cs-impact-label">Monthly Order Cancellation Rate</div>
+          <p class="cs-impact-desc">Average monthly cancellations due to manual stock checks</p>
+        </div>
+        <div class="cs-impact-card">
+          <div class="cs-impact-value" style="color: #dc2626;">₹17,234</div>
+          <div class="cs-impact-label">Monthly Financial Loss</div>
+          <p class="cs-impact-desc">Direct financial loss per month due to order drop-offs</p>
+        </div>
+      </div>
+      <div class="cs-takeaway-card">
+        <div class="cs-takeaway-title">💡 Executive Insight: The Cost of Manual Verification</div>
+        <p class="cs-takeaway-text">Manual phone verification post-checkout created an unsustainable bottleneck. Automating order routing directly to vendor self-service portals was critical to preserving farmer trust and preventing order drop-offs.</p>
+      </div>
+    </section>
+
+
+    <section class="cs-section" id="research">
+      <p class="cs-section-kicker">Discovery</p>
+      <h2 class="cs-section-title">💡 Researching the Problem Space</h2>
+      <p class="cs-body">We conducted extensive field research, interviewing university staff, operations managers, agricultural experts, and vendors at TNAU Coimbatore. The research was divided into two methodologies:</p>
+      <ul class="cs-list">
+        <li><strong>Virtual & In-person Interviews</strong> with operation teams, agricultural product experts, and vendors.</li>
+        <li><strong>On-site visits</strong> to Tamil Nadu Agriculture University, Coimbatore, to observe daily fulfillment workflows.</li>
+      </ul>
+      <div class="cs-image" data-lightbox>
+        <img src="tnauproject/Case Study Empowering TN government through Digita/Desktop_-_1.png" alt="Current system analysis" loading="lazy" width="1420" height="800" />
+      </div>
+      <div class="cs-image" data-lightbox>
+        <img src="tnauproject/Case Study Empowering TN government through Digita/Section_1architecture_.svg" alt="Research methodology architecture" loading="lazy" width="1392" height="800" />
+      </div>
+      <div class="cs-image" data-lightbox>
+        <img src="tnauproject/Case Study Empowering TN government through Digita/Group_1000001680.png" alt="Interview insights summary" loading="lazy" width="1420" height="800" />
+      </div>
+    </section>
+
+    <section class="cs-section" id="painpoints">
+      <p class="cs-section-kicker">Research Findings</p>
+      <h2 class="cs-section-title">⚠️ Problems / Pain-Points / Answers to Research Questions (11 Cards)</h2>
+      <p class="cs-body">During the research with operations managers, vendors, and agricultural experts, we gathered critical information across 11 key operational dimensions:</p>
+      
+      <div class="cs-qa-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+        <div class="cs-qa-card" style="border-left: 4px solid #eab308; background: #fefce8;">
+          <div class="cs-qa-card-q">1. How many staff operate the operation?</div>
+          <div class="cs-qa-card-a">Currently, there are 2-3 members who operate e-commerce, and it is a very manual process. They have to manually track the inventory by connecting with the vendor. When a new order is received, the team contacts the vendor and then accepts the order.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #3b82f6; background: #eff6ff;">
+          <div class="cs-qa-card-q">2. Who decides the product and pricing?</div>
+          <div class="cs-qa-card-a">TNAU itself decides the product list and pricing. They are connected to several FPOs and vendors who are their partners.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #ec4899; background: #fdf2f8;">
+          <div class="cs-qa-card-q">3. Sourcing to delivery process?</div>
+          <div class="cs-qa-card-a">TNAU has partnered with several FPOs and vendors. When an order is received, the admin team manually checks the order, calls the vendor to confirm, and then accepts or rejects the order.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #f97316; background: #fff7ed;">
+          <div class="cs-qa-card-q">4. Most used vs least used features?</div>
+          <div class="cs-qa-card-a">The operations team focuses primarily on order management. Very rarely does anyone from the team add, delete, or update products or manage inventory.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #eab308; background: #fefce8;">
+          <div class="cs-qa-card-q">5. What are their priorities while working?</div>
+          <div class="cs-qa-card-a">Orders arrive via email/phone. Fulfilling occurs during office hours, but team members are university staff busy with other academic work. The 24-hour SLA is often delayed due to college priorities or holidays, causing cancellations.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #3b82f6; background: #eff6ff;">
+          <div class="cs-qa-card-q">6. Overall use & operation time?</div>
+          <div class="cs-qa-card-a">The operation team generally fulfills orders within 24 hours when present. Easy to navigate order management, but staff frequently have to cancel orders due to stock delays.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #ec4899; background: #fdf2f8;">
+          <div class="cs-qa-card-q">7. How does TNAU deal with vendors?</div>
+          <div class="cs-qa-card-a">TNAU has 60-70 vendors across different Tamil Nadu districts (e.g., vendor A for paddy, vendor B for cotton). TNAU also holds central stock in university warehouses procured from FPOs.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #ef4444; background: #fef2f2;">
+          <div class="cs-qa-card-q">8. How do vendors operate?</div>
+          <div class="cs-qa-card-a">Vendors receive a manual phone call from TNAU to confirm product & quantity. Customer addresses are shared manually by TNAU staff, and vendor payouts are handled privately.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #64748b; background: #f8fafc;">
+          <div class="cs-qa-card-q">9. Difficulties faced while operating?</div>
+          <div class="cs-qa-card-a">Apart from order management, most sections in Zoho Commerce are unused. Zoho Commerce was built for single merchants and failed to meet multi-vendor aggregator requirements.</div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #10b981; background: #ecfdf5;">
+          <div class="cs-qa-card-q">10. Desired improvements & feature wishlist</div>
+          <div class="cs-qa-card-a">
+            <ul class="cs-list" style="margin-top: 4px; margin-bottom: 0;">
+              <li>Online vendor self-service store portal.</li>
+              <li>Product combo bundling (seeds + bio-boosters).</li>
+              <li>Services & drone rental booking appointments.</li>
+              <li>Soil testing (pH testing) appointment feature.</li>
+              <li>Online vendor account management & payouts.</li>
+              <li>Product variant management.</li>
+              <li>GST billing & customized invoice generation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cs-qa-card" style="border-left: 4px solid #eab308; background: #fefce8;">
+          <div class="cs-qa-card-q">11. Complaints faced from customers?</div>
+          <div class="cs-qa-card-a">Farmers complain about non-delivery, uncommunicated cancellations, and zero response. Farmers waiting for sowing season suffer crop loss when orders cancel silently days later.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="cs-section" id="findings">
+      <p class="cs-section-kicker">Analysis</p>
+      <h2 class="cs-section-title">🔍 Key Insights & Card Sorting</h2>
+      <p class="cs-body">TNAU collaborates with <strong>60 to 70 vendors</strong> (FPOs, seed centers, research stations) selling seeds, agricultural inputs, equipment, and services. Existing off-the-shelf software (Zoho Commerce) was built for single-merchant operations and could not handle multi-vendor order routing or vendor-specific inventory management.</p>
+      <div class="cs-image" data-lightbox>
+        <img src="tnauproject/Case Study Empowering TN government through Digita/CArdsortingfinal.svg" alt="Card sorting exercise" loading="lazy" width="1248" height="700" />
+      </div>
+      <div class="cs-image" data-lightbox>
+        <img src="tnauproject/Case Study Empowering TN government through Digita/Section_11.svg" alt="User journey mapping" loading="lazy" width="1248" height="700" />
+      </div>
+    </section>
+
+    <section class="cs-section" id="journey">
+      <p class="cs-section-kicker">Mapping</p>
+      <h2 class="cs-section-title">🛤️ Complete User Journey Map</h2>
+      <p class="cs-body">We mapped out the entire lifecycle from product sourcing to customer delivery across all stakeholders:</p>
+      <div class="cs-table-wrap">
+        <table class="cs-table">
+          <thead><tr><th>Stage</th><th>Action</th><th>Role</th><th>Pain Points</th><th>Target Solution</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. Sourcing</strong></td><td>Product setup & pricing</td><td>TNAU Staff</td><td>Manual entry across spreadsheets</td><td>Centralized admin dashboard</td></tr>
+            <tr><td><strong>2. Stocking</strong></td><td>Updating available quantity</td><td>Vendor ↔ TNAU</td><td>False stock claims; phone calls</td><td>Vendor self-serve portal</td></tr>
+            <tr><td><strong>3. Ordering</strong></td><td>Customer places order online</td><td>Customer</td><td>Orders missed during holidays</td><td>Automated vendor routing</td></tr>
+            <tr><td><strong>4. Confirmation</strong></td><td>Confirming stock & dispatch</td><td>Vendor</td><td>Delays & phone arguments</td><td>Vendor accept/reject SLA</td></tr>
+            <tr><td><strong>5. Fulfillment</strong></td><td>Shipping & delivery tracking</td><td>Vendor ↔ Courier</td><td>Forgotten status updates</td><td>Automated tracking API sync</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cs-section" id="goals">
+      <p class="cs-section-kicker">Strategy</p>
+      <h2 class="cs-section-title">🎯 Architecture Model: Org-Branch-POS</h2>
+      <p class="cs-body">We structured the application around a multi-tier organizational model:</p>
+      <div class="cs-callout cs-callout--purple">
+        <p class="cs-callout-body">🏢 <strong>Organization (Merchant) = TNAU Central Admin</strong><br/>🏪 <strong>Branch = Vendor Portal (FPOs, Seed Centers)</strong><br/>🛒 <strong>POS = Physical Offline Outlets & Kiosks</strong></p>
+      </div>
+      <p class="cs-body">This hierarchy allows TNAU to maintain central product catalogs and pricing governance while delegating stock updates, order acceptance, and shipping dispatches directly to individual vendor branches.</p>
+      <div class="cs-image" data-lightbox>
+        <img src="tnauproject/Case Study Empowering TN government through Digita/310c310b-6b60-45e3-b75b-0dedecf03475.png" alt="Organization-Branch-POS Model" loading="lazy" width="1018" height="600" />
+      </div>
+    </section>
+
+    <section class="cs-section" id="architecture">
+      <p class="cs-section-kicker">System Design</p>
+      <h2 class="cs-section-title">📍 Product Architecture & Navigation</h2>
+      <p class="cs-body">We mapped out navigation paths for both TNAU Central Super Admin and Vendor Branch Managers to ensure seamless switching between order views, inventory management, customer support, and vendor payouts.</p>
+      <div class="cs-image" data-lightbox>
+        <img src="tnauproject/Case Study Empowering TN government through Digita/untitled_(1).png" alt="Product architecture diagram" loading="lazy" width="1104" height="600" />
+      </div>
+      <div class="cs-image" data-lightbox>
+        <img src="tnauproject/Case Study Empowering TN government through Digita/navigaiton.svg" alt="Navigation design pattern" loading="lazy" width="816" height="500" />
+      </div>
+    </section>
+
+    <section class="cs-section" id="designs">
+      <p class="cs-section-kicker">Design Output</p>
+      <h2 class="cs-section-title">🎨 UI Designs</h2>
+      <h3 class="cs-section-subtitle">Catalog Management & Product Combos</h3>
+      <p class="cs-body">Designed product combo engines allowing TNAU to bundle crop seeds with compatible bio-fertilizers and boosters.</p>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Product_Combo.svg" alt="Product Combo screen" loading="lazy" width="912" height="600" /></div>
+        <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Products.svg" alt="Products listing screen" loading="lazy" width="576" height="600" /></div>
+      </div>
+      <h3 class="cs-section-subtitle">Inventory & Customer Management</h3>
+      <p class="cs-body">Real-time stock alerts and customer purchase history tracking tailored for agricultural requirements.</p>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Inventory_Mgmt.svg" alt="Inventory management" loading="lazy" width="1200" height="700" /></div>
+        <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Customer_Management.svg" alt="Customer management" loading="lazy" width="1420" height="800" /></div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="ordermgmt">
+      <p class="cs-section-kicker">Core Redesign</p>
+      <h2 class="cs-section-title">📦 Multi-Vendor Order Management Workflow</h2>
+      <p class="cs-body">When a customer places an order containing items from multiple vendors, the platform automatically splits the order into sub-orders and routes them directly to respective vendor portals. Vendors accept or reject sub-orders within a strict 12-hour SLA.</p>
+      <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/CurrentOrderStatus_shipping_refund.svg" alt="Order status redesign" loading="lazy" width="1296" height="700" /></div>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Order_Management1_(2).svg" alt="Merchant view" loading="lazy" width="1152" height="700" /><div class="cs-image-caption">Merchant Admin View</div></div>
+        <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Branch_Management1_(1).svg" alt="Vendor view" loading="lazy" width="1152" height="700" /><div class="cs-image-caption">Vendor Branch View</div></div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="orderfeedback">
+      <p class="cs-section-kicker">Validation</p>
+      <h2 class="cs-section-title">📢 Stakeholder & Operation Team Feedback</h2>
+      <p class="cs-body">We reviewed early prototypes with university officials and operations personnel to confirm operational feasibility:</p>
+      <div class="cs-callout cs-callout--success"><p class="cs-callout-body">✅ <strong>Automated Vendor Accept/Reject:</strong> Replaced phone calls with direct vendor portal notifications and sub-order reassignment logic.</p></div>
+      <div class="cs-callout cs-callout--success"><p class="cs-callout-body">✅ <strong>Automated Courier Tracking Sync:</strong> API integration with logistics carriers automatically transitions order statuses to "Shipped" and "Delivered".</p></div>
+    </section>
+
+    <section class="cs-section" id="testing">
+      <p class="cs-section-kicker">Usability</p>
+      <h2 class="cs-section-title">🔥 Usability Testing with Maze & Heatmaps</h2>
+      <p class="cs-body">We ran 50+ Maze usability tests alongside in-person interviews with non-technical operations staff to test task completion rates and navigation clarity.</p>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Screenshot_2025-09-01_at_20.47.57.png" alt="Maze results 1" loading="lazy" width="912" height="600" /></div>
+        <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Screenshot_2025-09-01_at_20.48.56.png" alt="Maze results 2" loading="lazy" width="912" height="600" /></div>
+      </div>
+      <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Screenshot_2025-09-02_at_00.55.02.png" alt="Maze overall results" loading="lazy" width="1200" height="700" /></div>
+    </section>
+
+    <section class="cs-section" id="insights">
+      <p class="cs-section-kicker">Iterative Design</p>
+      <h2 class="cs-section-title">📢 Usability Iterations & Interface Refinements</h2>
+      <p class="cs-body">Testing revealed that active buttons during initial order placement confused non-technical staff. We updated the UI to disable non-applicable action triggers until prerequisite confirmation steps were completed.</p>
+      <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Disable1.svg" alt="Before UI disable" loading="lazy" width="1056" height="600" /><div class="cs-image-caption">Before: Action options confused users during order placed stage</div></div>
+      <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Disable2.svg" alt="After UI disable" loading="lazy" width="1200" height="700" /><div class="cs-image-caption">After: Non-applicable actions disabled during confirmation</div></div>
+    </section>
+
+    <section class="cs-section" id="news">
+      <p class="cs-section-kicker">Recognition</p>
+      <h2 class="cs-section-title">📰 Public News & Media Coverage</h2>
+      <p class="cs-body">The revamped platform received widespread media recognition across Tamil Nadu press and government agricultural news for empowering farmers with reliable digital seed procurement.</p>
+      <div class="cs-image" data-lightbox><img src="tnauproject/Case Study Empowering TN government through Digita/Screenshot_2025-09-02_at_20.18.02.png" alt="Public news coverage" loading="lazy" width="1420" height="800" /></div>
+    </section>
+
+    <section class="cs-section" id="learnings">
+      <p class="cs-section-kicker">Reflection</p>
+      <h2 class="cs-section-title">📚 Key Takeaways</h2>
+      <p class="cs-body">Designing for large government organizations requires patience, deep empathy for operational constraints, and clear visual alignment with non-technical stakeholders. By shifting from manual phone verification to automated vendor routing, TNAU transformed its online marketplace into a high-scale digital asset for the agricultural community.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="cs-footer"><p>Case Study by Madhavan · <a href="index.html">Back to Portfolio</a></p></footer>
+
+<div class="cs-lightbox" id="lightbox"><button class="cs-lightbox-close" id="lightboxClose">✕</button><img src="" alt="Expanded view" id="lightboxImg" /></div>
+
+<!-- Executive Presentation Deck -->
+<div class="cs-presentation" id="presentation">
+  <div class="cs-pres-header">
+    <span class="cs-pres-counter" id="presCounter">1 / 6</span>
+    <button class="cs-pres-close" id="presClose">✕</button>
+  </div>
+  <div class="cs-pres-stage">
+    <button class="cs-pres-arrow cs-pres-arrow--prev" id="presPrev">‹</button>
+    <button class="cs-pres-arrow cs-pres-arrow--next" id="presNext">›</button>
+
+    <div class="cs-pres-slide cs-pres-slide--full is-active" data-slide="0">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Executive Pitch Deck</span>
+        <h2 class="cs-pres-title">Digital Transformation for TNAU Agriculture Marketplace</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Client:</strong> Tamil Nadu Agricultural University (Coimbatore)</li>
+          <li class="cs-pres-point"><strong>Challenge:</strong> Manual single-vendor system leading to 26.83% order cancellation rates</li>
+          <li class="cs-pres-point"><strong>Impact:</strong> Scaled monthly sales from ₹62,826 to <strong>₹77,01,486</strong></li>
+        </ul>
+        <div class="cs-pres-takeaway">🚀 Result: Expanded vendor network by 15× from 70 to 1,000+ active participants while automating SLA fulfillment.</div>
+      </div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="1">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Problem Space</span>
+        <h3 class="cs-pres-title">The Bottlenecks of Manual Operations</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>26.83% Cancellation Rate:</strong> Staff manually phoned vendors post-checkout, causing high order drop-offs.</li>
+          <li class="cs-pres-point"><strong>24-Hour Approval SLA:</strong> University staff overloaded with academic tasks, causing missed fulfillment windows.</li>
+          <li class="cs-pres-point"><strong>Reputational Risk:</strong> Uncommunicated cancellations damaged farmer trust in digital seed purchasing.</li>
+        </ul>
+        <div class="cs-pres-takeaway">⚠️ Baseline Loss: ₹17,234 monthly revenue lost to unfulfilled orders.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="tnauproject/Case Study Empowering TN government through Digita/Desktop_-_1.png" alt="Current system bottlenecks" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="2">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">System Architecture</span>
+        <h3 class="cs-pres-title">Organization-Branch-POS Multi-Vendor Model</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Org (Merchant):</strong> TNAU Central Admin maintains product setup, catalog pricing, and master governance.</li>
+          <li class="cs-pres-point"><strong>Branch (Vendors):</strong> Direct self-serve portal for vendors to manage inventory and confirm shipments.</li>
+          <li class="cs-pres-point"><strong>POS (Outlets):</strong> Integration for physical retail outlets selling seeds and agricultural inputs.</li>
+        </ul>
+        <div class="cs-pres-takeaway">💡 Breakthrough: Replaced single-merchant software with scalable multi-vendor infrastructure.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="tnauproject/Case Study Empowering TN government through Digita/310c310b-6b60-45e3-b75b-0dedecf03475.png" alt="Org-Branch-POS Architecture" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="3">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Core Product Feature</span>
+        <h3 class="cs-pres-title">Automated Order & Vendor Workflow</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Automated SLA Triggers:</strong> Vendors receive instant sub-order notifications with automated accept/reject timelines.</li>
+          <li class="cs-pres-point"><strong>Merchant Re-assignment:</strong> Rejected sub-orders automatically flag admin dashboard for seamless vendor reassignment.</li>
+          <li class="cs-pres-point"><strong>Live Courier Sync:</strong> Real-time carrier tracking auto-updates status to "Shipped" and "Delivered".</li>
+        </ul>
+        <div class="cs-pres-takeaway">✅ Outcome: Eliminated daily phone calls between TNAU staff and vendors.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="tnauproject/Case Study Empowering TN government through Digita/CurrentOrderStatus_shipping_refund.svg" alt="Order management workflow" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="4">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Validation & Usability</span>
+        <h3 class="cs-pres-title">50+ Prototype Tests via Maze</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Targeted Usability Testing:</strong> Conducted 50+ Maze prototype tasks with operations managers and non-technical staff.</li>
+          <li class="cs-pres-point"><strong>Affordance Iteration:</strong> Disabled irrelevant action triggers during order confirmation to eliminate misclicks.</li>
+          <li class="cs-pres-point"><strong>Staff Training Modules:</strong> Created video walkthroughs for seamless onboard of university team.</li>
+        </ul>
+        <div class="cs-pres-takeaway">📊 Data-Driven UX: High task success rates across all key operational user flows.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="tnauproject/Case Study Empowering TN government through Digita/Screenshot_2025-09-01_at_20.47.57.png" alt="Maze testing metrics" /></div>
+    </div>
+
+    <div class="cs-pres-slide cs-pres-slide--full" data-slide="5">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Business Transformation</span>
+        <h2 class="cs-pres-title">Year-on-Year Revenue Growth & State-Wide Impact</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>₹77.01 Lakhs Monthly Revenue:</strong> Surged from ₹62.8K/mo baseline prior to system redesign.</li>
+          <li class="cs-pres-point"><strong>1,000+ Active Vendors:</strong> Empowered farmers and FPOs across Tamil Nadu with direct digital market access.</li>
+          <li class="cs-pres-point"><strong>State Recognition:</strong> Featured in public news media as a benchmark for government digital transformation.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🌟 Product Leadership: Delivered a resilient, high-impact digital marketplace for Indian agriculture.</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="cs-pres-footer" id="presDots"></div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  const navLinks = document.querySelectorAll('.cs-nav-link');
+  const navIndicator = document.getElementById('navIndicator');
+  function updateIndicator(activeLink) {
+    if (!activeLink || !navIndicator) return;
+    const parentTop = activeLink.parentElement.parentElement.getBoundingClientRect().top;
+    const linkTop = activeLink.getBoundingClientRect().top;
+    const relativeTop = linkTop - parentTop;
+    navIndicator.style.top = relativeTop + 'px';
+    navIndicator.style.height = activeLink.offsetHeight + 'px';
+    
+    // Smoothly scroll the sidebar inner container so active link is always centered in view
+    const sidebarInner = document.querySelector('.cs-sidebar-inner');
+    if (sidebarInner) {
+      const linkOffTop = activeLink.offsetTop;
+      const cardHeight = sidebarInner.clientHeight;
+      sidebarInner.scrollTop = linkOffTop - (cardHeight / 2) + (activeLink.offsetHeight / 2);
+    }
+  }
+
+
+
+
+  let isClickScrolling = false;
+
+  const sections = document.querySelectorAll('.cs-section[id]');
+  const obs = new IntersectionObserver((entries) => {
+    if (isClickScrolling) return;
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          const isMatch = link.getAttribute('href') === '#' + id;
+          link.classList.toggle('is-active', isMatch);
+          if (isMatch) updateIndicator(link);
+        });
+      }
+    });
+  }, { threshold: [0.1, 0.3], rootMargin: '-20% 0px -40% 0px' });
+
+
+  sections.forEach(s => obs.observe(s));
+  setTimeout(() => {
+    const active = document.querySelector('.cs-nav-link.is-active');
+    if (active) updateIndicator(active);
+  }, 100);
+
+  window.addEventListener('scroll', () => {
+    const navCard = document.getElementById('navCard');
+    if (navCard) navCard.style.setProperty('--timeline-fill', Math.min((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100) + '%');
+  }, { passive: true });
+
+
+
+  navLinks.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    const href = l.getAttribute('href');
+    const targetEl = document.querySelector(href);
+    if (targetEl) {
+      isClickScrolling = true;
+      navLinks.forEach(link => link.classList.remove('is-active'));
+      l.classList.add('is-active');
+      updateIndicator(l);
+
+      const topOffset = 60;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      setTimeout(() => {
+        isClickScrolling = false;
+      }, 800);
+    }
+  }));
+
+
+  const lb = document.getElementById('lightbox'), lbI = document.getElementById('lightboxImg');
+  document.querySelectorAll('.cs-image[data-lightbox]').forEach(el => {
+    el.addEventListener('click', () => { const i = el.querySelector('img'); if (i) { lbI.src = i.src; lbI.alt = i.alt; lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; } });
+  });
+  function cLB() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+  document.getElementById('lightboxClose').addEventListener('click', cLB);
+  lb.addEventListener('click', e => { if (e.target === lb) cLB(); });
+
+  const pres = document.getElementById('presentation'), slides = pres.querySelectorAll('.cs-pres-slide'), counter = document.getElementById('presCounter'), dots = document.getElementById('presDots');
+  let cur = 0;
+  slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'cs-pres-dot' + (i === 0 ? ' is-active' : ''); d.addEventListener('click', () => go(i)); dots.appendChild(d); });
+  function go(n) { slides[cur].classList.remove('is-active'); dots.children[cur].classList.remove('is-active'); cur = (n + slides.length) % slides.length; slides[cur].classList.add('is-active'); dots.children[cur].classList.add('is-active'); counter.textContent = (cur + 1) + ' / ' + slides.length; }
+  document.getElementById('openPresentation').addEventListener('click', () => { pres.classList.add('is-open'); document.body.style.overflow = 'hidden'; go(0); });
+  document.getElementById('presClose').addEventListener('click', () => { pres.classList.remove('is-open'); document.body.style.overflow = ''; });
+  document.getElementById('presPrev').addEventListener('click', () => go(cur - 1));
+  document.getElementById('presNext').addEventListener('click', () => go(cur + 1));
+})();
+</script>
+<!-- M.Bot Floating AI Chatbot Widget -->
+<div class="mbot-launcher" id="mbotLauncher">
+  <div class="mbot-avatar"></div>
+  <span class="mbot-launcher-text">Ask</span>
+</div>
+
+<div class="mbot-window" id="mbotWindow">
+  <div class="mbot-header">
+    <div class="mbot-header-info">
+      <div class="mbot-avatar"></div>
+      <div>
+        <div class="mbot-title">Ask Madhavan</div>
+
+        <div class="mbot-sub">Assistant</div>
+      </div>
+    </div>
+    <button class="mbot-close" id="mbotClose">✕</button>
+  </div>
+
+  
+  <div class="mbot-messages" id="mbotMessages">
+    <div class="mbot-msg mbot-msg--bot">
+      👋 Hi! I'm Madhavan's Case Study Assistant. Ask me anything about project scope, ROI metrics, UX trade-offs, or design decisions!
+    </div>
+  </div>
+
+  <div class="mbot-pills" id="mbotPills">
+    <button class="mbot-pill" data-q="Problem & Business Impact">🎯 Problem & ROI</button>
+    <button class="mbot-pill" data-q="Why Zoho Failed">❌ Why Zoho Failed</button>
+    <button class="mbot-pill" data-q="Architecture Decisions">🏗️ Architecture Model</button>
+    <button class="mbot-pill" data-q="Field Research Insights">🔍 Field Research</button>
+    <button class="mbot-pill" data-q="Maze Usability Learnings">🧪 Usability Testing</button>
+    <button class="mbot-pill" data-q="SLA Auto-Routing">⚡ Order SLA Automation</button>
+    <button class="mbot-pill" data-q="Government Constraints">🏛️ Gov Stakeholders</button>
+    <button class="mbot-pill" data-q="Final Business Results">📊 Revenue Surge (6317%)</button>
+  </div>
+
+  <div class="mbot-input-area">
+    <input type="text" class="mbot-input" id="mbotInput" placeholder="Ask about metrics, scope, decisions..." />
+    <button class="mbot-send" id="mbotSend">➤</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const launcher = document.getElementById('mbotLauncher');
+  const win = document.getElementById('mbotWindow');
+  const close = document.getElementById('mbotClose');
+  const messages = document.getElementById('mbotMessages');
+  const pills = document.getElementById('mbotPills');
+  const input = document.getElementById('mbotInput');
+  const send = document.getElementById('mbotSend');
+
+  const kb = {
+    "problem & business impact": "TNAU suffered a 26.83% monthly order cancellation rate and ₹17,234/mo loss because staff manually phoned 60+ vendors to verify stock post-checkout. We transformed it into an automated multi-vendor SaaS platform.",
+    "why zoho failed": "Zoho Commerce was built for single merchants. It couldn't handle multi-vendor order routing, vendor-specific inventory isolation, or District-level branch management required by TNAU.",
+    "architecture decisions": "Architected a 3-tier Org-Branch-POS model: Organization (TNAU Central Hub), Branch (District Vendors/FPOs), and POS (Physical seed centers & research stations).",
+    "field research insights": "Conducted 1-on-1 field interviews in Coimbatore across 11 dimensions. Uncovered that staff missed 24h SLAs due to academic workloads, and vendors argued over verbal phone commitments.",
+    "maze usability learnings": "Ran 50+ Maze prototype tests. Found non-technical staff clicked non-applicable actions out of habit during early order stages, so we disabled irrelevant buttons during initial confirmation.",
+    "sla auto-routing": "Replaced manual phone calls with automated vendor dashboard notifications. Vendors accept/modify orders directly; if unconfirmed within 12h, orders auto-escalate to TNAU admins for re-assignment.",
+    "government constraints": "Working with government officials required patience, familiar UI paradigms (emulating spreadsheet tables & clear forms), and zero complex navigation to avoid retraining staff.",
+    "final business results": "🚀 Monthly sales surged from ₹62,826/mo to ₹77,01,486/mo (6,317% growth).\n🏢 Active vendor network expanded 15x from 70 to 1,000+ participating centers."
+  };
+
+
+  function toggle() { win.classList.toggle('is-open'); }
+  if (launcher) launcher.addEventListener('click', toggle);
+  if (close) close.addEventListener('click', toggle);
+
+  function addMsg(text, type) {
+    const d = document.createElement('div');
+    d.className = 'mbot-msg mbot-msg--' + type;
+    d.innerText = text;
+    messages.appendChild(d);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function answer(query) {
+    const qLower = query.toLowerCase();
+    let reply = "Great question! Madhavan led this project end-to-end, focusing on user-centered research, quantitative metric analysis, and component-driven UI systems. Feel free to explore the case study or presentation deck for complete details!";
+    for (let key in kb) {
+      if (qLower.includes(key.toLowerCase()) || key.toLowerCase().includes(qLower)) {
+        reply = kb[key];
+        break;
+      }
+    }
+    setTimeout(() => addMsg(reply, 'bot'), 400);
+  }
+
+  if (pills) {
+    pills.querySelectorAll('.mbot-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.getAttribute('data-q');
+        addMsg(q, 'user');
+        answer(q);
+      });
+    });
+  }
+
+  function handleSend() {
+    const val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    answer(val);
+  }
+
+  if (send) send.addEventListener('click', handleSend);
+  if (input) input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+})();
+</script>
+</body>
+</html>
+

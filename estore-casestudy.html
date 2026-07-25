@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Khata — E-Store Credit Feature — Madhavan</title>
+  <meta name="description" content="UX case study on designing Khata — a credit management feature for QueueBuster's e-commerce solution targeting Kirana stores." />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="style.css?v=5" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>WebFont.load({ google: { families: ["IBM Plex Sans:300,400,500,600,700"] } });</script>
+</head>
+<body class="cs-page" data-accent="orange">
+
+<a href="index.html" class="cs-back">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Back
+</a>
+
+
+<div class="cs-layout">
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-inner">
+      <nav class="cs-nav-card" id="navCard">
+        <ul class="cs-nav-list" id="navList">
+          <div class="cs-nav-indicator" id="navIndicator"></div>
+          <li><a href="#hero" class="cs-nav-link is-active">Intro</a></li>
+          <li><a href="#intro" class="cs-nav-link">Introduction</a></li>
+
+          <li><a href="#why" class="cs-nav-link">Why Khata?</a></li>
+          <li><a href="#what" class="cs-nav-link">What is Khata?</a></li>
+          <li><a href="#flow" class="cs-nav-link">User Flow</a></li>
+          <li><a href="#prototype" class="cs-nav-link">Prototype</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="cs-content">
+    <section class="cs-hero" id="hero">
+      <span class="cs-hero-kicker">Case Study</span>
+      <h1 class="cs-hero-title">Khata — E-Store Credit Management</h1>
+      <p class="cs-hero-lead">Designing a digital credit ledger feature for QueueBuster's Android POS app — replacing traditional notebooks with a seamless digital Khata system for Kirana stores.</p>
+      <div class="cs-hero-actions">
+        <div class="cs-hero-action">
+          <a href="#intro" class="cs-cta cs-cta-primary">📄 Read Case Study</a>
+          <span class="cs-cta-meta">~3 min read</span>
+        </div>
+        <div class="cs-hero-action">
+          <button type="button" class="cs-cta cs-cta-secondary" id="openPresentation">▶ Quick Summary</button>
+          <span class="cs-cta-meta">~2 min · Quick Deck</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-hero-meta">
+      <div class="cs-meta-item"><div class="cs-meta-label">Company</div><div class="cs-meta-value">QueueBuster</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Year</div><div class="cs-meta-value">2021</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Role</div><div class="cs-meta-value">Product Designer</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Platform</div><div class="cs-meta-value">Android POS</div></div>
+    </div>
+
+
+    <section class="cs-section" id="intro">
+      <p class="cs-section-kicker">Overview</p>
+      <h2 class="cs-section-title">📒 Introduction</h2>
+      <p class="cs-body"><strong>QueueBuster’s Khata</strong> was a new feature which was added to QueueuBuster android application.</p>
+    </section>
+
+    <section class="cs-section" id="why">
+      <p class="cs-section-kicker">Problem</p>
+      <h2 class="cs-section-title">🤔 Why Khata?</h2>
+      <p class="cs-body">QueueBuster has customers from <strong>Retail Business, Restaurant Business, Grocery Stores, Spa and Salon, and more.</strong> QueueBuster’s major focus is on the unorganized retail industry like <strong>General store</strong> or <strong>Kirana store.</strong> This khata feature can be helpful for these merchants.</p>
+    </section>
+
+    <section class="cs-section" id="what">
+      <p class="cs-section-kicker">Context</p>
+      <h2 class="cs-section-title">📖 What is Khata?</h2>
+      <p class="cs-body">There are Kirana stores in every corner of India, where loyal customers buy the products on credit. Shopkeepers maintain all the customer's credit in a notebook, this is where Khata can help.</p>
+      <blockquote class="cs-blockquote">For example : Sunil buys groceries everyday from Ratna Store. He pays for all the groceries bought in end of the week. Shopkeeper notes all the purchases Sunil made throughout the week in a notebook and recieves payment end of the week.</blockquote>
+      <p class="cs-body">Khata can record all the transactions easily made with the customer which makes this process much simpler for the merchant. The merchant can also ask the customer to pay through SMS, Whatsapp, email, etc. anytime with a payment link.</p>
+    </section>
+
+    <section class="cs-section" id="flow">
+      <p class="cs-section-kicker">Design</p>
+      <h2 class="cs-section-title">🔄 User flow for Khata</h2>
+      <p class="cs-body">We looked for products which were offering similar features. After researching we started to analyze how the merchants would be using it if this feature was built.</p>
+      <p class="cs-body">We found that there were two main transactions that will be performed by the users(merchant) :</p>
+      <ol class="cs-list">
+        <li>Give Credit</li>
+        <li>Accept payment</li>
+      </ol>
+      <p class="cs-body">We made this generic user flow for both the transactions.</p>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/800/1*Gsn6h8bI_iqZj4kRCZYS4w.png" alt="Khata user flow" loading="lazy" width="1200" height="700" /></div>
+    </section>
+
+    <section class="cs-section" id="prototype">
+      <p class="cs-section-kicker">Prototype</p>
+      <h2 class="cs-section-title">📱 Interactive Prototype</h2>
+      <p class="cs-body">After a whole lot of wireframing, we decided to add an option to upload image (a bill or grocery image while purchasing, or an other) for every transaction. User(merchant) should be able to edit each transaction, but not for the transaction which is already paid online by the customer. Here is the prototype of Khata we built.</p>
+      <div class="cs-marvel-wrapper" style="display: flex; justify-content: center; margin-top: 24px;">
+        <iframe src="https://marvelapp.com/prototype/390294j?emb=1&frameless=false&iosapp=false" width="390" height="780" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="cs-footer"><p>Case Study by Madhavan · <a href="index.html">Back to Portfolio</a></p></footer>
+
+<div class="cs-lightbox" id="lightbox"><button class="cs-lightbox-close" id="lightboxClose">✕</button><img src="" alt="Expanded view" id="lightboxImg" /></div>
+
+<!-- Executive Presentation Deck -->
+<div class="cs-presentation" id="presentation">
+  <div class="cs-pres-header">
+    <span class="cs-pres-counter" id="presCounter">1 / 4</span>
+    <button class="cs-pres-close" id="presClose">✕</button>
+  </div>
+  <div class="cs-pres-stage">
+    <button class="cs-pres-arrow cs-pres-arrow--prev" id="presPrev">‹</button>
+    <button class="cs-pres-arrow cs-pres-arrow--next" id="presNext">›</button>
+
+    <div class="cs-pres-slide cs-pres-slide--full is-active" data-slide="0">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Quick Summary</span>
+        <h2 class="cs-pres-title">Khata — Digital Credit Ledger for Kirana Stores</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Target Audience:</strong> Kirana store owners and unorganized retail merchants in India.</li>
+          <li class="cs-pres-point"><strong>Core Problem:</strong> Paper notebook credit tracking leading to lost records and collection delays.</li>
+          <li class="cs-pres-point"><strong>Solution:</strong> Embedded digital Khata feature with instant payment link sharing via WhatsApp.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🚀 Strategic Impact: Drive daily merchant retention within the QueueBuster POS ecosystem.</div>
+      </div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="1">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">User Flow</span>
+        <h3 class="cs-pres-title">Dual Transaction Model: Give Credit & Accept Payment</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Give Credit:</strong> Log purchase items with receipt photo proof in 2 steps.</li>
+          <li class="cs-pres-point"><strong>Accept Payment:</strong> Record cash payment or generate dynamic UPI/SMS payment link.</li>
+        </ul>
+        <div class="cs-pres-takeaway">💡 Usability Focus: Designed for rapid operation during busy store hours.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/800/1*Gsn6h8bI_iqZj4kRCZYS4w.png" alt="Khata Flow" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="2">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Key Features</span>
+        <h3 class="cs-pres-title">Image Proof & Payment Link Automation</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Bill Image Upload:</strong> Attach photo of physical receipt or goods for transaction dispute resolution.</li>
+          <li class="cs-pres-point"><strong>Lock Paid Transactions:</strong> Auto-lock completed online payments to prevent accidental editing.</li>
+        </ul>
+        <div class="cs-pres-takeaway">✅ Trust Factor: Building transparency between shopkeeper and regular buyers.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/1200/1*n4y72KJ33XlVCOlQW3wUQQ.png" alt="Khata Banner" /></div>
+    </div>
+
+    <div class="cs-pres-slide cs-pres-slide--full" data-slide="3">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Quick Summary</span>
+        <h2 class="cs-pres-title">Digitizing Kirana Credit Relationships</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point">Transformed manual notebook record-keeping into a seamless POS feature.</li>
+          <li class="cs-pres-point">Reduced payment collection cycles for small retail merchants across India.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🌟 Ecosystem Expansion: Added sticky value-add service to QueueBuster Android POS.</div>
+      </div>
+    </div>
+  </div>
+  <div class="cs-pres-footer" id="presDots"></div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  const navLinks = document.querySelectorAll('.cs-nav-link');
+  const navIndicator = document.getElementById('navIndicator');
+  function updateIndicator(activeLink) {
+    if (!activeLink || !navIndicator) return;
+    const parentTop = activeLink.parentElement.parentElement.getBoundingClientRect().top;
+    const linkTop = activeLink.getBoundingClientRect().top;
+    const relativeTop = linkTop - parentTop;
+    navIndicator.style.top = relativeTop + 'px';
+    navIndicator.style.height = activeLink.offsetHeight + 'px';
+  }
+
+  const sections = document.querySelectorAll('.cs-section[id]');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          const isMatch = link.getAttribute('href') === '#' + id;
+          link.classList.toggle('is-active', isMatch);
+          if (isMatch) updateIndicator(link);
+        });
+      }
+    });
+  }, { threshold: [0.1, 0.3], rootMargin: '-40px 0px -55% 0px' });
+  sections.forEach(s => obs.observe(s));
+  setTimeout(() => {
+    const active = document.querySelector('.cs-nav-link.is-active');
+    if (active) updateIndicator(active);
+  }, 100);
+
+  window.addEventListener('scroll', () => {
+    if (navCard) navCard.style.setProperty('--timeline-fill', Math.min((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100) + '%');
+  }, { passive: true });
+  navLinks.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    const href = l.getAttribute('href');
+    const targetEl = document.querySelector(href);
+    if (targetEl) {
+      const topOffset = 60;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }));
+
+  const lb = document.getElementById('lightbox'), lbI = document.getElementById('lightboxImg');
+  document.querySelectorAll('.cs-image[data-lightbox]').forEach(el => {
+    el.addEventListener('click', () => { const i = el.querySelector('img'); if (i) { lbI.src = i.src; lbI.alt = i.alt; lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; } });
+  });
+  function cLB() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+  document.getElementById('lightboxClose').addEventListener('click', cLB);
+  lb.addEventListener('click', e => { if (e.target === lb) cLB(); });
+
+  const pres = document.getElementById('presentation'), slides = pres.querySelectorAll('.cs-pres-slide'), counter = document.getElementById('presCounter'), dots = document.getElementById('presDots');
+  let cur = 0;
+  slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'cs-pres-dot' + (i === 0 ? ' is-active' : ''); d.addEventListener('click', () => go(i)); dots.appendChild(d); });
+  function go(n) { slides[cur].classList.remove('is-active'); dots.children[cur].classList.remove('is-active'); cur = (n + slides.length) % slides.length; slides[cur].classList.add('is-active'); dots.children[cur].classList.add('is-active'); counter.textContent = (cur + 1) + ' / ' + slides.length; }
+  document.getElementById('openPresentation').addEventListener('click', () => { pres.classList.add('is-open'); document.body.style.overflow = 'hidden'; go(0); });
+  document.getElementById('presClose').addEventListener('click', () => { pres.classList.remove('is-open'); document.body.style.overflow = ''; });
+  document.getElementById('presPrev').addEventListener('click', () => go(cur - 1));
+  document.getElementById('presNext').addEventListener('click', () => go(cur + 1));
+})();
+</script>
+<!-- M.Bot Floating AI Chatbot Widget -->
+<div class="mbot-launcher" id="mbotLauncher">
+  <div class="mbot-avatar"></div>
+  <span class="mbot-launcher-text">Ask</span>
+</div>
+
+<div class="mbot-window" id="mbotWindow">
+  <div class="mbot-header">
+    <div class="mbot-header-info">
+      <div class="mbot-avatar"></div>
+      <div>
+        <div class="mbot-title">Ask Madhavan</div>
+
+        <div class="mbot-sub">Assistant</div>
+      </div>
+    </div>
+    <button class="mbot-close" id="mbotClose">✕</button>
+  </div>
+
+  
+  <div class="mbot-messages" id="mbotMessages">
+    <div class="mbot-msg mbot-msg--bot">
+      👋 Hi! I'm Madhavan's Case Study Assistant. Ask me anything about QueueBuster Khata credit ledger design, user flows, or prototypes!
+    </div>
+  </div>
+
+  <div class="mbot-pills" id="mbotPills">
+    <button class="mbot-pill" data-q="Kirana Credit Problem">🏬 Kirana Paper Credit</button>
+    <button class="mbot-pill" data-q="Dual Action Flow">🔄 Give vs Accept Credit</button>
+    <button class="mbot-pill" data-q="Receipt Photo Attachments">📸 Camera Receipt Proof</button>
+    <button class="mbot-pill" data-q="WhatsApp Payment Links">📲 WhatsApp Payment Links</button>
+    <button class="mbot-pill" data-q="Settled Lock Trade-off">🔒 Paid Lock Trade-off</button>
+    <button class="mbot-pill" data-q="Marvel Prototype Interactive">📱 Live Marvel Prototype</button>
+    <button class="mbot-pill" data-q="POS System Integration">⚡ POS Hardware Sync</button>
+    <button class="mbot-pill" data-q="Merchant Engagement Impact">📈 Collection Metrics</button>
+  </div>
+
+  <div class="mbot-input-area">
+    <input type="text" class="mbot-input" id="mbotInput" placeholder="Ask about metrics, scope, decisions..." />
+    <button class="mbot-send" id="mbotSend">➤</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const launcher = document.getElementById('mbotLauncher');
+  const win = document.getElementById('mbotWindow');
+  const close = document.getElementById('mbotClose');
+  const messages = document.getElementById('mbotMessages');
+  const pills = document.getElementById('mbotPills');
+  const input = document.getElementById('mbotInput');
+  const send = document.getElementById('mbotSend');
+
+  const kb = {
+    "kirana credit problem": "Kirana store owners rely heavily on credit transactions but lose money tracking them in paper notebooks (bahi-khata). Paper records get lost, torn, or disputed by buyers.",
+    "dual action flow": "Designed an explicit dual-action entry: 'Give Credit' (Red entry - money owed to merchant) vs 'Accept Payment' (Green entry - balance settled), removing ambiguity for non-tech merchants.",
+    "receipt photo attachments": "Added camera receipt image attachments directly to transaction entries, allowing shopkeepers to photograph paper bills or signed notes as indisputable digital proof.",
+    "whatsapp payment links": "Integrated automated WhatsApp payment link generation upon recording credit, enabling merchants to request digital UPI payments directly from customers' phones.",
+    "settled lock trade-off": "Auto-locking paid transactions so balances cannot be edited online once settled. Prevented merchant fraud and built customer trust.",
+    "marvel prototype interactive": "Embedded a live interactive Marvel App mobile phone prototype frame inside the case study so recruiters can test the tap-by-tap Khata flow directly on screen.",
+    "pos system integration": "Fully integrated Khata credit ledger into QueueBuster's Android POS system, linking store inventory items with customer credit accounts.",
+    "merchant engagement impact": "📈 Drastically increased daily merchant retention on QueueBuster POS.\n⚡ Reduced collection cycles for Kirana shopkeepers through automated WhatsApp reminders."
+  };
+
+
+  function toggle() { win.classList.toggle('is-open'); }
+  if (launcher) launcher.addEventListener('click', toggle);
+  if (close) close.addEventListener('click', toggle);
+
+  function addMsg(text, type) {
+    const d = document.createElement('div');
+    d.className = 'mbot-msg mbot-msg--' + type;
+    d.innerText = text;
+    messages.appendChild(d);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function answer(query) {
+    const qLower = query.toLowerCase();
+    let reply = "Great question! Madhavan led this project end-to-end, focusing on user-centered research, quantitative metric analysis, and component-driven UI systems. Feel free to explore the case study or presentation deck for complete details!";
+    for (let key in kb) {
+      if (qLower.includes(key.toLowerCase()) || key.toLowerCase().includes(qLower)) {
+        reply = kb[key];
+        break;
+      }
+    }
+    setTimeout(() => addMsg(reply, 'bot'), 400);
+  }
+
+  if (pills) {
+    pills.querySelectorAll('.mbot-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.getAttribute('data-q');
+        addMsg(q, 'user');
+        answer(q);
+      });
+    });
+  }
+
+  function handleSend() {
+    const val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    answer(val);
+  }
+
+  if (send) send.addEventListener('click', handleSend);
+  if (input) input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+})();
+</script>
+</body>
+</html>
+

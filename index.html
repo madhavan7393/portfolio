@@ -794,13 +794,16 @@
     }
 
     .nav-clock-value {
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 400;
       color: rgba(34, 34, 34, 0.9);
       font-variant-numeric: tabular-nums;
       letter-spacing: 0.2px;
       transition: color 0.3s ease;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     }
+
+
 
     .nav-dark .nav-clock-value {
       color: rgba(255, 255, 255, 0.95);
@@ -852,6 +855,40 @@
 </head>
 
 <body class="body">
+  <!-- Ask AI Chatbot Widget (Portfolio Landing Page Persona) -->
+  <div class="mbot-launcher" id="mbotLauncher">
+    <div class="mbot-avatar"></div>
+    <span class="mbot-launcher-text">Ask</span>
+  </div>
+
+  <div class="mbot-window" id="mbotWindow">
+    <div class="mbot-header">
+      <div class="mbot-header-info">
+        <div class="mbot-avatar"></div>
+        <div>
+          <div class="mbot-title">Ask Madhavan</div>
+          <div class="mbot-sub">Assistant</div>
+        </div>
+      </div>
+      <button class="mbot-close" id="mbotClose">✕</button>
+    </div>
+    
+    <div class="mbot-messages" id="mbotMessages">
+      <div class="mbot-msg mbot-msg--bot">
+        👋 Hi! I'm Madhavan's Portfolio Assistant. Ask me anything about Madhavan's design experience, case studies, or how to contact him!
+      </div>
+    </div>
+
+
+    <div class="mbot-pills" id="mbotPills"></div>
+
+    <div class="mbot-input-area">
+      <input type="text" class="mbot-input" id="mbotInput" placeholder="Ask about experience, metrics, projects..." />
+      <button class="mbot-send" id="mbotSend">➤</button>
+    </div>
+  </div>
+
+
   <canvas id="hobby-canvas"></canvas>
   <div class="preloader">
     <div class="loader-wrapper">
@@ -870,24 +907,7 @@
       }
     </script>
   </div>
-  <div class="sound-wrapper" id="soundWrapper">
-    <svg class="curved-text" viewBox="0 0 100 100">
-      <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-      <text>
-        <textPath href="#circlePath">Click to enable easter eggs⚡</textPath>
-      </text>
-    </svg>
-    <div class="sound-notice" id="soundNotice" title="Click to enable interaction sounds">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round">
-        <path d="M11 5L6 9H2V15H6L11 19V5Z"></path>
-        <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07">
-        </path>
-        <path d="M15.54 8.46C16.4774 9.39764 17.004 10.6692 17.004 12C17.004 13.3308 16.4774 14.6024 15.54 15.54">
-        </path>
-      </svg>
-    </div>
-  </div>
+
   <!-- The Modal -->
   <div id="myModal" class="modal">
 
@@ -989,7 +1009,8 @@
       <h1 class="heading-7">Work.</h1>
     </div>
     <div class="container-7 w-container">
-      <a href="agriculture.html" target="_blank" class="w-inline-block project-card">
+      <a href="agriculture.html" target="_blank" class="w-inline-block project-card project-card-always">
+
         <div class="project-card-inner">
           <img
             src="https://cdn.prod.website-files.com/60b1ee968e7b7ab6bce183cb/69b252e31f812a288ccf6525_agriculture_compress.svg"
@@ -1375,16 +1396,16 @@ Built with ❤️ in Webflow × Google Antigravity | Dec 2025
               if (code === 1 || code === 2) return isDay ? '🌤️' : '☁️'; // Mainly clear, partly cloudy
               if (code === 3) return '☁️'; // Overcast
               if (code === 45 || code === 48) return '🌫️'; // Fog
-              if (code === 51 || code === 53 || code === 55) return '����️'; // Drizzle
-              if (code === 56 || code === 57 || code === 66 || code === 67) return '🌧️❄️'; // Freezing Rain / Freezing Drizzle
+              if (code === 51 || code === 53 || code === 55) return '🌧️'; // Drizzle
+              if (code === 56 || code === 57 || code === 66 || code === 67) return '🌧️'; // Freezing Rain / Drizzle
               if (code === 61 || code === 63) return '🌧️'; // Light/Moderate Rain
-              if (code === 65) return '🌧️'; // Heavy Rain (changed to standard rain for consistency, or '☔')
+              if (code === 65) return '🌧️'; // Heavy Rain
               if (code === 71 || code === 73) return '🌨️'; // Light/Moderate Snow
-              if (code === 75 || code === 77) return '❄️'; // Heavy Snow / Snow Grains
+              if (code === 75 || code === 77) return '❄️'; // Heavy Snow
               if (code >= 80 && code <= 82) return '🌦️'; // Rain showers
               if (code >= 85 && code <= 86) return '🌨️'; // Snow showers
               if (code >= 95 && code <= 99) return '⛈️'; // Thunderstorm
-              return '🌡️'; // Unknown fallback
+              return '🌤️'; // Default fallback
             }
 
             // --- Chennai Weather logic (Open-Meteo API) ---
@@ -1889,6 +1910,282 @@ Built with ❤️ in Webflow × Google Antigravity | Dec 2025
           window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
         </script>
         <script defer src="/_vercel/speed-insights/script.js"></script>
+        
+        <script>
+        (function() {
+          const launcher = document.getElementById('mbotLauncher');
+          const win = document.getElementById('mbotWindow');
+          const close = document.getElementById('mbotClose');
+          const messages = document.getElementById('mbotMessages');
+          const pills = document.getElementById('mbotPills');
+          const input = document.getElementById('mbotInput');
+          const send = document.getElementById('mbotSend');
+
+          // Master Knowledge Base Structure
+          const projectsData = {
+            agri: {
+              name: '🚜 TNAU Agricart',
+              pills: [
+                { label: '🎯 Problem & ROI', q: 'agri problem' },
+                { label: '❌ Why Zoho Failed', q: 'why zoho failed' },
+                { label: '🏗️ 3-Tier Architecture', q: 'agri architecture' },
+                { label: '⚡ Order SLA Automation', q: 'agri sla' }
+              ],
+              kb: {
+                "agri problem": "TNAU suffered a 26.83% monthly order cancellation rate and ₹17,234/mo loss because staff manually phoned 60+ vendors to verify stock post-checkout. We transformed it into an automated multi-vendor SaaS platform.",
+                "why zoho failed": "Zoho Commerce was built for single merchants. It couldn't handle multi-vendor order routing, vendor-specific inventory isolation, or District-level branch management required by TNAU.",
+                "agri architecture": "Architected a 3-tier Org-Branch-POS model: Organization (TNAU Central Hub), Branch (District Vendors/FPOs), and POS (Physical seed centers & research stations).",
+                "agri sla": "Replaced manual phone calls with automated vendor dashboard notifications. Vendors accept/modify orders directly; if unconfirmed within 12h, orders auto-escalate to TNAU admins for re-assignment."
+              }
+            },
+            skilllync: {
+              name: '📚 SkillLync LMS',
+              pills: [
+                { label: '📊 2,141 NPS Data', q: 'nps data' },
+                { label: '⚠️ O3 Mentoring Friction', q: 'o3 friction' },
+                { label: '⚡ 28% WhatsApp Fix', q: 'whatsapp fix' },
+                { label: '🎯 Session Type Dropdowns', q: 'session dropdowns' },
+                { label: '📈 Promoter Growth', q: 'promoter growth' }
+              ],
+              kb: {
+                "nps data": "Analyzed 2,141 student survey responses across 10+ engineering domains. Found a 66.88% overall NPS score, but uncovered severe domain disparities (CSE had a 46% detractor rate due to mentor shortages).",
+                "o3 friction": "Uncovered 13 operational issues in 1-on-1 (O3) mentoring: open-ended text booking caused slot misalignments, students missed slots, and technical video resolution was too low for reading code.",
+                "whatsapp fix": "Solved a 28.26% baseline O3 student no-show rate by introducing automated WhatsApp reminder notifications 15 minutes before scheduled tutoring sessions.",
+                "session dropdowns": "Replaced open-ended text inputs with mandatory Session Type dropdowns (Challenge, Project, Concept). Allowed automated routing to specialized mentors and cut scheduling errors by 85%.",
+                "promoter growth": "🎯 54 passive/detractor students upgraded their rating to Promoter following UX interventions.\n📈 Boosted 3-course completion rates beyond the 20% benchmark."
+              }
+            },
+            estore: {
+              name: '🛒 QueueBuster Khata',
+              pills: [
+                { label: '🏬 Kirana Credit Problem', q: 'khata problem' },
+                { label: '🔄 Give vs Accept Credit', q: 'khata flow' },
+                { label: '📸 Camera Receipt Proof', q: 'receipt proof' },
+                { label: '📲 WhatsApp Payment Links', q: 'whatsapp payment' },
+                { label: '🔒 Settled Lock Trade-off', q: 'paid lock' }
+              ],
+              kb: {
+                "khata problem": "Kirana store owners rely heavily on credit transactions but lose money tracking them in paper notebooks (bahi-khata). Paper records get lost, torn, or disputed by buyers.",
+                "khata flow": "Designed an explicit dual-action entry: 'Give Credit' (Red entry - money owed to merchant) vs 'Accept Payment' (Green entry - balance settled), removing ambiguity for non-tech merchants.",
+                "receipt proof": "Added camera receipt image attachments directly to transaction entries, allowing shopkeepers to photograph paper bills or signed notes as indisputable digital proof.",
+                "whatsapp payment": "Integrated automated WhatsApp payment link generation upon recording credit, enabling merchants to request digital UPI payments directly from customers' phones.",
+                "paid lock": "Auto-locking paid transactions so balances cannot be edited online once settled. Prevented merchant fraud and built customer trust."
+              }
+            },
+            qbapp: {
+              name: '📱 QB Android POS',
+              pills: [
+                { label: '📉 Support Call Reduction', q: 'support calls' },
+                { label: '🍔 Hamburger Menu Problem', q: 'hamburger menu' },
+                { label: '🏠 Home Screen Tiles', q: 'home tiles' },
+                { label: '⚡ 1-Tap Quick Bill', q: 'quick bill' },
+                { label: '📝 Progressive Form', q: 'product form' }
+              ],
+              kb: {
+                "support calls": "Analyzed customer support logs and found cashiers flooded support lines asking how to change prices, add products, or check inventory because features were buried.",
+                "hamburger menu": "The old Android POS relied entirely on a hidden hamburger drawer. Cashiers under rush-hour pressure failed to discover essential management tools.",
+                "home tiles": "Designed a dedicated Android POS Home Screen with prominent visual tiles for Quick Bill, Catalog, Customers, Inventory, and Store Settings.",
+                "quick bill": "Created a 1-tap 'Quick Bill' shortcut bypassing product catalog selection for rush-hour transactions where cashiers directly enter custom bill amounts.",
+                "product form": "Redesigned the product creation workflow by segregating massive 30-field forms into progressive 3-step tabs (Basic Info, Pricing & Taxes, Inventory Stock)."
+              }
+            },
+            v2web: {
+              name: '💻 QB SaaS Web App',
+              pills: [
+                { label: '⚡ ReactJS Migration', q: 'react migration' },
+                { label: '🅰️ 0ms System Font', q: 'system font' },
+                { label: '📂 2-Panel Navigation', q: '2-panel nav' },
+                { label: '📊 Data Table UX', q: 'table ux' },
+                { label: '🏬 50k SKU Scale', q: '50k sku' }
+              ],
+              kb: {
+                "react migration": "Engineered a migration from legacy web frames to a modular ReactJS architecture across 11 core SaaS modules, enabling instant client-side data rendering for multi-store chains.",
+                "system font": "Eliminated custom web font downloads to achieve 0ms typography loading latency by specifying native OS system fonts (Segoe UI on Windows, San Francisco on macOS).",
+                "2-panel nav": "Introduced a two-panel navigation drawer: Panel 1 displays main business pillars (Catalog, Sales, Reports), and Panel 2 dynamically expands sub-modules without losing context.",
+                "table ux": "Redesigned enterprise data tables with fixed column headers, customizable field visibility, inline batch actions, and high-contrast row zebra striping for low-end POS monitors.",
+                "50k sku": "Engineered data grid pagination and virtualized scrolling to handle enterprise clients operating 50+ store branches with over 50,000 SKUs."
+              }
+            }
+          };
+
+          const profileKB = {
+            "who is madhavan?": "Madhavan is a Product Designer passionate about human psychology and complex system architecture. He specializes in turning messy operational workflows into simple, scalable digital products.",
+            "total experience": "Madhavan has 7+years experience leading Product Design across B2B SaaS (QueueBuster POS), Ed-Tech (SkillLync), and Government Digital Transformation (TNAU Agricart).",
+
+            "core skills": "🎨 User Research & Usability Testing (Maze, Eye-Tracking)\n📐 Design Systems & Component Libraries\n📊 Data-Driven UX & NPS Analysis\n⚡ POS, E-Commerce, & B2B SaaS Workflows",
+            "design leadership": "Madhavan collaborates directly with PMs, VP of Engineering, and university stakeholders — driving end-to-end product ownership from research to production metrics.",
+            "how to hire": "You can reach out directly via email at madhavan7393@gmail.com or connect via LinkedIn & Behance links in the contact footer!"
+          };
+
+          function renderMainPills() {
+            pills.innerHTML = '';
+            
+            const mainPills = [
+              { label: '👤 Who is Madhavan?', q: 'who is madhavan?' },
+              { label: '💼 Total Experience', q: 'total experience' },
+              { label: '🛠️ Core Skills', q: 'core skills' },
+              { label: '🚀 Leadership & Scope', q: 'design leadership' },
+              { label: '📂 Projects', action: 'show_projects' },
+              { label: '📬 How to Hire', q: 'how to hire' }
+            ];
+
+            mainPills.forEach(p => {
+              const b = document.createElement('button');
+              b.className = 'mbot-pill';
+              b.textContent = p.label;
+              b.addEventListener('click', () => {
+                addMsg(p.label, 'user');
+                if (p.action === 'show_projects') {
+                  setTimeout(() => {
+                    addMsg("Select a project below to explore case study questions:", 'bot');
+                    renderProjectListPills();
+                  }, 300);
+                } else {
+                  answer(p.q, profileKB);
+                }
+              });
+              pills.appendChild(b);
+            });
+          }
+
+          function renderProjectListPills() {
+            pills.innerHTML = '';
+            
+            // Add Back button
+            const backBtn = document.createElement('button');
+            backBtn.className = 'mbot-pill';
+            backBtn.textContent = '⬅️ Back to Main Menu';
+            backBtn.style.background = '#e2e8f0';
+            backBtn.style.color = '#0f172a';
+            backBtn.addEventListener('click', () => {
+              renderMainPills();
+            });
+            pills.appendChild(backBtn);
+
+            for (let key in projectsData) {
+              const proj = projectsData[key];
+              const b = document.createElement('button');
+              b.className = 'mbot-pill';
+              b.textContent = proj.name;
+              b.addEventListener('click', () => {
+                addMsg(proj.name, 'user');
+                setTimeout(() => {
+                  addMsg(`Questions for ${proj.name}:`, 'bot');
+                  renderProjectQuestionsPills(key);
+                }, 300);
+              });
+              pills.appendChild(b);
+            }
+          }
+
+          function renderProjectQuestionsPills(projKey) {
+            pills.innerHTML = '';
+            const proj = projectsData[projKey];
+            if (!proj) return;
+
+            // Back to Projects list button
+            const backBtn = document.createElement('button');
+            backBtn.className = 'mbot-pill';
+            backBtn.textContent = '⬅️ Back to Projects List';
+            backBtn.style.background = '#e2e8f0';
+            backBtn.style.color = '#0f172a';
+            backBtn.addEventListener('click', () => {
+              renderProjectListPills();
+            });
+            pills.appendChild(backBtn);
+
+            proj.pills.forEach(p => {
+              const b = document.createElement('button');
+              b.className = 'mbot-pill';
+              b.textContent = p.label;
+              b.addEventListener('click', () => {
+                addMsg(p.label, 'user');
+                answer(p.q, proj.kb);
+              });
+              pills.appendChild(b);
+            });
+          }
+
+          function toggle() { win.classList.toggle('is-open'); }
+          if (launcher) launcher.addEventListener('click', toggle);
+          if (close) close.addEventListener('click', toggle);
+
+          // Initial Render Main Profile Pills
+          renderMainPills();
+
+          if (launcher) {
+            launcher.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+            launcher.style.opacity = '1';
+            launcher.style.pointerEvents = 'auto';
+            launcher.style.transform = 'translateY(0)';
+          }
+
+
+
+          function addMsg(text, type) {
+            const d = document.createElement('div');
+            d.className = 'mbot-msg mbot-msg--' + type;
+            d.innerText = text;
+            messages.appendChild(d);
+            messages.scrollTop = messages.scrollHeight;
+          }
+
+          function answer(query, targetKB) {
+            const qLower = query.toLowerCase();
+            let reply = null;
+
+            if (targetKB) {
+              for (let key in targetKB) {
+                if (qLower.includes(key) || key.includes(qLower)) {
+                  reply = targetKB[key];
+                  break;
+                }
+              }
+            }
+
+            // Fallback search across profile + all projects
+            if (!reply) {
+              for (let k in profileKB) {
+                if (qLower.includes(k) || k.includes(qLower)) {
+                  reply = profileKB[k];
+                  break;
+                }
+              }
+            }
+            if (!reply) {
+              for (let pk in projectsData) {
+                const map = projectsData[pk].kb;
+                for (let k in map) {
+                  if (qLower.includes(k) || k.includes(qLower)) {
+                    reply = map[k];
+                    break;
+                  }
+                }
+                if (reply) break;
+              }
+            }
+
+            if (!reply) {
+              reply = "Madhavan led this project end-to-end focusing on user research, metrics ROI, and scalable component systems. Check out the case study pages above or email madhavan7393@gmail.com!";
+            }
+
+            setTimeout(() => addMsg(reply, 'bot'), 400);
+          }
+
+          function handleSend() {
+            const val = input.value.trim();
+            if (!val) return;
+            addMsg(val, 'user');
+            input.value = '';
+            answer(val);
+          }
+
+          if (send) send.addEventListener('click', handleSend);
+          if (input) input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+        })();
+        </script>
+
+
 </body>
 
 </html>

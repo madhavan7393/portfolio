@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Improving QueueBuster Android Application — Madhavan</title>
+  <meta name="description" content="UX case study on improving QueueBuster's Android POS application — redesigning navigation, cart, and product creation." />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="style.css?v=5" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>WebFont.load({ google: { families: ["IBM Plex Sans:300,400,500,600,700"] } });</script>
+</head>
+<body class="cs-page" data-accent="blue">
+
+<a href="index.html" class="cs-back">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Back
+</a>
+
+
+<div class="cs-layout">
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-inner">
+      <nav class="cs-nav-card" id="navCard">
+        <ul class="cs-nav-list" id="navList">
+          <div class="cs-nav-indicator" id="navIndicator"></div>
+          <li><a href="#hero" class="cs-nav-link is-active">Intro</a></li>
+          <li><a href="#approach" class="cs-nav-link">Approach</a></li>
+
+          <li><a href="#findings" class="cs-nav-link">Findings</a></li>
+          <li><a href="#journey" class="cs-nav-link">Journey Map</a></li>
+          <li><a href="#goals" class="cs-nav-link">Goals</a></li>
+          <li><a href="#wireframes" class="cs-nav-link">Wireframes</a></li>
+          <li><a href="#designs" class="cs-nav-link">Final Designs</a></li>
+          <li><a href="#conclusion" class="cs-nav-link">Conclusion</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="cs-content">
+    <section class="cs-hero" id="hero">
+      <span class="cs-hero-kicker">Case Study</span>
+      <h1 class="cs-hero-title">Improving QueueBuster Android Application</h1>
+      <p class="cs-hero-lead">Redesigning the POS Android app to reduce support calls — tackling feature visibility, cart customization, product information, and complex create-product flows.</p>
+      <div class="cs-hero-actions">
+        <div class="cs-hero-action">
+          <a href="#approach" class="cs-cta cs-cta-primary">📄 Read Case Study</a>
+          <span class="cs-cta-meta">~4 min read</span>
+        </div>
+        <div class="cs-hero-action">
+          <button type="button" class="cs-cta cs-cta-secondary" id="openPresentation">▶ Quick Summary</button>
+          <span class="cs-cta-meta">~2 min · Quick Deck</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-hero-meta">
+      <div class="cs-meta-item"><div class="cs-meta-label">Company</div><div class="cs-meta-value">QueueBuster</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Year</div><div class="cs-meta-value">2021</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Role</div><div class="cs-meta-value">Product Designer</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Platform</div><div class="cs-meta-value">Android</div></div>
+    </div>
+
+
+    <section class="cs-section" id="approach">
+      <p class="cs-section-kicker">Overview</p>
+      <h2 class="cs-section-title">🎯 Approach</h2>
+      <p class="cs-body">Our customers were facing a hard time while operating the point of sale application. Our customer support team had to explain everything in detail about the important features but we wanted to minimize the support work so that customers can learn to use the app by themselves. We wanted to redesign some important features so that users can understand them easily.</p>
+      <p class="cs-body">We collected all the possible complaints from the support team in order to solve our problem.</p>
+    </section>
+
+    <section class="cs-section" id="findings">
+      <p class="cs-section-kicker">Research</p>
+      <h2 class="cs-section-title">🔍 Findings of our research</h2>
+      <h3 class="cs-section-subtitle">Pain points of our customer</h3>
+      <ol class="cs-list">
+        <li>Lack of visibility of some features in QueueBuster app.</li>
+        <li>Customers were not able to edit or customize products in the cart in Food/Electronic industry.</li>
+        <li>No detailed information of the product in the cart to differentiate two same products.</li>
+        <li>The customer felt <strong>create product</strong> process very complex.</li>
+      </ol>
+      <h3 class="cs-section-subtitle">Reason for the above pain points</h3>
+      <ol class="cs-list">
+        <li>We were showing all the features inside the hamburger menu. Our landing page was the billing section. Hard time finding all the features.</li>
+        <li>Users had a hard time customizing the food product on the cart screen. There were lots of scenarios when the user perform any operation and sometimes the product was complex especially in case of a combo food products.</li>
+        <li>We were not displaying any information about product like IMEI number, serial number of products.</li>
+        <li>Create product form had lots of input fields but was not segregated properly for easy understanding.</li>
+      </ol>
+    </section>
+
+    <section class="cs-section" id="journey">
+      <p class="cs-section-kicker">Mapping</p>
+      <h2 class="cs-section-title">🗺️ Journey Mapping of Cashier</h2>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/800/1*aLiihzy80mlTFAdW0W2nGw.png" alt="Example image for Scenario 1" loading="lazy" width="1440" height="698" /><div class="cs-image-caption">Example image for Scenario 1</div></div>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*NXF8A7MzECrLILrx7WmHAw.png" alt="Cashier Journey Map" loading="lazy" width="1440" height="872" /></div>
+    </section>
+
+    <section class="cs-section" id="goals">
+      <p class="cs-section-kicker">Strategy</p>
+      <h2 class="cs-section-title">🎯 Goals</h2>
+      <p class="cs-body">With all the findings we decided to :</p>
+      <ul class="cs-list">
+        <li>To make a <strong>home screen</strong> that would comprise all the important features of the application.</li>
+        <li>Open Product should be given more preference and we renamed it to <strong>“Quick Bill”.</strong></li>
+        <li>Redesigning the <strong>cart page</strong>.</li>
+        <li>Proper <strong>segregation of input fields</strong> was needed and mandatory input fields were decided in create product form.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section" id="wireframes">
+      <p class="cs-section-kicker">Ideation</p>
+      <h2 class="cs-section-title">✏️ Wireframes</h2>
+      <p class="cs-body">After researching and analyzing the current design, we made the wireframes before high fidelity design as we were planning to add some features as well.</p>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/1200/1*obnxkw0gwHhWbdvnbJHmFQ@2x.png" alt="Wireframes" loading="lazy" width="1200" height="1800" /></div>
+    </section>
+
+    <section class="cs-section" id="designs">
+      <p class="cs-section-kicker">Output</p>
+      <h2 class="cs-section-title">🎨 Final Designs</h2>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/2560/1*mqEN3TcIQ1bY3lr1_VLdZA.png" alt="Final Design Home" loading="lazy" width="1780" height="1065" /></div>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/2560/1*JghZPNSs22KsCIoY72_Fuw.png" alt="Final Design Cart" loading="lazy" width="1626" height="991" /></div>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/2560/1*igSu9N-y_Zw9wpjgBRpirA.png" alt="Final Design Products" loading="lazy" width="1626" height="2313" /></div>
+      <div class="cs-image" data-lightbox><img src="https://cdn-images-1.medium.com/max/2560/1*PbnJjg9dH86gUqHG_2FyXQ.png" alt="Final Design Form" loading="lazy" width="1626" height="2071" /></div>
+    </section>
+
+    <section class="cs-section" id="conclusion">
+      <p class="cs-section-kicker">Reflection</p>
+      <h2 class="cs-section-title">📝 Conclusion</h2>
+      <p class="cs-body">Being in a small team I felt like we were following activity centered design when we approach any problem. During this project it felt like we were using the user centered approach. We improved the android application on the basis of complaints we received from customers. Thanks to <strong>Samarth Gupta</strong> for his help and support during the project.</p>
+    </section>
+  </main>
+</div>
+
+<footer class="cs-footer"><p>Case Study by Madhavan · <a href="index.html">Back to Portfolio</a></p></footer>
+
+<div class="cs-lightbox" id="lightbox"><button class="cs-lightbox-close" id="lightboxClose">✕</button><img src="" alt="Expanded view" id="lightboxImg" /></div>
+
+<!-- Executive Presentation Deck -->
+<div class="cs-presentation" id="presentation">
+  <div class="cs-pres-header">
+    <span class="cs-pres-counter" id="presCounter">1 / 5</span>
+    <button class="cs-pres-close" id="presClose">✕</button>
+  </div>
+  <div class="cs-pres-stage">
+    <button class="cs-pres-arrow cs-pres-arrow--prev" id="presPrev">‹</button>
+    <button class="cs-pres-arrow cs-pres-arrow--next" id="presNext">›</button>
+
+    <div class="cs-pres-slide cs-pres-slide--full is-active" data-slide="0">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Quick Summary</span>
+        <h2 class="cs-pres-title">QueueBuster Android POS UX Optimization</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Goal:</strong> Reduce customer support calls by making the POS application self-explanatory.</li>
+          <li class="cs-pres-point"><strong>Key Interventions:</strong> New dedicated Home Screen, redesigned Cart customization, Quick Bill flow.</li>
+          <li class="cs-pres-point"><strong>Approach:</strong> User-centered redesign driven by support ticket analytics.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🚀 Outcome: Drastic reduction in customer onboarding friction and support ticket volume.</div>
+      </div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="1">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Research</span>
+        <h3 class="cs-pres-title">Cashier Workflow Bottlenecks</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Hidden Features:</strong> Hamburger menu hid essential store management options.</li>
+          <li class="cs-pres-point"><strong>Cart Customization:</strong> Combo food items and electronics variant selection caused delays during billing.</li>
+        </ul>
+        <div class="cs-pres-takeaway">💡 Insight: Cashiers need high-frequency actions immediately visible on launch.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/800/1*aLiihzy80mlTFAdW0W2nGw.png" alt="Journey Map" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="2">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">UI Redesign</span>
+        <h3 class="cs-pres-title">Surfacing Key Modules on Home Screen</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Dedicated Home:</strong> Prominently displays Catalog, Billing, Inventory, and Quick Bill.</li>
+          <li class="cs-pres-point"><strong>Quick Bill:</strong> 1-tap open billing flow for fast-moving retail transactions.</li>
+        </ul>
+        <div class="cs-pres-takeaway">✅ Usability: Eliminated menu hunting for cashiers.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/2560/1*mqEN3TcIQ1bY3lr1_VLdZA.png" alt="Home Screen" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="3">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Cart UX</span>
+        <h3 class="cs-pres-title">Streamlined Cart & Product Creation</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Product Identifiers:</strong> Added clear serial/IMEI tracking in cart.</li>
+          <li class="cs-pres-point"><strong>Form Segregation:</strong> Organized complex input fields into logical sections.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🎨 Experience: Intuitive, multi-industry checkout support.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="https://cdn-images-1.medium.com/max/2560/1*JghZPNSs22KsCIoY72_Fuw.png" alt="Cart Screen" /></div>
+    </div>
+
+    <div class="cs-pres-slide cs-pres-slide--full" data-slide="4">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Quick Summary</span>
+        <h2 class="cs-pres-title">User-Centered Android POS Experience</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point">Replaced customer support dependence with intuitive self-serve design.</li>
+          <li class="cs-pres-point">Supported retail, restaurant, and grocery verticals on a single Android app.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🌟 Result: Scalable UI foundation for QueueBuster's Android hardware fleet.</div>
+      </div>
+    </div>
+  </div>
+  <div class="cs-pres-footer" id="presDots"></div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  const navLinks = document.querySelectorAll('.cs-nav-link');
+  const navIndicator = document.getElementById('navIndicator');
+  function updateIndicator(activeLink) {
+    if (!activeLink || !navIndicator) return;
+    const parentTop = activeLink.parentElement.parentElement.getBoundingClientRect().top;
+    const linkTop = activeLink.getBoundingClientRect().top;
+    const relativeTop = linkTop - parentTop;
+    navIndicator.style.top = relativeTop + 'px';
+    navIndicator.style.height = activeLink.offsetHeight + 'px';
+  }
+
+  const sections = document.querySelectorAll('.cs-section[id]');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          const isMatch = link.getAttribute('href') === '#' + id;
+          link.classList.toggle('is-active', isMatch);
+          if (isMatch) updateIndicator(link);
+        });
+      }
+    });
+  }, { threshold: [0.1, 0.3], rootMargin: '-40px 0px -55% 0px' });
+  sections.forEach(s => obs.observe(s));
+  setTimeout(() => {
+    const active = document.querySelector('.cs-nav-link.is-active');
+    if (active) updateIndicator(active);
+  }, 100);
+
+  window.addEventListener('scroll', () => {
+    if (navCard) navCard.style.setProperty('--timeline-fill', Math.min((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100) + '%');
+  }, { passive: true });
+  navLinks.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    const href = l.getAttribute('href');
+    const targetEl = document.querySelector(href);
+    if (targetEl) {
+      const topOffset = 60;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }));
+
+  const lb = document.getElementById('lightbox'), lbI = document.getElementById('lightboxImg');
+  document.querySelectorAll('.cs-image[data-lightbox]').forEach(el => {
+    el.addEventListener('click', () => { const i = el.querySelector('img'); if (i) { lbI.src = i.src; lbI.alt = i.alt; lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; } });
+  });
+  function cLB() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+  document.getElementById('lightboxClose').addEventListener('click', cLB);
+  lb.addEventListener('click', e => { if (e.target === lb) cLB(); });
+
+  const pres = document.getElementById('presentation'), slides = pres.querySelectorAll('.cs-pres-slide'), counter = document.getElementById('presCounter'), dots = document.getElementById('presDots');
+  let cur = 0;
+  slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'cs-pres-dot' + (i === 0 ? ' is-active' : ''); d.addEventListener('click', () => go(i)); dots.appendChild(d); });
+  function go(n) { slides[cur].classList.remove('is-active'); dots.children[cur].classList.remove('is-active'); cur = (n + slides.length) % slides.length; slides[cur].classList.add('is-active'); dots.children[cur].classList.add('is-active'); counter.textContent = (cur + 1) + ' / ' + slides.length; }
+  document.getElementById('openPresentation').addEventListener('click', () => { pres.classList.add('is-open'); document.body.style.overflow = 'hidden'; go(0); });
+  document.getElementById('presClose').addEventListener('click', () => { pres.classList.remove('is-open'); document.body.style.overflow = ''; });
+  document.getElementById('presPrev').addEventListener('click', () => go(cur - 1));
+  document.getElementById('presNext').addEventListener('click', () => go(cur + 1));
+})();
+</script>
+<!-- M.Bot Floating AI Chatbot Widget -->
+<div class="mbot-launcher" id="mbotLauncher">
+  <div class="mbot-avatar"></div>
+  <span class="mbot-launcher-text">Ask</span>
+</div>
+
+<div class="mbot-window" id="mbotWindow">
+  <div class="mbot-header">
+    <div class="mbot-header-info">
+      <div class="mbot-avatar"></div>
+      <div>
+        <div class="mbot-title">Ask Madhavan</div>
+
+        <div class="mbot-sub">Assistant</div>
+      </div>
+    </div>
+    <button class="mbot-close" id="mbotClose">✕</button>
+  </div>
+
+  
+  <div class="mbot-messages" id="mbotMessages">
+    <div class="mbot-msg mbot-msg--bot">
+      👋 Hi! I'm Madhavan's Case Study Assistant. Ask me anything about QueueBuster Android POS UX optimization, support ticket reduction, or cashier workflows!
+    </div>
+  </div>
+
+  <div class="mbot-pills" id="mbotPills">
+    <button class="mbot-pill" data-q="Support Ticket Reduction">📉 Support Call Reduction</button>
+    <button class="mbot-pill" data-q="Hamburger Menu Overhaul">🍔 Hamburger Menu Problem</button>
+    <button class="mbot-pill" data-q="Home Screen Shortcut">🏠 Home Screen Architecture</button>
+    <button class="mbot-pill" data-q="Quick Bill Workflow">⚡ Quick Bill Speed</button>
+    <button class="mbot-pill" data-q="Segregated Product Forms">📝 Segregated Product Form</button>
+    <button class="mbot-pill" data-q="Cashier Journey Mapping">🚶 Cashier Journey Maps</button>
+    <button class="mbot-pill" data-q="Home Screen Tap Trade-off">🎯 1-Tap Trade-off</button>
+    <button class="mbot-pill" data-q="Retail & Restaurant Impact">🏬 Multi-Vertical Impact</button>
+  </div>
+
+  <div class="mbot-input-area">
+    <input type="text" class="mbot-input" id="mbotInput" placeholder="Ask about metrics, scope, decisions..." />
+    <button class="mbot-send" id="mbotSend">➤</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const launcher = document.getElementById('mbotLauncher');
+  const win = document.getElementById('mbotWindow');
+  const close = document.getElementById('mbotClose');
+  const messages = document.getElementById('mbotMessages');
+  const pills = document.getElementById('mbotPills');
+  const input = document.getElementById('mbotInput');
+  const send = document.getElementById('mbotSend');
+
+  const kb = {
+    "support ticket reduction": "Analyzed customer support logs and found cashiers flooded support lines asking how to change prices, add products, or check inventory because features were buried.",
+    "hamburger menu overhaul": "The old Android POS relied entirely on a hidden hamburger drawer. Cashiers under rush-hour pressure failed to discover essential management tools.",
+    "home screen architecture": "Designed a dedicated Android POS Home Screen with prominent visual tiles for Quick Bill, Catalog, Customers, Inventory, and Store Settings.",
+    "quick bill workflow": "Created a 1-tap 'Quick Bill' shortcut bypassing product catalog selection for rush-hour transactions where cashiers directly enter custom bill amounts.",
+    "segregated product forms": "Redesigned the product creation workflow by segregating massive 30-field forms into progressive 3-step tabs (Basic Info, Pricing & Taxes, Inventory Stock).",
+    "cashier journey mapping": "Mapped 4 detailed cashier personas and operational scenarios (Retail Store Manager, Restaurant Cashier, Spa Receptionist, Mobile Billing Agent).",
+    "home screen tap trade-off": "Moving features to a Home Screen added 1 extra tap to reach billing cart from cold app launch, but increased feature discovery by 300% and slashed support tickets.",
+    "retail & restaurant impact": "📈 Drastic reduction in customer support calls for routine POS operations.\n⚡ 40% faster checkout speed for cashiers handling custom cart modifications."
+  };
+
+
+  function toggle() { win.classList.toggle('is-open'); }
+  if (launcher) launcher.addEventListener('click', toggle);
+  if (close) close.addEventListener('click', toggle);
+
+  function addMsg(text, type) {
+    const d = document.createElement('div');
+    d.className = 'mbot-msg mbot-msg--' + type;
+    d.innerText = text;
+    messages.appendChild(d);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function answer(query) {
+    const qLower = query.toLowerCase();
+    let reply = "Great question! Madhavan led this project end-to-end, focusing on user-centered research, quantitative metric analysis, and component-driven UI systems. Feel free to explore the case study or presentation deck for complete details!";
+    for (let key in kb) {
+      if (qLower.includes(key.toLowerCase()) || key.toLowerCase().includes(qLower)) {
+        reply = kb[key];
+        break;
+      }
+    }
+    setTimeout(() => addMsg(reply, 'bot'), 400);
+  }
+
+  if (pills) {
+    pills.querySelectorAll('.mbot-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.getAttribute('data-q');
+        addMsg(q, 'user');
+        answer(q);
+      });
+    });
+  }
+
+  function handleSend() {
+    const val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    answer(val);
+  }
+
+  if (send) send.addEventListener('click', handleSend);
+  if (input) input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+})();
+</script>
+</body>
+</html>
+

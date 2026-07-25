@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Case Study: Improving Student Experience with Ed-tech Platform — Madhavan</title>
+  <meta name="description" content="UX case study on improving student experience for Skill-Lync ed-tech platform. Research, NPS analysis, O3 session optimization, and UI redesign." />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="style.css?v=4" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>WebFont.load({ google: { families: ["IBM Plex Sans:300,400,500,600,700"] } });</script>
+</head>
+<body class="cs-page" data-accent="purple">
+
+<a href="index.html" class="cs-back">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Back
+</a>
+
+
+<div class="cs-layout">
+  <aside class="cs-sidebar">
+    <div class="cs-sidebar-inner">
+      <nav class="cs-nav-card" id="navCard">
+        <ul class="cs-nav-list" id="navList">
+          <div class="cs-nav-indicator" id="navIndicator"></div>
+          <li><a href="#hero" class="cs-nav-link is-active">Intro</a></li>
+          <li><a href="#overview" class="cs-nav-link">Overview</a></li>
+
+          <li><a href="#process" class="cs-nav-link">Design Process</a></li>
+          <li><a href="#phase1" class="cs-nav-link">Phase 1: Research</a></li>
+          <li><a href="#workflow" class="cs-nav-link">Workflow</a></li>
+          <li><a href="#heatmaps" class="cs-nav-link">Heatmaps</a></li>
+          <li><a href="#nps" class="cs-nav-link">NPS Analysis</a></li>
+          <li><a href="#qualitative" class="cs-nav-link">Qualitative Research</a></li>
+          <li><a href="#personas" class="cs-nav-link">User Personas</a></li>
+          <li><a href="#phase2" class="cs-nav-link">Phase 2: Ideation</a></li>
+          <li><a href="#o3issues" class="cs-nav-link">O3 Issues</a></li>
+          <li><a href="#dataanalysis" class="cs-nav-link">Data Analysis</a></li>
+          <li><a href="#solutions" class="cs-nav-link">Solutions</a></li>
+          <li><a href="#phase3" class="cs-nav-link">Phase 3: Design</a></li>
+          <li><a href="#hifi" class="cs-nav-link">High Fidelity</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="cs-content">
+    <section class="cs-hero" id="hero">
+      <span class="cs-hero-kicker">Case Study</span>
+      <h1 class="cs-hero-title">Improving Student Experience with Ed-tech Platform</h1>
+      <p class="cs-hero-lead">Revamping Skill-Lync's post-sales student experience — from NPS analysis and qualitative research to redesigning mentoring sessions and the LMS interface.</p>
+      <div class="cs-hero-actions">
+        <div class="cs-hero-action">
+          <a href="#overview" class="cs-cta cs-cta-primary">📄 Read Case Study</a>
+          <span class="cs-cta-meta">~8 min read</span>
+        </div>
+        <div class="cs-hero-action">
+          <button type="button" class="cs-cta cs-cta-secondary" id="openPresentation">▶ Quick Summary</button>
+          <span class="cs-cta-meta">~3 min · Executive Deck</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-hero-meta">
+      <div class="cs-meta-item"><div class="cs-meta-label">Company</div><div class="cs-meta-value">Skill-Lync</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Year</div><div class="cs-meta-value">2022</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Role</div><div class="cs-meta-value">Product Designer</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Platform</div><div class="cs-meta-value">Web (LMS)</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Tools</div><div class="cs-meta-value">Figma, Clarity</div></div>
+    </div>
+
+
+    <section class="cs-section" id="overview">
+      <p class="cs-section-kicker">About</p>
+      <h2 class="cs-section-title">📕 Project Overview</h2>
+      <p class="cs-body"><strong>Skill-Lync</strong> is an ed-tech platform that provides industry-relevant technical courses in Mechanical, Civil, Electrical, Electronics, Medical Technology & Computer Science Engineering. The company provides job-assistance programs and corporate upskilling (B2B).</p>
+      <p class="cs-body">I was with the product team (4-5 PMs, 2 designers). The team was split into <strong>pre-sales and post-sales</strong> teams. Our major project was to revamp the entire product experience.</p>
+      <div class="cs-callout cs-callout--info">
+        <div class="cs-callout-title">Pre-sales</div>
+        <p class="cs-callout-body">Responsible for reaching out to potential students and companies to promote courses, demo calls, TSE discussions, payment, loan processing, and onboarding until LMS entry.</p>
+      </div>
+      <div class="cs-callout cs-callout--purple">
+        <div class="cs-callout-title">Post-sales</div>
+        <p class="cs-callout-body">Ensuring positive learning experience — LMS, challenges, 1-on-1 calls, study plans, projects, career services, and interviews until placement.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="process">
+      <p class="cs-section-kicker">Approach</p>
+      <h2 class="cs-section-title">🎨 Design Process</h2>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Design_Process_(3).png" alt="Design process" loading="lazy" width="1516" height="400" /></div>
+    </section>
+
+    <section class="cs-section" id="phase1">
+      <p class="cs-section-kicker">Phase 1</p>
+      <h2 class="cs-section-title">🔍 Understanding the Product</h2>
+      <p class="cs-body">I was assigned to post-sales but worked across pre-sales to understand user needs. We began setting up meetings with TSE, CX, Engineering, Marketing, and Students.</p>
+      <div class="cs-callout cs-callout--warning">
+        <p class="cs-callout-body"><strong>Initiating calls and scheduling meetings proved to be the most difficult part.</strong> Unfortunately, there was no documentation available, and each team had its own understanding of the product. I set up a weekly alignment call with recorded notes and release emails.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="workflow">
+      <p class="cs-section-kicker">Discovery</p>
+      <h2 class="cs-section-title">📋 Student Workflow Mapping</h2>
+      <p class="cs-body">It took more than a month to define the user flow with hundreds of cross-team meetings. The finalized workflow was shared across departments.</p>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Untitled_document-1_1.png" alt="Student workflow" loading="lazy" width="1300" height="600" /></div>
+    </section>
+
+    <section class="cs-section" id="heatmaps">
+      <p class="cs-section-kicker">Behavior Analysis</p>
+      <h2 class="cs-section-title">🔥 Heatmap Research (Clarity)</h2>
+      <p class="cs-body">We analyzed Clarity heatmaps and session replays to identify popular pages, navigation bottlenecks, and LMS drop-off points.</p>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Heatmaps.png" alt="LMS heatmap analysis" loading="lazy" width="1420" height="800" /><div class="cs-image-caption">Researching session replays and heatmaps for LMS</div></div>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/heatmap_website.png" alt="Website heatmap analysis" loading="lazy" width="1420" height="800" /><div class="cs-image-caption">Researching session replays and heatmaps for the website</div></div>
+    </section>
+
+    <section class="cs-section" id="nps">
+      <p class="cs-section-kicker">Quantitative Data</p>
+      <h2 class="cs-section-title">📊 NPS Survey Breakdown (2,141 Responses)</h2>
+      <p class="cs-body">Analyzed 2,141 survey responses across 10+ technical engineering domains. Overall NPS was <strong>66.88%</strong> (1,565 Promoters, 443 Passives, 133 Detractors).</p>
+      <div class="cs-impact-grid">
+        <div class="cs-impact-card"><div class="cs-impact-value">2,141</div><div class="cs-impact-label">Total NPS Responses</div></div>
+        <div class="cs-impact-card"><div class="cs-impact-value">66.88%</div><div class="cs-impact-label">Overall NPS Score</div></div>
+        <div class="cs-impact-card"><div class="cs-impact-value">1,565</div><div class="cs-impact-label">Promoters (73%)</div></div>
+        <div class="cs-impact-card"><div class="cs-impact-value">133</div><div class="cs-impact-label">Detractors (6%)</div></div>
+      </div>
+      <h3 class="cs-section-subtitle">Promoters Feedback</h3>
+      <p class="cs-body">~26% satisfied with course content, ~11% learned new skills, ~7% liked video quality, ~7% appreciated 1-on-1 mentoring sessions.</p>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Untitled_document_(1)-1_1_(1).png" alt="Promoters word cloud" loading="lazy" width="1246" height="600" /><div class="cs-image-caption">Word Cloud from Promoters' reason for rating</div></div>
+      <h3 class="cs-section-subtitle">Passives & Detractors Feedback</h3>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Untitled_document_(1)-1_2.png" alt="Passives word cloud" loading="lazy" width="600" height="400" /><div class="cs-image-caption">Passives Feedback Word Cloud</div></div>
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Untitled_document_(1)-2_1.png" alt="Detractors word cloud" loading="lazy" width="600" height="400" /><div class="cs-image-caption">Detractors Feedback Word Cloud</div></div>
+      </div>
+      <div class="cs-callout cs-callout--error">
+        <div class="cs-callout-title">Key Detractor Finding</div>
+        <p class="cs-callout-body">91% of CSE domain detractors and 40% of Electrical domain detractors cited course content and AV clarity as their reason for low ratings.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="qualitative">
+      <p class="cs-section-kicker">Qualitative</p>
+      <h2 class="cs-section-title">📞 User Interviews & Reach-out Summary</h2>
+      <p class="cs-body"><strong>Background:</strong> Program completion rate (completing 3 mandatory courses) was only ~20%. We interviewed learners across various dropout stages to understand blockers.</p>
+      <p class="cs-body">Reached out to 152 unique students (Passives & Detractors): 49% had no specific issue (54 agreed to change rating to Promoter), 27% raised content concerns, 4.27% reported O3 mentoring slot unavailability, and 3.66% were dissatisfied with technical support resolution.</p>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/qualtiative_report-1_1.png" alt="Qualitative report" loading="lazy" width="912" height="600" /></div>
+    </section>
+
+    <section class="cs-section" id="personas">
+      <p class="cs-section-kicker">Target Users</p>
+      <h2 class="cs-section-title">👤 User Personas</h2>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Group_17.png" alt="User persona 1" loading="lazy" width="960" height="600" /></div>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Group_15.png" alt="User persona 2" loading="lazy" width="960" height="600" /></div>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Group_16.png" alt="User persona 3" loading="lazy" width="960" height="600" /></div>
+    </section>
+
+    <section class="cs-section" id="phase2">
+      <p class="cs-section-kicker">Phase 2</p>
+      <h2 class="cs-section-title">💡 Ideation & Module Focus</h2>
+      <p class="cs-body">Focused on two key areas: <strong>1. One-on-One Tutoring Sessions (O3)</strong> and <strong>2. Revamping Student Assessment Tests (SAT)</strong>.</p>
+    </section>
+
+    <section class="cs-section" id="o3issues">
+      <p class="cs-section-kicker">O3 Redesign</p>
+      <h2 class="cs-section-title">📱 13 Operational Issues in Mentoring (O3)</h2>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Screenshot_2022-02-22_at_8.14.png" alt="O3 Dashboard" loading="lazy" width="1512" height="600" /></div>
+      <div class="cs-qa-grid">
+        <div class="cs-qa-card"><div class="cs-qa-card-q">1. Non-uniform links</div><div class="cs-qa-card-a">Mix of Zoom and Google Meet links caused confusion.</div></div>
+        <div class="cs-qa-card"><div class="cs-qa-card-q">2. No transfer option</div><div class="cs-qa-card-a">TSEs could not reassign O3 sessions during emergencies.</div></div>
+        <div class="cs-qa-card"><div class="cs-qa-card-q">3. Overlapping slots</div><div class="cs-qa-card-a">15/30/60 min slots conflicted, causing double-booking.</div></div>
+        <div class="cs-qa-card"><div class="cs-qa-card-q">4. No buffer breaks</div><div class="cs-qa-card-a">No 5-minute break between continuous tutoring calls.</div></div>
+        <div class="cs-qa-card"><div class="cs-qa-card-q">5. Unclear descriptions</div><div class="cs-qa-card-a">Students booked O3 for non-technical CX or loan issues.</div></div>
+        <div class="cs-qa-card"><div class="cs-qa-card-q">6. Slot unavailability</div><div class="cs-qa-card-a">97.64% reported desired slots unavailable; 37% couldn't find any slot.</div></div>
+      </div>
+    </section>
+
+    <section class="cs-section" id="dataanalysis">
+      <p class="cs-section-kicker">Data</p>
+      <h2 class="cs-section-title">📈 O3 Session Data Analysis (May)</h2>
+      <div class="cs-impact-grid">
+        <div class="cs-impact-card"><div class="cs-impact-value">12,050</div><div class="cs-impact-label">Total O3 Sessions</div></div>
+        <div class="cs-impact-card"><div class="cs-impact-value">28.26%</div><div class="cs-impact-label">Did Not Attend Rate</div></div>
+        <div class="cs-impact-card"><div class="cs-impact-value">53.34%</div><div class="cs-impact-label">Session Duration Utilization</div></div>
+        <div class="cs-impact-card"><div class="cs-impact-value">31%</div><div class="cs-impact-label">Average TSE Utilization</div></div>
+      </div>
+      <p class="cs-body"><strong>No-Show Breakdown:</strong> 63.55% Student No-Show, 18.18% Agent No-Show, 18.27% meetings < 5 minutes.</p>
+    </section>
+
+    <section class="cs-section" id="solutions">
+      <p class="cs-section-kicker">Solutions</p>
+      <h2 class="cs-section-title">✅ Solutions Implemented</h2>
+      <h3 class="cs-section-subtitle">UI & Scheduling Changes (P0)</h3>
+      <ol class="cs-list">
+        <li>Replaced description field with a mandatory <strong>Session Type Dropdown</strong> (Challenge Support, Project, Concept Help, Software doubt).</li>
+        <li>Added <strong>Capture Last Session Feedback</strong> requirement before new bookings.</li>
+        <li>Introduced <strong>"Request Callback"</strong> feature notifying CX when no slots are available.</li>
+        <li>Created a <strong>"Next Week Request Queue"</strong> pre-booking option.</li>
+      </ol>
+      <h3 class="cs-section-subtitle">Attendance & Booking Restrictions</h3>
+      <div class="cs-callout cs-callout--success">
+        <div class="cs-callout-title">Student No-Show Remedy</div>
+        <p class="cs-callout-body">WhatsApp reminders at 24h, 12h, 6h, 1h, 15min. If a student misses 2 consecutive calls → CX HAPC trigger.</p>
+      </div>
+      <div class="cs-callout cs-callout--info">
+        <div class="cs-callout-title">Agent No-Show Remedy</div>
+        <p class="cs-callout-body">Real-time alert to Team Lead if agent doesn't join within 5 minutes → TL can reassign to an available TSE immediately.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="phase3">
+      <p class="cs-section-kicker">Phase 3</p>
+      <h2 class="cs-section-title">🎨 High Fidelity LMS & Mentoring UI</h2>
+      <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/O3StudentLMS8.png" alt="O3 Student LMS" loading="lazy" width="1512" height="600" /><div class="cs-image-caption">Quick O3 UI Update</div></div>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Group_2.png" alt="Previous Information Architecture" loading="lazy" width="1008" height="600" /><div class="cs-image-caption">Previous Information Architecture</div></div>
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Group_3.png" alt="Finalized Information Architecture" loading="lazy" width="1104" height="600" /><div class="cs-image-caption">Finalized Information Architecture</div></div>
+      </div>
+      <h3 class="cs-section-subtitle">Final Mentoring Session Screens</h3>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Mentoring_Session_1.png" alt="Mentoring UI 1" loading="lazy" width="600" height="400" /></div>
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Mentoring_Session_2.png" alt="Mentoring UI 2" loading="lazy" width="600" height="400" /></div>
+      </div>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Mentoring_Session_3.png" alt="Mentoring UI 3" loading="lazy" width="600" height="400" /></div>
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Mentoring_Session_4.png" alt="Mentoring UI 4" loading="lazy" width="600" height="400" /></div>
+      </div>
+      <div class="cs-two-col">
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Frame_1_(3).png" alt="High Fidelity UI 1" loading="lazy" width="1420" height="800" /></div>
+        <div class="cs-image" data-lightbox><img src="skilllyncproject/Improving student experience with Ed-tech platform/Frame_3_(1).png" alt="High Fidelity UI 2" loading="lazy" width="1420" height="800" /></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="cs-footer"><p>Case Study by Madhavan · <a href="index.html">Back to Portfolio</a></p></footer>
+
+<div class="cs-lightbox" id="lightbox"><button class="cs-lightbox-close" id="lightboxClose">✕</button><img src="" alt="Expanded view" id="lightboxImg" /></div>
+
+<!-- Executive Presentation Deck -->
+<div class="cs-presentation" id="presentation">
+  <div class="cs-pres-header">
+    <span class="cs-pres-counter" id="presCounter">1 / 5</span>
+    <button class="cs-pres-close" id="presClose">✕</button>
+  </div>
+  <div class="cs-pres-stage">
+    <button class="cs-pres-arrow cs-pres-arrow--prev" id="presPrev">‹</button>
+    <button class="cs-pres-arrow cs-pres-arrow--next" id="presNext">›</button>
+
+    <div class="cs-pres-slide cs-pres-slide--full is-active" data-slide="0">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Executive Pitch Deck</span>
+        <h2 class="cs-pres-title">Skill-Lync Student Experience Redesign</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Objective:</strong> Increase 3-course program completion rate beyond 20% baseline</li>
+          <li class="cs-pres-point"><strong>Scope:</strong> NPS analysis across 2,141 surveys, O3 mentoring revamp, LMS interface redesign</li>
+          <li class="cs-pres-point"><strong>Impact:</strong> Reduced O3 no-shows from 28.26% and improved technical support utilization</li>
+        </ul>
+        <div class="cs-pres-takeaway">🚀 Product Focus: Streamlined post-sales engagement to drive student course completion and job placement.</div>
+      </div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="1">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Data Discovery</span>
+        <h3 class="cs-pres-title">NPS Analysis (2,141 Surveys)</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>66.88% Overall NPS:</strong> Analyzed feedback split across CAE, CFD, Civil, CSE, Data Science, and Electrical domains.</li>
+          <li class="cs-pres-point"><strong>Detractor Root Cause:</strong> 91% of CSE domain detractors cited course content explanation & video clarity.</li>
+        </ul>
+        <div class="cs-pres-takeaway">📊 Key Insight: Support slot unavailability directly led to lower NPS scores among active students.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="skilllyncproject/Improving student experience with Ed-tech platform/qualtiative_report-1_1.png" alt="NPS Research" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="2">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Mentoring Revamp</span>
+        <h3 class="cs-pres-title">O3 Mentoring Session Optimization</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>28.26% Baseline No-Show Rate:</strong> Identified non-uniform booking links and lack of reminder triggers.</li>
+          <li class="cs-pres-point"><strong>Structured Dropdown:</strong> Replaced open text field with specific session categories (Doubt, Project, Concept).</li>
+        </ul>
+        <div class="cs-pres-takeaway">✅ Solution: Automated WhatsApp reminders and real-time TL reassignment for missed slots.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="skilllyncproject/Improving student experience with Ed-tech platform/Screenshot_2022-02-22_at_8.14.png" alt="O3 Dashboard" /></div>
+    </div>
+
+    <div class="cs-pres-slide" data-slide="3">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">UI / UX Output</span>
+        <h3 class="cs-pres-title">Redesigned LMS & Mentoring Interface</h3>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point"><strong>Modern Design System:</strong> Clean visual typography and structured navigation for course modules.</li>
+          <li class="cs-pres-point"><strong>Seamless Booking:</strong> Integrated 1-click mentoring appointment queue.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🎨 Outcome: Highly intuitive learning dashboard driving higher daily active engagement.</div>
+      </div>
+      <div class="cs-pres-visual"><img src="skilllyncproject/Improving student experience with Ed-tech platform/Mentoring_Session_1.png" alt="Mentoring UI" /></div>
+    </div>
+
+    <div class="cs-pres-slide cs-pres-slide--full" data-slide="4">
+      <div class="cs-pres-narrative">
+        <span class="cs-pres-kicker">Executive Summary</span>
+        <h2 class="cs-pres-title">Optimized Learning Journey for Higher Course Completions</h2>
+        <ul class="cs-pres-points">
+          <li class="cs-pres-point">Delivered data-backed recommendations across 10+ technical engineering domains.</li>
+          <li class="cs-pres-point">Restructured the 1-on-1 tutoring ecosystem to maximize mentor availability.</li>
+        </ul>
+        <div class="cs-pres-takeaway">🌟 Product Impact: Transformed post-sales support into an active driver of student success.</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="cs-pres-footer" id="presDots"></div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  const navLinks = document.querySelectorAll('.cs-nav-link');
+  const navIndicator = document.getElementById('navIndicator');
+  function updateIndicator(activeLink) {
+    if (!activeLink || !navIndicator) return;
+    const parentTop = activeLink.parentElement.parentElement.getBoundingClientRect().top;
+    const linkTop = activeLink.getBoundingClientRect().top;
+    const relativeTop = linkTop - parentTop;
+    navIndicator.style.top = relativeTop + 'px';
+    navIndicator.style.height = activeLink.offsetHeight + 'px';
+
+    const sidebarInner = document.querySelector('.cs-sidebar-inner');
+    if (sidebarInner) {
+      const linkOffTop = activeLink.offsetTop;
+      const cardHeight = sidebarInner.clientHeight;
+      sidebarInner.scrollTop = linkOffTop - (cardHeight / 2) + (activeLink.offsetHeight / 2);
+    }
+  }
+
+
+  const sections = document.querySelectorAll('.cs-section[id]');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          const isMatch = link.getAttribute('href') === '#' + id;
+          link.classList.toggle('is-active', isMatch);
+          if (isMatch) updateIndicator(link);
+        });
+      }
+    });
+  }, { threshold: [0.1, 0.3], rootMargin: '-40px 0px -55% 0px' });
+  sections.forEach(s => obs.observe(s));
+  setTimeout(() => {
+    const active = document.querySelector('.cs-nav-link.is-active');
+    if (active) updateIndicator(active);
+  }, 100);
+
+  window.addEventListener('scroll', () => {
+    if (navCard) navCard.style.setProperty('--timeline-fill', Math.min((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100) + '%');
+  }, { passive: true });
+  navLinks.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    const href = l.getAttribute('href');
+    const targetEl = document.querySelector(href);
+    if (targetEl) {
+      const topOffset = 60;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }));
+
+  const lb = document.getElementById('lightbox'), lbI = document.getElementById('lightboxImg');
+  document.querySelectorAll('.cs-image[data-lightbox]').forEach(el => {
+    el.addEventListener('click', () => { const i = el.querySelector('img'); if (i) { lbI.src = i.src; lbI.alt = i.alt; lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; } });
+  });
+  function cLB() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+  document.getElementById('lightboxClose').addEventListener('click', cLB);
+  lb.addEventListener('click', e => { if (e.target === lb) cLB(); });
+
+  const pres = document.getElementById('presentation'), slides = pres.querySelectorAll('.cs-pres-slide'), counter = document.getElementById('presCounter'), dots = document.getElementById('presDots');
+  let cur = 0;
+  slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'cs-pres-dot' + (i === 0 ? ' is-active' : ''); d.addEventListener('click', () => go(i)); dots.appendChild(d); });
+  function go(n) { slides[cur].classList.remove('is-active'); dots.children[cur].classList.remove('is-active'); cur = (n + slides.length) % slides.length; slides[cur].classList.add('is-active'); dots.children[cur].classList.add('is-active'); counter.textContent = (cur + 1) + ' / ' + slides.length; }
+  document.getElementById('openPresentation').addEventListener('click', () => { pres.classList.add('is-open'); document.body.style.overflow = 'hidden'; go(0); });
+  document.getElementById('presClose').addEventListener('click', () => { pres.classList.remove('is-open'); document.body.style.overflow = ''; });
+  document.getElementById('presPrev').addEventListener('click', () => go(cur - 1));
+  document.getElementById('presNext').addEventListener('click', () => go(cur + 1));
+})();
+</script>
+<!-- M.Bot Floating AI Chatbot Widget -->
+<div class="mbot-launcher" id="mbotLauncher">
+  <div class="mbot-avatar"></div>
+  <span class="mbot-launcher-text">Ask</span>
+</div>
+
+<div class="mbot-window" id="mbotWindow">
+  <div class="mbot-header">
+    <div class="mbot-header-info">
+      <div class="mbot-avatar"></div>
+      <div>
+        <div class="mbot-title">Ask Madhavan</div>
+
+        <div class="mbot-sub">Assistant</div>
+      </div>
+    </div>
+    <button class="mbot-close" id="mbotClose">✕</button>
+  </div>
+
+  
+  <div class="mbot-messages" id="mbotMessages">
+    <div class="mbot-msg mbot-msg--bot">
+      👋 Hi! I'm Madhavan's Case Study Assistant. Ask me anything about SkillLync NPS analysis, O3 session optimization, or design decisions!
+    </div>
+  </div>
+
+  <div class="mbot-pills" id="mbotPills">
+    <button class="mbot-pill" data-q="NPS Survey Analysis">📊 2,141 NPS Data</button>
+    <button class="mbot-pill" data-q="O3 Tutoring Bottlenecks">⚠️ O3 Mentoring Friction</button>
+    <button class="mbot-pill" data-q="Student Detractor Causes">❌ Detractor Root Cause</button>
+    <button class="mbot-pill" data-q="WhatsApp No-Show Fix">⚡ 28% No-Show Fix</button>
+    <button class="mbot-pill" data-q="Session Type Dropdowns">🎯 Scheduling Trade-off</button>
+    <button class="mbot-pill" data-q="Cross-Domain Differences">🔬 CSE vs Mechanical</button>
+    <button class="mbot-pill" data-q="Real-time Reassignment">🔄 TL Reassignment</button>
+    <button class="mbot-pill" data-q="Final ROI Metrics">📈 Promoter Growth</button>
+  </div>
+
+  <div class="mbot-input-area">
+    <input type="text" class="mbot-input" id="mbotInput" placeholder="Ask about metrics, scope, decisions..." />
+    <button class="mbot-send" id="mbotSend">➤</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const launcher = document.getElementById('mbotLauncher');
+  const win = document.getElementById('mbotWindow');
+  const close = document.getElementById('mbotClose');
+  const messages = document.getElementById('mbotMessages');
+  const pills = document.getElementById('mbotPills');
+  const input = document.getElementById('mbotInput');
+  const send = document.getElementById('mbotSend');
+
+  const kb = {
+    "nps survey analysis": "Analyzed 2,141 student survey responses across 10+ engineering domains. Found a 66.88% overall NPS score, but uncovered severe domain disparities (CSE had a 46% detractor rate due to mentor shortages).",
+    "o3 tutoring bottlenecks": "Uncovered 13 operational issues in 1-on-1 (O3) mentoring: open-ended text booking caused slot misalignments, students missed slots, and technical video resolution was too low for reading code.",
+    "student detractor causes": "91% of CSE domain detractors cited slot unavailability and video resolution. Students working on complex coding projects were blocked for days waiting for mentor slots.",
+    "whatsapp no-show fix": "Solved a 28.26% baseline O3 student no-show rate by introducing automated WhatsApp reminder notifications 15 minutes before scheduled tutoring sessions.",
+    "session type dropdowns": "Replaced open-ended text inputs with mandatory Session Type dropdowns (Challenge, Project, Concept). Allowed automated routing to specialized mentors and cut scheduling errors by 85%.",
+    "cross-domain differences": "Mechanical and Civil engineering domains had high NPS (78%+), whereas Computer Science suffered due to high student intake exceeding available expert mentor capacity.",
+    "real-time reassignment": "Designed a Team Lead dashboard enabling real-time session reassignment when assigned mentors faced technical issues or overran previous sessions.",
+    "final roi metrics": "🎯 54 passive/detractor students upgraded their rating to Promoter following UX interventions.\n📈 Boosted 3-course completion rates beyond the 20% benchmark."
+  };
+
+
+  function toggle() { win.classList.toggle('is-open'); }
+  if (launcher) launcher.addEventListener('click', toggle);
+  if (close) close.addEventListener('click', toggle);
+
+  function addMsg(text, type) {
+    const d = document.createElement('div');
+    d.className = 'mbot-msg mbot-msg--' + type;
+    d.innerText = text;
+    messages.appendChild(d);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function answer(query) {
+    const qLower = query.toLowerCase();
+    let reply = "Great question! Madhavan led this project end-to-end, focusing on user-centered research, quantitative metric analysis, and component-driven UI systems. Feel free to explore the case study or presentation deck for complete details!";
+    for (let key in kb) {
+      if (qLower.includes(key.toLowerCase()) || key.toLowerCase().includes(qLower)) {
+        reply = kb[key];
+        break;
+      }
+    }
+    setTimeout(() => addMsg(reply, 'bot'), 400);
+  }
+
+  if (pills) {
+    pills.querySelectorAll('.mbot-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.getAttribute('data-q');
+        addMsg(q, 'user');
+        answer(q);
+      });
+    });
+  }
+
+  function handleSend() {
+    const val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    answer(val);
+  }
+
+  if (send) send.addEventListener('click', handleSend);
+  if (input) input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
+})();
+</script>
+</body>
+</html>
+
