@@ -18,8 +18,41 @@
   Back
 </a>
 
+<button class="cs-index-btn" id="mobileIndexBtn" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  Index
+</button>
+
+<div class="cs-mobile-drawer" id="mobileDrawer">
+  <div class="cs-mobile-drawer-card">
+    <div class="cs-mobile-drawer-header">
+      <span class="cs-mobile-drawer-title">Case Study Index</span>
+      <button class="cs-mobile-drawer-close" id="mobileDrawerClose" type="button">✕</button>
+    </div>
+    <div class="cs-mobile-drawer-content">
+      <a href="#hero" class="cs-mobile-drawer-link is-active">Intro</a>
+      <a href="#impact" class="cs-mobile-drawer-link">Impact Metrics</a>
+      <a href="#overview" class="cs-mobile-drawer-link">About TNAU</a>
+      <a href="#revamp" class="cs-mobile-drawer-link">Why Revamp</a>
+      <a href="#research" class="cs-mobile-drawer-link">Research</a>
+      <a href="#painpoints" class="cs-mobile-drawer-link">Pain Points</a>
+      <a href="#findings" class="cs-mobile-drawer-link">Key Findings</a>
+      <a href="#journey" class="cs-mobile-drawer-link">Journey Map</a>
+      <a href="#goals" class="cs-mobile-drawer-link">Goals & Model</a>
+      <a href="#architecture" class="cs-mobile-drawer-link">Architecture</a>
+      <a href="#designs" class="cs-mobile-drawer-link">UI Designs</a>
+      <a href="#ordermgmt" class="cs-mobile-drawer-link">Order Mgmt</a>
+      <a href="#orderfeedback" class="cs-mobile-drawer-link">Order Feedback</a>
+      <a href="#testing" class="cs-mobile-drawer-link">User Testing</a>
+      <a href="#insights" class="cs-mobile-drawer-link">Insights</a>
+      <a href="#news" class="cs-mobile-drawer-link">Public News</a>
+      <a href="#learnings" class="cs-mobile-drawer-link">Key Learnings</a>
+    </div>
+  </div>
+</div>
 
 <div class="cs-layout">
+
   <aside class="cs-sidebar">
     <div class="cs-sidebar-inner">
       <nav class="cs-nav-card" id="navCard">
@@ -579,12 +612,42 @@
   let cur = 0;
   slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'cs-pres-dot' + (i === 0 ? ' is-active' : ''); d.addEventListener('click', () => go(i)); dots.appendChild(d); });
   function go(n) { slides[cur].classList.remove('is-active'); dots.children[cur].classList.remove('is-active'); cur = (n + slides.length) % slides.length; slides[cur].classList.add('is-active'); dots.children[cur].classList.add('is-active'); counter.textContent = (cur + 1) + ' / ' + slides.length; }
-  document.getElementById('openPresentation').addEventListener('click', () => { pres.classList.add('is-open'); document.body.style.overflow = 'hidden'; go(0); });
-  document.getElementById('presClose').addEventListener('click', () => { pres.classList.remove('is-open'); document.body.style.overflow = ''; });
-  document.getElementById('presPrev').addEventListener('click', () => go(cur - 1));
-  document.getElementById('presNext').addEventListener('click', () => go(cur + 1));
+  // Mobile Drawer Toggle logic
+  const mIndexBtn = document.getElementById('mobileIndexBtn');
+  const mDrawer = document.getElementById('mobileDrawer');
+  const mDrawerClose = document.getElementById('mobileDrawerClose');
+  const mDrawerLinks = document.querySelectorAll('.cs-mobile-drawer-link');
+
+  function toggleMobileDrawer(open) {
+    if (!mDrawer) return;
+    if (open) {
+      mDrawer.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      mDrawer.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (mIndexBtn) mIndexBtn.addEventListener('click', () => toggleMobileDrawer(true));
+  if (mDrawerClose) mDrawerClose.addEventListener('click', () => toggleMobileDrawer(false));
+  if (mDrawer) mDrawer.addEventListener('click', e => { if (e.target === mDrawer) toggleMobileDrawer(false); });
+
+  mDrawerLinks.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    const href = l.getAttribute('href');
+    const targetEl = document.querySelector(href);
+    toggleMobileDrawer(false);
+    if (targetEl) {
+      const topOffset = 80;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  }));
 })();
 </script>
+
 <!-- M.Bot Floating AI Chatbot Widget -->
 <div class="mbot-launcher" id="mbotLauncher">
   <div class="mbot-avatar"></div>

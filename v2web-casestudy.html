@@ -18,8 +18,35 @@
   Back
 </a>
 
+<button class="cs-index-btn" id="mobileIndexBtn" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  Index
+</button>
+
+<div class="cs-mobile-drawer" id="mobileDrawer">
+  <div class="cs-mobile-drawer-card">
+    <div class="cs-mobile-drawer-header">
+      <span class="cs-mobile-drawer-title">Case Study Index</span>
+      <button class="cs-mobile-drawer-close" id="mobileDrawerClose" type="button">✕</button>
+    </div>
+    <div class="cs-mobile-drawer-content">
+      <a href="#hero" class="cs-mobile-drawer-link is-active">Intro</a>
+      <a href="#intro" class="cs-mobile-drawer-link">Introduction</a>
+      <a href="#problem" class="cs-mobile-drawer-link">Problem</a>
+      <a href="#ideation" class="cs-mobile-drawer-link">Ideation</a>
+      <a href="#speed" class="cs-mobile-drawer-link">Goal 1: Speed</a>
+      <a href="#navigation" class="cs-mobile-drawer-link">Goal 2: Navigation</a>
+      <a href="#usability" class="cs-mobile-drawer-link">Goal 3: Usability</a>
+      <a href="#tables" class="cs-mobile-drawer-link">Tables</a>
+      <a href="#orders" class="cs-mobile-drawer-link">Order Detail</a>
+      <a href="#createproduct" class="cs-mobile-drawer-link">Create Product</a>
+      <a href="#takeaway" class="cs-mobile-drawer-link">Takeaway</a>
+    </div>
+  </div>
+</div>
 
 <div class="cs-layout">
+
   <aside class="cs-sidebar">
     <div class="cs-sidebar-inner">
       <nav class="cs-nav-card" id="navCard">
@@ -337,18 +364,41 @@
     el.addEventListener('click', () => { const i = el.querySelector('img'); if (i) { lbI.src = i.src; lbI.alt = i.alt; lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; } });
   });
   function cLB() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
-  document.getElementById('lightboxClose').addEventListener('click', cLB);
-  lb.addEventListener('click', e => { if (e.target === lb) cLB(); });
+  // Mobile Drawer Toggle logic
+  const mIndexBtn = document.getElementById('mobileIndexBtn');
+  const mDrawer = document.getElementById('mobileDrawer');
+  const mDrawerClose = document.getElementById('mobileDrawerClose');
+  const mDrawerLinks = document.querySelectorAll('.cs-mobile-drawer-link');
 
-  const pres = document.getElementById('presentation'), slides = pres.querySelectorAll('.cs-pres-slide'), counter = document.getElementById('presCounter'), dots = document.getElementById('presDots');
-  let cur = 0;
-  slides.forEach((_, i) => { const d = document.createElement('button'); d.className = 'cs-pres-dot' + (i === 0 ? ' is-active' : ''); d.addEventListener('click', () => go(i)); dots.appendChild(d); });
-  function go(n) { slides[cur].classList.remove('is-active'); dots.children[cur].classList.remove('is-active'); cur = (n + slides.length) % slides.length; slides[cur].classList.add('is-active'); dots.children[cur].classList.add('is-active'); counter.textContent = (cur + 1) + ' / ' + slides.length; }
-  document.getElementById('openPresentation').addEventListener('click', () => { pres.classList.add('is-open'); document.body.style.overflow = 'hidden'; go(0); });
-  document.getElementById('presClose').addEventListener('click', () => { pres.classList.remove('is-open'); document.body.style.overflow = ''; });
-  document.getElementById('presPrev').addEventListener('click', () => go(cur - 1));
-  document.getElementById('presNext').addEventListener('click', () => go(cur + 1));
+  function toggleMobileDrawer(open) {
+    if (!mDrawer) return;
+    if (open) {
+      mDrawer.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    } else {
+      mDrawer.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (mIndexBtn) mIndexBtn.addEventListener('click', () => toggleMobileDrawer(true));
+  if (mDrawerClose) mDrawerClose.addEventListener('click', () => toggleMobileDrawer(false));
+  if (mDrawer) mDrawer.addEventListener('click', e => { if (e.target === mDrawer) toggleMobileDrawer(false); });
+
+  mDrawerLinks.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    const href = l.getAttribute('href');
+    const targetEl = document.querySelector(href);
+    toggleMobileDrawer(false);
+    if (targetEl) {
+      const topOffset = 80;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  }));
 })();
+
 </script>
 <!-- M.Bot Floating AI Chatbot Widget -->
 <div class="mbot-launcher" id="mbotLauncher">
