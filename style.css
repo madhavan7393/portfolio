@@ -5132,9 +5132,16 @@ body.case-study-page {
   .cs-hero-meta { padding: 14px 18px; gap: 16px; flex-direction: column; align-items: flex-start; }
 
   .cs-section { padding: 24px 0; }
+  .cs-section--alt {
+    padding: 24px 20px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 12px;
+  }
   .cs-qa-grid, .cs-two-col, .cs-impact-grid { grid-template-columns: 1fr; }
   .cs-pres-stage { padding: 20px 24px; }
 }
+
 
 
 
